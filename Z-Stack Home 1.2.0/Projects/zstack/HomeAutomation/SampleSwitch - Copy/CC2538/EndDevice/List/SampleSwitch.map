@@ -1,251 +1,251 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.10.3.6832/W32 for ARM                 05/Jun/2014  05:11:44
+# IAR ELF Linker V7.10.3.6832/W32 for ARM                 05/Jun/2014  05:34:16
 # Copyright 2007-2014 IAR Systems AB.
 #
 #    Output file  =  
-#        C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack Home
+#        C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
 #        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Exe\SampleSwitch.out
 #    Map file     =  
-#        C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack Home
+#        C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
 #        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\List\SampleSwitch.map
 #    Command line =  
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\AF.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\armcm3flashutil.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\BindingTable.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\DebugTrace.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_adc.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_aes.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_assert.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_ccm.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_drivers.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_key.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_lcd.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_led.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_mac_cfg.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_sleep.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_sys_ctrl.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_systick.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\hal_uart.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_autopend.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_backoff_timer.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_cfg.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_csp_tx.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_low_level.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_mcu.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_mem.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_pib.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_radio.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_radio_defs.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_rffrontend.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_rx.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_rx_onoff.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_sleep.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\mac_tx.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_AF.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_APP.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_DEBUG.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_NWK.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_SYS.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_TASK.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_UART.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_UTIL.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_VERSION.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\MT_ZDO.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\nwk_globals.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\OnBoard.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\OSAL.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\OSAL_Clock.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\OSAL_Memory.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\osal_nv.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\OSAL_PwrMgr.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\OSAL_SampleSw.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\OSAL_Timers.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\saddr.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\startup_ewarm.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\stub_aps.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zcl.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zcl_ezmode.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zcl_general.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zcl_ha.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zcl_samplesw.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zcl_samplesw_data.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZDApp.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZDConfig.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZDNwkMgr.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZDObject.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZDProfile.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZDSecMgr.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZGlobals.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zmac.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\zmac_cb.o"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Obj\ZMain.o" --redirect _Printf=_PrintfTiny
 #        --redirect _Scanf=_ScanfSmall -o
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\Exe\SampleSwitch.out" --map
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\EndDevice\List\SampleSwitch.map" --config
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\..\..\..\Tools\CC2538DB\CC2538.icf" --semihosting
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\..\..\..\Libraries\CC2538\bin\EndDevice.a"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\..\..\..\Libraries\TIMAC\bin\TIMAC-CC2538.a"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\..\..\..\..\..\Components\driverlib\cc2538\bin\iar\sdriverlib.lib"
-#        "C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack
-#        Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
+#        "C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home
+#        1.2.0\Projects\zstack\HomeAutomation\SampleSwitch -
 #        Copy\CC2538\..\..\..\..\..\Components\bsp\srf06eb_cc2538\drivers\bin\iar\bsp.lib"
 #        --entry __iar_program_start --vfe
 #
@@ -847,7 +847,7 @@ Copy/packbits (__iar_packbits_init3)
     Module                    ro code  ro data  rw data  rw data
                                                           (abs)
     ------                    -------  -------  -------  -------
-C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch - Copy\CC2538\EndDevice\Obj: [1]
+C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch - Copy\CC2538\EndDevice\Obj: [1]
     AF.o                        1 684        1        5
     BindingTable.o              2 236                29
     DebugTrace.o                   76
@@ -2796,7 +2796,7 @@ zmain_ext_addr          0x00219539   0x108  Code  Lc  ZMain.o [1]
 zmain_lcd_init          0x002196b1     0xc  Code  Lc  ZMain.o [1]
 
 
-[1] = C:\Users\Nguyen\Documents\GitHub\hungtest\LuanVan_Project\Z-Stack Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch - Copy\CC2538\EndDevice\Obj
+[1] = C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home 1.2.0\Projects\zstack\HomeAutomation\SampleSwitch - Copy\CC2538\EndDevice\Obj
 [2] = command line
 [3] = EndDevice.a
 [4] = TIMAC-CC2538.a
