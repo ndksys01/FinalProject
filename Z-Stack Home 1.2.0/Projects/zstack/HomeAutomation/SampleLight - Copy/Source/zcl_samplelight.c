@@ -1705,7 +1705,7 @@ static void rxCB( uint8 port, uint8 event )
           case 'f':
            {
              autoLight =0;
-             SendDataFull("#f",0x1e,"Get Status Now");
+             SendDataFull("#f",0x1f,"Get Status Now");
              break;
            }
           }

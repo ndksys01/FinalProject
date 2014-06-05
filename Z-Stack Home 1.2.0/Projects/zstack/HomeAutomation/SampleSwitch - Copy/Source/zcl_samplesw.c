@@ -1248,7 +1248,23 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
     }
   case 0x1f:
   {
-        char * tmpInfo ="";
+        char tmpInfo[8];
+        unsigned char index=0;
+        tmpInfo[index++] = '#';
+        tmpInfo[index++] = 'f';
+        //get status led 1
+        tmpInfo[index++] = bspLedGet(BSP_LED_1)+48;
+        //get status led 2
+        tmpInfo[index++] = bspLedGet(BSP_LED_2)+47;
+        //Get status automatic light
+        tmpInfo[index++] = autoLight+48; //autoLight
+        //get status Accelerator
+        tmpInfo[index++] = getAccelerator();
+        //get temperature
+        tmpInfo[index++] = bufTemp[2];
+        tmpInfo[index++] = bufTemp[3];
+        
+        /*
         *(tmpInfo++) = '#';
         *(tmpInfo++) = 'f';
         *(tmpInfo++) = bspLedGet(BSP_LED_1)+48; //led 1 status
@@ -1260,9 +1276,10 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         {
           *(tmpInfo++) = *(bufTemp+ic);
         }
-
-   SendDataFull(tmpInfo,0x21,"Disable Auto Light");
-   break;     //disable auto control light 1 3
+        */
+        
+        SendDataFull(tmpInfo,0x21,"Sending Status");
+        break;     //disable auto control light 1 3
   }
 
   }
