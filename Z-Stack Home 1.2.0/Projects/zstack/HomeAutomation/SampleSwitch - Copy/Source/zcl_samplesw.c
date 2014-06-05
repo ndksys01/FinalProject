@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //git master branch
+=======
+//git change_branch test
+>>>>>>> change_branch
 /**************************************************************************************************
 Filename:       zcl_samplesw.c
 Revised:        $Date: 2013-08-02 16:56:53 -0700 (Fri, 02 Aug 2013) $
@@ -276,7 +280,7 @@ int iCount=1;
 int jCount=1;
 int flag =0;
 static uint8 enableBaotrom=0;
-static void sendLight();
+//static void sendLight();
 uint16_t ui16Dummy;
 double dOutputVoltage;
 char pcTemp[10];
@@ -289,6 +293,8 @@ static void rxCB( uint8 port, uint8 event );
 int ic=0;
 char* tempData;
 static uint8 bufTemp[8];
+char getAccelerator();
+
 //**************************Ket thuc cac khai bao duoc them vao
 
 
@@ -367,7 +373,7 @@ void zclSampleSw_Init( byte task_id )
 #ifdef LCD_SUPPORTED
   HalLcdWriteString ( (char *)sDeviceName, HAL_LCD_LINE_3 );
 #endif
-  //connect2ZC();
+  connect2ZC();
 }
 
 /*********************************************************************
@@ -1196,37 +1202,11 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
   case 0x14: // tin nhan LIGHT
     {
     //HalUARTWrite(SERIAL_APP_PORT,(uint8*)pkt->cmd.Data,14);
-    ui16AlsValue=0;
-    int ui16AlsValueTB[5];
-    ui16AlsValue = alsRead();
-    ui16AlsValueTB[0]=alsRead();
-    ui16AlsValueTB[1]=alsRead();
-    ui16AlsValueTB[2]=alsRead();
-    ui16AlsValueTB[3]=alsRead();
-    ui16AlsValueTB[4]=alsRead();
-    int i;
-    for(i=0;i<5;i++)
-    {
-      ui16AlsValue += ui16AlsValueTB[i];
-    }
-    ui16AlsValue = ui16AlsValue/5;
-    
-    char statusLight3Byte[]="#40";
-    //while(1)
-    {
-      if(ui16AlsValue >400)
-      {
-        statusLight3Byte[2] = '1';
-      }
-      else
-      {
-        statusLight3Byte[2] = '0';
-      }
+      char statusLight3Byte[]="#40";
+      statusLight3Byte[2] = getAccelerator();
       SendDataFull(statusLight3Byte,0x24,"Sending Light.");
-      
-    }
         
-    //HalLcdWriteString( (char*)pkt->cmd.Data, HAL_LCD_LINE_7 );
+    //HalLcdWriteString( "toi iday", HAL_LCD_LINE_7 );
     //HalUARTWrite( SERIAL_APP_PORT, (uint8*)pkt->cmd.Data, 6 );
     break; 
     }
@@ -1272,20 +1252,20 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
     }
   case 0x1f:
   {
-        char * tmpInfo;
+        char * tmpInfo ="";
         *(tmpInfo++) = '#';
         *(tmpInfo++) = 'f';
         *(tmpInfo++) = bspLedGet(BSP_LED_1)+48; //led 1 status
         *(tmpInfo++) = bspLedGet(BSP_LED_2)+48; //led 2 status
         *(tmpInfo++) = autoLight+48; //autoLight
-        
+        *(tmpInfo++) = getAccelerator();
         int ic;
         for(ic=2;ic<9;ic++)
         {
           *(tmpInfo++) = *(bufTemp+ic);
         }
 
-   SendDataFull("#e",0x21,"Disable Auto Light");
+   SendDataFull(tmpInfo,0x21,"Disable Auto Light");
    break;     //disable auto control light 1 3
   }
 
@@ -1329,7 +1309,7 @@ static void sendAccelermeter()
   accReadData(&i16X, &i16Y, &i16Z);
   if(i16X < -30 | i16X >30 | i16Z < -50 | i16Z >50)
   {
-    SendDataFull("#2Co Trom\r\n",0x21,"Co Trom");
+    SendDataFull("#21*",0x21,"Co Trom");
     
   }
   else {
@@ -1383,33 +1363,53 @@ static void sendAccelermeter()
   HalLcdWriteString( data, HAL_LCD_LINE_5 );
   //HalUARTWrite(SERIAL_APP_PORT,(uint8*)data,14);
 }
-static void sendLight()
+char getAccelerator()
 {
-  ui16AlsValue = alsRead();
-  char dataLight[6];  
-  dataLight[0]=ui16AlsValue/1000 + 48;
-  dataLight[1]=(ui16AlsValue%1000)/100 + 48;
-  dataLight[2]=(ui16AlsValue%100)/10 + 48;
-  dataLight[3]= ui16AlsValue%10 + 48;
-  dataLight[4]='\r';
-  dataLight[5]='\n';
-  if ( AF_DataRequest( &zclSampleSw_DstAddr, &zclSampleSw_epDesc,
-                      2, //=1 tin nhan test
-                      (byte)osal_strlen( dataLight ) + 1,
-                      (byte *)&dataLight,
-                      &zclSampleSw_TransID,
-                      AF_SKIP_ROUTING, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
-  {
-    
-    // Successfully requested to be sent.8
-    // HalLcdWriteString( dataLight, HAL_LCD_LINE_5 );
-  }
-  else
-  {
-    // Error occurred in request to send.
-    HalLcdWriteString( "Bi loi", HAL_LCD_LINE_5 );
-  } 
+      ui16AlsValue=0;
+    int ui16AlsValueTB[5];
+    ui16AlsValue = alsRead();
+    ui16AlsValueTB[0]=alsRead();
+    ui16AlsValueTB[1]=alsRead();
+    ui16AlsValueTB[2]=alsRead();
+    ui16AlsValueTB[3]=alsRead();
+    ui16AlsValueTB[4]=alsRead();
+    int i;
+    for(i=0;i<5;i++)
+    {
+      ui16AlsValue += ui16AlsValueTB[i];
+    }
+    ui16AlsValue = ui16AlsValue/5;
+    if(ui16AlsValue >400)
+      return '1';
+    return '0';
 }
+//static void sendLight()
+//{
+//  ui16AlsValue = alsRead();
+//  char dataLight[6];  
+//  dataLight[0]=ui16AlsValue/1000 + 48;
+//  dataLight[1]=(ui16AlsValue%1000)/100 + 48;
+//  dataLight[2]=(ui16AlsValue%100)/10 + 48;
+//  dataLight[3]= ui16AlsValue%10 + 48;
+//  dataLight[4]='\r';
+//  dataLight[5]='\n';
+//  if ( AF_DataRequest( &zclSampleSw_DstAddr, &zclSampleSw_epDesc,
+//                      2, //=1 tin nhan test
+//                      (byte)osal_strlen( dataLight ) + 1,
+//                      (byte *)&dataLight,
+//                      &zclSampleSw_TransID,
+//                      AF_SKIP_ROUTING, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+//  {
+//    
+//    // Successfully requested to be sent.8
+//    // HalLcdWriteString( dataLight, HAL_LCD_LINE_5 );
+//  }
+//  else
+//  {
+//    // Error occurred in request to send.
+//    HalLcdWriteString( "Bi loi", HAL_LCD_LINE_5 );
+//  } 
+//}
 void initTemperature()
 {
     SysCtrlClockSet(false, false, SYS_CTRL_SYSDIV_32MHZ);
