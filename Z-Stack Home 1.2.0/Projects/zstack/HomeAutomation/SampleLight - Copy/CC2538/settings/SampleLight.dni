@@ -1,6 +1,3 @@
-[xds100]
-xds100serialNo=06EB121009FE
-xds100foundProbes=
 [Stack]
 FillEnabled=0
 OverflowWarningsEnabled=1
@@ -11,25 +8,6 @@ UseTrigger=1
 TriggerName=main
 LimitSize=0
 ByteLimit=50
-[Exceptions]
-StopOnUncaught=_ 0
-StopOnThrow=_ 0
-[DebugChecksum]
-Checksum=667953126
-[CallStack]
-ShowArgs=0
-[Disassembly]
-MixedMode=1
-[SfrWindow]
-Show=1 1
-Sort=4 0
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Disassemble mode]
 mode=0
 [Breakpoints]
