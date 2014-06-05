@@ -243,6 +243,7 @@ static uint8 statusLight4Byte[] = "#400";
 void SendDataFull(char *dataSend,int cluID,char *info);
 void connect2ZE();
 uint8 autoLight = 0;
+char getAccelerator();
 //**************************Ket thuc cac khai bao duoc them vao
  
  
@@ -1628,15 +1629,7 @@ static void rxCB( uint8 port, uint8 event )
            }
            case '4':
            {
-             //Lay gia tri den 1 ( trong ZC)
-              ui16AlsValue = alsRead();
-              if(ui16AlsValue > 400) {
-                
-                  statusLight4Byte[2] = '1';
-                }
-                else{
-                  statusLight4Byte[2] = '0';
-                }
+             statusLight4Byte[2] = getAccelerator(); //lay trang thai cua led sensor dau tien
              SendDataFull("#4",0x14,"Getting Light");
              break;
            }
@@ -1709,7 +1702,13 @@ static void rxCB( uint8 port, uint8 event )
              SendDataFull("#e",0x1e,"Disable Auto Light");
              break;
            }
-         }
+          case 'f':
+           {
+             autoLight =0;
+             SendDataFull("#f",0x1e,"Get Status Now");
+             break;
+           }
+          }
         }
 
    }
@@ -1801,4 +1800,24 @@ void connect2ZE()
                            TRUE );
     }
 #endif // ZCL_EZMODE
+}
+char getAccelerator()
+{
+      ui16AlsValue=0;
+    int ui16AlsValueTB[5];
+    ui16AlsValue = alsRead();
+    ui16AlsValueTB[0]=alsRead();
+    ui16AlsValueTB[1]=alsRead();
+    ui16AlsValueTB[2]=alsRead();
+    ui16AlsValueTB[3]=alsRead();
+    ui16AlsValueTB[4]=alsRead();
+    int i;
+    for(i=0;i<5;i++)
+    {
+      ui16AlsValue += ui16AlsValueTB[i];
+    }
+    ui16AlsValue = ui16AlsValue/5;
+    if(ui16AlsValue >400)
+      return '1';
+    return '0';
 }
