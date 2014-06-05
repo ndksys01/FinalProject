@@ -1262,7 +1262,7 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         //get status led 3
         tmpInfo[index++] = bspLedGet(BSP_LED_1)+48;
         //get status led 4
-        tmpInfo[index++] = bspLedGet(BSP_LED_2)/2+48;
+        tmpInfo[index++] = bspLedGet(BSP_LED_2)/2 + 48;
         
         //Get status automatic light 1
         tmpInfo[index++] = 'x';
