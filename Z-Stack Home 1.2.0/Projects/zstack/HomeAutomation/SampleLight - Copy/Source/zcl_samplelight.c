@@ -1,6 +1,4 @@
-
-//hung1
-
+//git change_branch test
 /**************************************************************************************************
   Filename:       zcl_sampleLight.c
   Revised:        $Date: 2013-11-25 10:56:12 -0800 (Mon, 25 Nov 2013) $
@@ -1604,7 +1602,7 @@ static void rxCB( uint8 port, uint8 event )
 {
     if ( event != HAL_UART_TX_EMPTY )
   {
-    HalLcdWriteString ( "Nhan dc", HAL_LCD_LINE_7 );     
+    HalLcdWriteString ( "Receive From RS232", HAL_LCD_LINE_7 );     
     uint8 pBuf[50];
     // Read from UART
     HalUARTRead( SERIAL_APP_PORT, pBuf, 50 );

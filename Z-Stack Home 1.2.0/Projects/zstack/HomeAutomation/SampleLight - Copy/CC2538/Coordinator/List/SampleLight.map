@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.10.3.6832/W32 for ARM                 05/Jun/2014  07:02:14
+# IAR ELF Linker V7.10.3.6832/W32 for ARM                 05/Jun/2014  07:24:09
 # Copyright 2007-2014 IAR Systems AB.
 #
 #    Output file  =  
@@ -275,7 +275,7 @@ __SystemLibrary = DLib
   .intvec            const    0x00200000    0x100  startup_ewarm.o [1]
                             - 0x00200100    0x100
 
-"P1":                                     0x210af
+"P1":                                     0x210bb
   .text              ro code  0x00200100   0x27fc  mac_beacon.o [4]
   .text              ro code  0x002028fc    0x7a4  OSAL.o [1]
   .text              ro code  0x002030a0    0x20c  OSAL_Memory.o [1]
@@ -453,84 +453,84 @@ __SystemLibrary = DLib
   .rodata            const    0x00220d2c     0x14  zcl_samplelight.o [1]
   .rodata            const    0x00220d40     0x14  zcl_samplelight.o [1]
   .rodata            const    0x00220d54     0x14  zcl_samplelight.o [1]
-  .rodata            const    0x00220d68     0x14  zcl_samplelight_data.o [1]
+  .rodata            const    0x00220d68     0x14  zcl_samplelight.o [1]
   .rodata            const    0x00220d7c     0x14  zcl_samplelight_data.o [1]
   .rodata            const    0x00220d90     0x14  zcl_samplelight_data.o [1]
-  .rodata            const    0x00220da4     0x14  ZDNwkMgr.o [1]
-  .rodata            const    0x00220db8     0x14  zmac_cb.o [1]
-  .rodata            const    0x00220dcc     0x14  ZMain.o [1]
-  .rodata            const    0x00220de0     0x10  nwk_globals.o [1]
-  .rodata            const    0x00220df0     0x10  nwk_globals.o [1]
-  .rodata            const    0x00220e00     0x10  nwk_globals.o [1]
-  .rodata            const    0x00220e10     0x10  nwk_globals.o [1]
-  .rodata            const    0x00220e20     0x10  nwk_globals.o [1]
-  .rodata            const    0x00220e30     0x10  nwk_globals.o [1]
-  .rodata            const    0x00220e40     0x10  nwk_globals.o [1]
-  .rodata            const    0x00220e50     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220e60     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220e70     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220e80     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220e90     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220ea0     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220eb0     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220ec0     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220ed0     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220ee0     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220ef0     0x10  zcl_samplelight.o [1]
-  .rodata            const    0x00220f00     0x10  ZDObject.o [1]
-  .rodata            const    0x00220f10     0x10  ZDObject.o [1]
-  .rodata            const    0x00220f20     0x10  ZDObject.o [1]
-  .rodata            const    0x00220f30     0x10  ZDObject.o [1]
-  .rodata            const    0x00220f40      0xc  nwk_globals.o [1]
-  .rodata            const    0x00220f4c      0xc  nwk_globals.o [1]
-  .rodata            const    0x00220f58      0xc  nwk_globals.o [1]
-  .rodata            const    0x00220f64      0xc  zcl_ha.o [1]
-  .rodata            const    0x00220f70      0xc  zcl_samplelight_data.o [1]
-  .rodata            const    0x00220f7c      0xc  ZDObject.o [1]
-  .rodata            const    0x00220f88      0xc  ZDObject.o [1]
-  .text              ro code  0x00220f94      0xa  hal_sleep.o [1]
-  .rodata            const    0x00220f9e      0x1  nwk_globals.o [1]
-  .rodata            const    0x00220f9f      0x1  nwk_globals.o [1]
-  .rodata            const    0x00220fa0      0x8  mac_cfg.o [1]
-  .rodata            const    0x00220fa8      0x8  MT_SYS.o [1]
-  .rodata            const    0x00220fb0      0x8  MT_VERSION.o [1]
-  .rodata            const    0x00220fb8      0x8  nwk_globals.o [1]
-  .rodata            const    0x00220fc0      0x8  nwk_globals.o [1]
-  .rodata            const    0x00220fc8      0x8  nwk_globals.o [1]
-  .rodata            const    0x00220fd0      0x8  nwk_globals.o [1]
-  .rodata            const    0x00220fd8      0x8  nwk_globals.o [1]
-  .rodata            const    0x00220fe0      0x8  osal_nv.o [1]
-  .rodata            const    0x00220fe8      0x8  zcl_ha.o [1]
-  .rodata            const    0x00220ff0      0x8  zcl_ha.o [1]
-  .rodata            const    0x00220ff8      0x8  zcl_ha.o [1]
-  .rodata            const    0x00221000      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221008      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221010      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221018      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221020      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221028      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221030      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221038      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221040      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221048      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221050      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221058      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221060      0x8  zcl_samplelight.o [1]
-  .rodata            const    0x00221068      0x8  ZMain.o [1]
-  .rodata            const    0x00221070      0x8  ZMain.o [1]
-  .rodata            const    0x00221078      0x4  mac_rx.o [1]
-  .rodata            const    0x0022107c      0x4  nwk_globals.o [1]
-  .rodata            const    0x00221080      0x1  nwk_globals.o [1]
-  .rodata            const    0x00221081      0x1  OSAL_SampleLight.o [1]
-  .rodata            const    0x00221082      0x1  zcl_samplelight_data.o [1]
-  .rodata            const    0x00221083      0x1  zcl_samplelight_data.o [1]
-  .rodata            const    0x00221084      0x1  zcl_samplelight_data.o [1]
-  .rodata            const    0x00221085      0x1  zcl_samplelight_data.o [1]
-  .rodata            const    0x00221086      0x1  ZDProfile.o [1]
-  .rodata            const    0x00221087      0x0  zero_init3.o [8]
-  .rodata            const    0x00221087      0x0  packbits_init.o [8]
-  Initializer bytes  ro data  0x00221087    0x128  <for P2 s0>
-                            - 0x002211af  0x210af
+  .rodata            const    0x00220da4     0x14  zcl_samplelight_data.o [1]
+  .rodata            const    0x00220db8     0x14  ZDNwkMgr.o [1]
+  .rodata            const    0x00220dcc     0x14  zmac_cb.o [1]
+  .rodata            const    0x00220de0     0x14  ZMain.o [1]
+  .rodata            const    0x00220df4     0x10  nwk_globals.o [1]
+  .rodata            const    0x00220e04     0x10  nwk_globals.o [1]
+  .rodata            const    0x00220e14     0x10  nwk_globals.o [1]
+  .rodata            const    0x00220e24     0x10  nwk_globals.o [1]
+  .rodata            const    0x00220e34     0x10  nwk_globals.o [1]
+  .rodata            const    0x00220e44     0x10  nwk_globals.o [1]
+  .rodata            const    0x00220e54     0x10  nwk_globals.o [1]
+  .rodata            const    0x00220e64     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220e74     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220e84     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220e94     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220ea4     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220eb4     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220ec4     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220ed4     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220ee4     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220ef4     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220f04     0x10  zcl_samplelight.o [1]
+  .rodata            const    0x00220f14     0x10  ZDObject.o [1]
+  .rodata            const    0x00220f24     0x10  ZDObject.o [1]
+  .rodata            const    0x00220f34     0x10  ZDObject.o [1]
+  .rodata            const    0x00220f44     0x10  ZDObject.o [1]
+  .rodata            const    0x00220f54      0xc  nwk_globals.o [1]
+  .rodata            const    0x00220f60      0xc  nwk_globals.o [1]
+  .rodata            const    0x00220f6c      0xc  nwk_globals.o [1]
+  .rodata            const    0x00220f78      0xc  zcl_ha.o [1]
+  .rodata            const    0x00220f84      0xc  zcl_samplelight_data.o [1]
+  .rodata            const    0x00220f90      0xc  ZDObject.o [1]
+  .rodata            const    0x00220f9c      0xc  ZDObject.o [1]
+  .text              ro code  0x00220fa8      0xa  hal_sleep.o [1]
+  .rodata            const    0x00220fb2      0x1  nwk_globals.o [1]
+  .rodata            const    0x00220fb3      0x1  nwk_globals.o [1]
+  .rodata            const    0x00220fb4      0x8  mac_cfg.o [1]
+  .rodata            const    0x00220fbc      0x8  MT_SYS.o [1]
+  .rodata            const    0x00220fc4      0x8  MT_VERSION.o [1]
+  .rodata            const    0x00220fcc      0x8  nwk_globals.o [1]
+  .rodata            const    0x00220fd4      0x8  nwk_globals.o [1]
+  .rodata            const    0x00220fdc      0x8  nwk_globals.o [1]
+  .rodata            const    0x00220fe4      0x8  nwk_globals.o [1]
+  .rodata            const    0x00220fec      0x8  nwk_globals.o [1]
+  .rodata            const    0x00220ff4      0x8  osal_nv.o [1]
+  .rodata            const    0x00220ffc      0x8  zcl_ha.o [1]
+  .rodata            const    0x00221004      0x8  zcl_ha.o [1]
+  .rodata            const    0x0022100c      0x8  zcl_ha.o [1]
+  .rodata            const    0x00221014      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x0022101c      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x00221024      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x0022102c      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x00221034      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x0022103c      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x00221044      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x0022104c      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x00221054      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x0022105c      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x00221064      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x0022106c      0x8  zcl_samplelight.o [1]
+  .rodata            const    0x00221074      0x8  ZMain.o [1]
+  .rodata            const    0x0022107c      0x8  ZMain.o [1]
+  .rodata            const    0x00221084      0x4  mac_rx.o [1]
+  .rodata            const    0x00221088      0x4  nwk_globals.o [1]
+  .rodata            const    0x0022108c      0x1  nwk_globals.o [1]
+  .rodata            const    0x0022108d      0x1  OSAL_SampleLight.o [1]
+  .rodata            const    0x0022108e      0x1  zcl_samplelight_data.o [1]
+  .rodata            const    0x0022108f      0x1  zcl_samplelight_data.o [1]
+  .rodata            const    0x00221090      0x1  zcl_samplelight_data.o [1]
+  .rodata            const    0x00221091      0x1  zcl_samplelight_data.o [1]
+  .rodata            const    0x00221092      0x1  ZDProfile.o [1]
+  .rodata            const    0x00221093      0x0  zero_init3.o [8]
+  .rodata            const    0x00221093      0x0  packbits_init.o [8]
+  Initializer bytes  ro data  0x00221093    0x128  <for P2 s0>
+                            - 0x002211bb  0x210bb
 
 Absolute sections:                         0x3000
   .noinit            uninit   0x0027c800   0x3000  osal_nv.o [1]
@@ -877,7 +877,7 @@ Zero (__iar_zero_init3)
 
 Copy/packbits (__iar_packbits_init3)
     1 source range, total size 0x128 (46% of destination):
-          0x00221087   0x128
+          0x00221093   0x128
     1 destination range, total size 0x279:
           0x20004100   0x279
 
@@ -953,12 +953,12 @@ C:\Users\Nguyen\Documents\GitHub\FinalProject\Z-Stack Home 1.2.0\Projects\zstack
     zcl_ezmode.o                  924                40
     zcl_general.o               5 392                 9
     zcl_ha.o                      196       36
-    zcl_samplelight.o           2 868      596      157
+    zcl_samplelight.o           2 868      608      157
     zcl_samplelight_data.o                 241       46
     zmac.o                        652                 8
     zmac_cb.o                     724       20        5
     ------------------------------------------------------------
-    Total:                     75 754    2 682   11 065   12 288
+    Total:                     75 754    2 694   11 065   12 288
 
 command line: [2]
     ------------------------------------------------------------
@@ -1054,7 +1054,7 @@ shb_l.a: [10]
 
     Linker created                          52
 ----------------------------------------------------------------
-    Grand Total:              132 054    3 557   13 420   12 288
+    Grand Total:              132 054    3 569   13 420   12 288
 
 
 *******************************************************************************
@@ -1188,8 +1188,8 @@ AssocChildTableManagement
                         0x002121d5    0x3a  Code  Gb  AssocList.o [3]
 AssocChildTableUpdateTimeout
                         0x002121b9    0x1c  Code  Gb  AssocList.o [3]
-AssocCnfFailStr         0x00220e30    0x10  Data  Gb  nwk_globals.o [1]
-AssocCnfStr             0x00220f40     0xc  Data  Gb  nwk_globals.o [1]
+AssocCnfFailStr         0x00220e44    0x10  Data  Gb  nwk_globals.o [1]
+AssocCnfStr             0x00220f54     0xc  Data  Gb  nwk_globals.o [1]
 AssocCount              0x00211c77    0x26  Code  Gb  AssocList.o [3]
 AssocFindDevice         0x002120c3    0x2a  Code  Gb  AssocList.o [3]
 AssocGetNextNode        0x00211fe9    0x6a  Code  Lc  AssocList.o [3]
@@ -1202,7 +1202,7 @@ AssocIsParent           0x00211e6f    0x18  Code  Gb  AssocList.o [3]
 AssocIsRFChild          0x00211e4f    0x20  Code  Gb  AssocList.o [3]
 AssocMakeList           0x00212069    0x48  Code  Gb  AssocList.o [3]
 AssocRemove             0x00211f97    0x52  Code  Gb  AssocList.o [3]
-AssocRspFailStr         0x00220e20    0x10  Data  Gb  nwk_globals.o [1]
+AssocRspFailStr         0x00220e34    0x10  Data  Gb  nwk_globals.o [1]
 AssociatedDevList       0x2000477c   0x1f8  Data  Gb  nwk_globals.o [1]
 BindInitNV              0x002163a1    0x2e  Code  Gb  BindingTable.o [1]
 BindRestoreFromNV       0x002163e9    0x46  Code  Gb  BindingTable.o [1]
@@ -1224,9 +1224,9 @@ CPUcpsid                0x00204eb5     0x8  Code  Gb  cpu.o [9]
 CPUcpsie                0x00204ebd     0x8  Code  Gb  cpu.o [9]
 CskipChldrn             0x20005436     0x1  Data  Gb  nwk_globals.o [1]
 CskipRtrs               0x20005435     0x1  Data  Gb  nwk_globals.o [1]
-EnergyLevelStr          0x00220e40    0x10  Data  Gb  nwk_globals.o [1]
+EnergyLevelStr          0x00220e54    0x10  Data  Gb  nwk_globals.o [1]
 FSC_Token               0x20005433     0x1  Data  Gb  MT_UART.o [1]
-FailedStr               0x00220fd8     0x8  Data  Gb  nwk_globals.o [1]
+FailedStr               0x00220fec     0x8  Data  Gb  nwk_globals.o [1]
 FaultISR                0x00220b4f     0x2  Code  Lc  startup_ewarm.o [1]
 FlashCacheModeSet       0x0021ffbd    0x12  Code  Gb  flash.o [9]
 FlashMainPageErase      0x0021ff9d    0x10  Code  Gb  flash.o [9]
@@ -1340,7 +1340,7 @@ MAC_SrcMatchDeleteEntry
                         0x00210dcb    0x40  Code  Gb  mac_autopend.o [1]
 MAC_SrcMatchEnable      0x00210cc5    0x52  Code  Gb  mac_autopend.o [1]
 MTProcessAppRspMsg      0x0021535d    0x16  Code  Gb  MT.o [1]
-MTVersionString         0x00220fb0     0x8  Data  Gb  MT_VERSION.o [1]
+MTVersionString         0x00220fc4     0x8  Data  Gb  MT_VERSION.o [1]
 MT_AfExec               0x00215375    0xba  Code  Gb  MT_AF.o [1]
 MT_AppCommandProcessing
                         0x002206e9    0x2c  Code  Gb  MT_APP.o [1]
@@ -1361,7 +1361,7 @@ MT_SysCommandProcessing
 MT_SysGetExtAddr        0x002155bb    0x1a  Code  Gb  MT_SYS.o [1]
 MT_SysGetUtcTime        0x00215beb    0x86  Code  Gb  MT_SYS.o [1]
 MT_SysGpio              0x002159d3    0xa8  Code  Gb  MT_SYS.o [1]
-MT_SysOsalEventId       0x00220fa8     0x8  Data  Gb  MT_SYS.o [1]
+MT_SysOsalEventId       0x00220fbc     0x8  Data  Gb  MT_SYS.o [1]
 MT_SysOsalNVDelete      0x0021580f    0x3a  Code  Gb  MT_SYS.o [1]
 MT_SysOsalNVItemInit    0x0021578d    0x82  Code  Gb  MT_SYS.o [1]
 MT_SysOsalNVLength      0x00215849    0x38  Code  Gb  MT_SYS.o [1]
@@ -1548,7 +1548,7 @@ NLME_SyncIndication     0x0021440b     0x4  Code  Gb  NLMEDE_CB.o [3]
 NLME_UpdateLinkStatus   0x0020fc09    0x24  Code  Gb  nwk_util.o [3]
 NLME_beaconNotifyInd    0x002143f7     0x4  Code  Gb  NLMEDE_CB.o [3]
 NWK_TaskID              0x20005402     0x1  Data  Gb  nwk.o [3]
-NetworkIDStr            0x00220f4c     0xc  Data  Gb  nwk_globals.o [1]
+NetworkIDStr            0x00220f60     0xc  Data  Gb  nwk_globals.o [1]
 NmiSR                   0x00220b4d     0x2  Code  Lc  startup_ewarm.o [1]
 NwkCommandPktProcessing
                         0x002075c1    0xee  Code  Lc  nwk.o [3]
@@ -1559,12 +1559,12 @@ NwkFreqAgilityIncTotalTx
                         0x002105fd    0x1c  Code  Lc  nwk_util.o [3]
 NwkFreqAgilityInit      0x002105c3    0x18  Code  Gb  nwk_util.o [3]
 NwkFreqAgilityScanCfg   0x002105dd    0x20  Code  Lc  nwk_util.o [3]
-NwkInfoStrs             0x00220f64     0xc  Data  Gb  zcl_ha.o [1]
-NwkInfoZcStr            0x00220fe8     0x8  Data  Gb  zcl_ha.o [1]
-NwkInfoZedStr           0x00220ff8     0x8  Data  Gb  zcl_ha.o [1]
-NwkInfoZrStr            0x00220ff0     0x8  Data  Gb  zcl_ha.o [1]
+NwkInfoStrs             0x00220f78     0xc  Data  Gb  zcl_ha.o [1]
+NwkInfoZcStr            0x00220ffc     0x8  Data  Gb  zcl_ha.o [1]
+NwkInfoZedStr           0x0022100c     0x8  Data  Gb  zcl_ha.o [1]
+NwkInfoZrStr            0x00221004     0x8  Data  Gb  zcl_ha.o [1]
 NwkInitChildAging       0x002106cd    0x32  Code  Gb  nwk_util.o [3]
-NwkMgrStr_4             0x00220da4    0x14  Data  Gb  ZDNwkMgr.o [1]
+NwkMgrStr_4             0x00220db8    0x14  Data  Gb  ZDNwkMgr.o [1]
 NwkNotMyChildListAdd    0x002108ed    0x7e  Code  Gb  nwk_util.o [3]
 NwkNotMyChildListAging  0x002108a1    0x4a  Code  Gb  nwk_util.o [3]
 NwkNotMyChildListDelete
@@ -1576,8 +1576,8 @@ OnBoard_KeyCallback     0x0020497d    0x18  Code  Gb  OnBoard.o [1]
 OnBoard_SendKeys        0x00204949    0x34  Code  Gb  OnBoard.o [1]
 OnboardKeyIntEnable     0x20005437     0x1  Data  Gb  OnBoard.o [1]
 Onboard_rand            0x002049ff     0x8  Code  Gb  OnBoard.o [1]
-OrphanRspStr            0x00220e10    0x10  Data  Gb  nwk_globals.o [1]
-ParentStr               0x00220fc0     0x8  Data  Gb  nwk_globals.o [1]
+OrphanRspStr            0x00220e24    0x10  Data  Gb  nwk_globals.o [1]
+ParentStr               0x00220fd4     0x8  Data  Gb  nwk_globals.o [1]
 PortCPortAIsr           0x00220b45     0x8  Code  Lc  startup_ewarm.o [1]
 ProcessData             0x0020d507    0xe2  Code  Gb  zcl_samplelight.o [1]
 RTG_AddRtgEntry         0x00212cbd   0x15c  Code  Lc  rtg.o [3]
@@ -1628,7 +1628,7 @@ Region$$Table$$Base     0x00220c04           --   Gb  - Linker created -
 Region$$Table$$Limit    0x00220c38           --   Gb  - Linker created -
 RegisterForKeys         0x00204933    0x16  Code  Gb  OnBoard.o [1]
 ResetIsr                0x00220b11    0x22  Code  Lc  startup_ewarm.o [1]
-RouterStr               0x00220fc8     0x8  Data  Gb  nwk_globals.o [1]
+RouterStr               0x00220fdc     0x8  Data  Gb  nwk_globals.o [1]
 SOCADCDataGet           0x0021faff    0x12  Code  Gb  adc.o [9]
 SOCADCEndOfCOnversionGet
                         0x0021fb11     0xc  Code  Gb  adc.o [9]
@@ -1661,11 +1661,11 @@ SSP_Process             0x00214531    0xac  Code  Gb  ssp.o [3]
 SSP_ReadNwkActiveKey    0x0021462b    0x1c  Code  Gb  ssp.o [3]
 SSP_SwitchNwkKey        0x00214675    0xa2  Code  Gb  ssp.o [3]
 SSP_UpdateNwkKey        0x00214647    0x2e  Code  Gb  ssp.o [3]
-ScanFailedStr           0x00220f58     0xc  Data  Gb  nwk_globals.o [1]
+ScanFailedStr           0x00220f6c     0xc  Data  Gb  nwk_globals.o [1]
 SendData                0x0020d7ef    0x44  Code  Gb  zcl_samplelight.o [1]
 SendDataFull            0x0020d833    0x4a  Code  Gb  zcl_samplelight.o [1]
-SentStr                 0x00220fd0     0x8  Data  Gb  nwk_globals.o [1]
-SuccessStr              0x00220fb8     0x8  Data  Gb  nwk_globals.o [1]
+SentStr                 0x00220fe4     0x8  Data  Gb  nwk_globals.o [1]
+SuccessStr              0x00220fcc     0x8  Data  Gb  nwk_globals.o [1]
 SysCtrlClockGet         0x0021117d    0x2c  Code  Gb  sys_ctrl.o [9]
 SysCtrlClockSet         0x00211131    0x4c  Code  Gb  sys_ctrl.o [9]
 SysCtrlClockStartSetting
@@ -1879,7 +1879,7 @@ ZDO_UpdateAddrManager   0x0021864f    0x24  Code  Gb  ZDObject.o [1]
 ZDO_UpdateNwkStatus     0x00217f95    0x38  Code  Gb  ZDObject.o [1]
 ZDO_UseExtendedPANID    0x200052b0     0x8  Data  Gb  ZDApp.o [1]
 ZDO_beaconNotifyIndCB   0x0020a1e1   0x148  Code  Gb  ZDApp.o [1]
-ZDP_AF_ENDPOINT         0x00221086     0x1  Data  Gb  ZDProfile.o [1]
+ZDP_AF_ENDPOINT         0x00221092     0x1  Data  Gb  ZDProfile.o [1]
 ZDP_BindUnbindReq       0x0021bebb    0xce  Code  Gb  ZDProfile.o [1]
 ZDP_Buf                 0x20004e6c    0x50  Data  Lc  ZDProfile.o [1]
 ZDP_DeviceAnnce         0x0021b631    0x64  Code  Gb  ZDProfile.o [1]
@@ -1971,7 +1971,7 @@ ZMacSrcMatchEnable      0x00210c3b     0xa  Code  Gb  zmac.o [1]
 ZMacStartReq            0x00210b97    0x28  Code  Gb  zmac.o [1]
 ZMacSyncReq             0x00210bbf     0xe  Code  Gb  zmac.o [1]
 ZMac_ScanBuf            0x200053ac     0x4  Data  Gb  zmac.o [1]
-ZigbeeCoordStr          0x00220e00    0x10  Data  Gb  nwk_globals.o [1]
+ZigbeeCoordStr          0x00220e14    0x10  Data  Gb  nwk_globals.o [1]
 _NIB                    0x20004c74    0x74  Data  Gb  nwk.o [3]
 _ScanChannels           0x200053a8     0x4  Data  Gb  zmac.o [1]
 __aeabi_memclr          0x002048f1          Code  Gb  ABImemclr.o [8]
@@ -2105,8 +2105,8 @@ data                    0x2000430c     0x8  Data  Gb  zcl_samplelight.o [1]
 debugCompId             0x2000542e     0x1  Data  Gb  MT.o [1]
 debugThreshold          0x2000542d     0x1  Data  Gb  MT.o [1]
 debug_str               0x0021e009    0x46  Code  Gb  DebugTrace.o [1]
-defaultKey              0x00220de0    0x10  Data  Gb  nwk_globals.o [1]
-defaultTCLinkKey        0x00220df0    0x10  Data  Gb  nwk_globals.o [1]
+defaultKey              0x00220df4    0x10  Data  Gb  nwk_globals.o [1]
+defaultTCLinkKey        0x00220e04    0x10  Data  Gb  nwk_globals.o [1]
 devStartMode            0x2000435b     0x1  Data  Gb  ZDApp.o [1]
 devState                0x2000435a     0x1  Data  Gb  ZDApp.o [1]
 epList                  0x200052e8     0x4  Data  Gb  AF.o [1]
@@ -2118,7 +2118,7 @@ findItem                0x0021a5c9    0x4c  Code  Lc  osal_nv.o [1]
 flashErasePage          0x0021f939    0x28  Code  Gb  armcm3flashutil.o [1]
 flashWrite              0x0021f961   0x17a  Code  Gb  armcm3flashutil.o [1]
 flash_write_word        0x0021f925    0x12  Code  Lc  armcm3flashutil.o [1]
-gAPS_MAX_GROUPS         0x00221080     0x1  Data  Gb  nwk_globals.o [1]
+gAPS_MAX_GROUPS         0x0022108c     0x1  Data  Gb  nwk_globals.o [1]
 gBIND_REC_SIZE          0x00215db2     0x2  Data  Gb  nwk_globals.o [1]
 gDEFAULT_ROUTE_REQUEST_RADIUS
                         0x00220b7f     0x1  Data  Gb  nwk_globals.o [1]
@@ -2130,13 +2130,13 @@ gLINK_STATUS_JITTER_MASK
                         0x0020e4c6     0x2  Data  Gb  nwk_globals.o [1]
 gMAX_BCAST              0x002207b6     0x1  Data  Gb  nwk_globals.o [1]
 gMAX_BINDING_CLUSTER_IDS
-                        0x00220f9f     0x1  Data  Gb  nwk_globals.o [1]
+                        0x00220fb3     0x1  Data  Gb  nwk_globals.o [1]
 gMAX_BROADCAST_QUEUED   0x0022028e     0x1  Data  Gb  nwk_globals.o [1]
 gMAX_NEIGHBOR_ENTRIES   0x0021fbb6     0x1  Data  Gb  nwk_globals.o [1]
 gMAX_NOT_MYCHILD_DEVICES
                         0x00220bb7     0x1  Data  Gb  nwk_globals.o [1]
 gMAX_NWK_FRAMECOUNTER_CHANGES
-                        0x0022107c     0x4  Data  Gb  nwk_globals.o [1]
+                        0x00221088     0x4  Data  Gb  nwk_globals.o [1]
 gMAX_PASSIVE_ACK_CNT    0x002206d3     0x1  Data  Gb  nwk_globals.o [1]
 gMAX_RREQ_ENTRIES       0x0021fadb     0x1  Data  Gb  nwk_globals.o [1]
 gMAX_RTG_ENTRIES        0x0021e923     0x1  Data  Gb  nwk_globals.o [1]
@@ -2156,7 +2156,7 @@ gNWK_INDIRECT_MSG_MAX_ALL
 gNWK_INDIRECT_MSG_MAX_PER
                         0x0021e81f     0x1  Data  Gb  nwk_globals.o [1]
 gNWK_MAX_BINDING_ENTRIES
-                        0x00220f9e     0x1  Data  Gb  nwk_globals.o [1]
+                        0x00220fb2     0x1  Data  Gb  nwk_globals.o [1]
 gNWK_MAX_DATABUFS_SCHEDULED
                         0x0021e21a     0x1  Data  Gb  nwk_globals.o [1]
 gNWK_MAX_DATABUFS_TOTAL
@@ -2204,12 +2204,12 @@ halAssertHazardLights   0x002045a9   0x278  Code  Gb  hal_assert.o [1]
 halIntKeys              0x2000540a     0x1  Data  Lc  hal_key.o [1]
 halIntsAreEnabled       0x0020483d    0x1e  Code  Lc  mac_low_level.o [1]
 halSavedKeys            0x20005409     0x1  Data  Lc  hal_key.o [1]
-halSleepTimerIsr        0x00220f95     0xa  Code  Gb  hal_sleep.o [1]
+halSleepTimerIsr        0x00220fa9     0xa  Code  Gb  hal_sleep.o [1]
 hal_key_int_keys        0x00207049    0x42  Code  Gb  hal_key.o [1]
 hal_key_keys            0x0020700f    0x3a  Code  Gb  hal_key.o [1]
 hdrData                 0x20004324     0x4  Data  Lc  osal_nv.o [1]
 holdTmr                 0x20005467     0x1  Data  Lc  rtg.o [3]
-hotIds                  0x00220fe0     0x8  Data  Lc  osal_nv.o [1]
+hotIds                  0x00220ff4     0x8  Data  Lc  osal_nv.o [1]
 hotItem                 0x0021ad4b    0x24  Code  Lc  osal_nv.o [1]
 hotItemUpdate           0x0021ad6f    0x2a  Code  Lc  osal_nv.o [1]
 hotOff                  0x200052a0     0x8  Data  Lc  osal_nv.o [1]
@@ -2296,7 +2296,7 @@ macBuildHeader          0x00201c89   0x13a  Code  Gb  mac_beacon.o [4]
 macBuildRealign         0x002001bd    0x7a  Code  Gb  mac_beacon.o [4]
 macCbackEventTbl        0x00201fb0     0xc  Data  Gb  mac_beacon.o [4]
 macCbackForEvent        0x00201889    0x72  Code  Gb  mac_beacon.o [4]
-macCfg                  0x00220fa0     0x8  Data  Gb  mac_cfg.o [1]
+macCfg                  0x00220fb4     0x8  Data  Gb  mac_cfg.o [1]
 macCheckSched           0x00200d01    0x10  Code  Gb  mac_beacon.o [4]
 macChipVersion          0x20005318     0x4  Data  Gb  mac_mcu.o [1]
 macCommStatusInd        0x00201fe3    0xae  Code  Gb  mac_beacon.o [4]
@@ -2428,7 +2428,7 @@ macRadioUpdateTxPower   0x00203ae7    0x48  Code  Gb  mac_radio.o [1]
 macReset                0x20004134    0x1c  Data  Gb  mac_beacon.o [4]
 macRxAckTxDoneCallback  0x0020641b    0x16  Code  Gb  mac_rx.o [1]
 macRxActive             0x20005417     0x1  Data  Gb  mac_rx.o [1]
-macRxAddrLen            0x00221078     0x4  Data  Lc  mac_rx.o [1]
+macRxAddrLen            0x00221084     0x4  Data  Lc  mac_rx.o [1]
 macRxAssocRsp           0x00201375    0xa0  Code  Gb  mac_beacon.o [4]
 macRxAssociateReq       0x00200593    0x46  Code  Gb  mac_beacon.o [4]
 macRxBeacon             0x00202191    0x98  Code  Gb  mac_beacon.o [4]
@@ -2857,12 +2857,12 @@ sAddrCmp                0x002032ad    0x48  Code  Gb  saddr.o [1]
 sAddrCpy                0x002032f5    0x20  Code  Gb  saddr.o [1]
 sAddrExtCmp             0x00203315    0x2c  Code  Gb  saddr.o [1]
 sAddrExtCpy             0x00203341    0x12  Code  Gb  saddr.o [1]
-sDeviceName             0x00220ec0    0x10  Data  Gb  zcl_samplelight.o [1]
-sLightOff               0x00220ef0    0x10  Data  Gb  zcl_samplelight.o [1]
-sLightOn                0x00220ee0    0x10  Data  Gb  zcl_samplelight.o [1]
-sSwEZMode               0x00220ed0    0x10  Data  Gb  zcl_samplelight.o [1]
+sDeviceName             0x00220ed4    0x10  Data  Gb  zcl_samplelight.o [1]
+sLightOff               0x00220f04    0x10  Data  Gb  zcl_samplelight.o [1]
+sLightOn                0x00220ef4    0x10  Data  Gb  zcl_samplelight.o [1]
+sSwEZMode               0x00220ee4    0x10  Data  Gb  zcl_samplelight.o [1]
 sSwHelp                 0x20004280    0x14  Data  Gb  zcl_samplelight.o [1]
-sSwLight                0x00220d54    0x14  Data  Gb  zcl_samplelight.o [1]
+sSwLight                0x00220d68    0x14  Data  Gb  zcl_samplelight.o [1]
 s_bcMask                0x20005464     0x1  Data  Lc  nwk_util.o [3]
 sampleLight_TestEp      0x200042d0    0x10  Data  Lc  zcl_samplelight.o [1]
 saveExtAddr             0x200042f8     0x8  Data  Gb  nwk_util.o [3]
@@ -2877,7 +2877,7 @@ storedRand              0x2000546a     0x1  Data  Lc  ssp.o [3]
 strcat                  0x00204a4d    0x1c  Code  Gb  strcat.o [6]
 strlen                  0x002048a5          Code  Gb  strlen.o [8]
 tasksArr                0x00220bb8    0x28  Data  Gb  OSAL_SampleLight.o [1]
-tasksCnt                0x00221081     0x1  Data  Gb  OSAL_SampleLight.o [1]
+tasksCnt                0x0022108d     0x1  Data  Gb  OSAL_SampleLight.o [1]
 tasksEvents             0x20005350     0x4  Data  Gb  OSAL_SampleLight.o [1]
 tempDataLen             0x20005434     0x1  Data  Gb  MT_UART.o [1]
 theHeap                 0x2000546c  0x1800  Data  Lc  OSAL_Memory.o [1]
@@ -3026,7 +3026,7 @@ zclSampleLight_BasicResetCB
 zclSampleLight_CmdCallbacks
                         0x20004224    0x40  Data  Lc  zcl_samplelight.o [1]
 zclSampleLight_DateCode
-                        0x00220d90    0x14  Data  Gb  zcl_samplelight_data.o [1]
+                        0x00220da4    0x14  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_DeviceEnable
                         0x20004359     0x1  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_DisplayLight
@@ -3035,7 +3035,7 @@ zclSampleLight_DstAddr  0x20005238     0xc  Data  Gb  zcl_samplelight.o [1]
 zclSampleLight_EZModeCB
                         0x0020d437    0xd0  Code  Lc  zcl_samplelight.o [1]
 zclSampleLight_HWRevision
-                        0x00221082     0x1  Data  Gb  zcl_samplelight_data.o [1]
+                        0x0022108e     0x1  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_HandleKeys
                         0x0020d0b9   0x104  Code  Lc  zcl_samplelight.o [1]
 zclSampleLight_IdentifyCB
@@ -3047,7 +3047,7 @@ zclSampleLight_IdentifyQueryRspCB
 zclSampleLight_IdentifyTime
                         0x200053f8     0x2  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_InClusterList
-                        0x00220f70     0xc  Data  Gb  zcl_samplelight_data.o [1]
+                        0x00220f84     0xc  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_Init     0x0020ceb5    0xbe  Code  Gb  zcl_samplelight.o [1]
 zclSampleLight_LcdDisplayHelpMode
                         0x0020d281    0x22  Code  Lc  zcl_samplelight.o [1]
@@ -3058,10 +3058,10 @@ zclSampleLight_LcdDisplayUpdate
 zclSampleLight_LocationDescription
                         0x20004294    0x14  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_ManufacturerName
-                        0x00220d68    0x14  Data  Gb  zcl_samplelight_data.o [1]
-zclSampleLight_ModelId  0x00220d7c    0x14  Data  Gb  zcl_samplelight_data.o [1]
+                        0x00220d7c    0x14  Data  Gb  zcl_samplelight_data.o [1]
+zclSampleLight_ModelId  0x00220d90    0x14  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_NumAttributes
-                        0x00221085     0x1  Data  Gb  zcl_samplelight_data.o [1]
+                        0x00221091     0x1  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_NwkState
                         0x20004358     0x1  Data  Gb  zcl_samplelight.o [1]
 zclSampleLight_OnOff    0x2000544b     0x1  Data  Gb  zcl_samplelight_data.o [1]
@@ -3071,7 +3071,7 @@ zclSampleLight_OutClusterList
 zclSampleLight_PhysicalEnvironment
                         0x20005449     0x1  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_PowerSource
-                        0x00221084     0x1  Data  Gb  zcl_samplelight_data.o [1]
+                        0x00221090     0x1  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_ProcessIdentifyTimeChange
                         0x0020d2a3    0x56  Code  Lc  zcl_samplelight.o [1]
 zclSampleLight_ProcessInDefaultRspCmd
@@ -3085,13 +3085,13 @@ zclSampleLight_ProcessIncomingMsg
 zclSampleLight_ProcessZDOMsgs
                         0x0020d40f    0x28  Code  Lc  zcl_samplelight.o [1]
 zclSampleLight_RegisterEZModeData
-                        0x00220eb0    0x10  Data  Lc  zcl_samplelight.o [1]
+                        0x00220ec4    0x10  Data  Lc  zcl_samplelight.o [1]
 zclSampleLight_SimpleDesc
                         0x200042a8    0x14  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_TaskID   0x20005443     0x1  Data  Gb  zcl_samplelight.o [1]
 zclSampleLight_TransID  0x20005447     0x1  Data  Gb  zcl_samplelight.o [1]
 zclSampleLight_ZCLVersion
-                        0x00221083     0x1  Data  Gb  zcl_samplelight_data.o [1]
+                        0x0022108f     0x1  Data  Gb  zcl_samplelight_data.o [1]
 zclSampleLight_epDesc   0x200051d4    0x10  Data  Gb  zcl_samplelight.o [1]
 zclSampleLight_event_loop
                         0x0020cf73   0x146  Code  Gb  zcl_samplelight.o [1]
@@ -3200,7 +3200,7 @@ zgStackProfile          0x20004360     0x1  Data  Gb  ZGlobals.o [1]
 zgStartDelay            0x20004373     0x1  Data  Gb  ZGlobals.o [1]
 zgUseDefaultTCLK        0x20005460     0x1  Data  Gb  ZGlobals.o [1]
 zgWriteStartupOptions   0x00219f03    0x56  Code  Gb  ZGlobals.o [1]
-zmacCBSizeTable         0x00220db8    0x14  Data  Gb  zmac_cb.o [1]
+zmacCBSizeTable         0x00220dcc    0x14  Data  Gb  zmac_cb.o [1]
 zmain_dev_info          0x002201b5    0x70  Code  Lc  ZMain.o [1]
 zmain_ext_addr          0x002200ad   0x108  Code  Lc  ZMain.o [1]
 zmain_lcd_init          0x00220225     0xc  Code  Lc  ZMain.o [1]
@@ -3218,7 +3218,7 @@ zmain_lcd_init          0x00220225     0xc  Code  Lc  ZMain.o [1]
 [10] = shb_l.a
 
   132 054 bytes of readonly  code memory
-    3 557 bytes of readonly  data memory
+    3 569 bytes of readonly  data memory
    13 420 bytes of readwrite data memory (+ 12 288 absolute)
 
 Errors: none
