@@ -1,0 +1,1679 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       08/Apr/2014  21:14:19 #
+# Copyright 1996-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  small                                                   #
+#    Source file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\Source\zap_app.c              #
+#    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                   #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\zap.cfg" (-DZAP_PHY_SPI=1                        #
+#                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE    #
+#                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                  #
+#                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE               #
+#                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE            #
+#                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE            #
+#                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG            #
+#                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC               #
+#                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC          #
+#                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0         #
+#                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                 #
+#                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000           #
+#                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f   #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE    #
+#                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                 #
+#                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4          #
+#                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10         #
+#                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10        #
+#                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING -DZCL_PRICING  #
+#                     -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU                 #
+#                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home   #
+#                     1.2.0\Projects\zstack\ZAP\Source\zap_app.c" -D          #
+#                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D       #
+#                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC "C:\Texas  #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\List\" -lA           #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\" --remarks --diag_suppress            #
+#                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\Obj\" --debug        #
+#                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\" -I "C:\Texas Instruments\Z-Stack   #
+#                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\. #
+#                     .\Source\" -I "C:\Texas Instruments\Z-Stack Home        #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\" -I "C:\Texas Instruments\Z-Stack Home          #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\target\MSP5438ZAP\" -I          #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\include\" -I "C:\Texas          #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\mac\includ #
+#                     e\" -I "C:\Texas Instruments\Z-Stack Home               #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\mt\" -I "C:\Texas                   #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\osal\inclu #
+#                     de\" -I "C:\Texas Instruments\Z-Stack Home              #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas      #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\services\s #
+#                     addr\" -I "C:\Texas Instruments\Z-Stack Home            #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\services\sdata\" -I "C:\Texas       #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\af\" #
+#                      -I "C:\Texas Instruments\Z-Stack Home                  #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\nwk\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sapi #
+#                     \" -I "C:\Texas Instruments\Z-Stack Home                #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\sec\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sys\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\zcl\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\zdo\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\zmac\" -I "C:\Texas                 #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w\" #
+#                      --core=430X --data_model=small -Ohz --multiplier=32    #
+#                     --multiplier_location=4C0 --require_prototypes          #
+#                     --hw_workaround=CPU40 --hw_workaround=CPU39             #
+#    List file     =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\zap_app.lst                            #
+#    Object file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\Obj\zap_app.r43                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\Source\zap_app.c
+      1          /**************************************************************************************************
+      2              Filename:       zap_app.c
+      3              Revised:        $Date: 2013-05-16 17:29:25 -0700 (Thu, 16 May 2013) $
+      4              Revision:       $Revision: 34342 $
+      5          
+      6              Description:
+      7          
+      8              This file defines the functionality of the ZNP Application Processor.
+      9          
+     10          
+     11              Copyright 2009-2013 Texas Instruments Incorporated. All rights reserved.
+     12          
+     13              IMPORTANT: Your use of this Software is limited to those specific rights
+     14              granted under the terms of a software license agreement between the user
+     15              who downloaded the software, his/her employer (which must be your employer)
+     16              and Texas Instruments Incorporated (the "License").  You may not use this
+     17              Software unless you agree to abide by the terms of the License. The License
+     18              limits your use, and you acknowledge, that the Software may not be modified,
+     19              copied or distributed unless embedded on a Texas Instruments microcontroller
+     20              or used solely and exclusively in conjunction with a Texas Instruments radio
+     21              frequency transceiver, which is integrated into your product.  Other than for
+     22              the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     23              works of, modify, distribute, perform, display or sell this Software and/or
+     24              its documentation for any purpose.
+     25          
+     26              YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     27              PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     28              INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     29              NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     30              TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     31              NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     32              LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     33              INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     34              OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     35              OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     36              (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     37          
+     38              Should you have any questions regarding your right to use this Software,
+     39              contact Texas Instruments Incorporated at www.TI.com.
+     40          **************************************************************************************************/
+     41          
+     42          /* ------------------------------------------------------------------------------------------------
+     43           *                                          Includes
+     44           * ------------------------------------------------------------------------------------------------
+     45           */
+     46          
+     47          #include "hal_board.h"
+
+   \                                 In  segment DATA16_AN, at 0x120
+   \   union <unnamed> _A_PMMCTL0_L
+   \                     _A_PMMCTL0_L:
+   \   000000                DS8 2
+     48          #include "hal_key.h"
+     49          #include "hal_lcd.h"
+     50          #include "hal_led.h"
+     51          #include "mt.h"
+     52          #include "mt_rpc.h"
+     53          #include "mt_sys.h"
+     54          #include "mt_uart.h"
+     55          #include "OSAL.h"
+     56          #include "OSAL_Tasks.h"
+     57          #include "sapi.h"
+     58          #include "zap_app.h"
+     59          #include "zap_phy.h"
+     60          #include "zap_znp.h"
+     61          #include "ZDApp.h"
+     62          #include "ZDObject.h"
+     63          #include "ZComDef.h"
+     64          
+     65          /* ------------------------------------------------------------------------------------------------
+     66           *                                           Constants
+     67           * ------------------------------------------------------------------------------------------------
+     68           */
+     69          
+     70          #if !defined ZAP_APP_PORT
+     71          #define ZAP_APP_PORT  0
+     72          #endif
+     73          
+     74          #if !defined ZAP_APP_LED
+     75          #define ZAP_APP_LED   FALSE
+     76          #endif
+     77          
+     78          #if !defined ZAP_APP_KEYS
+     79          #define ZAP_APP_KEYS  TRUE
+     80          #endif
+     81          
+     82          /* ------------------------------------------------------------------------------------------------
+     83           *                                           Typedefs
+     84           * ------------------------------------------------------------------------------------------------
+     85           */
+     86          
+     87          typedef void (*zapProcessFunc_t)(uint8 port, uint8 *pBuf);
+     88          
+     89          /* ------------------------------------------------------------------------------------------------
+     90           *                                           Macros
+     91           * ------------------------------------------------------------------------------------------------
+     92           */
+     93          
+     94          /* ------------------------------------------------------------------------------------------------
+     95           *                                           Global Variables
+     96           * ------------------------------------------------------------------------------------------------
+     97           */
+     98          
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     99          uint8 zapTaskId;
+   \                     zapTaskId:
+   \   000000                DS8 1
+    100          
+    101          // Hook for supporting more than 1 ZNP on different ports.
+    102          // An example of use would be to set this to the desired port before invoking AF_DataRequest().
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    103          uint8 zapAppPort;
+   \                     zapAppPort:
+   \   000000                DS8 1
+    104          
+    105          // Count of the global ZNP variables that are cached locally on ZAP.
+    106          #define ZAP_MON_INFO_CNT  5
+    107          // IEEE Address (64-bit Extended Address) of the ZNP device.
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    108          uint8 znpIEEE[8];
+   \                     znpIEEE:
+   \   000000                DS8 8
+    109          // ZigBee Network Address of the ZNP device.
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    110          uint16 znpAddr;
+   \                     znpAddr:
+   \   000000                DS8 2
+    111          // ZigBee Network Address of the parent of the ZNP device.
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    112          uint16 znpParent;
+   \                     znpParent:
+   \   000000                DS8 2
+    113          // ZigBee Network PanId.
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    114          uint16 znpPanId;
+   \                     znpPanId:
+   \   000000                DS8 2
+    115          // ZNP variable indicating the current device state (from Z-Stack ZDO/ZD_App.c).
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    116          devStates_t devState;
+   \                     devState:
+   \   000000                DS8 1
+    117          
+    118          #if SECURE
+    119          // ZNP variable read from NV at powerup by the ZGlobals manager - TODO: how to sync value with ZNP?
+    120          uint8 zgSecurityMode = ZG_SECURITY_MODE;
+    121          #endif
+    122          
+    123          
+    124          /* ------------------------------------------------------------------------------------------------
+    125           *                                           Local Variables
+    126           * ------------------------------------------------------------------------------------------------
+    127           */
+    128          
+
+   \                                 In  segment DATA16_C, align 2, align-sorted
+    129          static const zapProcessFunc_t zapProcessFunc[] =
+   \                     zapProcessFunc:
+   \   000000   00000000.... DC32 0H, zapSysProcessIncoming, 0H, 0H, zapAfProcessIncoming
+   \            ....00000000
+   \            00000000....
+   \            ....        
+   \   000014   ............ DC32 zapZdoProcessIncoming, zapSapiProcessIncoming
+   \            ....        
+   \   00001C   ........0000 DC32 zapUtilProcessIncoming, 0H, 0H
+   \            000000000000
+    130          {
+    131            NULL,
+    132          
+    133          #if defined (ZAP_SYS_FUNC)
+    134            zapSysProcessIncoming,
+    135          #else
+    136            NULL,
+    137          #endif
+    138          
+    139          #if defined (ZAP_MAC_FUNC)
+    140            zapMacProcessIncoming,
+    141          #else
+    142            NULL,
+    143          #endif
+    144          
+    145          #if defined (ZAP_NWK_FUNC)
+    146            zapNwkProcessIncoming,
+    147          #else
+    148            NULL,
+    149          #endif
+    150          
+    151          #if defined (ZAP_AF_FUNC)
+    152            zapAfProcessIncoming,
+    153          #else
+    154            NULL,
+    155          #endif
+    156          
+    157          #if defined (ZAP_ZDO_FUNC)
+    158            zapZdoProcessIncoming,
+    159          #else
+    160            NULL,
+    161          #endif
+    162          
+    163          #if defined (ZAP_SAPI_FUNC)
+    164            zapSapiProcessIncoming,
+    165          #else
+    166            NULL,
+    167          #endif
+    168          
+    169          #if defined (ZAP_UTIL_FUNC)
+    170            zapUtilProcessIncoming,
+    171          #else
+    172            NULL,
+    173          #endif
+    174          
+    175          #if defined (ZAP_DEBUG_FUNC)
+    176            zapDebugProcessIncoming,
+    177          #else
+    178            NULL,
+    179          #endif
+    180          
+    181          #if defined (ZAP_APP_FUNC)
+    182            zapApsProcessIncoming,
+    183          #else
+    184            NULL,
+    185          #endif
+    186          };
+    187          
+    188          #ifdef LCD_SUPPORTED
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    189          static uint16 zapDisAddr;
+   \                     zapDisAddr:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    190          static uint16 zapDisPanId;
+   \                     zapDisPanId:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    191          static uint8  zapDisIEEE[Z_EXTADDR_LEN];
+   \                     zapDisIEEE:
+   \   000000                DS8 8
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    192          static uint8  zapDisState;
+   \                     zapDisState:
+   \   000000                DS8 1
+    193          #endif
+    194          
+    195          /* ------------------------------------------------------------------------------------------------
+    196           *                                           Local Functions
+    197           * ------------------------------------------------------------------------------------------------
+    198           */
+    199          
+    200          #if ZAP_ZNP_MT
+    201          #include "zap_phy_uart.c"
+    202          #if ZAP_APP_MSG
+    203          #define MT_APP_FUNC
+    204          #include "MT_App.c"
+    205          #endif
+    206          #endif
+    207          
+    208          #ifdef LCD_SUPPORTED
+    209          static void zapDisInfo(void);
+    210          #endif
+    211          static void zapMonInfo(void);
+    212          #if ZAP_APP_KEYS
+    213          static void zapKeys(keyChange_t *msg);
+    214          #endif
+    215          static void zapMonitor(void);
+    216          static void zapSync(void);
+    217          static void zapSysEvtMsg(void);
+    218          
+    219          /**************************************************************************************************
+    220           * @fn          zapInit
+    221           *
+    222           * @brief       This function is the application's task initialization.
+    223           *
+    224           * input parameters
+    225           *
+    226           * None.
+    227           *
+    228           * output parameters
+    229           *
+    230           * None.
+    231           *
+    232           * @return      None.
+    233           **************************************************************************************************
+    234           */
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   3E40E803     MOV.W   #0x3e8, R14
+   \   000004   0F43         MOV.W   #0x0, R15
+   \   000006   3D400010     MOV.W   #0x1000, R13
+   \   00000A   5C42....     MOV.B   &zapTaskId, R12
+   \   00000E   ........     CALLA   #osal_start_timerEx
+   \   000012   4C93         CMP.B   #0x0, R12
+   \   000014   0624         JEQ     ??zapMonitor_0
+   \   000016   3D400010     MOV.W   #0x1000, R13
+   \   00001A   5C42....     MOV.B   &zapTaskId, R12
+   \   00001E   ........     CALLA   #osal_set_event
+   \                     ??zapMonitor_0:
+   \   000022   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    235          void zapInit(uint8 id)
+   \                     zapInit:
+    236          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   4A4C         MOV.B   R12, R10
+    237            zapTaskId = id;
+   \   000004   C24C....     MOV.B   R12, &zapTaskId
+    238            zapAppPort = ZAP_APP_PORT;
+   \   000008   C243....     MOV.B   #0x0, &zapAppPort
+    239          
+    240            zapPhyInit();
+   \   00000C   ........     CALLA   #zapPhyInit
+    241          #if ZAP_APP_KEYS
+    242            RegisterForKeys(id);
+   \   000010   4C4A         MOV.B   R10, R12
+   \   000012   ........     CALLA   #RegisterForKeys
+    243          #endif
+    244          
+    245            zapLostSync(ZAP_APP_PORT);
+   \   000016   4C43         MOV.B   #0x0, R12
+   \   000018   ........     CALLA   #zapLostSync
+    246            if (ZSuccess != osal_start_timerEx(zapTaskId, ZAP_APP_TMR_EVT, ZAP_APP_TMR_DLY))
+   \   00001C   ........     CALLA   #?Subroutine0
+    247            {
+    248              (void)osal_set_event(zapTaskId, ZAP_APP_TMR_EVT);
+    249            }
+    250          
+    251          #if !ZAP_PHY_RESET_ZNP
+    252            uint8 *pBuf;
+    253            if ((pBuf = zap_msg_allocate(0, (uint8)MT_RPC_SYS_UTIL | (uint8)MT_RPC_CMD_AREQ,
+    254                                            (uint8)MT_UTIL_SYNC_REQ)) != NULL)
+    255            {
+    256              zapPhySend(zapAppPort, pBuf);
+    257              zap_msg_deallocate(&pBuf);
+    258            }
+    259          #endif
+    260          
+    261          #if ZAP_ZNP_MT
+    262            zapPhyUartInit();
+    263          #endif
+    264          }
+   \                     ??CrossCallReturnLabel_0:
+   \   000020   3A41         POP.W   R10
+   \   000022   1001         RETA
+    265          
+    266          /**************************************************************************************************
+    267           * @fn          zapEvt
+    268           *
+    269           * @brief       This function is called to process the OSAL events for the task.
+    270           *
+    271           * input parameters
+    272           *
+    273           * @param       id - OSAL task Id.
+    274           * @param       evts - OSAL events bit mask of pending events.
+    275           *
+    276           * output parameters
+    277           *
+    278           * None.
+    279           *
+    280           * @return      evts - OSAL events bit mask of unprocessed events.
+    281           **************************************************************************************************
+    282           */
+
+   \                                 In  segment CODE, align 2
+    283          uint16 zapEvt(uint8 id, uint16 evts)
+   \                     zapEvt:
+    284          {
+   \   000000   3B15         PUSHM.W #0x4, R11
+   \   000002   0A4D         MOV.W   R13, R10
+    285            uint16 mask = 0;
+    286            (void)id;
+    287          
+    288            if (evts & SYS_EVENT_MSG)
+   \   000004   0D93         CMP.W   #0x0, R13
+   \   000006   1634         JGE     ??zapEvt_2
+    289            {
+    290              mask = SYS_EVENT_MSG;
+   \   000008   3B400080     MOV.W   #0x8000, R11
+    291              zapSysEvtMsg();
+   \                     ??zapEvt_0:
+   \   00000C   5C42....     MOV.B   &zapTaskId, R12
+   \   000010   ........     CALLA   #osal_msg_receive
+   \   000014   084C         MOV.W   R12, R8
+   \   000016   0C93         CMP.W   #0x0, R12
+   \   000018   3624         JEQ     ??zapEvt_3
+   \   00001A   DC930000     CMP.B   #0x1, 0(R12)
+   \   00001E   0620         JNE     ??zapEvt_4
+   \   000020   1D4C0200     MOV.W   0x2(R12), R13
+   \   000024   5C480100     MOV.B   0x1(R8), R12
+   \   000028   ........     CALLA   #zapProcessIncoming
+   \                     ??zapEvt_4:
+   \   00002C   0C48         MOV.W   R8, R12
+   \   00002E   ........     CALLA   #osal_msg_deallocate
+   \   000032   EC3F         JMP     ??zapEvt_0
+    292            }
+    293            else if (evts & (ZAP_PHY_SPI_EVT | ZAP_PHY_UART_EVT))
+   \                     ??zapEvt_2:
+   \   000034   0B4D         MOV.W   R13, R11
+   \   000036   3BF00060     AND.W   #0x6000, R11
+   \   00003A   0424         JEQ     ??zapEvt_5
+    294            {
+    295              mask = evts & (ZAP_PHY_SPI_EVT | ZAP_PHY_UART_EVT);
+    296              zapPhyExec(mask);
+   \   00003C   0C4B         MOV.W   R11, R12
+   \   00003E   ........     CALLA   #zapPhyExec
+   \   000042   213C         JMP     ??zapEvt_3
+    297            }
+    298            else if (evts & ZAP_APP_TMR_EVT)
+   \                     ??zapEvt_5:
+   \   000044   3DB00010     BIT.W   #0x1000, R13
+   \   000048   0528         JNC     ??zapEvt_6
+    299            {
+    300              mask = ZAP_APP_TMR_EVT;
+   \   00004A   3B400010     MOV.W   #0x1000, R11
+    301              zapMonitor();
+   \   00004E   ........     CALLA   #zapMonitor
+   \   000052   193C         JMP     ??zapEvt_3
+    302            }
+    303            else if (evts & ZAP_APP_SYNC_EVT)
+   \                     ??zapEvt_6:
+   \   000054   3DB00008     BIT.W   #0x800, R13
+   \   000058   0528         JNC     ??zapEvt_7
+    304            {
+    305              mask = ZAP_APP_SYNC_EVT;
+   \   00005A   3B400008     MOV.W   #0x800, R11
+    306              zapSync();
+   \   00005E   ........     CALLA   #zapSync
+   \   000062   113C         JMP     ??zapEvt_3
+    307            }
+    308            else if (evts & ZAP_APP_ZDO_STATE_CHANGE_EVT)
+   \                     ??zapEvt_7:
+   \   000064   3DB00004     BIT.W   #0x400, R13
+   \   000068   0D28         JNC     ??zapEvt_8
+    309            {
+    310              mask = ZAP_APP_ZDO_STATE_CHANGE_EVT;
+   \   00006A   3B400004     MOV.W   #0x400, R11
+    311          
+    312          #ifdef LCD_SUPPORTED
+    313              // Loop to get all of the cached, global ZNP variables for the sake of a timely LCD update.
+    314              for (id = 0; id <= ZAP_MON_INFO_CNT; id++)
+   \   00006E   78400600     MOV.B   #0x6, R8
+    315              {
+    316                zapMonInfo();
+   \                     ??zapEvt_1:
+   \   000072   ........     CALLA   #zapMonInfo
+    317              }
+   \   000076   7853         ADD.B   #0xff, R8
+   \   000078   FC23         JNE     ??zapEvt_1
+    318          #else
+    319              // Otherwise, just get what is needed for the ZDO state change update.
+    320              zb_GetDeviceInfo(ZB_INFO_DEV_STATE, &devState);
+    321          #endif
+    322          
+    323              ZDO_UpdateNwkStatus(devState);
+   \   00007A   5C42....     MOV.B   &devState, R12
+   \   00007E   ........     CALLA   #ZDO_UpdateNwkStatus
+   \   000082   013C         JMP     ??zapEvt_3
+    324            }
+    325            else
+    326            {
+    327              mask = evts;  // Discard unknown events - should never happen.
+   \                     ??zapEvt_8:
+   \   000084   0B4D         MOV.W   R13, R11
+    328            }
+    329          
+    330            return (evts ^ mask);  // Return unprocessed events.
+   \                     ??zapEvt_3:
+   \   000086   0AEB         XOR.W   R11, R10
+   \   000088   0C4A         MOV.W   R10, R12
+   \   00008A   3817         POPM.W  #0x4, R11
+   \   00008C   1001         RETA
+    331          }
+    332          
+    333          /**************************************************************************************************
+    334           * @fn          zapGotSync
+    335           *
+    336           * @brief       This function is invoked upon receipt of MT_SYS_RESET_IND or MT_UTIL_SYNC_REQ
+    337           *              and would indicate that sync is (re-)gained with the ZNP.
+    338           *
+    339           * input parameters
+    340           *
+    341           * @param       port - Port Id corresponding to the ZNP that got sync.
+    342           *
+    343           * output parameters
+    344           *
+    345           * None.
+    346           *
+    347           * @return      None.
+    348           **************************************************************************************************
+    349           */
+
+   \                                 In  segment CODE, align 2
+    350          void zapGotSync(uint8 port)
+   \                     zapGotSync:
+    351          {
+    352            zapPhySync(port);
+   \   000000   ........     CALLA   #zapPhySync
+    353          
+    354            // Especially for UART transport, allow time for multiple got syncs before acting on it.
+    355            if (ZSuccess != osal_start_timerEx(zapTaskId, ZAP_APP_SYNC_EVT, ZAP_APP_SYNC_DLY))
+   \   000004   3E406400     MOV.W   #0x64, R14
+   \   000008   0F43         MOV.W   #0x0, R15
+   \   00000A   3D400008     MOV.W   #0x800, R13
+   \   00000E   5C42....     MOV.B   &zapTaskId, R12
+   \   000012   ........     CALLA   #osal_start_timerEx
+   \   000016   4C93         CMP.B   #0x0, R12
+   \   000018   0624         JEQ     ??zapGotSync_0
+    356            {
+    357              (void)osal_set_event(zapTaskId, ZAP_APP_SYNC_EVT);
+   \   00001A   3D400008     MOV.W   #0x800, R13
+   \   00001E   5C42....     MOV.B   &zapTaskId, R12
+   \   000022   ........     CALLA   #osal_set_event
+    358            }
+    359          }
+   \                     ??zapGotSync_0:
+   \   000026   1001         RETA
+    360          
+    361          /**************************************************************************************************
+    362           * @fn          zapLostSync
+    363           *
+    364           * @brief       This function is invoked by the PHY drivers when sync is lost with the ZNP.
+    365           *
+    366           * input parameters
+    367           *
+    368           * @param       port - Port Id corresponding to the ZNP that lost sync.
+    369           *
+    370           * output parameters
+    371           *
+    372           * None.
+    373           *
+    374           * @return      None.
+    375           **************************************************************************************************
+    376           */
+
+   \                                 In  segment CODE, align 2
+    377          void zapLostSync(uint8 port)
+   \                     zapLostSync:
+    378          {
+    379            devState = DEV_STATE_INVALID;
+   \   000000   F240FC00.... MOV.B   #0xfc, &devState
+    380            znpAddr = znpParent = INVALID_NODE_ADDR;
+   \   000006   B240FEFF.... MOV.W   #0xfffe, &znpParent
+   \   00000C   B240FEFF.... MOV.W   #0xfffe, &znpAddr
+    381            znpPanId = 0xFFFF;
+   \   000012   B243....     MOV.W   #0xffff, &znpPanId
+    382          }
+   \   000016   1001         RETA
+    383          
+    384          /**************************************************************************************************
+    385           * @fn          zapProcessIncoming
+    386           *
+    387           * @brief       This function is called by zapSysEvtMsg() to process an incoming message from ZNP.
+    388           *
+    389           * input parameters
+    390           *
+    391           * @param       port - Port Id corresponding to the ZNP that sent the message.
+    392           * @param       pBuf - Pointer to event message.
+    393           *
+    394           * output parameters
+    395           *
+    396           * None.
+    397           *
+    398           * @return      None.
+    399           **************************************************************************************************
+    400           */
+
+   \                                 In  segment CODE, align 2
+    401          void zapProcessIncoming(uint8 port, uint8 *pBuf)
+   \                     zapProcessIncoming:
+    402          {
+   \   000000   0A12         PUSH.W  R10
+    403            if ((pBuf[MT_RPC_POS_CMD0] & MT_RPC_SUBSYSTEM_MASK) < MT_RPC_SYS_MAX)
+   \   000002   5F4D0100     MOV.B   0x1(R13), R15
+   \   000006   4E4F         MOV.B   R15, R14
+   \   000008   7EF01F00     AND.B   #0x1f, R14
+   \   00000C   7E901200     CMP.B   #0x12, R14
+   \   000010   0D2C         JC      ??zapProcessIncoming_0
+    404            {
+    405              zapProcessFunc_t func;
+    406          
+    407              if (NULL != (func = zapProcessFunc[pBuf[MT_RPC_POS_CMD0] & MT_RPC_SUBSYSTEM_MASK]))
+   \   000012   3FF01F00     AND.W   #0x1f, R15
+   \   000016   5F06         RLAM.W  #0x2, R15
+   \   000018   1E4F....     MOV.W   zapProcessFunc(R15), R14
+   \   00001C   1F4F....     MOV.W   zapProcessFunc + 2(R15), R15
+   \   000020   0A4E         MOV.W   R14, R10
+   \   000022   0ADF         BIS.W   R15, R10
+   \   000024   0A93         CMP.W   #0x0, R10
+   \   000026   0224         JEQ     ??zapProcessIncoming_0
+    408              {
+    409                func(port, pBuf);
+   \   000028   ........     CALLA   #?IndCallR15
+    410              }
+    411            }
+    412          
+    413          #if ZAP_ZNP_MT
+    414          #if ZAP_APP_MSG
+    415            if ((MT_RPC_SYS_APP == (pBuf[MT_RPC_POS_CMD0] & MT_RPC_SUBSYSTEM_MASK)) &&
+    416                    (MT_APP_MSG ==  pBuf[MT_RPC_POS_CMD1]))
+    417            {
+    418              MT_AppMsg(pBuf);
+    419            }
+    420            else
+    421          #endif
+    422            {
+    423              MT_BuildAndSendZToolResponse(pBuf[MT_RPC_POS_CMD0], pBuf[MT_RPC_POS_CMD1],
+    424                                           pBuf[MT_RPC_POS_LEN],  pBuf+MT_RPC_POS_DAT0);
+    425            }
+    426          #endif
+    427          }
+   \                     ??zapProcessIncoming_0:
+   \   00002C   3A41         POP.W   R10
+   \   00002E   1001         RETA
+    428          
+    429          /**************************************************************************************************
+    430           * @fn          zap_msg_allocate
+    431           *
+    432           * @brief       This function allocates and pre-fills a dynamic RPC message buffer.
+    433           *
+    434           * input parameters
+    435           *
+    436           * @param       len - length of the data to send via RPC (i.e. not including RPC overhead.)
+    437           * @param       cmd0 - a valid logical OR of the mtRpcCmdType_t & mtRpcSysType_t.
+    438           * @param       cmd1 - a valid command for the mtRpcSysType_t.
+    439           *
+    440           * output parameters
+    441           *
+    442           * None.
+    443           *
+    444           * @return      NULL on failure to allocate all memory necessary.
+    445           *              A pointer to the data area (size 'len') of a valid dynamic memory buffer on success.
+    446           **************************************************************************************************
+    447           */
+
+   \                                 In  segment CODE, align 2
+    448          uint8 *zap_msg_allocate(uint8 len, uint8 cmd0, uint8 cmd1)
+   \                     zap_msg_allocate:
+    449          {
+   \   000000   3B15         PUSHM.W #0x4, R11
+   \   000002   4A4C         MOV.B   R12, R10
+   \   000004   4B4D         MOV.B   R13, R11
+   \   000006   484E         MOV.B   R14, R8
+    450            // An SREQ buffer must be big enough to accept an SRSP up to the max allowable size.
+    451            const uint8 sz = (MT_RPC_CMD_SREQ == (cmd0 & MT_RPC_CMD_TYPE_MASK)) ? MT_RPC_DATA_MAX : len;
+   \   000008   4E4D         MOV.B   R13, R14
+   \   00000A   7EF0E000     AND.B   #0xe0, R14
+   \   00000E   7E902000     CMP.B   #0x20, R14
+   \   000012   0320         JNE     ??zap_msg_allocate_0
+   \   000014   7C40FA00     MOV.B   #0xfa, R12
+   \   000018   013C         JMP     ??zap_msg_allocate_1
+   \                     ??zap_msg_allocate_0:
+   \   00001A   4C4A         MOV.B   R10, R12
+    452            // Add space for the RPC frame header and UART transport SOP and FCS.
+    453            uint8 *pBuf = (uint8 *)osal_mem_alloc(sz + MT_RPC_FRAME_HDR_SZ + 2);
+   \                     ??zap_msg_allocate_1:
+   \   00001C   3C500500     ADD.W   #0x5, R12
+   \   000020   ........     CALLA   #osal_mem_alloc
+    454          
+    455            if (NULL != pBuf)
+   \   000024   0C93         CMP.W   #0x0, R12
+   \   000026   1424         JEQ     ??zap_msg_allocate_2
+    456            {
+    457              // Pre-seed the SOP for UART transport.
+    458              *pBuf++ = MT_UART_SOF;
+   \   000028   FC40FE000000 MOV.B   #0xfe, 0(R12)
+   \   00002E   1C53         ADD.W   #0x1, R12
+    459              *pBuf++ = len;
+   \   000030   CC4A0000     MOV.B   R10, 0(R12)
+   \   000034   1C53         ADD.W   #0x1, R12
+    460              *pBuf++ = cmd0;
+   \   000036   CC4B0000     MOV.B   R11, 0(R12)
+   \   00003A   1C53         ADD.W   #0x1, R12
+    461              *pBuf++ = cmd1;
+   \   00003C   CC480000     MOV.B   R8, 0(R12)
+   \   000040   1C53         ADD.W   #0x1, R12
+    462              #if (3 != MT_RPC_FRAME_HDR_SZ)
+    463              #error Need to port RPC frame header changes here.
+    464              #endif
+    465              // Pre-seed the FCS for UART transport.
+    466              *(pBuf + len) = len ^ cmd0 ^ cmd1;
+   \   000042   4E4A         MOV.B   R10, R14
+   \   000044   4EEB         XOR.B   R11, R14
+   \   000046   4EE8         XOR.B   R8, R14
+   \   000048   0F4C         MOV.W   R12, R15
+   \   00004A   0F5A         ADD.W   R10, R15
+   \   00004C   CF4E0000     MOV.B   R14, 0(R15)
+    467            }
+    468          
+    469            return pBuf;
+   \                     ??zap_msg_allocate_2:
+   \   000050   3817         POPM.W  #0x4, R11
+   \   000052   1001         RETA
+    470          }
+    471          
+    472          /**************************************************************************************************
+    473           * @fn          zap_msg_deallocate
+    474           *
+    475           * @brief       This function deallocates an RPC message buffer created with zap_msg_allocate().
+    476           *
+    477           * input parameters
+    478           *
+    479           * @param       ppBuf - A pointer to the buffer pointer returned by zap_msg_allocate().
+    480           *
+    481           * output parameters
+    482           *
+    483           * None.
+    484           *
+    485           * @return      None.
+    486           **************************************************************************************************
+    487           */
+
+   \                                 In  segment CODE, align 2
+    488          void zap_msg_deallocate(uint8 **ppBuf)
+   \                     zap_msg_deallocate:
+    489          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   0A4C         MOV.W   R12, R10
+    490            uint8 *pBuf;
+    491          
+    492            HAL_ASSERT(ppBuf);
+   \   000004   0C93         CMP.W   #0x0, R12
+   \   000006   0220         JNE     ??zap_msg_deallocate_2
+   \   000008   ........     CALLA   #halAssertHandler
+    493          
+    494            if (NULL == *ppBuf)
+   \                     ??zap_msg_deallocate_2:
+   \   00000C   2C4A         MOV.W   @R10, R12
+   \   00000E   0C93         CMP.W   #0x0, R12
+   \   000010   0524         JEQ     ??zap_msg_deallocate_1
+    495            {
+    496              return;
+    497            }
+    498          
+    499            pBuf = *ppBuf - (MT_RPC_FRAME_HDR_SZ + 1);
+   \   000012   2C82         SUB.W   #0x4, R12
+    500            *ppBuf = NULL;
+   \   000014   8A430000     MOV.W   #0x0, 0(R10)
+    501            osal_mem_free((void *)pBuf);
+   \   000018   ........     CALLA   #osal_mem_free
+    502          }
+   \                     ??zap_msg_deallocate_1:
+   \   00001C   3A41         POP.W   R10
+   \   00001E   1001         RETA
+    503          
+    504          #ifdef LCD_SUPPORTED
+    505          /**************************************************************************************************
+    506           * @fn          zapDisInfo
+    507           *
+    508           * @brief       This displays the IEEE (MSB to LSB) and Network State & Address on the LCD whenever
+    509           *              a change in the value is detected.
+    510           *
+    511           * input parameters
+    512           *
+    513           * None.
+    514           *
+    515           * output parameters
+    516           *
+    517           * None.
+    518           *
+    519           * @return      None.
+    520           **************************************************************************************************
+    521           */
+
+   \                                 In  segment CODE, align 2
+    522          static void zapDisInfo(void)
+   \                     zapDisInfo:
+    523          {
+   \   000000   3B15         PUSHM.W #0x4, R11
+   \   000002   31801200     SUB.W   #0x12, SP
+    524            uint8 i;
+    525            uint8 *xad;
+    526            uint8 lcd_buf[Z_EXTADDR_LEN*2+1];
+    527          
+    528            if (!osal_memcmp(zapDisIEEE, znpIEEE, Z_EXTADDR_LEN))
+   \   000006   7A401000     MOV.B   #0x10, R10
+   \   00000A   3E42         MOV.W   #0x8, R14
+   \   00000C   3D40....     MOV.W   #znpIEEE, R13
+   \   000010   3C40....     MOV.W   #zapDisIEEE, R12
+   \   000014   ........     CALLA   #osal_memcmp
+   \   000018   4C93         CMP.B   #0x0, R12
+   \   00001A   1E20         JNE     ??zapDisInfo_6
+    529            {
+    530              (void)osal_memcpy(zapDisIEEE, znpIEEE, Z_EXTADDR_LEN);
+   \   00001C   3E42         MOV.W   #0x8, R14
+   \   00001E   3D40....     MOV.W   #znpIEEE, R13
+   \   000022   3C40....     MOV.W   #zapDisIEEE, R12
+   \   000026   ........     CALLA   #osal_memcpy
+    531              xad = znpIEEE + Z_EXTADDR_LEN - 1;
+   \   00002A   3D40....     MOV.W   #znpIEEE + 7, R13
+    532          
+    533              for (i = 0; i < Z_EXTADDR_LEN*2; xad--)
+   \   00002E   4843         MOV.B   #0x0, R8
+   \   000030   0C41         MOV.W   SP, R12
+   \   000032   0C53         ADD.W   #0x0, R12
+    534              {
+    535                uint8 ch;
+    536                ch = (*xad >> 4) & 0x0F;
+   \                     ??zapDisInfo_0:
+   \   000034   6B4D         MOV.B   @R13, R11
+   \   000036                RPT     #0x4
+   \   000036   43194B10     RRUX.B  R11
+    537                lcd_buf[i++] = ch + (( ch < 10 ) ? '0' : '7');
+   \   00003A   ........     CALLA   #?Subroutine2
+    538                ch = *xad & 0x0F;
+   \                     ??CrossCallReturnLabel_2:
+   \   00003E   6B4D         MOV.B   @R13, R11
+   \   000040   7BF00F00     AND.B   #0xf, R11
+    539                lcd_buf[i++] = ch + (( ch < 10 ) ? '0' : '7');
+   \   000044   ........     CALLA   #?Subroutine2
+    540              }
+   \                     ??CrossCallReturnLabel_3:
+   \   000048   3D53         ADD.W   #0xffff, R13
+   \   00004A   489A         CMP.B   R10, R8
+   \   00004C   F32B         JNC     ??zapDisInfo_0
+    541              lcd_buf[Z_EXTADDR_LEN*2] = '\0';
+   \   00004E   C1431000     MOV.B   #0x0, 0x10(SP)
+    542              HalLcdWriteString((char *)lcd_buf, HAL_LCD_LINE_1);
+   \   000052   5D43         MOV.B   #0x1, R13
+   \   000054   ........     CALLA   #HalLcdWriteString
+    543            }
+    544          
+    545            if ((zapDisState != devState) || (zapDisAddr != znpAddr))
+   \                     ??zapDisInfo_6:
+   \   000058   1D42....     MOV.W   &znpAddr, R13
+   \   00005C   5E42....     MOV.B   &devState, R14
+   \   000060   C29E....     CMP.B   R14, &zapDisState
+   \   000064   0320         JNE     ??zapDisInfo_7
+   \   000066   829D....     CMP.W   R13, &zapDisAddr
+   \   00006A   2124         JEQ     ??zapDisInfo_8
+    546            {
+    547              zapDisState = devState;
+   \                     ??zapDisInfo_7:
+   \   00006C   C24E....     MOV.B   R14, &zapDisState
+    548              zapDisAddr = znpAddr;
+   \   000070   824D....     MOV.W   R13, &zapDisAddr
+    549          
+    550              switch (devState)
+   \   000074   7E800600     SUB.B   #0x6, R14
+   \   000078   0524         JEQ     ??zapDisInfo_9
+   \   00007A   5E83         SUB.B   #0x1, R14
+   \   00007C   0824         JEQ     ??zapDisInfo_10
+   \   00007E   6E83         SUB.B   #0x2, R14
+   \   000080   0B24         JEQ     ??zapDisInfo_11
+   \   000082   0F3C         JMP     ??zapDisInfo_12
+    551              {
+    552              case DEV_END_DEVICE:
+    553                HalLcdWriteStringValue("End Device", znpAddr, 16, HAL_LCD_LINE_2);
+   \                     ??zapDisInfo_9:
+   \   000084   6F43         MOV.B   #0x2, R15
+   \   000086   4E4A         MOV.B   R10, R14
+   \   000088   3C40....     MOV.W   #`?<Constant "End Device">`, R12
+   \   00008C   0E3C         JMP     ??zapDisInfo_1
+    554                break;
+    555          
+    556              case DEV_ROUTER:
+    557                HalLcdWriteStringValue("ZigBee Rtr", znpAddr, 16, HAL_LCD_LINE_2);
+   \                     ??zapDisInfo_10:
+   \   00008E   6F43         MOV.B   #0x2, R15
+   \   000090   4E4A         MOV.B   R10, R14
+   \   000092   3C40....     MOV.W   #`?<Constant "ZigBee Rtr">`, R12
+   \   000096   093C         JMP     ??zapDisInfo_1
+    558                break;
+    559          
+    560              case DEV_ZB_COORD:
+    561                HalLcdWriteStringValue("ZigBee Coord", znpAddr, 16, HAL_LCD_LINE_2);
+   \                     ??zapDisInfo_11:
+   \   000098   6F43         MOV.B   #0x2, R15
+   \   00009A   4E4A         MOV.B   R10, R14
+   \   00009C   3C40....     MOV.W   #`?<Constant "ZigBee Coord">`, R12
+   \   0000A0   043C         JMP     ??zapDisInfo_1
+    562                break;
+    563          
+    564              default:
+    565                HalLcdWriteStringValue("Other Inval", znpAddr, 16, HAL_LCD_LINE_2);
+   \                     ??zapDisInfo_12:
+   \   0000A2   6F43         MOV.B   #0x2, R15
+   \   0000A4   4E4A         MOV.B   R10, R14
+   \   0000A6   3C40....     MOV.W   #`?<Constant "Other Inval">`, R12
+   \                     ??zapDisInfo_1:
+   \   0000AA   ........     CALLA   #HalLcdWriteStringValue
+    566                break;
+    567              }
+    568            }
+    569          
+    570            if (zapDisPanId != znpPanId)
+   \                     ??zapDisInfo_8:
+   \   0000AE   1D42....     MOV.W   &znpPanId, R13
+   \   0000B2   829D....     CMP.W   R13, &zapDisPanId
+   \   0000B6   0924         JEQ     ??zapDisInfo_13
+    571            {
+    572              zapDisPanId = znpPanId;
+   \   0000B8   824D....     MOV.W   R13, &zapDisPanId
+    573              HalLcdWriteStringValue("PanId 0x", znpPanId, 16, HAL_LCD_LINE_3);
+   \   0000BC   7F400300     MOV.B   #0x3, R15
+   \   0000C0   4E4A         MOV.B   R10, R14
+   \   0000C2   3C40....     MOV.W   #`?<Constant "PanId 0x">`, R12
+   \   0000C6   ........     CALLA   #HalLcdWriteStringValue
+    574            }
+    575          }
+   \                     ??zapDisInfo_13:
+   \   0000CA   31501200     ADD.W   #0x12, SP
+   \   0000CE   3817         POPM.W  #0x4, R11
+   \   0000D0   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine2:
+   \   000000   4F48         MOV.B   R8, R15
+   \   000002   5853         ADD.B   #0x1, R8
+   \   000004   7B900A00     CMP.B   #0xa, R11
+   \   000008   0328         JNC     ??zapDisInfo_2
+   \   00000A   7E403700     MOV.B   #0x37, R14
+   \   00000E   023C         JMP     ??zapDisInfo_3
+   \                     ??zapDisInfo_2:
+   \   000010   7E403000     MOV.B   #0x30, R14
+   \                     ??zapDisInfo_3:
+   \   000014   4B5E         ADD.B   R14, R11
+   \   000016   0E4C         MOV.W   R12, R14
+   \   000018   0E5F         ADD.W   R15, R14
+   \   00001A   CE4B0000     MOV.B   R11, 0(R14)
+   \   00001E   1001         RETA
+    576          #endif
+    577          
+    578          /**************************************************************************************************
+    579           * @fn          zapMonInfo
+    580           *
+    581           * @brief       This function is invoked by zapMonitor during steady state in order to maintain
+    582           *              the local copies of ZNP-side global variables.
+    583           *
+    584           * input parameters
+    585           *
+    586           * None.
+    587           *
+    588           * output parameters
+    589           *
+    590           * None.
+    591           *
+    592           * @return      None.
+    593           **************************************************************************************************
+    594           */
+
+   \                                 In  segment CODE, align 2
+    595          static void zapMonInfo(void)
+   \                     zapMonInfo:
+    596          {
+    597            static uint8 getInfoIdx;
+    598          
+    599            switch (getInfoIdx++)
+   \   000000   5E42....     MOV.B   &??getInfoIdx, R14
+   \   000004   4F4E         MOV.B   R14, R15
+   \   000006   5F53         ADD.B   #0x1, R15
+   \   000008   C24F....     MOV.B   R15, &??getInfoIdx
+   \   00000C   4E83         SUB.B   #0x0, R14
+   \   00000E   0924         JEQ     ??zapMonInfo_0
+   \   000010   5E83         SUB.B   #0x1, R14
+   \   000012   0C24         JEQ     ??zapMonInfo_1
+   \   000014   5E83         SUB.B   #0x1, R14
+   \   000016   0F24         JEQ     ??zapMonInfo_2
+   \   000018   5E83         SUB.B   #0x1, R14
+   \   00001A   1224         JEQ     ??zapMonInfo_3
+   \   00001C   5E83         SUB.B   #0x1, R14
+   \   00001E   1624         JEQ     ??zapMonInfo_4
+   \   000020   1B3C         JMP     ??zapMonInfo_5
+    600            {
+    601            case 0:
+    602              zb_GetDeviceInfo(ZB_INFO_DEV_STATE, &devState);
+   \                     ??zapMonInfo_0:
+   \   000022   3D40....     MOV.W   #devState, R13
+   \   000026   4C43         MOV.B   #0x0, R12
+   \   000028   ........     BRA     #zb_GetDeviceInfo
+    603              break;
+    604            case 1:
+    605              zb_GetDeviceInfo(ZB_INFO_IEEE_ADDR, &znpIEEE);
+   \                     ??zapMonInfo_1:
+   \   00002C   3D40....     MOV.W   #znpIEEE, R13
+   \   000030   5C43         MOV.B   #0x1, R12
+   \   000032   ........     BRA     #zb_GetDeviceInfo
+    606              break;
+    607            case 2:
+    608              zb_GetDeviceInfo(ZB_INFO_SHORT_ADDR, &znpAddr);
+   \                     ??zapMonInfo_2:
+   \   000036   3D40....     MOV.W   #znpAddr, R13
+   \   00003A   6C43         MOV.B   #0x2, R12
+   \   00003C   ........     BRA     #zb_GetDeviceInfo
+    609              break;
+    610            case 3:
+    611              zb_GetDeviceInfo(ZB_INFO_PARENT_SHORT_ADDR, &znpParent);
+   \                     ??zapMonInfo_3:
+   \   000040   3D40....     MOV.W   #znpParent, R13
+   \   000044   7C400300     MOV.B   #0x3, R12
+   \   000048   ........     BRA     #zb_GetDeviceInfo
+    612              break;
+    613            case 4:
+    614              zb_GetDeviceInfo(ZB_INFO_PAN_ID, &znpPanId);
+   \                     ??zapMonInfo_4:
+   \   00004C   3D40....     MOV.W   #znpPanId, R13
+   \   000050   7C400600     MOV.B   #0x6, R12
+   \   000054   ........     BRA     #zb_GetDeviceInfo
+    615              break;
+    616            // Update ZAP_MON_INFO_CNT whenever another case is added.
+    617            default:
+    618          #ifdef LCD_SUPPORTED
+    619              zapDisInfo();
+   \                     ??zapMonInfo_5:
+   \   000058   ........     CALLA   #zapDisInfo
+    620          #endif
+    621              getInfoIdx = 0;
+   \   00005C   C243....     MOV.B   #0x0, &??getInfoIdx
+    622              break;
+    623            }
+    624          }
+   \   000060   1001         RETA
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+   \                     ??getInfoIdx:
+   \   000000                DS8 1
+    625          
+    626          #if ZAP_APP_KEYS
+    627          /**************************************************************************************************
+    628           * @fn          zapKeys
+    629           *
+    630           * @brief       This function is called by zapSysEvtMsg() to process a key(s) event.
+    631           *
+    632           * input parameters
+    633           *
+    634           * None.
+    635           *
+    636           * output parameters
+    637           *
+    638           * None.
+    639           *
+    640           * @return      None.
+    641           **************************************************************************************************
+    642           */
+    643          static void zapKeys(keyChange_t *msg)
+    644          {
+    645            const uint8 keys = msg->keys;
+    646          
+    647            if (msg->state)  // Shift key.
+    648            {
+    649              if (keys & HAL_KEY_SW_1)
+    650              {
+    651              }
+    652              if (keys & HAL_KEY_SW_2)
+    653              {
+    654              }
+    655              if (keys & HAL_KEY_SW_3)
+    656              {
+    657              }
+    658              if (keys & HAL_KEY_SW_4)
+    659              {
+    660              }
+    661            }
+    662            else
+    663            {
+    664              if (keys & HAL_KEY_SW_1)
+    665              {
+    666              }
+    667              if (keys & HAL_KEY_SW_2)
+    668              {
+    669              }
+    670              if (keys & HAL_KEY_SW_3)
+    671              {
+    672              }
+    673              if (keys & HAL_KEY_SW_4)
+    674              {
+    675              }
+    676            }
+    677          }
+    678          #endif
+    679          
+    680          /**************************************************************************************************
+    681           * @fn          zapMonitor
+    682           *
+    683           * @brief       This function is called by OSAL timer or event to monitor the ZNP for all.
+    684           *
+    685           * input parameters
+    686           *
+    687           * None.
+    688           *
+    689           * output parameters
+    690           *
+    691           * None.
+    692           *
+    693           * @return      None.
+    694           **************************************************************************************************
+    695           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    696          static void zapMonitor(void)
+   \                     zapMonitor:
+    697          {
+    698            /* If the ZNP has not already reported by the first monitor run, only the ZAP has reset and not
+    699             * the ZNP; or the ZAP/ZNP sync has been lost.
+    700             */
+    701            if (DEV_STATE_INVALID == devState)
+   \   000000   5E42....     MOV.B   &devState, R14
+   \   000004   7E90FC00     CMP.B   #0xfc, R14
+   \   000008   0A20         JNE     ??zapMonitor_1
+    702            {
+    703          #if ZAP_APP_LED
+    704              HalLedSet (HAL_LED_2, HAL_LED_MODE_OFF);
+    705          #endif
+    706              devState = DEV_STATE_SYNC_LOST;
+   \   00000A   F240FD00.... MOV.B   #0xfd, &devState
+    707              zapUtilReq(MT_UTIL_SYNC_REQ, NULL, NULL);
+   \   000010   0E43         MOV.W   #0x0, R14
+   \   000012   0D43         MOV.W   #0x0, R13
+   \   000014   7C40E000     MOV.B   #0xe0, R12
+   \   000018   ........     CALLA   #zapUtilReq
+   \   00001C   1E3C         JMP     ??zapMonitor_2
+    708            }
+    709            else if (DEV_STATE_SYNC_LOST == devState)
+   \                     ??zapMonitor_1:
+   \   00001E   7E90FD00     CMP.B   #0xfd, R14
+   \   000022   0720         JNE     ??zapMonitor_3
+    710            {
+    711              devState = DEV_STATE_ZNP_LOST;
+   \   000024   F240FE00.... MOV.B   #0xfe, &devState
+    712              znpSystemReset(ZNP_RESET_SOFT);
+   \   00002A   5C43         MOV.B   #0x1, R12
+   \   00002C   ........     CALLA   #znpSystemReset
+   \   000030   143C         JMP     ??zapMonitor_2
+    713            }
+    714            else if (DEV_STATE_ZNP_LOST == devState)
+   \                     ??zapMonitor_3:
+   \   000032   7E90FE00     CMP.B   #0xfe, R14
+   \   000036   0720         JNE     ??zapMonitor_4
+    715            {
+    716              devState = DEV_STATE_ZAP_LOST;
+   \   000038   F243....     MOV.B   #0xff, &devState
+    717              zapPhyReset(zapAppPort);
+   \   00003C   5C42....     MOV.B   &zapAppPort, R12
+   \   000040   ........     CALLA   #zapPhyReset
+   \   000044   0A3C         JMP     ??zapMonitor_2
+    718            }
+    719            else if (DEV_STATE_ZAP_LOST == devState)
+   \                     ??zapMonitor_4:
+   \   000046   7E93         CMP.B   #0xff, R14
+   \   000048   0620         JNE     ??zapMonitor_5
+    720            {
+    721              HalReset();
+   \   00004A   32C2         dint
+   \   00004C   0343         nop
+   \   00004E   B24004A52001 MOV.W   #0xa504, &0x120
+   \   000054   023C         JMP     ??zapMonitor_2
+    722            }
+    723            else
+    724            {
+    725          #if ZAP_APP_LED
+    726              HalLedSet (HAL_LED_2, HAL_LED_MODE_ON);
+    727          #endif
+    728              zapMonInfo();
+   \                     ??zapMonitor_5:
+   \   000056   ........     CALLA   #zapMonInfo
+    729            }
+    730          
+    731            if (ZSuccess != osal_start_timerEx(zapTaskId, ZAP_APP_TMR_EVT, ZAP_APP_TMR_DLY))
+   \                     ??zapMonitor_2:
+   \   00005A                REQUIRE ?Subroutine0
+   \   00005A                REQUIRE _A_PMMCTL0_L
+   \   00005A                // Fall through to label ?Subroutine0
+    732            {
+    733              (void)osal_set_event(zapTaskId, ZAP_APP_TMR_EVT);
+    734            }
+    735          
+    736          #if ZAP_APP_LED
+    737            HalLedSet (HAL_LED_4, HAL_LED_MODE_TOGGLE);
+    738          #endif
+    739          }
+    740          
+    741          /**************************************************************************************************
+    742           * @fn          zapSync
+    743           *
+    744           * @brief       This function is invoked upon receipt of ZAP_APP_SYNC_EVT.
+    745           *
+    746           * input parameters
+    747           *
+    748           * None.
+    749           *
+    750           * output parameters
+    751           *
+    752           * None.
+    753           *
+    754           * @return      None.
+    755           **************************************************************************************************
+    756           */
+
+   \                                 In  segment CODE, align 2
+    757          static void zapSync(void)
+   \                     zapSync:
+    758          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   3182         SUB.W   #0x8, SP
+    759            uint8 pBuf[Z_EXTADDR_LEN];
+    760          
+    761          #if ZAP_NV_RESTORE
+    762            pBuf[0] = ZCD_STARTOPT_AUTO_START;
+    763            (void)znp_nv_write(ZCD_NV_STARTUP_OPTION, 0, 1, pBuf);
+    764          #else
+    765            (void)osal_memset(pBuf, 0, Z_EXTADDR_LEN);
+   \   000004   0A41         MOV.W   SP, R10
+   \   000006   0A53         ADD.W   #0x0, R10
+   \   000008   3E42         MOV.W   #0x8, R14
+   \   00000A   4D43         MOV.B   #0x0, R13
+   \   00000C   0C4A         MOV.W   R10, R12
+   \   00000E   ........     CALLA   #osal_memset
+    766            if (osal_memcmp(pBuf, znpIEEE, Z_EXTADDR_LEN))
+   \   000012   3E42         MOV.W   #0x8, R14
+   \   000014   3D40....     MOV.W   #znpIEEE, R13
+   \   000018   0C4A         MOV.W   R10, R12
+   \   00001A   ........     CALLA   #osal_memcmp
+   \   00001E   4C93         CMP.B   #0x0, R12
+   \   000020   1424         JEQ     ??zapSync_0
+    767            {
+    768              zb_GetDeviceInfo(ZB_INFO_IEEE_ADDR, &znpIEEE);
+   \   000022   3D40....     MOV.W   #znpIEEE, R13
+   \   000026   5C43         MOV.B   #0x1, R12
+   \   000028   ........     CALLA   #zb_GetDeviceInfo
+    769              pBuf[0] = ZCD_STARTOPT_CLEAR_STATE | ZCD_STARTOPT_CLEAR_CONFIG;
+   \   00002C   F14003000000 MOV.B   #0x3, 0(SP)
+    770              (void)znp_nv_write(ZCD_NV_STARTUP_OPTION, 0, 1, pBuf);
+   \   000032   0F4A         MOV.W   R10, R15
+   \   000034   5E43         MOV.B   #0x1, R14
+   \   000036   4D43         MOV.B   #0x0, R13
+   \   000038   3C400300     MOV.W   #0x3, R12
+   \   00003C   ........     CALLA   #znp_nv_write
+    771              zapPhyReset(zapAppPort);
+   \   000040   5C42....     MOV.B   &zapAppPort, R12
+   \   000044   ........     CALLA   #zapPhyReset
+    772              return;
+   \   000048   3C3C         JMP     ??zapSync_1
+    773            }
+    774          #endif
+    775          
+    776            zb_GetDeviceInfo(ZB_INFO_DEV_STATE, &devState);
+   \                     ??zapSync_0:
+   \   00004A   ........     CALLA   #?Subroutine1
+    777            zapAfSync();
+   \                     ??CrossCallReturnLabel_1:
+   \   00004E   ........     CALLA   #zapAfSync
+    778            zapZdoSync();
+   \   000052   ........     CALLA   #zapZdoSync
+    779          #if !ZAP_PHY_RESET_ZNP
+    780            // If ZAP resets while a connected ZNP is left running, the ZNP cannot be expected to issue a
+    781            // ZDO_STATE_CHANGE notification.
+    782            if ((DEV_END_DEVICE == devState) || (DEV_ROUTER == devState) || (DEV_ZB_COORD == devState))
+    783            {
+    784              // Especially for UART transport, allow time for multiple got syncs before acting on it.
+    785              if (ZSuccess != osal_start_timerEx(zapTaskId, ZAP_APP_ZDO_STATE_CHANGE_EVT,
+    786                                                            ZAP_APP_ZDO_STATE_CHANGE_DLY))
+    787              {
+    788                (void)osal_set_event(zapTaskId, ZAP_APP_ZDO_STATE_CHANGE_EVT);
+    789              }
+    790            }
+    791          #endif
+    792          #if ZAP_AUTO_CFG
+    793            if (devState < DEV_END_DEVICE)
+   \   000056   F2900600.... CMP.B   #0x6, &devState
+   \   00005C   232C         JC      ??zapSync_2
+    794            {
+    795              // Configure the defaults from zap.cfg into the ZNP.
+    796              pBuf[0] = ZAP_DEVICETYPE;
+   \   00005E   C1430000     MOV.B   #0x0, 0(SP)
+    797              (void)znp_nv_write(ZCD_NV_LOGICAL_TYPE, 0, 1, pBuf);
+   \   000062   0F4A         MOV.W   R10, R15
+   \   000064   5E43         MOV.B   #0x1, R14
+   \   000066   4D43         MOV.B   #0x0, R13
+   \   000068   3C408700     MOV.W   #0x87, R12
+   \   00006C   ........     CALLA   #znp_nv_write
+    798          
+    799              pBuf[0] = LO_UINT16(ZDAPP_CONFIG_PAN_ID);
+   \   000070   F1430000     MOV.B   #0xff, 0(SP)
+    800              pBuf[1] = HI_UINT16(ZDAPP_CONFIG_PAN_ID);
+   \   000074   F1430100     MOV.B   #0xff, 0x1(SP)
+    801              (void)znp_nv_write(ZCD_NV_PANID, 0, 2, pBuf);
+   \   000078   0F4A         MOV.W   R10, R15
+   \   00007A   6E43         MOV.B   #0x2, R14
+   \   00007C   4D43         MOV.B   #0x0, R13
+   \   00007E   3C408300     MOV.W   #0x83, R12
+   \   000082   ........     CALLA   #znp_nv_write
+    802          
+    803              pBuf[0] = BREAK_UINT32(DEFAULT_CHANLIST, 0);
+   \   000086   C1430000     MOV.B   #0x0, 0(SP)
+    804              pBuf[1] = BREAK_UINT32(DEFAULT_CHANLIST, 1);
+   \   00008A   F1420100     MOV.B   #0x8, 0x1(SP)
+    805              pBuf[2] = BREAK_UINT32(DEFAULT_CHANLIST, 2);
+   \   00008E   C1430200     MOV.B   #0x0, 0x2(SP)
+    806              pBuf[3] = BREAK_UINT32(DEFAULT_CHANLIST, 3);
+   \   000092   C1430300     MOV.B   #0x0, 0x3(SP)
+    807              (void)znp_nv_write(ZCD_NV_CHANLIST, 0, 4, pBuf);
+   \   000096   0F4A         MOV.W   R10, R15
+   \   000098   6E42         MOV.B   #0x4, R14
+   \   00009A   4D43         MOV.B   #0x0, R13
+   \   00009C   3C408400     MOV.W   #0x84, R12
+   \   0000A0   ........     CALLA   #znp_nv_write
+    808            }
+    809          #endif
+    810          #if defined TC_LINKKEY_JOIN
+    811            zapCertSync();
+    812          #endif
+    813          #if ZAP_AUTO_START
+    814            if ((DEV_HOLD == devState) || (DEV_INIT == devState) || (DEV_NWK_ORPHAN == devState))
+   \                     ??zapSync_2:
+   \   0000A4   5E42....     MOV.B   &devState, R14
+   \   0000A8   4E93         CMP.B   #0x0, R14
+   \   0000AA   0524         JEQ     ??zapSync_3
+   \   0000AC   5E93         CMP.B   #0x1, R14
+   \   0000AE   0324         JEQ     ??zapSync_3
+   \   0000B0   7E900A00     CMP.B   #0xa, R14
+   \   0000B4   0420         JNE     ??zapSync_4
+    815            {
+    816              (void)ZDOInitDevice(NWK_START_DELAY);
+   \                     ??zapSync_3:
+   \   0000B6   3C406400     MOV.W   #0x64, R12
+   \   0000BA   ........     CALLA   #ZDOInitDevice
+    817            }
+    818          #endif
+    819            zb_GetDeviceInfo(ZB_INFO_DEV_STATE, &devState);
+   \                     ??zapSync_4:
+   \   0000BE   ........     CALLA   #?Subroutine1
+    820          }
+   \                     ??zapSync_1:
+   \   0000C2   3152         ADD.W   #0x8, SP
+   \   0000C4   3A41         POP.W   R10
+   \   0000C6   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   3D40....     MOV.W   #devState, R13
+   \   000004   4C43         MOV.B   #0x0, R12
+   \   000006   ........     BRA     #zb_GetDeviceInfo
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "End Device">`:
+   \   000000   456E64204465 DC8 "End Device"
+   \            7669636500  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "ZigBee Rtr">`:
+   \   000000   5A6967426565 DC8 "ZigBee Rtr"
+   \            2052747200  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "ZigBee Coord">`:
+   \   000000   5A6967426565 DC8 "ZigBee Coord"
+   \            20436F6F7264
+   \            00          
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "Other Inval">`:
+   \   000000   4F7468657220 DC8 "Other Inval"
+   \            496E76616C00
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "PanId 0x">`:
+   \   000000   50616E496420 DC8 "PanId 0x"
+   \            307800      
+    821          
+    822          /**************************************************************************************************
+    823           * @fn          zapSysEvtMsg
+    824           *
+    825           * @brief       This function is called by zapEvt() to process all of the pending OSAL messages.
+    826           *
+    827           * input parameters
+    828           *
+    829           * None.
+    830           *
+    831           * output parameters
+    832           *
+    833           * None.
+    834           *
+    835           * @return      None.
+    836           **************************************************************************************************
+    837           */
+    838          static void zapSysEvtMsg(void)
+    839          {
+    840            uint8 *msg;
+    841          
+    842            while ((msg = osal_msg_receive(zapTaskId)))
+    843            {
+    844              switch (*msg)
+    845              {
+    846              case CMD_SERIAL_MSG:
+    847                zapProcessIncoming(((mtOSALSerialData_t *)msg)->hdr.status, ((mtOSALSerialData_t *)msg)->msg);
+    848                break;
+    849          
+    850          #if ZAP_APP_KEYS
+    851              case KEY_CHANGE:
+    852                zapKeys((keyChange_t *)msg);
+    853                break;
+    854          #endif
+    855          
+    856              default:
+    857                break;
+    858              }
+    859          
+    860              (void)osal_msg_deallocate(msg);  // Receiving task is responsible for releasing the memory.
+    861            }
+    862          }
+    863          
+    864          #if ZAP_ZNP_MT
+    865          /**************************************************************************************************
+    866           * @fn          MT_BuildAndSendZToolResponse
+    867           *
+    868           * @brief       This function is the ZAP proxy to the ZNP SystemReset() functionality.
+    869           *
+    870           * input parameters
+    871           *
+    872           * @param       cmdType - include type and subsystem
+    873           * @param       cmdId - command ID
+    874           * @param       dataLen
+    875           * @param       *pData
+    876           *
+    877           * output parameters
+    878           *
+    879           * None.
+    880           *
+    881           * @return      None.
+    882           **************************************************************************************************
+    883           */
+    884          void MT_BuildAndSendZToolResponse(uint8 cmdType, uint8 cmdId, uint8 dataLen, uint8 *pData)
+    885          {
+    886            uint8 *pBuf = zap_msg_allocate(dataLen, cmdType, cmdId);
+    887          
+    888            if (NULL != pBuf)
+    889            {
+    890              (void)osal_memcpy(pBuf, pData, dataLen);
+    891              zapPhyUartSend(zapAppPort, pBuf);
+    892              zap_msg_deallocate(&pBuf);
+    893            }
+    894          }
+    895          #endif
+    896          
+    897          /**************************************************************************************************
+    898          */
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+     30   zapDisInfo
+       30   -> HalLcdWriteString
+       30   -> HalLcdWriteStringValue
+       30   -> osal_memcmp
+       30   -> osal_memcpy
+     12   zapEvt
+       12   -> ZDO_UpdateNwkStatus
+       12   -> osal_msg_deallocate
+       12   -> osal_msg_receive
+       12   -> zapMonInfo
+       12   -> zapMonitor
+       12   -> zapPhyExec
+       12   -> zapProcessIncoming
+       12   -> zapSync
+      4   zapGotSync
+        4   -> osal_set_event
+        4   -> osal_start_timerEx
+        4   -> zapPhySync
+      6   zapInit
+        6   -> RegisterForKeys
+        6   -> osal_set_event
+        6   -> osal_start_timerEx
+        6   -> zapLostSync
+        6   -> zapPhyInit
+      4   zapLostSync
+      4   zapMonInfo
+        4   -> zapDisInfo
+        4   -> zb_GetDeviceInfo
+      4   zapMonitor
+        4   -> osal_set_event
+        4   -> osal_start_timerEx
+        4   -> zapMonInfo
+        4   -> zapPhyReset
+        4   -> zapUtilReq
+        4   -> znpSystemReset
+      6   zapProcessIncoming
+        6   -- Indirect call
+     14   zapSync
+       14   -> ZDOInitDevice
+       14   -> osal_memcmp
+       14   -> osal_memset
+       14   -> zapAfSync
+       14   -> zapPhyReset
+       14   -> zapZdoSync
+       14   -> zb_GetDeviceInfo
+       14   -> znp_nv_write
+     12   zap_msg_allocate
+       12   -> osal_mem_alloc
+      6   zap_msg_deallocate
+        6   -> halAssertHandler
+        6   -> osal_mem_free
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      11  ?<Constant "End Device">
+      12  ?<Constant "Other Inval">
+       9  ?<Constant "PanId 0x">
+      13  ?<Constant "ZigBee Coord">
+      11  ?<Constant "ZigBee Rtr">
+      36  ?Subroutine0
+      10  ?Subroutine1
+      32  ?Subroutine2
+       2  _A_PMMCTL0_L
+       1  devState
+       1  getInfoIdx
+       1  zapAppPort
+       2  zapDisAddr
+       8  zapDisIEEE
+     210  zapDisInfo
+       2  zapDisPanId
+       1  zapDisState
+     142  zapEvt
+      40  zapGotSync
+      36  zapInit
+      24  zapLostSync
+      98  zapMonInfo
+      90  zapMonitor
+      40  zapProcessFunc
+      48  zapProcessIncoming
+     200  zapSync
+       1  zapTaskId
+      84  zap_msg_allocate
+      32  zap_msg_deallocate
+       2  znpAddr
+       8  znpIEEE
+       2  znpPanId
+       2  znpParent
+
+ 
+ 1 082 bytes in segment CODE
+     2 bytes in segment DATA16_AN
+    96 bytes in segment DATA16_C
+    31 bytes in segment DATA16_Z
+ 
+ 1 082 bytes of CODE  memory
+    96 bytes of CONST memory
+    31 bytes of DATA  memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

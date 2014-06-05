@@ -1,0 +1,832 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       08/Apr/2014  21:14:15 #
+# Copyright 1996-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  small                                                   #
+#    Source file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Components\hal\target\MSP5438ZAP\hal_timer.c      #
+#    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                   #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\zap.cfg" (-DZAP_PHY_SPI=1                        #
+#                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE    #
+#                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                  #
+#                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE               #
+#                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE            #
+#                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE            #
+#                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG            #
+#                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC               #
+#                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC          #
+#                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0         #
+#                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                 #
+#                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000           #
+#                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f   #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE    #
+#                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                 #
+#                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4          #
+#                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10         #
+#                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10        #
+#                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING -DZCL_PRICING  #
+#                     -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU                 #
+#                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home   #
+#                     1.2.0\Components\hal\target\MSP5438ZAP\hal_timer.c" -D  #
+#                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D       #
+#                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC "C:\Texas  #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\List\" -lA           #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\" --remarks --diag_suppress            #
+#                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\Obj\" --debug        #
+#                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\" -I "C:\Texas Instruments\Z-Stack   #
+#                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\. #
+#                     .\Source\" -I "C:\Texas Instruments\Z-Stack Home        #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\" -I "C:\Texas Instruments\Z-Stack Home          #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\target\MSP5438ZAP\" -I          #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\include\" -I "C:\Texas          #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\mac\includ #
+#                     e\" -I "C:\Texas Instruments\Z-Stack Home               #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\mt\" -I "C:\Texas                   #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\osal\inclu #
+#                     de\" -I "C:\Texas Instruments\Z-Stack Home              #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas      #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\services\s #
+#                     addr\" -I "C:\Texas Instruments\Z-Stack Home            #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\services\sdata\" -I "C:\Texas       #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\af\" #
+#                      -I "C:\Texas Instruments\Z-Stack Home                  #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\nwk\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sapi #
+#                     \" -I "C:\Texas Instruments\Z-Stack Home                #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\sec\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sys\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\zcl\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\zdo\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\zmac\" -I "C:\Texas                 #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w\" #
+#                      --core=430X --data_model=small -Ohz --multiplier=32    #
+#                     --multiplier_location=4C0 --require_prototypes          #
+#                     --hw_workaround=CPU40 --hw_workaround=CPU39             #
+#    List file     =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\hal_timer.lst                          #
+#    Object file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\Obj\hal_timer.r43                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.0\Components\hal\target\MSP5438ZAP\hal_timer.c
+      1          /*********************************************************************
+      2            Filename:       hal_timer.c
+      3            Revised:        $Date: 2009-12-22 12:38:28 -0800 (Tue, 22 Dec 2009) $
+      4            Revision:       $Revision: 21387 $
+      5          
+      6            Description:   This file contains the interface to the Timer Service.
+      7          
+      8          
+      9            Copyright 2006-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include <intrinsics.h>
+     44          #include "hal_types.h"
+     45          #include "hal_timer.h"
+
+   \                                 In  segment DATA16_AN, at 0x3c0
+   \   unsigned short volatile TB0CTL
+   \                     TB0CTL:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x3c2
+   \   unsigned short volatile TB0CCTL0
+   \                     TB0CCTL0:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x3d0
+   \   unsigned short volatile TB0R
+   \                     TB0R:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x3d2
+   \   unsigned short volatile TB0CCR0
+   \                     TB0CCR0:
+   \   000000                DS8 2
+     46          #include "hal_mcu.h"
+     47          #include "hal_board_cfg.h"
+     48          
+     49          
+     50          /*********************************************************************
+     51           * MACROS
+     52           */
+     53          #define HAL_TIMER_INIT() { TBCCTL0 = 0 ; TBCTL = 0; TBCCR0 = 0; }
+     54          
+     55          
+     56          /*********************************************************************
+     57           * CONSTANTS
+     58           */
+     59          
+     60          /* Timer clock pre-scaler definition for TimerB - MSP430 */
+     61          #define HAL_TIMERB_16_TC_DIV1   ID_0
+     62          #define HAL_TIMERB_16_TC_DIV2   ID_1
+     63          #define HAL_TIMERB_16_TC_DIV4   ID_2
+     64          #define HAL_TIMERB_16_TC_DIV8   ID_3
+     65          
+     66          /* Prescale settings */
+     67          #define HAL_TIMER_B_16_PRESCALE      HAL_TIMERB_16_TC_DIV1
+     68          #define HAL_TIMER_B_16_PRESCALE_VAL  1
+     69          
+     70          /* Clock settings, for MSP430s that have 6MHz crystal installed,
+     71           * #define HAL_TIMER_FLL_ADJUST_KHZ HAL_TIMER_MHZ - this will turn off the FLL adjustment.
+     72           * The integer casts prevent floating point library from being linked in.
+     73           */
+     74          #define HAL_TIMER_MHZ             (uint8)(HAL_CPU_CLOCK_MHZ)         /* 6MHz for some boards */
+     75          #define HAL_TIMER_FLL_ADJUST_KHZ (uint32)(HAL_CPU_CLOCK_MHZ * 1000)  /* 6291KHZ */
+     76          
+     77          /* Timer re-map */
+     78          #define HAL_TIMER_A   HAL_TIMER_1  /* Used by MAC */
+     79          #define HAL_TIMER_B   HAL_TIMER_3
+     80          
+     81          
+     82          /*********************************************************************
+     83           * TYPEDEFS
+     84           */
+     85          typedef struct
+     86          {
+     87            bool configured;
+     88            bool intEnable;
+     89            uint8 opMode;
+     90            uint8 channel;
+     91            uint8 channelMode;
+     92            uint8 prescale;
+     93            uint8 prescaleVal;
+     94            uint8 clock;
+     95            halTimerCBack_t callBackFunc;
+     96          }halTimerSettings_t;
+     97          
+     98          /***************************************************************************************************
+     99           *                                             GLOBAL VARIABLES
+    100           ***************************************************************************************************/
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    101          static halTimerSettings_t timerRecord[HAL_TIMER_MAX];
+   \                     timerRecord:
+   \   000000                DS8 48
+    102          
+    103          /*********************************************************************
+    104           * FUNCTIONS - Local
+    105           */
+    106          static uint8 halTimerSetCount (uint8 timerId, uint32 timePerTick);
+    107          static uint8 halTimerSetPrescale (uint8 timerId, uint8 prescale);
+    108          static uint8 halTimerSetOpMode (uint8 timerId, uint8 opMode);
+    109          static void  halTimerSendCallBack (uint8 timerId, uint8 channel, uint8 channelMode);
+    110          
+    111          /***************************************************************************************************
+    112           *                                              FUNCTIONS - API
+    113           ***************************************************************************************************/
+    114          
+    115          /***************************************************************************************************
+    116           * @fn      HalTimerInit
+    117           *
+    118           * @brief   Initialize Timer Service
+    119           *
+    120           * @param   None
+    121           *
+    122           * @return  None
+    123           ***************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    124          void HalTimerInit (void)
+   \                     HalTimerInit:
+    125          {
+    126            /* Setup prescale & clock for timerB */
+    127            timerRecord[HAL_TIMER_B].prescale    = HAL_TIMER_B_16_PRESCALE;
+   \   000000   C243....     MOV.B   #0x0, &timerRecord + 41
+    128            timerRecord[HAL_TIMER_B].clock       = HAL_TIMER_MHZ; /* MHz */
+   \   000004   F2400C00.... MOV.B   #0xc, &timerRecord + 43
+    129            timerRecord[HAL_TIMER_B].prescaleVal = HAL_TIMER_B_16_PRESCALE_VAL;
+   \   00000A   D243....     MOV.B   #0x1, &timerRecord + 42
+    130          
+    131            HAL_TIMER_INIT();
+   \   00000E   8243C203     MOV.W   #0x0, &0x3c2
+   \   000012   8243C003     MOV.W   #0x0, &0x3c0
+   \   000016   8243D203     MOV.W   #0x0, &0x3d2
+    132          }
+   \   00001A   1001         RETA
+   \   00001C                REQUIRE TB0CCTL0
+   \   00001C                REQUIRE TB0CTL
+   \   00001C                REQUIRE TB0CCR0
+    133          
+    134          /***************************************************************************************************
+    135           * @fn      HalTimerConfig
+    136           *
+    137           * @brief   Configure the Timer Serivce
+    138           *
+    139           * @param   timerId - Id of the timer
+    140           *          opMode  - Operation mode
+    141           *          channel - Channel where the counter operates on
+    142           *          channelMode - Mode of that channel
+    143           *          prescale - Prescale of the clock
+    144           *          cBack - Pointer to the callback function
+    145           *
+    146           * @return  Status of the configuration
+    147           ***************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    148          uint8 HalTimerConfig ( uint8 timerId, uint8 opMode, uint8 channel, uint8 channelMode,  bool intEnable, halTimerCBack_t cBack )
+   \                     HalTimerConfig:
+    149          {
+    150            if ((opMode & HAL_TIMER_MODE_MASK) && (timerId < HAL_TIMER_MAX) && (channelMode & HAL_TIMER_CHANNEL_MASK) && (channel & HAL_TIMER_CHANNEL_MASK))
+   \   000000   7DB00300     BIT.B   #0x3, R13
+   \   000004   1E24         JEQ     ??HalTimerConfig_0
+   \   000006   6C92         CMP.B   #0x4, R12
+   \   000008   1C2C         JC      ??HalTimerConfig_0
+   \   00000A   7FB03F00     BIT.B   #0x3f, R15
+   \   00000E   1924         JEQ     ??HalTimerConfig_0
+   \   000010   7EB03F00     BIT.B   #0x3f, R14
+   \   000014   1624         JEQ     ??HalTimerConfig_0
+    151            {
+    152              if (timerId == HAL_TIMER_B)
+   \   000016   7C900300     CMP.B   #0x3, R12
+   \   00001A   1120         JNE     ??HalTimerConfig_1
+    153              {
+    154                timerRecord[timerId].configured    = TRUE;
+   \   00001C   D243....     MOV.B   #0x1, &timerRecord + 36
+    155                timerRecord[timerId].opMode        = opMode;
+   \   000020   C24D....     MOV.B   R13, &timerRecord + 38
+    156                timerRecord[timerId].channel       = channel;      /* Ignored for MSP430 */
+   \   000024   C24E....     MOV.B   R14, &timerRecord + 39
+    157                timerRecord[timerId].channelMode   = channelMode;  /* Support only 1 Mode - Capture-Compare */
+   \   000028   C24F....     MOV.B   R15, &timerRecord + 40
+    158                timerRecord[timerId].intEnable     = intEnable;
+   \   00002C   D2410400.... MOV.B   0x4(SP), &timerRecord + 37
+    159                timerRecord[timerId].callBackFunc  = cBack;
+   \   000032   92410600.... MOV.W   0x6(SP), &timerRecord + 44
+   \   000038   92410800.... MOV.W   0x8(SP), &timerRecord + 46
+    160              }
+    161            }
+    162            else
+    163            {
+    164              return HAL_TIMER_PARAMS_ERROR;
+    165            }
+    166            return HAL_TIMER_OK;
+   \                     ??HalTimerConfig_1:
+   \   00003E   4C43         MOV.B   #0x0, R12
+   \   000040   1001         RETA
+   \                     ??HalTimerConfig_0:
+   \   000042   6C43         MOV.B   #0x2, R12
+   \   000044   1001         RETA
+    167          }
+    168          
+    169          
+    170          /***************************************************************************************************
+    171           * @fn      HalTimerStart
+    172           *
+    173           * @brief   Start the Timer Service
+    174           *
+    175           * @param   timerId      - ID of the timer
+    176           *          timerPerTick - number of micro sec per tick, (ticks x prescale) / clock = usec/tick
+    177           *
+    178           * @return  Status - OK or Not OK
+    179           ***************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    180          uint8 HalTimerStart ( uint8 timerId, uint32 timePerTick)
+   \                     HalTimerStart:
+    181          {
+   \   000000   1B15         PUSHM.W #0x2, R11
+   \   000002   4A4C         MOV.B   R12, R10
+    182            if (timerRecord[timerId].configured)
+   \   000004   0B4A         MOV.W   R10, R11
+   \   000006                RPT     #0xb
+   \   000006   4A180B5A     ADDX.W  R10, R11
+   \   00000A   CB93....     CMP.B   #0x0, timerRecord(R11)
+   \   00000E   1E24         JEQ     ??HalTimerStart_2
+    183            {
+    184              halTimerSetCount        (timerId, timePerTick);
+   \   000010   ........     CALLA   #halTimerSetCount
+    185              halTimerSetPrescale     (timerId, timerRecord[timerId].prescale);
+   \   000014   7A900300     CMP.B   #0x3, R10
+   \   000018   0420         JNE     ??HalTimerStart_3
+   \   00001A   5F42....     MOV.B   &timerRecord + 41, R15
+   \   00001E   82DFC003     BIS.W   R15, &0x3c0
+    186              halTimerSetOpMode       (timerId, timerRecord[timerId].opMode);
+   \                     ??HalTimerStart_3:
+   \   000022   5E4B....     MOV.B   timerRecord + 2(R11), R14
+   \   000026   5E83         SUB.B   #0x1, R14
+   \   000028   0224         JEQ     ??HalTimerStart_0
+   \   00002A   5E83         SUB.B   #0x1, R14
+   \   00002C   0620         JNE     ??HalTimerStart_1
+   \                     ??HalTimerStart_0:
+   \   00002E   7A900300     CMP.B   #0x3, R10
+   \   000032   0320         JNE     ??HalTimerStart_1
+   \   000034   B2D01000C003 BIS.W   #0x10, &0x3c0
+    187              HalTimerInterruptEnable (timerId, timerRecord[timerId].channelMode, timerRecord[timerId].intEnable);
+   \                     ??HalTimerStart_1:
+   \   00003A   5E4B....     MOV.B   timerRecord + 1(R11), R14
+   \   00003E   5D4B....     MOV.B   timerRecord + 4(R11), R13
+   \   000042   4C4A         MOV.B   R10, R12
+   \   000044   ........     CALLA   #HalTimerInterruptEnable
+    188            }
+    189            else
+    190            {
+    191              return HAL_TIMER_NOT_CONFIGURED;
+    192            }
+    193            return HAL_TIMER_OK;
+   \   000048   4C43         MOV.B   #0x0, R12
+   \   00004A   023C         JMP     ??HalTimerStart_4
+   \                     ??HalTimerStart_2:
+   \   00004C   7C400300     MOV.B   #0x3, R12
+   \                     ??HalTimerStart_4:
+   \   000050   1A17         POPM.W  #0x2, R11
+   \   000052   1001         RETA
+   \   000054                REQUIRE TB0CTL
+    194          }
+    195          
+    196          /***************************************************************************************************
+    197           * @fn      HalTimerTick
+    198           *
+    199           * @brief   Check the counter for expired counter.
+    200           *
+    201           * @param   None
+    202           *
+    203           * @return  None
+    204           ***************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    205           void HalTimerTick ( void )
+   \                     HalTimerTick:
+    206           {
+    207              if (!timerRecord[HAL_TIMER_B].intEnable)
+   \   000000   C293....     CMP.B   #0x0, &timerRecord + 37
+   \   000004   1120         JNE     ??HalTimerTick_0
+    208              {
+    209                /* Counter3 - OC Mode */
+    210                if (TBCCTL0 & CCIFG)
+   \   000006   92B3C203     BIT.W   #0x1, &0x3c2
+   \   00000A   0E28         JNC     ??HalTimerTick_0
+    211                {
+    212                  /* Clear CIF flag manually for polling */
+    213                  TBCCTL0 &= (CCIFG ^ 0xFFFF);
+   \   00000C   92C3C203     BIC.W   #0x1, &0x3c2
+    214                  /* Send callback */
+    215                  halTimerSendCallBack ( HAL_TIMER_B, HAL_TIMER_CHANNEL_A, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000010   1F42....     MOV.W   &timerRecord + 44, R15
+   \   000014   1FD2....     BIS.W   &timerRecord + 46, R15
+   \   000018   0F93         CMP.W   #0x0, R15
+   \   00001A   0624         JEQ     ??HalTimerTick_0
+   \   00001C   6E43         MOV.B   #0x2, R14
+   \   00001E   6D43         MOV.B   #0x2, R13
+   \   000020   7C400300     MOV.B   #0x3, R12
+   \   000024   ........     CALLA   &timerRecord + 44
+    216                }
+    217              }
+    218          }
+   \                     ??HalTimerTick_0:
+   \   000028   1001         RETA
+   \   00002A                REQUIRE TB0CCTL0
+    219          
+    220          /***************************************************************************************************
+    221           * @fn      HalTimerStop
+    222           *
+    223           * @brief   Stop the Timer Service
+    224           *
+    225           * @param   timerId - ID of the timer
+    226           *
+    227           * @return  Status - OK or Not OK
+    228           ***************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    229          uint8 HalTimerStop ( uint8 timerId )
+   \                     HalTimerStop:
+    230          {
+    231            uint8 status = HAL_TIMER_OK;
+   \   000000   4E43         MOV.B   #0x0, R14
+    232            switch (timerId)
+   \   000002   7C900300     CMP.B   #0x3, R12
+   \   000006   0420         JNE     ??HalTimerStop_0
+    233            {
+    234              case HAL_TIMER_B:
+    235                TBCTL |= MC_0;
+   \   000008   9242C003C003 MOV.W   &0x3c0, &0x3c0
+    236                break;
+   \   00000E   013C         JMP     ??HalTimerStop_1
+    237              default:
+    238                status = HAL_TIMER_INVALID_ID;
+   \                     ??HalTimerStop_0:
+   \   000010   6E42         MOV.B   #0x4, R14
+    239                break;
+    240            }
+    241            return (status);
+   \                     ??HalTimerStop_1:
+   \   000012   4C4E         MOV.B   R14, R12
+   \   000014   1001         RETA
+   \   000016                REQUIRE TB0CTL
+    242          }
+    243          
+    244          /***************************************************************************************************
+    245           * @fn      halTimerSetCount
+    246           *
+    247           * @brief   Stop the Timer Service
+    248           *
+    249           * @param   timerId - ID of the timer
+    250           *          timerPerTick - Number micro sec per ticks
+    251           *
+    252           * @return  Status - OK or Not OK
+    253           ***************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    254          uint8 halTimerSetCount ( uint8 timerId, uint32 timePerTick )
+   \                     halTimerSetCount:
+    255          {
+   \   000000   3B15         PUSHM.W #0x4, R11
+   \   000002   4A4C         MOV.B   R12, R10
+    256            uint32 fll_adjust;
+    257            uint16 count;
+    258          
+    259            /* FLL adjust. CPU clock may be generatd from 32KHz and may not be exactly 6 MHz.
+    260             * first, calculate the difference to the base 6MHz in KHz.
+    261             */
+    262            fll_adjust = HAL_TIMER_FLL_ADJUST_KHZ - timerRecord[timerId].clock * 1000;
+    263          
+    264            /* then, add the base 6MHz to get the true clock speed in KHz */
+    265            fll_adjust += (HAL_TIMER_MHZ * 1000);
+    266          
+    267            /* Load count = ((sec/tick) x clock) / prescale */
+    268            count = (uint16)((timePerTick * fll_adjust / 1000) / timerRecord[timerId].prescaleVal);
+   \   000004   0B4A         MOV.W   R10, R11
+   \   000006                RPT     #0xb
+   \   000006   4A180B5A     ADDX.W  R10, R11
+   \   00000A   0C4E         MOV.W   R14, R12
+   \   00000C   0D4F         MOV.W   R15, R13
+   \   00000E   3E40C05D     MOV.W   #0x5dc0, R14
+   \   000012   0F43         MOV.W   #0x0, R15
+   \   000014   584B....     MOV.B   timerRecord + 7(R11), R8
+   \   000018   580A         RLAM.W  #0x3, R8
+   \   00001A   0948         MOV.W   R8, R9
+   \   00001C   5806         RLAM.W  #0x2, R8
+   \   00001E   0958         ADD.W   R8, R9
+   \   000020   0858         RLA.W   R8
+   \   000022   0958         ADD.W   R8, R9
+   \   000024   0858         RLA.W   R8
+   \   000026   0958         ADD.W   R8, R9
+   \   000028   0858         RLA.W   R8
+   \   00002A   0958         ADD.W   R8, R9
+   \   00002C   0858         RLA.W   R8
+   \   00002E   0859         ADD.W   R9, R8
+   \   000030   0948         MOV.W   R8, R9
+   \   000032   39E3         XOR.W   #0xffff, R9
+   \   000034   0959         RLA.W   R9
+   \   000036   0979         SUBC.W  R9, R9
+   \   000038   0E88         SUB.W   R8, R14
+   \   00003A   0F79         SUBC.W  R9, R15
+   \   00003C   ........     CALLA   #?Mul32
+   \   000040   3E40E803     MOV.W   #0x3e8, R14
+   \   000044   0F43         MOV.W   #0x0, R15
+   \   000046   ........     CALLA   #?DivMod32u
+   \   00004A   5E4B....     MOV.B   timerRecord + 6(R11), R14
+   \   00004E   0F43         MOV.W   #0x0, R15
+   \   000050   ........     CALLA   #?DivMod32u
+    269          
+    270            switch (timerId)
+   \   000054   7A900300     CMP.B   #0x3, R10
+   \   000058   0A20         JNE     ??halTimerSetCount_0
+    271            {
+    272              case HAL_TIMER_B:
+    273                TBR     = 0;         /* Set counter */
+   \   00005A   8243D003     MOV.W   #0x0, &0x3d0
+    274                TBCTL  |= TBSSEL_2;  /* Set Clock type - SMCLK */
+   \   00005E   B2D00002C003 BIS.W   #0x200, &0x3c0
+    275                TBCCR0  = count-1;   /* Set count */
+   \   000064   3C53         ADD.W   #0xffff, R12
+   \   000066   824CD203     MOV.W   R12, &0x3d2
+    276                break;
+    277              default:
+    278                return HAL_TIMER_INVALID_ID;
+    279            }
+    280            return HAL_TIMER_OK;
+   \   00006A   4C43         MOV.B   #0x0, R12
+   \   00006C   013C         JMP     ??halTimerSetCount_1
+   \                     ??halTimerSetCount_0:
+   \   00006E   6C42         MOV.B   #0x4, R12
+   \                     ??halTimerSetCount_1:
+   \   000070   3817         POPM.W  #0x4, R11
+   \   000072   1001         RETA
+   \   000074                REQUIRE TB0R
+   \   000074                REQUIRE TB0CTL
+   \   000074                REQUIRE TB0CCR0
+    281          }
+    282          
+    283          /***************************************************************************************************
+    284           * @fn      halTimerSetPrescale
+    285           *
+    286           * @brief   Stop the Timer Service
+    287           *
+    288           * @param   timerId - ID of the timer
+    289           *          prescale - Prescale of the clock
+    290           *
+    291           * @return  Status - OK or Not OK
+    292           ***************************************************************************************************/
+    293          uint8 halTimerSetPrescale ( uint8 timerId, uint8 prescale )
+    294          {
+    295            switch (timerId)
+    296            {
+    297              case HAL_TIMER_B:
+    298                TBCTL |= prescale;  /* Load prescalar */
+    299                break;
+    300              default:
+    301                return HAL_TIMER_INVALID_ID;
+    302            }
+    303          
+    304            return HAL_TIMER_OK;
+    305          }
+    306          
+    307          /***************************************************************************************************
+    308           * @fn      halTimerSetOpMode
+    309           *
+    310           * @brief   Setup operate modes
+    311           *
+    312           * @param   timerId - ID of the timer
+    313           *          opMode - operation mode of the timer
+    314           *
+    315           * @return  Status - OK or Not OK
+    316           ***************************************************************************************************/
+    317          uint8 halTimerSetOpMode ( uint8 timerId, uint8 opMode )
+    318          {
+    319            uint8 status = HAL_TIMER_OK;
+    320          
+    321            switch (opMode)
+    322            {
+    323              case HAL_TIMER_MODE_NORMAL:
+    324              case HAL_TIMER_MODE_CTC:
+    325                if (timerId == HAL_TIMER_B)
+    326                {
+    327                  TBCTL |= MC_1;  /* UP mode */
+    328                }
+    329                break;
+    330          
+    331              default:
+    332                status = HAL_TIMER_INVALID_OP_MODE;
+    333                break;
+    334            }
+    335          
+    336            return (status);
+    337          }
+    338          
+    339          /***************************************************************************************************
+    340           * @fn      HalTimerInterruptEnable
+    341           *
+    342           * @brief   Enable or disable interrupt and set channel mode
+    343           *
+    344           * @param   timerId - ID of the timer
+    345           *          channelMode - channel mode
+    346           *          enable - TRUE or FALSE
+    347           *
+    348           * @return  Status - OK or Not OK
+    349           ***************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    350          uint8 HalTimerInterruptEnable ( uint8 timerId, uint8 channelMode, bool enable )
+   \                     HalTimerInterruptEnable:
+    351          {
+    352            uint8 status = HAL_TIMER_OK;
+   \   000000   4F43         MOV.B   #0x0, R15
+    353          
+    354            switch (channelMode)
+   \   000002   6D93         CMP.B   #0x2, R13
+   \   000004   1320         JNE     ??HalTimerInterruptEnable_0
+    355            {
+    356          
+    357              case HAL_TIMER_CH_MODE_OUTPUT_COMPARE:
+    358          
+    359                /* Set to Compare mode */
+    360                TBCCTL0 &= (CAP ^ 0xFFFF);
+   \   000006   B2C00001C203 BIC.W   #0x100, &0x3c2
+    361          
+    362                if (enable)
+   \   00000C   4E93         CMP.B   #0x0, R14
+   \   00000E   0724         JEQ     ??HalTimerInterruptEnable_1
+    363                {
+    364                  /* Enable interrupt */
+    365                  if (timerId == HAL_TIMER_B)
+   \   000010   7C900300     CMP.B   #0x3, R12
+   \   000014   0D20         JNE     ??HalTimerInterruptEnable_2
+    366                    TBCCTL0 |= CCIE;
+   \   000016   B2D01000C203 BIS.W   #0x10, &0x3c2
+   \   00001C   093C         JMP     ??HalTimerInterruptEnable_2
+    367                }
+    368                else
+    369                {
+    370                  /* Disable interrupt */
+    371                  if (timerId == HAL_TIMER_B)
+   \                     ??HalTimerInterruptEnable_1:
+   \   00001E   7C900300     CMP.B   #0x3, R12
+   \   000022   0620         JNE     ??HalTimerInterruptEnable_2
+    372                    TBCCTL0  &= (CCIE ^ 0xFFFF);
+   \   000024   B2C01000C203 BIC.W   #0x10, &0x3c2
+   \   00002A   023C         JMP     ??HalTimerInterruptEnable_2
+    373                }
+    374                break;
+    375          
+    376              default:
+    377                status = HAL_TIMER_INVALID_CH_MODE;
+   \                     ??HalTimerInterruptEnable_0:
+   \   00002C   7F400500     MOV.B   #0x5, R15
+    378              break;
+    379            }
+    380          
+    381            return (status);
+   \                     ??HalTimerInterruptEnable_2:
+   \   000030   4C4F         MOV.B   R15, R12
+   \   000032   1001         RETA
+   \   000034                REQUIRE TB0CCTL0
+    382          }
+    383          
+    384          /***************************************************************************************************
+    385           * @fn      halTimerSendCallBack
+    386           *
+    387           * @brief   Send Callback back to the caller
+    388           *
+    389           * @param   timerId - ID of the timer
+    390           *          channel - channel where the interrupt occurs
+    391           *          channelMode - channel mode
+    392           *
+    393           *
+    394           * @return  None
+    395           ***************************************************************************************************/
+    396          void halTimerSendCallBack ( uint8 timerId, uint8 channel, uint8 channelMode )
+    397          {
+    398            if (timerRecord[timerId].callBackFunc)
+    399            {
+    400              (timerRecord[timerId].callBackFunc) (timerId, channel, channelMode);
+    401            }
+    402          }
+    403          
+    404          
+    405          /***************************************************************************************************
+    406           *                                    INTERRUPT SERVICE ROUTINE
+    407           ***************************************************************************************************/
+    408          
+    409          /*
+    410           *   Interrupt Service for the timerB, channel 0, output compare mode
+    411           */
+
+   \                                 In  segment ISR_CODE, align 2
+    412          INTERRUPT_TIMERB_OC_CC0()
+   \                     haBoardTimerB0Isr:
+    413          {
+    414          #if (defined HAL_TIMER) && (HAL_TIMER == TRUE)
+    415          
+    416          #ifdef POWER_SAVING
+    417            __low_power_mode_off_on_exit();
+    418          #endif
+    419            if (timerRecord[HAL_TIMER_B].intEnable)
+    420            {
+    421              halTimerSendCallBack ( HAL_TIMER_B, HAL_TIMER_CHANNEL_A, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+    422            }
+    423          
+    424          #endif /* (defined HAL_TIMER) && (HAL_TIMER == TRUE) */
+    425          }
+   \   000000   0013         RETI
+    426          
+    427          /*
+    428           *   Interrupt Service for the timerB, channel 1-6, output compare mode
+    429           */
+
+   \                                 In  segment ISR_CODE, align 2
+    430          INTERRUPT_TIMERB_OC_CC1_6()
+   \                     haBoardTimerB1Isr:
+    431          {
+    432            /* Not doing anything for now */
+    433          }
+   \   000000   0013         RETI
+
+   \                                 In  segment INTVEC, offset 0x76, root
+   \                     `??haBoardTimerB1Isr??INTVEC 118`:
+   \   000076   ....         DC16    haBoardTimerB1Isr
+
+   \                                 In  segment INTVEC, offset 0x78, root
+   \                     `??haBoardTimerB0Isr??INTVEC 120`:
+   \   000078   ....         DC16    haBoardTimerB0Isr
+    434          
+    435          /***************************************************************************************************
+    436          ***************************************************************************************************/
+    437          
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+      4   HalTimerConfig
+      4   HalTimerInit
+      4   HalTimerInterruptEnable
+      8   HalTimerStart
+        8   -> HalTimerInterruptEnable
+        8   -> halTimerSetCount
+      4   HalTimerStop
+      4   HalTimerTick
+        4   -- Indirect call
+      4   haBoardTimerB0Isr
+      4   haBoardTimerB1Isr
+     12   halTimerSetCount
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  ??haBoardTimerB0Isr??INTVEC 120
+       2  ??haBoardTimerB1Isr??INTVEC 118
+      70  HalTimerConfig
+      28  HalTimerInit
+      52  HalTimerInterruptEnable
+      84  HalTimerStart
+      22  HalTimerStop
+      42  HalTimerTick
+       2  TB0CCR0
+       2  TB0CCTL0
+       2  TB0CTL
+       2  TB0R
+       2  haBoardTimerB0Isr
+       2  haBoardTimerB1Isr
+     116  halTimerSetCount
+      48  timerRecord
+
+ 
+ 414 bytes in segment CODE
+   8 bytes in segment DATA16_AN
+  48 bytes in segment DATA16_Z
+   4 bytes in segment INTVEC
+   4 bytes in segment ISR_CODE
+ 
+ 418 bytes of CODE  memory
+   0 bytes of CONST memory (+ 4 bytes shared)
+  48 bytes of DATA  memory (+ 8 bytes shared)
+
+Errors: none
+Warnings: none

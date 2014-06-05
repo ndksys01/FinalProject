@@ -1,0 +1,57 @@
+
+ROM used: 990 (12%)
+          990 (12%) including unused fragments
+
+          1 Average locations per line
+          6 Average locations per statement
+
+RAM used: 31 (8%) at main() level
+          63 (17%) worst case
+
+Stack used: 3 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   76    52  30  NhietDo.c
+  430     0   0  C:\Program Files (x86)\PICC\devices\16f887.h
+  409   121  70  C:\Program Files (x86)\PICC\drivers\string.h
+   32     0   0  C:\Program Files (x86)\PICC\drivers\stddef.h
+   28     0   0  C:\Program Files (x86)\PICC\drivers\ctype.h
+----- -----
+  975   173 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   2   1             @delay_ms1
+0     53   5   1   195  3.1  init_adc
+0    136  14   4   436  4.3  uartInterrupt
+0     29   3   2             @ITOF
+0    117  12  13             @MULFF
+0    202  20  14             @DIVFF
+0     31   3   4             @SFTOI
+0     21   2   3             @DIV88
+0    331  33   5  1360  5.4  MAIN
+
+Program metrics:
+    Functions               3
+    Statements              173
+    Comments                230
+    Volume (V)              2425
+    Difficilty (D)          12.5
+    Effort to implement (E) 30298
+    Time to implement (T)   28 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   2
+    Maintainability (MI)    112
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00030    45  0  
+00031-007FF   941  1058  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

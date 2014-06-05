@@ -1,0 +1,2343 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       08/Apr/2014  21:14:16 #
+# Copyright 1996-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  small                                                   #
+#    Source file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Components\osal\common\OSAL.c                     #
+#    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                   #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\zap.cfg" (-DZAP_PHY_SPI=1                        #
+#                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE    #
+#                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                  #
+#                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE               #
+#                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE            #
+#                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE            #
+#                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG            #
+#                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC               #
+#                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC          #
+#                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0         #
+#                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                 #
+#                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000           #
+#                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f   #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE    #
+#                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                 #
+#                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4          #
+#                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10         #
+#                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10        #
+#                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING -DZCL_PRICING  #
+#                     -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU                 #
+#                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home   #
+#                     1.2.0\Components\osal\common\OSAL.c" -D                 #
+#                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D       #
+#                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC "C:\Texas  #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\List\" -lA           #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\" --remarks --diag_suppress            #
+#                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\Obj\" --debug        #
+#                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\" -I "C:\Texas Instruments\Z-Stack   #
+#                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\. #
+#                     .\Source\" -I "C:\Texas Instruments\Z-Stack Home        #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\" -I "C:\Texas Instruments\Z-Stack Home          #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\target\MSP5438ZAP\" -I          #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\include\" -I "C:\Texas          #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\mac\includ #
+#                     e\" -I "C:\Texas Instruments\Z-Stack Home               #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\mt\" -I "C:\Texas                   #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\osal\inclu #
+#                     de\" -I "C:\Texas Instruments\Z-Stack Home              #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas      #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\services\s #
+#                     addr\" -I "C:\Texas Instruments\Z-Stack Home            #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\services\sdata\" -I "C:\Texas       #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\af\" #
+#                      -I "C:\Texas Instruments\Z-Stack Home                  #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\nwk\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sapi #
+#                     \" -I "C:\Texas Instruments\Z-Stack Home                #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\sec\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sys\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\zcl\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\zdo\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\zmac\" -I "C:\Texas                 #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w\" #
+#                      --core=430X --data_model=small -Ohz --multiplier=32    #
+#                     --multiplier_location=4C0 --require_prototypes          #
+#                     --hw_workaround=CPU40 --hw_workaround=CPU39             #
+#    List file     =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\OSAL.lst                               #
+#    Object file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\Obj\OSAL.r43                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.0\Components\osal\common\OSAL.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL.c
+      3            Revised:        $Date: 2012-02-02 12:55:32 -0800 (Thu, 02 Feb 2012) $
+      4            Revision:       $Revision: 29143 $
+      5          
+      6            Description:    This API allows the software components in the Z-stack to be written
+      7                            independently of the specifics of the operating system, kernel or tasking
+      8                            environment (including control loops or connect-to-interrupt systems).
+      9          
+     10          
+     11            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     12          
+     13            IMPORTANT: Your use of this Software is limited to those specific rights
+     14            granted under the terms of a software license agreement between the user
+     15            who downloaded the software, his/her employer (which must be your employer)
+     16            and Texas Instruments Incorporated (the "License"). You may not use this
+     17            Software unless you agree to abide by the terms of the License. The License
+     18            limits your use, and you acknowledge, that the Software may not be modified,
+     19            copied or distributed unless embedded on a Texas Instruments microcontroller
+     20            or used solely and exclusively in conjunction with a Texas Instruments radio
+     21            frequency transceiver, which is integrated into your product. Other than for
+     22            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     23            works of, modify, distribute, perform, display or sell this Software and/or
+     24            its documentation for any purpose.
+     25          
+     26            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     27            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     28            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     29            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     30            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     31            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     32            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     33            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     34            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     35            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     36            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     37          
+     38            Should you have any questions regarding your right to use this Software,
+     39            contact Texas Instruments Incorporated at www.TI.com.
+     40          **************************************************************************************************/
+     41          
+     42          /*********************************************************************
+     43           * INCLUDES
+     44           */
+     45          
+     46          #include <string.h>
+     47          
+     48          #include "comdef.h"
+     49          #include "hal_board.h"
+     50          #include "OSAL.h"
+     51          #include "OSAL_Tasks.h"
+     52          #include "OSAL_Memory.h"
+     53          #include "OSAL_PwrMgr.h"
+     54          #include "OSAL_Clock.h"
+     55          
+     56          #include "OnBoard.h"
+     57          
+     58          /* HAL */
+     59          #include "hal_drivers.h"
+     60          
+     61          #ifdef IAR_ARMCM3_LM
+     62            #include "FreeRTOSConfig.h"
+     63            #include "osal_task.h"
+     64          #endif
+     65          
+     66          /*********************************************************************
+     67           * MACROS
+     68           */
+     69          
+     70          /*********************************************************************
+     71           * CONSTANTS
+     72           */
+     73          
+     74          /*********************************************************************
+     75           * TYPEDEFS
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * GLOBAL VARIABLES
+     80           */
+     81          
+     82          // Message Pool Definitions
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     83          osal_msg_q_t osal_qHead;
+   \                     osal_qHead:
+   \   000000                DS8 2
+     84          
+     85          /*********************************************************************
+     86           * EXTERNAL VARIABLES
+     87           */
+     88          
+     89          /*********************************************************************
+     90           * EXTERNAL FUNCTIONS
+     91           */
+     92          
+     93          /*********************************************************************
+     94           * LOCAL VARIABLES
+     95           */
+     96          
+     97          // Index of active task
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     98          static uint8 activeTaskID = TASK_NO_TASK;
+   \                     activeTaskID:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for activeTaskID>`
+     99          
+    100          /*********************************************************************
+    101           * LOCAL FUNCTION PROTOTYPES
+    102           */
+    103          
+    104          static uint8 osal_msg_enqueue_push( uint8 destination_task, uint8 *msg_ptr, uint8 urgent );
+    105          
+    106          /*********************************************************************
+    107           * HELPER FUNCTIONS
+    108           */
+    109          /* very ugly stub so Keil can compile */
+    110          #ifdef __KEIL__
+    111          char *  itoa ( int value, char * buffer, int radix )
+    112          {
+    113            return(buffer);
+    114          }
+    115          #endif
+    116          
+    117          /*********************************************************************
+    118           * @fn      osal_strlen
+    119           *
+    120           * @brief
+    121           *
+    122           *   Calculates the length of a string.  The string must be null
+    123           *   terminated.
+    124           *
+    125           * @param   char *pString - pointer to text string
+    126           *
+    127           * @return  int - number of characters
+    128           */
+
+   \                                 In  segment CODE, align 2
+    129          int osal_strlen( char *pString )
+   \                     osal_strlen:
+    130          {
+    131            return (int)( strlen( pString ) );
+   \   000000   ........     BRA     #strlen
+    132          }
+    133          
+    134          /*********************************************************************
+    135           * @fn      osal_memcpy
+    136           *
+    137           * @brief
+    138           *
+    139           *   Generic memory copy.
+    140           *
+    141           *   Note: This function differs from the standard memcpy(), since
+    142           *         it returns the pointer to the next destination uint8. The
+    143           *         standard memcpy() returns the original destination address.
+    144           *
+    145           * @param   dst - destination address
+    146           * @param   src - source address
+    147           * @param   len - number of bytes to copy
+    148           *
+    149           * @return  pointer to end of destination buffer
+    150           */
+
+   \                                 In  segment CODE, align 2
+    151          void *osal_memcpy( void *dst, const void GENERIC *src, unsigned int len )
+   \                     osal_memcpy:
+    152          {
+    153            uint8 *pDst;
+    154            const uint8 GENERIC *pSrc;
+    155          
+    156            pSrc = src;
+    157            pDst = dst;
+   \   000000   033C         JMP     ??osal_memcpy_1
+    158          
+    159            while ( len-- )
+    160              *pDst++ = *pSrc++;
+   \                     ??osal_memcpy_0:
+   \   000002   FC4D0000     MOV.B   @R13+, 0(R12)
+   \   000006   1C53         ADD.W   #0x1, R12
+   \                     ??osal_memcpy_1:
+   \   000008   0F4E         MOV.W   R14, R15
+   \   00000A   3E53         ADD.W   #0xffff, R14
+   \   00000C   0F93         CMP.W   #0x0, R15
+   \   00000E   F923         JNE     ??osal_memcpy_0
+    161          
+    162            return ( pDst );
+   \   000010   1001         RETA
+    163          }
+    164          
+    165          /*********************************************************************
+    166           * @fn      osal_revmemcpy
+    167           *
+    168           * @brief   Generic reverse memory copy.  Starts at the end of the
+    169           *   source buffer, by taking the source address pointer and moving
+    170           *   pointer ahead "len" bytes, then decrementing the pointer.
+    171           *
+    172           *   Note: This function differs from the standard memcpy(), since
+    173           *         it returns the pointer to the next destination uint8. The
+    174           *         standard memcpy() returns the original destination address.
+    175           *
+    176           * @param   dst - destination address
+    177           * @param   src - source address
+    178           * @param   len - number of bytes to copy
+    179           *
+    180           * @return  pointer to end of destination buffer
+    181           */
+
+   \                                 In  segment CODE, align 2
+    182          void *osal_revmemcpy( void *dst, const void GENERIC *src, unsigned int len )
+   \                     osal_revmemcpy:
+    183          {
+    184            uint8 *pDst;
+    185            const uint8 GENERIC *pSrc;
+    186          
+    187            pSrc = src;
+    188            pSrc += (len-1);
+   \   000000   0D5E         ADD.W   R14, R13
+   \   000002   3D53         ADD.W   #0xffff, R13
+    189            pDst = dst;
+   \   000004   043C         JMP     ??osal_revmemcpy_1
+    190          
+    191            while ( len-- )
+    192              *pDst++ = *pSrc--;
+   \                     ??osal_revmemcpy_0:
+   \   000006   EC4D0000     MOV.B   @R13, 0(R12)
+   \   00000A   3D53         ADD.W   #0xffff, R13
+   \   00000C   1C53         ADD.W   #0x1, R12
+   \                     ??osal_revmemcpy_1:
+   \   00000E   0F4E         MOV.W   R14, R15
+   \   000010   3E53         ADD.W   #0xffff, R14
+   \   000012   0F93         CMP.W   #0x0, R15
+   \   000014   F823         JNE     ??osal_revmemcpy_0
+    193          
+    194            return ( pDst );
+   \   000016   1001         RETA
+    195          }
+    196          
+    197          /*********************************************************************
+    198           * @fn      osal_memdup
+    199           *
+    200           * @brief   Allocates a buffer [with osal_mem_alloc()] and copies
+    201           *          the src buffer into the newly allocated space.
+    202           *
+    203           * @param   src - source address
+    204           * @param   len - number of bytes to copy
+    205           *
+    206           * @return  pointer to the new allocated buffer, or NULL if
+    207           *          allocation problem.
+    208           */
+
+   \                                 In  segment CODE, align 2
+    209          void *osal_memdup( const void GENERIC *src, unsigned int len )
+   \                     osal_memdup:
+    210          {
+   \   000000   3B15         PUSHM.W #0x4, R11
+   \   000002   0A4C         MOV.W   R12, R10
+   \   000004   0B4D         MOV.W   R13, R11
+    211            uint8 *pDst;
+    212          
+    213            pDst = osal_mem_alloc( len );
+   \   000006   0C4D         MOV.W   R13, R12
+   \   000008   ........     CALLA   #osal_mem_alloc
+   \   00000C   084C         MOV.W   R12, R8
+    214            if ( pDst )
+   \   00000E   0C93         CMP.W   #0x0, R12
+   \   000010   0424         JEQ     ??osal_memdup_0
+    215            {
+    216              VOID osal_memcpy( pDst, src, len );
+   \   000012   0E4B         MOV.W   R11, R14
+   \   000014   0D4A         MOV.W   R10, R13
+   \   000016   ........     CALLA   #osal_memcpy
+    217            }
+    218          
+    219            return ( (void *)pDst );
+   \                     ??osal_memdup_0:
+   \   00001A   0C48         MOV.W   R8, R12
+   \   00001C   3817         POPM.W  #0x4, R11
+   \   00001E   1001         RETA
+    220          }
+    221          
+    222          /*********************************************************************
+    223           * @fn      osal_memcmp
+    224           *
+    225           * @brief
+    226           *
+    227           *   Generic memory compare.
+    228           *
+    229           * @param   src1 - source 1 addrexx
+    230           * @param   src2 - source 2 address
+    231           * @param   len - number of bytes to compare
+    232           *
+    233           * @return  TRUE - same, FALSE - different
+    234           */
+
+   \                                 In  segment CODE, align 2
+    235          uint8 osal_memcmp( const void GENERIC *src1, const void GENERIC *src2, unsigned int len )
+   \                     osal_memcmp:
+   \                     ??osal_memcmp_0:
+    236          {
+    237            const uint8 GENERIC *pSrc1;
+    238            const uint8 GENERIC *pSrc2;
+    239          
+    240            pSrc1 = src1;
+    241            pSrc2 = src2;
+    242          
+    243            while ( len-- )
+   \   000000   0F4E         MOV.W   R14, R15
+   \   000002   3E53         ADD.W   #0xffff, R14
+   \   000004   0F93         CMP.W   #0x0, R15
+   \   000006   0524         JEQ     ??osal_memcmp_1
+    244            {
+    245              if( *pSrc1++ != *pSrc2++ )
+   \   000008   7F4C         MOV.B   @R12+, R15
+   \   00000A   7F9D         CMP.B   @R13+, R15
+   \   00000C   F927         JEQ     ??osal_memcmp_0
+    246                return FALSE;
+   \   00000E   4C43         MOV.B   #0x0, R12
+   \   000010   1001         RETA
+    247            }
+    248            return TRUE;
+   \                     ??osal_memcmp_1:
+   \   000012   5C43         MOV.B   #0x1, R12
+   \   000014   1001         RETA
+    249          }
+    250          
+    251          
+    252          /*********************************************************************
+    253           * @fn      osal_memset
+    254           *
+    255           * @brief
+    256           *
+    257           *   Set memory buffer to value.
+    258           *
+    259           * @param   dest - pointer to buffer
+    260           * @param   value - what to set each uint8 of the message
+    261           * @param   size - how big
+    262           *
+    263           * @return  pointer to destination buffer
+    264           */
+
+   \                                 In  segment CODE, align 2
+    265          void *osal_memset( void *dest, uint8 value, int len )
+   \                     osal_memset:
+    266          {
+    267            return memset( dest, value, len );
+   \   000000   4D4D         MOV.B   R13, R13
+   \   000002   ........     BRA     #memset
+    268          }
+    269          
+    270          /*********************************************************************
+    271           * @fn      osal_build_uint16
+    272           *
+    273           * @brief
+    274           *
+    275           *   Build a uint16 out of 2 bytes (0 then 1).
+    276           *
+    277           * @param   swapped - 0 then 1
+    278           *
+    279           * @return  uint16
+    280           */
+
+   \                                 In  segment CODE, align 2
+    281          uint16 osal_build_uint16( uint8 *swapped )
+   \                     osal_build_uint16:
+    282          {
+    283            return ( BUILD_UINT16( swapped[0], swapped[1] ) );
+   \   000000   6F4C         MOV.B   @R12, R15
+   \   000002   5E4C0100     MOV.B   0x1(R12), R14
+   \   000006                RPT     #0x8
+   \   000006   47180E5E     RLAX.W  R14
+   \   00000A   0F5E         ADD.W   R14, R15
+   \   00000C   0C4F         MOV.W   R15, R12
+   \   00000E   1001         RETA
+    284          }
+    285          
+    286          /*********************************************************************
+    287           * @fn      osal_build_uint32
+    288           *
+    289           * @brief
+    290           *
+    291           *   Build a uint32 out of sequential bytes.
+    292           *
+    293           * @param   swapped - sequential bytes
+    294           * @param   len - number of bytes in the uint8 array
+    295           *
+    296           * @return  uint32
+    297           */
+
+   \                                 In  segment CODE, align 2
+    298          uint32 osal_build_uint32( uint8 *swapped, uint8 len )
+   \                     osal_build_uint32:
+    299          {
+   \   000000   1B15         PUSHM.W #0x2, R11
+   \   000002   0F4C         MOV.W   R12, R15
+    300            if ( len == 2 )
+   \   000004   6A4C         MOV.B   @R12, R10
+   \   000006   0B43         MOV.W   #0x0, R11
+   \   000008   6D93         CMP.B   #0x2, R13
+   \   00000A   0320         JNE     ??osal_build_uint32_0
+    301              return ( BUILD_UINT32( swapped[0], swapped[1], 0L, 0L ) );
+   \   00000C   ........     CALLA   #?Subroutine9
+   \                     ??CrossCallReturnLabel_8:
+   \   000010   143C         JMP     ??osal_build_uint32_1
+    302            else if ( len == 3 )
+   \                     ??osal_build_uint32_0:
+   \   000012   7D900300     CMP.B   #0x3, R13
+   \   000016   0520         JNE     ??osal_build_uint32_2
+    303              return ( BUILD_UINT32( swapped[0], swapped[1], swapped[2], 0L ) );
+   \   000018   ........     CALLA   #?Subroutine9
+   \                     ??CrossCallReturnLabel_9:
+   \   00001C   5F4F0200     MOV.B   0x2(R15), R15
+   \   000020   0B3C         JMP     ??osal_build_uint32_3
+    304            else if ( len == 4 )
+   \                     ??osal_build_uint32_2:
+   \   000022   6D92         CMP.B   #0x4, R13
+   \   000024   0D20         JNE     ??osal_build_uint32_4
+    305              return ( BUILD_UINT32( swapped[0], swapped[1], swapped[2], swapped[3] ) );
+   \   000026   ........     CALLA   #?Subroutine9
+   \                     ??CrossCallReturnLabel_10:
+   \   00002A   5D4F0200     MOV.B   0x2(R15), R13
+   \   00002E   0B5D         ADD.W   R13, R11
+   \   000030   5F4F0300     MOV.B   0x3(R15), R15
+   \   000034                RPT     #0x8
+   \   000034   47180F5F     RLAX.W  R15
+   \                     ??osal_build_uint32_3:
+   \   000038   0B5F         ADD.W   R15, R11
+   \                     ??osal_build_uint32_1:
+   \   00003A   0C4A         MOV.W   R10, R12
+   \   00003C   0D4B         MOV.W   R11, R13
+   \   00003E   023C         JMP     ??osal_build_uint32_5
+    306            else
+    307              return ( (uint32)swapped[0] );
+   \                     ??osal_build_uint32_4:
+   \   000040   0C4A         MOV.W   R10, R12
+   \   000042   0D43         MOV.W   #0x0, R13
+   \                     ??osal_build_uint32_5:
+   \   000044   1A17         POPM.W  #0x2, R11
+   \   000046   1001         RETA
+    308          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine9:
+   \   000000   5C4F0100     MOV.B   0x1(R15), R12
+   \   000004   0D43         MOV.W   #0x0, R13
+   \   000006   ........     CALLA   #?ShiftLeft32_8
+   \   00000A   0A5C         ADD.W   R12, R10
+   \   00000C   0B6D         ADDC.W  R13, R11
+   \   00000E   1001         RETA
+    309          
+    310          #if !defined ( ZBIT ) && !defined ( ZBIT2 ) && !defined (UBIT)
+    311          /*********************************************************************
+    312           * @fn      _ltoa
+    313           *
+    314           * @brief
+    315           *
+    316           *   convert a long unsigned int to a string.
+    317           *
+    318           * @param  l - long to convert
+    319           * @param  buf - buffer to convert to
+    320           * @param  radix - 10 dec, 16 hex
+    321           *
+    322           * @return  pointer to buffer
+    323           */
+
+   \                                 In  segment CODE, align 2
+    324          unsigned char * _ltoa(unsigned long l, unsigned char *buf, unsigned char radix)
+   \                     _ltoa:
+    325          {
+   \   000000   7B15         PUSHM.W #0x8, R11
+   \   000002   31801E00     SUB.W   #0x1e, SP
+   \   000006   0A4C         MOV.W   R12, R10
+   \   000008   0B4D         MOV.W   R13, R11
+   \   00000A   094E         MOV.W   R14, R9
+    326          #if defined( __GNUC__ )
+    327            return ( (char*)ltoa( l, buf, radix ) );
+    328          #else
+    329            unsigned char tmp1[10] = "", tmp2[10] = "", tmp3[10] = "";
+   \   00000C   0C41         MOV.W   SP, R12
+   \   00000E   3C501400     ADD.W   #0x14, R12
+   \   000012   ........     CALLA   #?Subroutine7
+   \                     ??CrossCallReturnLabel_5:
+   \   000016   0C41         MOV.W   SP, R12
+   \   000018   3C500A00     ADD.W   #0xa, R12
+   \   00001C   ........     CALLA   #?Subroutine7
+   \                     ??CrossCallReturnLabel_6:
+   \   000020   0C41         MOV.W   SP, R12
+   \   000022   0C53         ADD.W   #0x0, R12
+   \   000024   ........     CALLA   #?Subroutine7
+    330            unsigned short num1, num2, num3;
+    331            unsigned char i;
+    332          
+    333            buf[0] = '\0';
+   \                     ??CrossCallReturnLabel_7:
+   \   000028   C9430000     MOV.B   #0x0, 0(R9)
+   \   00002C   75400A00     MOV.B   #0xa, R5
+   \   000030   0441         MOV.W   SP, R4
+   \   000032   34500A00     ADD.W   #0xa, R4
+   \   000036   0741         MOV.W   SP, R7
+   \   000038   37501400     ADD.W   #0x14, R7
+   \   00003C   4F95         CMP.B   R5, R15
+   \   00003E   5820         JNE     ??_ltoa_5
+    334          
+    335            if ( radix == 10 )
+    336            {
+    337              num1 = l % 10000;
+   \   000040   0C4A         MOV.W   R10, R12
+   \   000042   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_2:
+   \   000046   064E         MOV.W   R14, R6
+    338              num2 = (l / 10000) % 10000;
+   \   000048   0C4A         MOV.W   R10, R12
+   \   00004A   0D4B         MOV.W   R11, R13
+   \   00004C   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_3:
+   \   000050   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_4:
+   \   000054   084E         MOV.W   R14, R8
+    339              num3 = (unsigned short)(l / 100000000);
+   \   000056   0C4A         MOV.W   R10, R12
+   \   000058   0D4B         MOV.W   R11, R13
+   \   00005A   3E4000E1     MOV.W   #0xe100, R14
+   \   00005E   3F40F505     MOV.W   #0x5f5, R15
+   \   000062   ........     CALLA   #?DivMod32u
+   \   000066   0B4C         MOV.W   R12, R11
+    340          
+    341              if (num3) _itoa(num3, tmp3, 10);
+   \   000068   0C93         CMP.W   #0x0, R12
+   \   00006A   0524         JEQ     ??_ltoa_6
+   \   00006C   4E45         MOV.B   R5, R14
+   \   00006E   0D41         MOV.W   SP, R13
+   \   000070   0D53         ADD.W   #0x0, R13
+   \   000072   ........     CALLA   #_itoa
+    342              if (num2) _itoa(num2, tmp2, 10);
+   \                     ??_ltoa_6:
+   \   000076   0893         CMP.W   #0x0, R8
+   \   000078   0524         JEQ     ??_ltoa_7
+   \   00007A   4E45         MOV.B   R5, R14
+   \   00007C   0D44         MOV.W   R4, R13
+   \   00007E   0C48         MOV.W   R8, R12
+   \   000080   ........     CALLA   #_itoa
+    343              if (num1) _itoa(num1, tmp1, 10);
+   \                     ??_ltoa_7:
+   \   000084   0693         CMP.W   #0x0, R6
+   \   000086   0524         JEQ     ??_ltoa_8
+   \   000088   4E45         MOV.B   R5, R14
+   \   00008A   0D47         MOV.W   R7, R13
+   \   00008C   0C46         MOV.W   R6, R12
+   \   00008E   ........     CALLA   #_itoa
+    344          
+    345              if (num3)
+   \                     ??_ltoa_8:
+   \   000092   0B93         CMP.W   #0x0, R11
+   \   000094   1024         JEQ     ??_ltoa_9
+    346              {
+    347                strcpy((char*)buf, (char const*)tmp3);
+   \   000096   0D41         MOV.W   SP, R13
+   \   000098   0D53         ADD.W   #0x0, R13
+   \   00009A   0C49         MOV.W   R9, R12
+   \   00009C   ........     CALLA   #strcpy
+    348                for (i = 0; i < 4 - strlen((char const*)tmp2); i++)
+   \   0000A0   4A43         MOV.B   #0x0, R10
+   \   0000A2   023C         JMP     ??_ltoa_10
+    349                  strcat((char*)buf, "0");
+   \                     ??_ltoa_0:
+   \   0000A4   ........     CALLA   #?Subroutine8
+   \                     ??_ltoa_10:
+   \   0000A8   2542         MOV.W   #0x4, R5
+   \   0000AA   0C44         MOV.W   R4, R12
+   \   0000AC   ........     CALLA   #strlen
+   \   0000B0   058C         SUB.W   R12, R5
+   \   0000B2   0A95         CMP.W   R5, R10
+   \   0000B4   F72B         JNC     ??_ltoa_0
+    350              }
+    351              strcat((char*)buf, (char const*)tmp2);
+   \                     ??_ltoa_9:
+   \   0000B6   0D44         MOV.W   R4, R13
+   \   0000B8   ........     CALLA   #??Subroutine11_0
+    352              if (num3 || num2)
+   \                     ??CrossCallReturnLabel_11:
+   \   0000BC   0B93         CMP.W   #0x0, R11
+   \   0000BE   0220         JNE     ??_ltoa_11
+   \   0000C0   0893         CMP.W   #0x0, R8
+   \   0000C2   0B24         JEQ     ??_ltoa_12
+    353              {
+    354                for (i = 0; i < 4 - strlen((char const*)tmp1); i++)
+   \                     ??_ltoa_11:
+   \   0000C4   4A43         MOV.B   #0x0, R10
+   \   0000C6   023C         JMP     ??_ltoa_13
+    355                  strcat((char*)buf, "0");
+   \                     ??_ltoa_1:
+   \   0000C8   ........     CALLA   #?Subroutine8
+   \                     ??_ltoa_13:
+   \   0000CC   2442         MOV.W   #0x4, R4
+   \   0000CE   0C47         MOV.W   R7, R12
+   \   0000D0   ........     CALLA   #strlen
+   \   0000D4   048C         SUB.W   R12, R4
+   \   0000D6   0A94         CMP.W   R4, R10
+   \   0000D8   F72B         JNC     ??_ltoa_1
+    356              }
+    357              strcat((char*)buf, (char const*)tmp1);
+   \                     ??_ltoa_12:
+   \   0000DA   ........     CALLA   #?Subroutine10
+    358              if (!num3 && !num2 && !num1)
+   \                     ??CrossCallReturnLabel_13:
+   \   0000DE   0B93         CMP.W   #0x0, R11
+   \   0000E0   0220         JNE     ??_ltoa_3
+   \   0000E2   0893         CMP.W   #0x0, R8
+   \   0000E4   2F24         JEQ     ??_ltoa_14
+    359                strcpy((char*)buf, "0");
+    360            }
+    361            else if ( radix == 16 )
+    362            {
+    363              num1 = l & 0x0000FFFF;
+    364              num2 = l >> 16;
+    365          
+    366              if (num2) _itoa(num2, tmp2, 16);
+    367              if (num1) _itoa(num1, tmp1, 16);
+    368          
+    369              if (num2)
+    370              {
+    371                strcpy((char*)buf,(char const*)tmp2);
+    372                for (i = 0; i < 4 - strlen((char const*)tmp1); i++)
+    373                  strcat((char*)buf, "0");
+    374              }
+    375              strcat((char*)buf, (char const*)tmp1);
+    376              if (!num2 && !num1)
+    377                strcpy((char*)buf, "0");
+    378            }
+    379            else
+    380              return NULL;
+    381          
+    382            return buf;
+   \                     ??_ltoa_3:
+   \   0000E6   0C49         MOV.W   R9, R12
+   \                     ??_ltoa_4:
+   \   0000E8   31501E00     ADD.W   #0x1e, SP
+   \   0000EC   7417         POPM.W  #0x8, R11
+   \   0000EE   1001         RETA
+   \                     ??_ltoa_5:
+   \   0000F0   7F901000     CMP.B   #0x10, R15
+   \   0000F4   2F20         JNE     ??_ltoa_15
+   \   0000F6   064A         MOV.W   R10, R6
+   \   0000F8   084D         MOV.W   R13, R8
+   \   0000FA   0D93         CMP.W   #0x0, R13
+   \   0000FC   0624         JEQ     ??_ltoa_16
+   \   0000FE   7E401000     MOV.B   #0x10, R14
+   \   000102   0D44         MOV.W   R4, R13
+   \   000104   0C48         MOV.W   R8, R12
+   \   000106   ........     CALLA   #_itoa
+   \                     ??_ltoa_16:
+   \   00010A   0A93         CMP.W   #0x0, R10
+   \   00010C   0624         JEQ     ??_ltoa_17
+   \   00010E   7E401000     MOV.B   #0x10, R14
+   \   000112   0D47         MOV.W   R7, R13
+   \   000114   0C4A         MOV.W   R10, R12
+   \   000116   ........     CALLA   #_itoa
+   \                     ??_ltoa_17:
+   \   00011A   0893         CMP.W   #0x0, R8
+   \   00011C   0F24         JEQ     ??_ltoa_18
+   \   00011E   0D44         MOV.W   R4, R13
+   \   000120   0C49         MOV.W   R9, R12
+   \   000122   ........     CALLA   #strcpy
+   \   000126   4A43         MOV.B   #0x0, R10
+   \   000128   023C         JMP     ??_ltoa_19
+   \                     ??_ltoa_2:
+   \   00012A   ........     CALLA   #?Subroutine8
+   \                     ??_ltoa_19:
+   \   00012E   2B42         MOV.W   #0x4, R11
+   \   000130   0C47         MOV.W   R7, R12
+   \   000132   ........     CALLA   #strlen
+   \   000136   0B8C         SUB.W   R12, R11
+   \   000138   0A9B         CMP.W   R11, R10
+   \   00013A   F72B         JNC     ??_ltoa_2
+   \                     ??_ltoa_18:
+   \   00013C   ........     CALLA   #?Subroutine10
+   \                     ??CrossCallReturnLabel_12:
+   \   000140   0893         CMP.W   #0x0, R8
+   \   000142   D123         JNE     ??_ltoa_3
+   \                     ??_ltoa_14:
+   \   000144   0693         CMP.W   #0x0, R6
+   \   000146   CF23         JNE     ??_ltoa_3
+   \   000148   3D40....     MOV.W   #`?<Constant "0">`, R13
+   \   00014C   0C49         MOV.W   R9, R12
+   \   00014E   ........     CALLA   #strcpy
+   \   000152   C93F         JMP     ??_ltoa_3
+   \                     ??_ltoa_15:
+   \   000154   0C43         MOV.W   #0x0, R12
+   \   000156   C83F         JMP     ??_ltoa_4
+   \   000158   0343         NOP
+    383          #endif
+    384          }
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   0D47         MOV.W   R7, R13
+   \   000002                REQUIRE ??Subroutine11_0
+   \   000002                // Fall through to label ??Subroutine11_0
+
+   \                                 In  segment CODE, align 2
+   \                     ??Subroutine11_0:
+   \   000000   0C49         MOV.W   R9, R12
+   \   000002   ........     BRA     #strcat
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine8:
+   \   000000   3D40....     MOV.W   #`?<Constant "0">`, R13
+   \   000004   0C49         MOV.W   R9, R12
+   \   000006   ........     CALLA   #strcat
+   \   00000A   5A53         ADD.B   #0x1, R10
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine7:
+   \   000000   3E400A00     MOV.W   #0xa, R14
+   \   000004   ........     BRA     #?ClearMemoryBytes
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine6:
+   \   000000   3E401027     MOV.W   #0x2710, R14
+   \   000004   0F43         MOV.W   #0x0, R15
+   \   000006   ........     BRA     #?DivMod32u
+    385          #endif // !defined(ZBIT) && !defined(ZBIT2)
+    386          
+    387          /*********************************************************************
+    388           * @fn        osal_rand
+    389           *
+    390           * @brief    Random number generator
+    391           *
+    392           * @param   none
+    393           *
+    394           * @return  uint16 - new random number
+    395           */
+
+   \                                 In  segment CODE, align 2
+    396          uint16 osal_rand( void )
+   \                     osal_rand:
+    397          {
+    398            return ( Onboard_rand() );
+   \   000000   ........     BRA     #Onboard_rand
+    399          }
+    400          
+    401          /*********************************************************************
+    402           * API FUNCTIONS
+    403           *********************************************************************/
+    404          
+    405          /*********************************************************************
+    406           * @fn      osal_msg_allocate
+    407           *
+    408           * @brief
+    409           *
+    410           *    This function is called by a task to allocate a message buffer
+    411           *    into which the task will encode the particular message it wishes
+    412           *    to send.  This common buffer scheme is used to strictly limit the
+    413           *    creation of message buffers within the system due to RAM size
+    414           *    limitations on the microprocessor.   Note that all message buffers
+    415           *    are a fixed size (at least initially).  The parameter len is kept
+    416           *    in case a message pool with varying fixed message sizes is later
+    417           *    created (for example, a pool of message buffers of size LARGE,
+    418           *    MEDIUM and SMALL could be maintained and allocated based on request
+    419           *    from the tasks).
+    420           *
+    421           *
+    422           * @param   uint8 len  - wanted buffer length
+    423           *
+    424           *
+    425           * @return  pointer to allocated buffer or NULL if allocation failed.
+    426           */
+
+   \                                 In  segment CODE, align 2
+    427          uint8 * osal_msg_allocate( uint16 len )
+   \                     osal_msg_allocate:
+    428          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   0A4C         MOV.W   R12, R10
+    429            osal_msg_hdr_t *hdr;
+    430          
+    431            if ( len == 0 )
+   \   000004   0C93         CMP.W   #0x0, R12
+   \   000006   0F24         JEQ     ??osal_msg_allocate_0
+    432              return ( NULL );
+    433          
+    434            hdr = (osal_msg_hdr_t *) osal_mem_alloc( (short)(len + sizeof( osal_msg_hdr_t )) );
+   \   000008   3C500600     ADD.W   #0x6, R12
+   \   00000C   ........     CALLA   #osal_mem_alloc
+    435            if ( hdr )
+   \   000010   0C93         CMP.W   #0x0, R12
+   \   000012   0924         JEQ     ??osal_msg_allocate_0
+    436            {
+    437              hdr->next = NULL;
+   \   000014   8C430000     MOV.W   #0x0, 0(R12)
+    438              hdr->len = len;
+   \   000018   8C4A0200     MOV.W   R10, 0x2(R12)
+    439              hdr->dest_id = TASK_NO_TASK;
+   \   00001C   FC430400     MOV.B   #0xff, 0x4(R12)
+    440              return ( (uint8 *) (hdr + 1) );
+   \   000020   3C500600     ADD.W   #0x6, R12
+   \   000024   013C         JMP     ??osal_msg_allocate_1
+    441            }
+    442            else
+    443              return ( NULL );
+   \                     ??osal_msg_allocate_0:
+   \   000026   0C43         MOV.W   #0x0, R12
+   \                     ??osal_msg_allocate_1:
+   \   000028   3A41         POP.W   R10
+   \   00002A   1001         RETA
+    444          }
+    445          
+    446          /*********************************************************************
+    447           * @fn      osal_msg_deallocate
+    448           *
+    449           * @brief
+    450           *
+    451           *    This function is used to deallocate a message buffer. This function
+    452           *    is called by a task (or processing element) after it has finished
+    453           *    processing a received message.
+    454           *
+    455           *
+    456           * @param   uint8 *msg_ptr - pointer to new message buffer
+    457           *
+    458           * @return  SUCCESS, INVALID_MSG_POINTER
+    459           */
+
+   \                                 In  segment CODE, align 2
+    460          uint8 osal_msg_deallocate( uint8 *msg_ptr )
+   \                     osal_msg_deallocate:
+    461          {
+    462            uint8 *x;
+    463          
+    464            if ( msg_ptr == NULL )
+   \   000000   0C93         CMP.W   #0x0, R12
+   \   000002   0320         JNE     ??osal_msg_deallocate_0
+    465              return ( INVALID_MSG_POINTER );
+   \   000004   7C400500     MOV.B   #0x5, R12
+   \   000008   1001         RETA
+    466          
+    467            // don't deallocate queued buffer
+    468            if ( OSAL_MSG_ID( msg_ptr ) != TASK_NO_TASK )
+   \                     ??osal_msg_deallocate_0:
+   \   00000A   FC93FEFF     CMP.B   #0xff, 0xfffe(R12)
+   \   00000E   0224         JEQ     ??osal_msg_deallocate_1
+    469              return ( MSG_BUFFER_NOT_AVAIL );
+   \   000010   6C42         MOV.B   #0x4, R12
+   \   000012   1001         RETA
+    470          
+    471            x = (uint8 *)((uint8 *)msg_ptr - sizeof( osal_msg_hdr_t ));
+    472          
+    473            osal_mem_free( (void *)x );
+   \                     ??osal_msg_deallocate_1:
+   \   000014   3C50FAFF     ADD.W   #0xfffa, R12
+   \   000018   ........     CALLA   #osal_mem_free
+    474          
+    475            return ( SUCCESS );
+   \   00001C   4C43         MOV.B   #0x0, R12
+   \   00001E   1001         RETA
+    476          }
+    477          
+    478          /*********************************************************************
+    479           * @fn      osal_msg_send
+    480           *
+    481           * @brief
+    482           *
+    483           *    This function is called by a task to send a command message to
+    484           *    another task or processing element.  The sending_task field must
+    485           *    refer to a valid task, since the task ID will be used
+    486           *    for the response message.  This function will also set a message
+    487           *    ready event in the destination tasks event list.
+    488           *
+    489           *
+    490           * @param   uint8 destination_task - Send msg to Task ID
+    491           * @param   uint8 *msg_ptr - pointer to new message buffer
+    492           *
+    493           * @return  SUCCESS, INVALID_TASK, INVALID_MSG_POINTER
+    494           */
+
+   \                                 In  segment CODE, align 2
+    495          uint8 osal_msg_send( uint8 destination_task, uint8 *msg_ptr )
+   \                     osal_msg_send:
+    496          {
+    497            return ( osal_msg_enqueue_push( destination_task, msg_ptr, FALSE ) );
+   \   000000   4E43         MOV.B   #0x0, R14
+   \   000002   ........     BRA     #osal_msg_enqueue_push
+    498          }
+    499          
+    500          /*********************************************************************
+    501           * @fn      osal_msg_push_front
+    502           *
+    503           * @brief
+    504           *
+    505           *    This function is called by a task to push a command message
+    506           *    to the head of the OSAL queue. The destination_task field
+    507           *    must refer to a valid task, since the task ID will be used to
+    508           *    send the message to. This function will also set a message
+    509           *    ready event in the destination task's event list.
+    510           *
+    511           * @param   uint8 destination_task - Send msg to Task ID
+    512           * @param   uint8 *msg_ptr - pointer to message buffer
+    513           *
+    514           * @return  SUCCESS, INVALID_TASK, INVALID_MSG_POINTER
+    515           */
+
+   \                                 In  segment CODE, align 2
+    516          uint8 osal_msg_push_front( uint8 destination_task, uint8 *msg_ptr )
+   \                     osal_msg_push_front:
+    517          {
+    518            return ( osal_msg_enqueue_push( destination_task, msg_ptr, TRUE ) );
+   \   000000   5E43         MOV.B   #0x1, R14
+   \   000002   ........     BRA     #osal_msg_enqueue_push
+    519          }
+    520          
+    521          /*********************************************************************
+    522           * @fn      osal_msg_enqueue_push
+    523           *
+    524           * @brief
+    525           *
+    526           *    This function is called by a task to either enqueue (append to
+    527           *    queue) or push (prepend to queue) a command message to the OSAL
+    528           *    queue. The destination_task field must refer to a valid task,
+    529           *    since the task ID will be used to send the message to. This 
+    530           *    function will also set a message ready event in the destination
+    531           *    task's event list.
+    532           *
+    533           * @param   uint8 destination_task - Send msg to Task ID
+    534           * @param   uint8 *msg_ptr - pointer to message buffer
+    535           * @param   uint8 push - TRUE to push, otherwise enqueue
+    536           *
+    537           * @return  SUCCESS, INVALID_TASK, INVALID_MSG_POINTER
+    538           */
+
+   \                                 In  segment CODE, align 2
+    539          static uint8 osal_msg_enqueue_push( uint8 destination_task, uint8 *msg_ptr, uint8 push )
+   \                     osal_msg_enqueue_push:
+    540          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   4A4C         MOV.B   R12, R10
+    541            if ( msg_ptr == NULL )
+   \   000004   0D93         CMP.W   #0x0, R13
+   \   000006   1224         JEQ     ??osal_msg_enqueue_push_1
+    542            {
+    543              return ( INVALID_MSG_POINTER );
+    544            }
+    545          
+    546            if ( destination_task >= tasksCnt )
+   \   000008   5C92....     CMP.B   &tasksCnt, R12
+   \   00000C   0628         JNC     ??osal_msg_enqueue_push_2
+    547            {
+    548              osal_msg_deallocate( msg_ptr );
+   \   00000E   0C4D         MOV.W   R13, R12
+   \   000010   ........     CALLA   #osal_msg_deallocate
+    549              return ( INVALID_TASK );
+   \   000014   7C400300     MOV.B   #0x3, R12
+   \   000018   1D3C         JMP     ??osal_msg_enqueue_push_3
+    550            }
+    551          
+    552            // Check the message header
+    553            if ( OSAL_MSG_NEXT( msg_ptr ) != NULL ||
+    554                 OSAL_MSG_ID( msg_ptr ) != TASK_NO_TASK )
+   \                     ??osal_msg_enqueue_push_2:
+   \   00001A   8D93FAFF     CMP.W   #0x0, 0xfffa(R13)
+   \   00001E   0320         JNE     ??osal_msg_enqueue_push_4
+   \   000020   FD93FEFF     CMP.B   #0xff, 0xfffe(R13)
+   \   000024   0624         JEQ     ??osal_msg_enqueue_push_5
+    555            {
+    556              osal_msg_deallocate( msg_ptr );
+   \                     ??osal_msg_enqueue_push_4:
+   \   000026   0C4D         MOV.W   R13, R12
+   \   000028   ........     CALLA   #osal_msg_deallocate
+    557              return ( INVALID_MSG_POINTER );
+   \                     ??osal_msg_enqueue_push_1:
+   \   00002C   7C400500     MOV.B   #0x5, R12
+   \   000030   113C         JMP     ??osal_msg_enqueue_push_3
+    558            }
+    559          
+    560            OSAL_MSG_ID( msg_ptr ) = destination_task;
+   \                     ??osal_msg_enqueue_push_5:
+   \   000032   CD4CFEFF     MOV.B   R12, 0xfffe(R13)
+    561          
+    562            if ( push == TRUE )
+   \   000036   5E93         CMP.B   #0x1, R14
+   \   000038   3C40....     MOV.W   #osal_qHead, R12
+   \   00003C   0320         JNE     ??osal_msg_enqueue_push_6
+    563            {
+    564              // prepend the message
+    565              osal_msg_push( &osal_qHead, msg_ptr );
+   \   00003E   ........     CALLA   #osal_msg_push
+   \   000042   023C         JMP     ??osal_msg_enqueue_push_7
+    566            }
+    567            else
+    568            {
+    569              // append the message
+    570              osal_msg_enqueue( &osal_qHead, msg_ptr );
+   \                     ??osal_msg_enqueue_push_6:
+   \   000044   ........     CALLA   #osal_msg_enqueue
+    571            }
+    572          
+    573            // Signal the task that a message is waiting
+    574            osal_set_event( destination_task, SYS_EVENT_MSG );
+   \                     ??osal_msg_enqueue_push_7:
+   \   000048   3D400080     MOV.W   #0x8000, R13
+   \   00004C   4C4A         MOV.B   R10, R12
+   \   00004E   ........     CALLA   #osal_set_event
+    575          
+    576            return ( SUCCESS );
+   \   000052   4C43         MOV.B   #0x0, R12
+   \                     ??osal_msg_enqueue_push_3:
+   \   000054   3A41         POP.W   R10
+   \   000056   1001         RETA
+    577          }
+    578          
+    579          /*********************************************************************
+    580           * @fn      osal_msg_receive
+    581           *
+    582           * @brief
+    583           *
+    584           *    This function is called by a task to retrieve a received command
+    585           *    message. The calling task must deallocate the message buffer after
+    586           *    processing the message using the osal_msg_deallocate() call.
+    587           *
+    588           * @param   uint8 task_id - receiving tasks ID
+    589           *
+    590           * @return  *uint8 - message information or NULL if no message
+    591           */
+
+   \                                 In  segment CODE, align 2
+    592          uint8 *osal_msg_receive( uint8 task_id )
+   \                     osal_msg_receive:
+    593          {
+   \   000000   3B15         PUSHM.W #0x4, R11
+    594            osal_msg_hdr_t *listHdr;
+    595            osal_msg_hdr_t *prevHdr = NULL;
+   \   000002   0A43         MOV.W   #0x0, R10
+    596            osal_msg_hdr_t *foundHdr = NULL;
+   \   000004   0B43         MOV.W   #0x0, R11
+    597            halIntState_t   intState;
+    598          
+    599            // Hold off interrupts
+    600            HAL_ENTER_CRITICAL_SECTION(intState);
+   \   000006   0842         MOV.W   SR, R8
+   \   000008   32C2         dint
+   \   00000A   0343         nop
+    601          
+    602            // Point to the top of the queue
+    603            listHdr = osal_qHead;
+   \   00000C   1F42....     MOV.W   &osal_qHead, R15
+   \   000010   053C         JMP     ??osal_msg_receive_2
+    604          
+    605            // Look through the queue for a message that belongs to the asking task
+    606            while ( listHdr != NULL )
+    607            {
+    608              if ( (listHdr - 1)->dest_id == task_id )
+    609              {
+    610                if ( foundHdr == NULL )
+    611                {
+    612                  // Save the first one
+    613                  foundHdr = listHdr;
+    614                }
+    615                else
+    616                {
+    617                  // Second msg found, stop looking
+    618                  break;
+    619                }
+    620              }
+    621              if ( foundHdr == NULL )
+   \                     ??osal_msg_receive_0:
+   \   000012   0B93         CMP.W   #0x0, R11
+   \   000014   0120         JNE     ??osal_msg_receive_1
+    622              {
+    623                prevHdr = listHdr;
+   \   000016   0A4F         MOV.W   R15, R10
+    624              }
+    625              listHdr = OSAL_MSG_NEXT( listHdr );
+   \                     ??osal_msg_receive_1:
+   \   000018   1F4FFAFF     MOV.W   0xfffa(R15), R15
+   \                     ??osal_msg_receive_2:
+   \   00001C   0F93         CMP.W   #0x0, R15
+   \   00001E   0C24         JEQ     ??osal_msg_receive_3
+   \   000020   CF9CFEFF     CMP.B   R12, 0xfffe(R15)
+   \   000024   F623         JNE     ??osal_msg_receive_0
+   \   000026   0B93         CMP.W   #0x0, R11
+   \   000028   0220         JNE     ??osal_msg_receive_4
+   \   00002A   0B4F         MOV.W   R15, R11
+   \   00002C   F53F         JMP     ??osal_msg_receive_1
+    626            }
+    627          
+    628            // Is there more than one?
+    629            if ( listHdr != NULL )
+    630            {
+    631              // Yes, Signal the task that a message is waiting
+    632              osal_set_event( task_id, SYS_EVENT_MSG );
+   \                     ??osal_msg_receive_4:
+   \   00002E   3D400080     MOV.W   #0x8000, R13
+   \   000032   ........     CALLA   #osal_set_event
+   \   000036   063C         JMP     ??osal_msg_receive_5
+    633            }
+    634            else
+    635            {
+    636              // No more
+    637              osal_clear_event( task_id, SYS_EVENT_MSG );
+   \                     ??osal_msg_receive_3:
+   \   000038   3D400080     MOV.W   #0x8000, R13
+   \   00003C   ........     CALLA   #osal_clear_event
+    638            }
+    639          
+    640            // Did we find a message?
+    641            if ( foundHdr != NULL )
+   \   000040   0B93         CMP.W   #0x0, R11
+   \   000042   0624         JEQ     ??osal_msg_receive_6
+    642            {
+    643              // Take out of the link list
+    644              osal_msg_extract( &osal_qHead, foundHdr, prevHdr );
+   \                     ??osal_msg_receive_5:
+   \   000044   0E4A         MOV.W   R10, R14
+   \   000046   0D4B         MOV.W   R11, R13
+   \   000048   3C40....     MOV.W   #osal_qHead, R12
+   \   00004C   ........     CALLA   #osal_msg_extract
+    645            }
+    646          
+    647            // Release interrupts
+    648            HAL_EXIT_CRITICAL_SECTION(intState);
+   \                     ??osal_msg_receive_6:
+   \   000050   0248         MOV.W   R8, SR
+   \   000052   0343         NOP
+    649          
+    650            return ( (uint8*) foundHdr );
+   \   000054   0C4B         MOV.W   R11, R12
+   \   000056   3817         POPM.W  #0x4, R11
+   \   000058   1001         RETA
+    651          }
+    652          
+    653          /**************************************************************************************************
+    654           * @fn          osal_msg_find
+    655           *
+    656           * @brief       This function finds in place an OSAL message matching the task_id and event
+    657           *              parameters.
+    658           *
+    659           * input parameters
+    660           *
+    661           * @param       task_id - The OSAL task id that the enqueued OSAL message must match.
+    662           * @param       event - The OSAL event id that the enqueued OSAL message must match.
+    663           *
+    664           * output parameters
+    665           *
+    666           * None.
+    667           *
+    668           * @return      NULL if no match, otherwise an in place pointer to the matching OSAL message.
+    669           **************************************************************************************************
+    670           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   024E         MOV.W   R14, SR
+   \   000002   0343         NOP
+   \   000004   0C4F         MOV.W   R15, R12
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    671          osal_event_hdr_t *osal_msg_find(uint8 task_id, uint8 event)
+   \                     osal_msg_find:
+    672          {
+    673            osal_msg_hdr_t *pHdr;
+    674            halIntState_t intState;
+    675          
+    676            HAL_ENTER_CRITICAL_SECTION(intState);  // Hold off interrupts.
+   \   000000   0E42         MOV.W   SR, R14
+   \   000002   32C2         dint
+   \   000004   0343         nop
+    677          
+    678            pHdr = osal_qHead;  // Point to the top of the queue.
+   \   000006   1F42....     MOV.W   &osal_qHead, R15
+   \   00000A   023C         JMP     ??osal_msg_find_1
+    679          
+    680            // Look through the queue for a message that matches the task_id and event parameters.
+    681            while (pHdr != NULL)
+    682            {
+    683              if (((pHdr-1)->dest_id == task_id) && (((osal_event_hdr_t *)pHdr)->event == event))
+    684              {
+    685                break;
+    686              }
+    687          
+    688              pHdr = OSAL_MSG_NEXT(pHdr);
+   \                     ??osal_msg_find_0:
+   \   00000C   1F4FFAFF     MOV.W   0xfffa(R15), R15
+   \                     ??osal_msg_find_1:
+   \   000010   0F93         CMP.W   #0x0, R15
+   \   000012   0624         JEQ     ??osal_msg_find_2
+   \   000014   CF9CFEFF     CMP.B   R12, 0xfffe(R15)
+   \   000018   F923         JNE     ??osal_msg_find_0
+   \   00001A   CF9D0000     CMP.B   R13, 0(R15)
+   \   00001E   F623         JNE     ??osal_msg_find_0
+    689            }
+    690          
+    691            HAL_EXIT_CRITICAL_SECTION(intState);  // Release interrupts.
+   \                     ??osal_msg_find_2:
+   \   000020   ....         JMP     ?Subroutine2
+   \   000022   0343         NOP
+    692          
+    693            return (osal_event_hdr_t *)pHdr;
+    694          }
+    695          
+    696          /*********************************************************************
+    697           * @fn      osal_msg_enqueue
+    698           *
+    699           * @brief
+    700           *
+    701           *    This function enqueues an OSAL message into an OSAL queue.
+    702           *
+    703           * @param   osal_msg_q_t *q_ptr - OSAL queue
+    704           * @param   void *msg_ptr  - OSAL message
+    705           *
+    706           * @return  none
+    707           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    708          void osal_msg_enqueue( osal_msg_q_t *q_ptr, void *msg_ptr )
+   \                     osal_msg_enqueue:
+    709          {
+    710            void *list;
+    711            halIntState_t intState;
+    712          
+    713            // Hold off interrupts
+    714            HAL_ENTER_CRITICAL_SECTION(intState);
+   \   000000   0F42         MOV.W   SR, R15
+   \   000002   32C2         dint
+   \   000004   0343         nop
+    715          
+    716            OSAL_MSG_NEXT( msg_ptr ) = NULL;
+   \   000006   8D43FAFF     MOV.W   #0x0, 0xfffa(R13)
+    717            // If first message in queue
+    718            if ( *q_ptr == NULL )
+   \   00000A   2E4C         MOV.W   @R12, R14
+   \   00000C   0E93         CMP.W   #0x0, R14
+   \   00000E   0420         JNE     ??osal_msg_enqueue_2
+    719            {
+    720              *q_ptr = msg_ptr;
+   \   000010   8C4D0000     MOV.W   R13, 0(R12)
+   \   000014   073C         JMP     ??osal_msg_enqueue_3
+    721            }
+    722            else
+    723            {
+    724              // Find end of queue
+    725              for ( list = *q_ptr; OSAL_MSG_NEXT( list ) != NULL; list = OSAL_MSG_NEXT( list ) );
+   \                     ??osal_msg_enqueue_0:
+   \   000016   0E4C         MOV.W   R12, R14
+   \                     ??osal_msg_enqueue_2:
+   \   000018   1C4EFAFF     MOV.W   0xfffa(R14), R12
+   \   00001C   0C93         CMP.W   #0x0, R12
+   \   00001E   FB23         JNE     ??osal_msg_enqueue_0
+    726          
+    727              // Add message to end of queue
+    728              OSAL_MSG_NEXT( list ) = msg_ptr;
+   \   000020   8E4DFAFF     MOV.W   R13, 0xfffa(R14)
+    729            }
+    730          
+    731            // Re-enable interrupts
+    732            HAL_EXIT_CRITICAL_SECTION(intState);
+   \                     ??osal_msg_enqueue_3:
+   \   000024   024F         MOV.W   R15, SR
+   \   000026   0343         NOP
+    733          }
+   \   000028   1001         RETA
+    734          
+    735          /*********************************************************************
+    736           * @fn      osal_msg_dequeue
+    737           *
+    738           * @brief
+    739           *
+    740           *    This function dequeues an OSAL message from an OSAL queue.
+    741           *
+    742           * @param   osal_msg_q_t *q_ptr - OSAL queue
+    743           *
+    744           * @return  void * - pointer to OSAL message or NULL of queue is empty.
+    745           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    746          void *osal_msg_dequeue( osal_msg_q_t *q_ptr )
+   \                     osal_msg_dequeue:
+    747          {
+    748            void *msg_ptr = NULL;
+   \   000000   0F43         MOV.W   #0x0, R15
+    749            halIntState_t intState;
+    750          
+    751            // Hold off interrupts
+    752            HAL_ENTER_CRITICAL_SECTION(intState);
+   \   000002   0E42         MOV.W   SR, R14
+   \   000004   32C2         dint
+   \   000006   0343         nop
+    753          
+    754            if ( *q_ptr != NULL )
+   \   000008   2D4C         MOV.W   @R12, R13
+   \   00000A   0D93         CMP.W   #0x0, R13
+   \   00000C   0824         JEQ     ??osal_msg_dequeue_0
+    755            {
+    756              // Dequeue message
+    757              msg_ptr = *q_ptr;
+   \   00000E   0F4D         MOV.W   R13, R15
+    758              *q_ptr = OSAL_MSG_NEXT( msg_ptr );
+   \   000010   9C4DFAFF0000 MOV.W   0xfffa(R13), 0(R12)
+    759              OSAL_MSG_NEXT( msg_ptr ) = NULL;
+   \   000016   8D43FAFF     MOV.W   #0x0, 0xfffa(R13)
+    760              OSAL_MSG_ID( msg_ptr ) = TASK_NO_TASK;
+   \   00001A   FD43FEFF     MOV.B   #0xff, 0xfffe(R13)
+    761            }
+    762          
+    763            // Re-enable interrupts
+    764            HAL_EXIT_CRITICAL_SECTION(intState);
+   \                     ??osal_msg_dequeue_0:
+   \   00001E                REQUIRE ?Subroutine2
+   \   00001E                // Fall through to label ?Subroutine2
+    765          
+    766            return msg_ptr;
+    767          }
+    768          
+    769          /*********************************************************************
+    770           * @fn      osal_msg_push
+    771           *
+    772           * @brief
+    773           *
+    774           *    This function pushes an OSAL message to the head of an OSAL
+    775           *    queue.
+    776           *
+    777           * @param   osal_msg_q_t *q_ptr - OSAL queue
+    778           * @param   void *msg_ptr  - OSAL message
+    779           *
+    780           * @return  none
+    781           */
+
+   \                                 In  segment CODE, align 2
+    782          void osal_msg_push( osal_msg_q_t *q_ptr, void *msg_ptr )
+   \                     osal_msg_push:
+    783          {
+    784            halIntState_t intState;
+    785          
+    786            // Hold off interrupts
+    787            HAL_ENTER_CRITICAL_SECTION(intState);
+   \   000000   0F42         MOV.W   SR, R15
+   \   000002   32C2         dint
+   \   000004   0343         nop
+    788          
+    789            // Push message to head of queue
+    790            OSAL_MSG_NEXT( msg_ptr ) = *q_ptr;
+   \   000006   AD4CFAFF     MOV.W   @R12, 0xfffa(R13)
+    791            *q_ptr = msg_ptr;
+   \   00000A   8C4D0000     MOV.W   R13, 0(R12)
+    792          
+    793            // Re-enable interrupts
+    794            HAL_EXIT_CRITICAL_SECTION(intState);
+   \   00000E   024F         MOV.W   R15, SR
+   \   000010   0343         NOP
+    795          }
+   \   000012   1001         RETA
+    796          
+    797          /*********************************************************************
+    798           * @fn      osal_msg_extract
+    799           *
+    800           * @brief
+    801           *
+    802           *    This function extracts and removes an OSAL message from the
+    803           *    middle of an OSAL queue.
+    804           *
+    805           * @param   osal_msg_q_t *q_ptr - OSAL queue
+    806           * @param   void *msg_ptr  - OSAL message to be extracted
+    807           * @param   void *prev_ptr  - OSAL message before msg_ptr in queue
+    808           *
+    809           * @return  none
+    810           */
+
+   \                                 In  segment CODE, align 2
+    811          void osal_msg_extract( osal_msg_q_t *q_ptr, void *msg_ptr, void *prev_ptr )
+   \                     osal_msg_extract:
+    812          {
+   \   000000   0A12         PUSH.W  R10
+    813            halIntState_t intState;
+    814          
+    815            // Hold off interrupts
+    816            HAL_ENTER_CRITICAL_SECTION(intState);
+   \   000002   0F42         MOV.W   SR, R15
+   \   000004   32C2         dint
+   \   000006   0343         nop
+    817          
+    818            if ( msg_ptr == *q_ptr )
+   \   000008   1A4DFAFF     MOV.W   0xfffa(R13), R10
+   \   00000C   2D9C         CMP.W   @R12, R13
+   \   00000E   0320         JNE     ??osal_msg_extract_0
+    819            {
+    820              // remove from first
+    821              *q_ptr = OSAL_MSG_NEXT( msg_ptr );
+   \   000010   8C4A0000     MOV.W   R10, 0(R12)
+   \   000014   023C         JMP     ??osal_msg_extract_1
+    822            }
+    823            else
+    824            {
+    825              // remove from middle
+    826              OSAL_MSG_NEXT( prev_ptr ) = OSAL_MSG_NEXT( msg_ptr );
+   \                     ??osal_msg_extract_0:
+   \   000016   8E4AFAFF     MOV.W   R10, 0xfffa(R14)
+    827            }
+    828            OSAL_MSG_NEXT( msg_ptr ) = NULL;
+   \                     ??osal_msg_extract_1:
+   \   00001A   8D43FAFF     MOV.W   #0x0, 0xfffa(R13)
+    829            OSAL_MSG_ID( msg_ptr ) = TASK_NO_TASK;
+   \   00001E   FD43FEFF     MOV.B   #0xff, 0xfffe(R13)
+    830          
+    831            // Re-enable interrupts
+    832            HAL_EXIT_CRITICAL_SECTION(intState);
+   \   000022   024F         MOV.W   R15, SR
+   \   000024   0343         NOP
+    833          }
+   \   000026   3A41         POP.W   R10
+   \   000028   1001         RETA
+    834          
+    835          /*********************************************************************
+    836           * @fn      osal_msg_enqueue_max
+    837           *
+    838           * @brief
+    839           *
+    840           *    This function enqueues an OSAL message into an OSAL queue if
+    841           *    the length of the queue is less than max.
+    842           *
+    843           * @param   osal_msg_q_t *q_ptr - OSAL queue
+    844           * @param   void *msg_ptr  - OSAL message
+    845           * @param   uint8 max - maximum length of queue
+    846           *
+    847           * @return  TRUE if message was enqueued, FALSE otherwise
+    848           */
+
+   \                                 In  segment CODE, align 2
+    849          uint8 osal_msg_enqueue_max( osal_msg_q_t *q_ptr, void *msg_ptr, uint8 max )
+   \                     osal_msg_enqueue_max:
+    850          {
+   \   000000   1B15         PUSHM.W #0x2, R11
+    851            void *list;
+    852            uint8 ret = FALSE;
+   \   000002   4F43         MOV.B   #0x0, R15
+    853            halIntState_t intState;
+    854          
+    855            // Hold off interrupts
+    856            HAL_ENTER_CRITICAL_SECTION(intState);
+   \   000004   0A42         MOV.W   SR, R10
+   \   000006   32C2         dint
+   \   000008   0343         nop
+    857          
+    858            // If first message in queue
+    859            if ( *q_ptr == NULL )
+   \   00000A   2B4C         MOV.W   @R12, R11
+   \   00000C   0B93         CMP.W   #0x0, R11
+   \   00000E   0620         JNE     ??osal_msg_enqueue_max_2
+    860            {
+    861              *q_ptr = msg_ptr;
+   \   000010   8C4D0000     MOV.W   R13, 0(R12)
+    862              ret = TRUE;
+   \   000014   0C3C         JMP     ??osal_msg_enqueue_max_3
+    863            }
+    864            else
+    865            {
+    866              // Find end of queue or max
+    867              list = *q_ptr;
+    868              max--;
+    869              while ( (OSAL_MSG_NEXT( list ) != NULL) && (max > 0) )
+   \                     ??osal_msg_enqueue_max_0:
+   \   000016   4E93         CMP.B   #0x0, R14
+   \   000018   0B24         JEQ     ??osal_msg_enqueue_max_4
+    870              {
+    871                list = OSAL_MSG_NEXT( list );
+   \   00001A   0B4C         MOV.W   R12, R11
+    872                max--;
+   \                     ??osal_msg_enqueue_max_2:
+   \   00001C   7E53         ADD.B   #0xff, R14
+    873              }
+   \   00001E   1C4BFAFF     MOV.W   0xfffa(R11), R12
+   \   000022   0C93         CMP.W   #0x0, R12
+   \   000024   F823         JNE     ??osal_msg_enqueue_max_0
+    874          
+    875              // Add message to end of queue if max not reached
+    876              if ( max != 0 )
+   \   000026   4E93         CMP.B   #0x0, R14
+   \   000028   0324         JEQ     ??osal_msg_enqueue_max_4
+    877              {
+    878                OSAL_MSG_NEXT( list ) = msg_ptr;
+   \   00002A   8B4DFAFF     MOV.W   R13, 0xfffa(R11)
+    879                ret = TRUE;
+   \                     ??osal_msg_enqueue_max_3:
+   \   00002E   5F43         MOV.B   #0x1, R15
+    880              }
+    881            }
+    882          
+    883            // Re-enable interrupts
+    884            HAL_EXIT_CRITICAL_SECTION(intState);
+   \                     ??osal_msg_enqueue_max_4:
+   \   000030   024A         MOV.W   R10, SR
+   \   000032   0343         NOP
+    885          
+    886            return ret;
+   \   000034   4C4F         MOV.B   R15, R12
+   \   000036   1A17         POPM.W  #0x2, R11
+   \   000038   1001         RETA
+    887          }
+    888          
+    889          /*********************************************************************
+    890           * @fn      osal_set_event
+    891           *
+    892           * @brief
+    893           *
+    894           *    This function is called to set the event flags for a task. The
+    895           *    event passed in is OR'd into the task's event variable.
+    896           *
+    897           * @param   uint8 task_id - receiving tasks ID
+    898           * @param   uint8 event_flag - what event to set
+    899           *
+    900           * @return  SUCCESS, INVALID_TASK
+    901           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   7C400300     MOV.B   #0x3, R12
+   \   000004   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   024F         MOV.W   R15, SR
+   \   000002   0343         NOP
+   \   000004   4C43         MOV.B   #0x0, R12
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    902          uint8 osal_set_event( uint8 task_id, uint16 event_flag )
+   \                     osal_set_event:
+    903          {
+    904            if ( task_id < tasksCnt )
+   \   000000   5C92....     CMP.B   &tasksCnt, R12
+   \   000004   0B2C         JC      ??osal_set_event_0
+    905            {
+    906              halIntState_t   intState;
+    907              HAL_ENTER_CRITICAL_SECTION(intState);    // Hold off interrupts
+   \   000006   0F42         MOV.W   SR, R15
+   \   000008   32C2         dint
+   \   00000A   0343         nop
+    908              tasksEvents[task_id] |= event_flag;  // Stuff the event bit(s)
+   \   00000C   1E42....     MOV.W   &tasksEvents, R14
+   \   000010   4C4C         MOV.B   R12, R12
+   \   000012   0C5C         RLA.W   R12
+   \   000014   0E5C         ADD.W   R12, R14
+   \   000016   8EDD0000     BIS.W   R13, 0(R14)
+    909              HAL_EXIT_CRITICAL_SECTION(intState);     // Release interrupts
+   \   00001A   ....         JMP     ?Subroutine1
+    910              return ( SUCCESS );
+    911            }
+    912             else
+    913            {
+    914              return ( INVALID_TASK );
+   \                     ??osal_set_event_0:
+   \   00001C   ....         JMP     ?Subroutine4
+   \   00001E   0343         NOP
+    915            }
+    916          }
+    917          
+    918          /*********************************************************************
+    919           * @fn      osal_clear_event
+    920           *
+    921           * @brief
+    922           *
+    923           *    This function is called to clear the event flags for a task. The
+    924           *    event passed in is masked out of the task's event variable.
+    925           *
+    926           * @param   uint8 task_id - receiving tasks ID
+    927           * @param   uint8 event_flag - what event to clear
+    928           *
+    929           * @return  SUCCESS, INVALID_TASK
+    930           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    931          uint8 osal_clear_event( uint8 task_id, uint16 event_flag )
+   \                     osal_clear_event:
+    932          {
+    933            if ( task_id < tasksCnt )
+   \   000000   5C92....     CMP.B   &tasksCnt, R12
+   \   000004   0B2C         JC      ??osal_clear_event_0
+    934            {
+    935              halIntState_t   intState;
+    936              HAL_ENTER_CRITICAL_SECTION(intState);    // Hold off interrupts
+   \   000006   0F42         MOV.W   SR, R15
+   \   000008   32C2         dint
+   \   00000A   0343         nop
+    937              tasksEvents[task_id] &= ~(event_flag);   // Clear the event bit(s)
+   \   00000C   1E42....     MOV.W   &tasksEvents, R14
+   \   000010   4C4C         MOV.B   R12, R12
+   \   000012   0C5C         RLA.W   R12
+   \   000014   0E5C         ADD.W   R12, R14
+   \   000016   8ECD0000     BIC.W   R13, 0(R14)
+    938              HAL_EXIT_CRITICAL_SECTION(intState);     // Release interrupts
+   \   00001A   ....         JMP     ?Subroutine1
+    939              return ( SUCCESS );
+    940            }
+    941             else
+    942            {
+    943              return ( INVALID_TASK );
+   \                     ??osal_clear_event_0:
+   \   00001C                REQUIRE ?Subroutine4
+   \   00001C                // Fall through to label ?Subroutine4
+    944            }
+    945          }
+    946          
+    947          /*********************************************************************
+    948           * @fn      osal_isr_register
+    949           *
+    950           * @brief
+    951           *
+    952           *   This function is called to register a service routine with an
+    953           *   interrupt. When the interrupt occurs, this service routine is called.
+    954           *
+    955           * @param   uint8 interrupt_id - Interrupt number
+    956           * @param   void (*isr_ptr)( uint8* ) - function pointer to ISR
+    957           *
+    958           * @return  SUCCESS, INVALID_INTERRUPT_ID,
+    959           */
+
+   \                                 In  segment CODE, align 2
+    960          uint8 osal_isr_register( uint8 interrupt_id, void (*isr_ptr)( uint8* ) )
+   \                     osal_isr_register:
+    961          {
+    962            // Remove these statements when functionality is complete
+    963            (void)interrupt_id;
+    964            (void)isr_ptr;
+    965            return ( SUCCESS );
+   \   000000   4C43         MOV.B   #0x0, R12
+   \   000002   1001         RETA
+    966          }
+    967          
+    968          /*********************************************************************
+    969           * @fn      osal_int_enable
+    970           *
+    971           * @brief
+    972           *
+    973           *   This function is called to enable an interrupt. Once enabled,
+    974           *   occurrence of the interrupt causes the service routine associated
+    975           *   with that interrupt to be called.
+    976           *
+    977           *   If INTS_ALL is the interrupt_id, interrupts (in general) are enabled.
+    978           *   If a single interrupt is passed in, then interrupts still have
+    979           *   to be enabled with another call to INTS_ALL.
+    980           *
+    981           * @param   uint8 interrupt_id - Interrupt number
+    982           *
+    983           * @return  SUCCESS or INVALID_INTERRUPT_ID
+    984           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7C400700     MOV.B   #0x7, R12
+   \   000004   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    985          uint8 osal_int_enable( uint8 interrupt_id )
+   \                     osal_int_enable:
+    986          {
+    987          
+    988            if ( interrupt_id == INTS_ALL )
+   \   000000   7C93         CMP.B   #0xff, R12
+   \   000002   0320         JNE     ??osal_int_enable_0
+    989            {
+    990              HAL_ENABLE_INTERRUPTS();
+   \   000004   32D2         eint
+    991              return ( SUCCESS );
+   \   000006   4C43         MOV.B   #0x0, R12
+   \   000008   1001         RETA
+    992            }
+    993            else
+    994            {
+    995              return ( INVALID_INTERRUPT_ID );
+   \                     ??osal_int_enable_0:
+   \   00000A   ....         JMP     ?Subroutine3
+   \   00000C   0343         NOP
+    996            }
+    997          }
+    998          
+    999          /*********************************************************************
+   1000           * @fn      osal_int_disable
+   1001           *
+   1002           * @brief
+   1003           *
+   1004           *   This function is called to disable an interrupt. When a disabled
+   1005           *   interrupt occurs, the service routine associated with that
+   1006           *   interrupt is not called.
+   1007           *
+   1008           *   If INTS_ALL is the interrupt_id, interrupts (in general) are disabled.
+   1009           *   If a single interrupt is passed in, then just that interrupt is disabled.
+   1010           *
+   1011           * @param   uint8 interrupt_id - Interrupt number
+   1012           *
+   1013           * @return  SUCCESS or INVALID_INTERRUPT_ID
+   1014           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   1015          uint8 osal_int_disable( uint8 interrupt_id )
+   \                     osal_int_disable:
+   1016          {
+   1017          
+   1018            if ( interrupt_id == INTS_ALL )
+   \   000000   7C93         CMP.B   #0xff, R12
+   \   000002   0420         JNE     ??osal_int_disable_0
+   1019            {
+   1020              HAL_DISABLE_INTERRUPTS();
+   \   000004   32C2         dint
+   \   000006   0343         nop
+   1021              return ( SUCCESS );
+   \   000008   4C43         MOV.B   #0x0, R12
+   \   00000A   1001         RETA
+   1022            }
+   1023            else
+   1024            {
+   1025              return ( INVALID_INTERRUPT_ID );
+   \                     ??osal_int_disable_0:
+   \   00000C                REQUIRE ?Subroutine3
+   \   00000C                // Fall through to label ?Subroutine3
+   1026            }
+   1027          }
+   1028          
+   1029          /*********************************************************************
+   1030           * @fn      osal_init_system
+   1031           *
+   1032           * @brief
+   1033           *
+   1034           *   This function initializes the "task" system by creating the
+   1035           *   tasks defined in the task table (OSAL_Tasks.h).
+   1036           *
+   1037           * @param   void
+   1038           *
+   1039           * @return  SUCCESS
+   1040           */
+
+   \                                 In  segment CODE, align 2
+   1041          uint8 osal_init_system( void )
+   \                     osal_init_system:
+   1042          {
+   1043            // Initialize the Memory Allocation System
+   1044            osal_mem_init();
+   \   000000   ........     CALLA   #osal_mem_init
+   1045          
+   1046            // Initialize the message queue
+   1047            osal_qHead = NULL;
+   \   000004   8243....     MOV.W   #0x0, &osal_qHead
+   1048          
+   1049            // Initialize the timers
+   1050            osalTimerInit();
+   \   000008   ........     CALLA   #osalTimerInit
+   1051          
+   1052            // Initialize the Power Management System
+   1053            osal_pwrmgr_init();
+   \   00000C   ........     CALLA   #osal_pwrmgr_init
+   1054          
+   1055            // Initialize the system tasks.
+   1056            osalInitTasks();
+   \   000010   ........     CALLA   #osalInitTasks
+   1057          
+   1058            // Setup efficient search for the first free block of heap.
+   1059            osal_mem_kick();
+   \   000014   ........     CALLA   #osal_mem_kick
+   1060          
+   1061            return ( SUCCESS );
+   \   000018   4C43         MOV.B   #0x0, R12
+   \   00001A   1001         RETA
+   1062          }
+   1063          
+   1064          /*********************************************************************
+   1065           * @fn      osal_start_system
+   1066           *
+   1067           * @brief
+   1068           *
+   1069           *   This function is the main loop function of the task system (if
+   1070           *   ZBIT and UBIT are not defined). This Function doesn't return.
+   1071           *
+   1072           * @param   void
+   1073           *
+   1074           * @return  none
+   1075           */
+
+   \                                 In  segment CODE, align 2
+   1076          void osal_start_system( void )
+   \                     osal_start_system:
+   \                     ??osal_start_system_0:
+   1077          {
+   1078          #if !defined ( ZBIT ) && !defined ( UBIT )
+   1079            for(;;)  // Forever Loop
+   1080          #endif
+   1081            {
+   1082              osal_run_system();
+   \   000000   ........     CALLA   #osal_run_system
+   \   000004   FD3F         JMP     ??osal_start_system_0
+   \   000006   0343         NOP
+   1083            }
+   1084          }
+   1085          
+   1086          /*********************************************************************
+   1087           * @fn      osal_run_system
+   1088           *
+   1089           * @brief
+   1090           *
+   1091           *   This function will make one pass through the OSAL taskEvents table
+   1092           *   and call the task_event_processor() function for the first task that
+   1093           *   is found with at least one event pending. If there are no pending
+   1094           *   events (all tasks), this function puts the processor into Sleep.
+   1095           *
+   1096           * @param   void
+   1097           *
+   1098           * @return  none
+   1099           */
+
+   \                                 In  segment CODE, align 2
+   1100          void osal_run_system( void )
+   \                     osal_run_system:
+   1101          {
+   \   000000   1B15         PUSHM.W #0x2, R11
+   1102            uint8 idx = 0;
+   \   000002   4A43         MOV.B   #0x0, R10
+   1103          
+   1104          #ifndef HAL_BOARD_CC2538
+   1105            osalTimeUpdate();
+   \   000004   ........     CALLA   #osalTimeUpdate
+   1106          #endif
+   1107            
+   1108            Hal_ProcessPoll();
+   \   000008   ........     CALLA   #Hal_ProcessPoll
+   1109          
+   1110            do {
+   1111              if (tasksEvents[idx])  // Task is highest priority that is ready.
+   \                     ??osal_run_system_0:
+   \   00000C   1F42....     MOV.W   &tasksEvents, R15
+   \   000010   4B4A         MOV.B   R10, R11
+   \   000012   0B5B         RLA.W   R11
+   \   000014   0F5B         ADD.W   R11, R15
+   \   000016   8F930000     CMP.W   #0x0, 0(R15)
+   \   00001A   0420         JNE     ??osal_run_system_1
+   1112              {
+   1113                break;
+   1114              }
+   1115            } while (++idx < tasksCnt);
+   \   00001C   5A53         ADD.B   #0x1, R10
+   \   00001E   5A92....     CMP.B   &tasksCnt, R10
+   \   000022   F42B         JNC     ??osal_run_system_0
+   1116          
+   1117            if (idx < tasksCnt)
+   \                     ??osal_run_system_1:
+   \   000024   5A92....     CMP.B   &tasksCnt, R10
+   \   000028   232C         JC      ??osal_run_system_2
+   1118            {
+   1119              uint16 events;
+   1120              halIntState_t intState;
+   1121          
+   1122              HAL_ENTER_CRITICAL_SECTION(intState);
+   \   00002A   0F42         MOV.W   SR, R15
+   \   00002C   32C2         dint
+   \   00002E   0343         nop
+   1123              events = tasksEvents[idx];
+   \   000030   4A4A         MOV.B   R10, R10
+   \   000032   0B4A         MOV.W   R10, R11
+   \   000034   0B5B         RLA.W   R11
+   \   000036   1E42....     MOV.W   &tasksEvents, R14
+   \   00003A   0E5B         ADD.W   R11, R14
+   \   00003C   2D4E         MOV.W   @R14, R13
+   1124              tasksEvents[idx] = 0;  // Clear the Events for this task.
+   \   00003E   8E430000     MOV.W   #0x0, 0(R14)
+   1125              HAL_EXIT_CRITICAL_SECTION(intState);
+   \   000042   024F         MOV.W   R15, SR
+   \   000044   0343         NOP
+   1126          
+   1127              activeTaskID = idx;
+   \   000046   C24A....     MOV.B   R10, &activeTaskID
+   1128              events = (tasksArr[idx])( idx, events );
+   \   00004A   4C4A         MOV.B   R10, R12
+   \   00004C   5A06         RLAM.W  #0x2, R10
+   \   00004E   1E4A....     MOV.W   tasksArr(R10), R14
+   \   000052   1F4A....     MOV.W   tasksArr + 2(R10), R15
+   \   000056   ........     CALLA   #?IndCallR15
+   1129              activeTaskID = TASK_NO_TASK;
+   \   00005A   F243....     MOV.B   #0xff, &activeTaskID
+   1130          
+   1131              HAL_ENTER_CRITICAL_SECTION(intState);
+   \   00005E   0F42         MOV.W   SR, R15
+   \   000060   32C2         dint
+   \   000062   0343         nop
+   1132              tasksEvents[idx] |= events;  // Add back unprocessed events to the current task.
+   \   000064   1E42....     MOV.W   &tasksEvents, R14
+   \   000068   0E5B         ADD.W   R11, R14
+   \   00006A   8EDC0000     BIS.W   R12, 0(R14)
+   1133              HAL_EXIT_CRITICAL_SECTION(intState);
+   \   00006E   024F         MOV.W   R15, SR
+   1134            }
+   1135          #if defined( POWER_SAVING )
+   1136            else  // Complete pass through all task events with no activity?
+   1137            {
+   1138              osal_pwrmgr_powerconserve();  // Put the processor/system into sleep
+   1139            }
+   1140          #endif
+   1141          
+   1142            /* Yield in case cooperative scheduling is being used. */
+   1143          #if defined (configUSE_PREEMPTION) && (configUSE_PREEMPTION == 0)
+   1144            {
+   1145              osal_task_yield();
+   1146            }
+   1147          #endif
+   1148          }
+   \                     ??osal_run_system_2:
+   \   000070   1A17         POPM.W  #0x2, R11
+   \   000072   1001         RETA
+   1149          
+   1150          /*********************************************************************
+   1151           * @fn      osal_buffer_uint32
+   1152           *
+   1153           * @brief
+   1154           *
+   1155           *   Buffer an uint32 value - LSB first.
+   1156           *
+   1157           * @param   buf - buffer
+   1158           * @param   val - uint32 value
+   1159           *
+   1160           * @return  pointer to end of destination buffer
+   1161           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   CC4F0000     MOV.B   R15, 0(R12)
+   \   000004   1C53         ADD.W   #0x1, R12
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   1162          uint8* osal_buffer_uint32( uint8 *buf, uint32 val )
+   \                     osal_buffer_uint32:
+   1163          {
+   1164            *buf++ = BREAK_UINT32( val, 0 );
+   \   000000   ........     CALLA   #?Subroutine5
+   1165            *buf++ = BREAK_UINT32( val, 1 );
+   1166            *buf++ = BREAK_UINT32( val, 2 );
+   \                     ??CrossCallReturnLabel_1:
+   \   000004   CC4F0000     MOV.B   R15, 0(R12)
+   \   000008   1C53         ADD.W   #0x1, R12
+   1167            *buf++ = BREAK_UINT32( val, 3 );
+   \   00000A   8F10         SWPB    R15
+   \   00000C   ....         JMP     ?Subroutine0
+   \   00000E   0343         NOP
+   1168          
+   1169            return buf;
+   1170          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine5:
+   \   000000   CC4E0000     MOV.B   R14, 0(R12)
+   \   000004   1C53         ADD.W   #0x1, R12
+   \   000006   0D4E         MOV.W   R14, R13
+   \   000008                RPT     #0x8
+   \   000008   47190D10     RRUX.W  R13
+   \   00000C   CC4D0000     MOV.B   R13, 0(R12)
+   \   000010   1C53         ADD.W   #0x1, R12
+   \   000012   1001         RETA
+   1171          
+   1172          /*********************************************************************
+   1173           * @fn      osal_buffer_uint24
+   1174           *
+   1175           * @brief
+   1176           *
+   1177           *   Buffer an uint24 value - LSB first. Note that type uint24 is
+   1178           *   typedef to uint32 in comdef.h
+   1179           *
+   1180           * @param   buf - buffer
+   1181           * @param   val - uint24 value
+   1182           *
+   1183           * @return  pointer to end of destination buffer
+   1184           */
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   1185          uint8* osal_buffer_uint24( uint8 *buf, uint24 val )
+   \                     osal_buffer_uint24:
+   1186          {
+   1187            *buf++ = BREAK_UINT32( val, 0 );
+   \   000000   ........     CALLA   #?Subroutine5
+   1188            *buf++ = BREAK_UINT32( val, 1 );
+   1189            *buf++ = BREAK_UINT32( val, 2 );
+   \                     ??CrossCallReturnLabel_0:
+   \   000004                REQUIRE ?Subroutine0
+   \   000004                // Fall through to label ?Subroutine0
+   1190          
+   1191            return buf;
+   1192          }
+   1193          
+   1194          /*********************************************************************
+   1195           * @fn      osal_isbufset
+   1196           *
+   1197           * @brief
+   1198           *
+   1199           *   Is all of the array elements set to a value?
+   1200           *
+   1201           * @param   buf - buffer to check
+   1202           * @param   val - value to check each array element for
+   1203           * @param   len - length to check
+   1204           *
+   1205           * @return  TRUE if all "val"
+   1206           *          FALSE otherwise
+   1207           */
+
+   \                                 In  segment CODE, align 2
+   1208          uint8 osal_isbufset( uint8 *buf, uint8 val, uint8 len )
+   \                     osal_isbufset:
+   1209          {
+   \   000000   0A12         PUSH.W  R10
+   1210            uint8 x;
+   1211          
+   1212            if ( buf == NULL )
+   \   000002   0C93         CMP.W   #0x0, R12
+   \   000004   0A24         JEQ     ??osal_isbufset_1
+   1213            {
+   1214              return ( FALSE );
+   1215            }
+   1216          
+   1217            for ( x = 0; x < len; x++ )
+   \   000006   4F43         MOV.B   #0x0, R15
+   \   000008   013C         JMP     ??osal_isbufset_2
+   \                     ??osal_isbufset_0:
+   \   00000A   5F53         ADD.B   #0x1, R15
+   \                     ??osal_isbufset_2:
+   \   00000C   4F9E         CMP.B   R14, R15
+   \   00000E   072C         JC      ??osal_isbufset_3
+   1218            {
+   1219              // Check for non-initialized value
+   1220              if ( buf[x] != val )
+   \   000010   0A4C         MOV.W   R12, R10
+   \   000012   0A5F         ADD.W   R15, R10
+   \   000014   CA9D0000     CMP.B   R13, 0(R10)
+   \   000018   F827         JEQ     ??osal_isbufset_0
+   1221              {
+   1222                return ( FALSE );
+   \                     ??osal_isbufset_1:
+   \   00001A   4C43         MOV.B   #0x0, R12
+   \   00001C   013C         JMP     ??osal_isbufset_4
+   1223              }
+   1224            }
+   1225            return ( TRUE );
+   \                     ??osal_isbufset_3:
+   \   00001E   5C43         MOV.B   #0x1, R12
+   \                     ??osal_isbufset_4:
+   \   000020   3A41         POP.W   R10
+   \   000022   1001         RETA
+   1226          }
+   1227          
+   1228          /*********************************************************************
+   1229           * @fn      osal_self
+   1230           *
+   1231           * @brief
+   1232           *
+   1233           *   This function returns the task ID of the current (active) task.
+   1234           *
+   1235           * @param   void
+   1236           *
+   1237           * @return   active task ID or TASK_NO_TASK if no task is active
+   1238           */
+
+   \                                 In  segment CODE, align 2
+   1239          uint8 osal_self( void )
+   \                     osal_self:
+   1240          {
+   1241            return ( activeTaskID );
+   \   000000   5C42....     MOV.B   &activeTaskID, R12
+   \   000004   1001         RETA
+   1242          }
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for activeTaskID>`:
+   \   000000   FF           DC8 255
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \   000000   00           DC8 ""
+   \   000001   000000000000 DC8 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            000000      
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \   000000   00           DC8 ""
+   \   000001   000000000000 DC8 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            000000      
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \   000000   00           DC8 ""
+   \   000001   000000000000 DC8 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            000000      
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+   \                     `?<Constant "0">`:
+   \   000000   3000         DC8 "0"
+   1243          
+   1244          /*********************************************************************
+   1245           */
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+     50   _ltoa
+       50   -> _itoa
+       50   -> strcat
+       50   -> strcpy
+       50   -> strlen
+      4   osal_buffer_uint24
+      4   osal_buffer_uint32
+      4   osal_build_uint16
+      8   osal_build_uint32
+      4   osal_clear_event
+      4   osal_init_system
+        4   -> osalInitTasks
+        4   -> osalTimerInit
+        4   -> osal_mem_init
+        4   -> osal_mem_kick
+        4   -> osal_pwrmgr_init
+      4   osal_int_disable
+      4   osal_int_enable
+      6   osal_isbufset
+      4   osal_isr_register
+      4   osal_memcmp
+      4   osal_memcpy
+     12   osal_memdup
+       12   -> osal_mem_alloc
+       12   -> osal_memcpy
+      4   osal_memset
+        4   -> memset
+      6   osal_msg_allocate
+        6   -> osal_mem_alloc
+      4   osal_msg_deallocate
+        4   -> osal_mem_free
+      4   osal_msg_dequeue
+      4   osal_msg_enqueue
+      8   osal_msg_enqueue_max
+      6   osal_msg_enqueue_push
+        6   -> osal_msg_deallocate
+        6   -> osal_msg_enqueue
+        6   -> osal_msg_push
+        6   -> osal_set_event
+      6   osal_msg_extract
+      4   osal_msg_find
+      4   osal_msg_push
+      4   osal_msg_push_front
+        4   -> osal_msg_enqueue_push
+     12   osal_msg_receive
+       12   -> osal_clear_event
+       12   -> osal_msg_extract
+       12   -> osal_set_event
+      4   osal_msg_send
+        4   -> osal_msg_enqueue_push
+      4   osal_rand
+        4   -> Onboard_rand
+      4   osal_revmemcpy
+      8   osal_run_system
+        8   -- Indirect call
+        8   -> Hal_ProcessPoll
+        8   -> osalTimeUpdate
+      4   osal_self
+      4   osal_set_event
+      4   osal_start_system
+        4   -> osal_run_system
+      4   osal_strlen
+        4   -> strlen
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      10  ?<Constant "">
+      10  ?<Constant "">_1
+      10  ?<Constant "">_2
+       2  ?<Constant "0">
+       1  ?<Initializer for activeTaskID>
+       6  ??Subroutine11_0
+       8  ?Subroutine0
+       8  ?Subroutine1
+       2  ?Subroutine10
+       8  ?Subroutine2
+       6  ?Subroutine3
+       6  ?Subroutine4
+      20  ?Subroutine5
+      10  ?Subroutine6
+       8  ?Subroutine7
+      14  ?Subroutine8
+      16  ?Subroutine9
+     346  _ltoa
+       1  activeTaskID
+       4  osal_buffer_uint24
+      16  osal_buffer_uint32
+      16  osal_build_uint16
+      72  osal_build_uint32
+      28  osal_clear_event
+      28  osal_init_system
+      12  osal_int_disable
+      14  osal_int_enable
+      36  osal_isbufset
+       4  osal_isr_register
+      22  osal_memcmp
+      18  osal_memcpy
+      32  osal_memdup
+       6  osal_memset
+      44  osal_msg_allocate
+      32  osal_msg_deallocate
+      30  osal_msg_dequeue
+      42  osal_msg_enqueue
+      58  osal_msg_enqueue_max
+      88  osal_msg_enqueue_push
+      42  osal_msg_extract
+      36  osal_msg_find
+      20  osal_msg_push
+       6  osal_msg_push_front
+      90  osal_msg_receive
+       6  osal_msg_send
+       2  osal_qHead
+       4  osal_rand
+      24  osal_revmemcpy
+     116  osal_run_system
+       6  osal_self
+      32  osal_set_event
+       8  osal_start_system
+       4  osal_strlen
+
+ 
+ 1 454 bytes in segment CODE
+    32 bytes in segment DATA16_C
+     1 byte  in segment DATA16_I
+     1 byte  in segment DATA16_ID
+     2 bytes in segment DATA16_Z
+ 
+ 1 454 bytes of CODE  memory
+    33 bytes of CONST memory
+     3 bytes of DATA  memory
+
+Errors: none
+Warnings: none

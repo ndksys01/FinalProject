@@ -1,0 +1,646 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       08/Apr/2014  21:14:23 #
+# Copyright 1996-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  small                                                   #
+#    Source file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\Source\zcl_ha.c               #
+#    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                   #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\zap.cfg" (-DZAP_PHY_SPI=1                        #
+#                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE    #
+#                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                  #
+#                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE               #
+#                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE            #
+#                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE            #
+#                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG            #
+#                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC               #
+#                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC          #
+#                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0         #
+#                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                 #
+#                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000           #
+#                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f   #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE    #
+#                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                 #
+#                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4          #
+#                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10         #
+#                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10        #
+#                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING -DZCL_PRICING  #
+#                     -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU                 #
+#                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home   #
+#                     1.2.0\Projects\zstack\ZAP\Source\zcl_ha.c" -D           #
+#                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D       #
+#                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC "C:\Texas  #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\List\" -lA           #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\" --remarks --diag_suppress            #
+#                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\Obj\" --debug        #
+#                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\" -I "C:\Texas Instruments\Z-Stack   #
+#                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\. #
+#                     .\Source\" -I "C:\Texas Instruments\Z-Stack Home        #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\" -I "C:\Texas Instruments\Z-Stack Home          #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\target\MSP5438ZAP\" -I          #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\include\" -I "C:\Texas          #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\mac\includ #
+#                     e\" -I "C:\Texas Instruments\Z-Stack Home               #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\mt\" -I "C:\Texas                   #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\osal\inclu #
+#                     de\" -I "C:\Texas Instruments\Z-Stack Home              #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas      #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\services\s #
+#                     addr\" -I "C:\Texas Instruments\Z-Stack Home            #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\services\sdata\" -I "C:\Texas       #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\af\" #
+#                      -I "C:\Texas Instruments\Z-Stack Home                  #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\nwk\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sapi #
+#                     \" -I "C:\Texas Instruments\Z-Stack Home                #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\sec\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sys\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\zcl\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\zdo\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\zmac\" -I "C:\Texas                 #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w\" #
+#                      --core=430X --data_model=small -Ohz --multiplier=32    #
+#                     --multiplier_location=4C0 --require_prototypes          #
+#                     --hw_workaround=CPU40 --hw_workaround=CPU39             #
+#    List file     =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\zcl_ha.lst                             #
+#    Object file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\Obj\zcl_ha.r43                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\Source\zcl_ha.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_ha.c
+      3            Revised:        $Date: 2013-10-21 12:15:10 -0700 (Mon, 21 Oct 2013) $
+      4            Revision:       $Revision: 35738 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2013 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "ZComDef.h"
+     44          #include "OSAL.h"
+     45          
+     46          #include "zcl.h"
+     47          #include "zcl_general.h"
+     48          #include "zcl_closures.h"
+     49          #include "zcl_HVAC.h"
+     50          #include "zcl_ss.h"
+     51          #include "zcl_ms.h"
+     52          #include "zcl_lighting.h"
+     53          #include "zcl_ha.h"
+     54          
+     55          /* HAL */
+     56          #include "hal_lcd.h"
+     57          
+     58          /*********************************************************************
+     59           * MACROS
+     60           */
+     61          
+     62          /*********************************************************************
+     63           * CONSTANTS
+     64           */
+     65          
+     66          /*********************************************************************
+     67           * TYPEDEFS
+     68           */
+     69          
+     70          /*********************************************************************
+     71           * GLOBAL VARIABLES
+     72           */
+     73          
+     74          /*********************************************************************
+     75           * EXTERNAL VARIABLES
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * EXTERNAL FUNCTIONS
+     80           */
+     81          
+     82          /*********************************************************************
+     83           * LOCAL VARIABLES
+     84           */
+     85          
+     86          /*********************************************************************
+     87           * STATUS STRINGS
+     88           */
+     89          // NwkInfo displayed on line 1 once on the network
+     90          // 0123456789012345
+     91          // Zc: PPPP CH ADDR
+     92          // Zr: PPPP CH ADDR
+     93          // Zed:PPPP CH ADDR
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     94          const char NwkInfoZcStr[]  = "ZC: ";
+   \                     NwkInfoZcStr:
+   \   000000   5A433A2000   DC8 "ZC: "
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     95          const char NwkInfoZrStr[]  = "ZR: ";
+   \                     NwkInfoZrStr:
+   \   000000   5A523A2000   DC8 "ZR: "
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     96          const char NwkInfoZedStr[] = "Zed:";
+   \                     NwkInfoZedStr:
+   \   000000   5A65643A00   DC8 "Zed:"
+
+   \                                 In  segment DATA16_C, align 2, align-sorted
+     97          const char * const NwkInfoStrs[] = { NwkInfoZcStr, NwkInfoZrStr, NwkInfoZedStr };
+   \                     NwkInfoStrs:
+   \   000000   ............ DC16 NwkInfoZcStr, NwkInfoZrStr, NwkInfoZedStr
+     98          
+     99          /*********************************************************************
+    100           * LOCAL FUNCTIONS
+    101           */
+    102          
+    103          /*********************************************************************
+    104           * @fn      zclHA_Init
+    105           *
+    106           * @brief   Register the Simple descriptor with the HA profile.
+    107           *          This function also registers the profile's cluster
+    108           *          conversion table.
+    109           *
+    110           * @param   simpleDesc - a pointer to a valid SimpleDescriptionFormat_t, must not be NULL.
+    111           *
+    112           * @return  none
+    113           */
+
+   \                                 In  segment CODE, align 2
+    114          void zclHA_Init( SimpleDescriptionFormat_t *simpleDesc )
+   \                     zclHA_Init:
+    115          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   0A4C         MOV.W   R12, R10
+    116            endPointDesc_t *epDesc;
+    117          
+    118            // Register the application's endpoint descriptor
+    119            //  - This memory is allocated and never freed.
+    120            epDesc = osal_mem_alloc( sizeof ( endPointDesc_t ) );
+   \   000004   3C42         MOV.W   #0x8, R12
+   \   000006   ........     CALLA   #osal_mem_alloc
+    121            if ( epDesc )
+   \   00000A   0C93         CMP.W   #0x0, R12
+   \   00000C   0B24         JEQ     ??zclHA_Init_0
+    122            {
+    123              // Fill out the endpoint description.
+    124              epDesc->endPoint = simpleDesc->EndPoint;
+   \   00000E   EC4A0000     MOV.B   @R10, 0(R12)
+    125              epDesc->task_id = &zcl_TaskID;   // all messages get sent to ZCL first
+   \   000012   BC40....0200 MOV.W   #zcl_TaskID, 0x2(R12)
+    126              epDesc->simpleDesc = simpleDesc;
+   \   000018   8C4A0400     MOV.W   R10, 0x4(R12)
+    127              epDesc->latencyReq = noLatencyReqs;
+   \   00001C   CC430600     MOV.B   #0x0, 0x6(R12)
+    128          
+    129              // Register the endpoint description with the AF
+    130              afRegister( epDesc );
+   \   000020   ........     CALLA   #afRegister
+    131            }
+    132          }
+   \                     ??zclHA_Init_0:
+   \   000024   3A41         POP.W   R10
+   \   000026   1001         RETA
+    133          
+    134          /*********************************************************************
+    135           * @fn      zclHA_isbit
+    136           *
+    137           * @brief   Returns TRUE if the index bit is set
+    138           *
+    139           * @param   pArray   - array with bits in it
+    140           *          bitIndex - index into the array of bits
+    141           *
+    142           * @return  TRUE if index bit is set
+    143           */
+
+   \                                 In  segment CODE, align 2
+    144          bool zclHA_isbit(uint8 *pArray, uint8 bitIndex)
+   \                     zclHA_isbit:
+    145          {
+    146            uint8 bit;
+    147            bit = ( 1 << ( bitIndex & 0x7 ) );
+    148            if( pArray[bitIndex >> 3] & bit )
+   \   000000   4E4D         MOV.B   R13, R14
+   \   000002                RPT     #0x3
+   \   000002   42194E10     RRUX.B  R14
+   \   000006   0C5E         ADD.W   R14, R12
+   \   000008   6E4C         MOV.B   @R12, R14
+   \   00000A   7DF00700     AND.B   #0x7, R13
+   \   00000E   5D83         SUB.B   #0x1, R13
+   \   000010   0230         JN      ??zclHA_isbit_0
+   \   000012                RPT     R13
+   \   000012   CD194E10     RRUX.B  R14
+   \                     ??zclHA_isbit_0:
+   \   000016   5EB3         BIT.B   #0x1, R14
+   \   000018   0224         JEQ     ??zclHA_isbit_1
+    149              return TRUE;
+   \   00001A   5C43         MOV.B   #0x1, R12
+   \   00001C   1001         RETA
+    150            return FALSE;
+   \                     ??zclHA_isbit_1:
+   \   00001E   4C43         MOV.B   #0x0, R12
+   \   000020   1001         RETA
+    151          }
+    152          
+    153          /*********************************************************************
+    154           * @fn      zclHA_setbit
+    155           *
+    156           * @brief   Sets a bit in a bit array
+    157           *
+    158           * @param   pArray   - array with bits in it
+    159           *          bitIndex - index into the array of bits
+    160           *
+    161           * @return  none
+    162           */
+
+   \                                 In  segment CODE, align 2
+    163          void zclHA_setbit(uint8 *pArray, uint8 bitIndex)
+   \                     zclHA_setbit:
+    164          {
+    165            uint8 bit;
+    166            bit = ( 1 << ( bitIndex & 0x7 ) );
+    167            pArray[bitIndex >> 3] |= bit;
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_1:
+   \   000004   CCDE0000     BIS.B   R14, 0(R12)
+    168          }
+   \   000008   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   4E4D         MOV.B   R13, R14
+   \   000002                RPT     #0x3
+   \   000002   42194E10     RRUX.B  R14
+   \   000006   0C5E         ADD.W   R14, R12
+   \   000008   5E43         MOV.B   #0x1, R14
+   \   00000A   7DF00700     AND.B   #0x7, R13
+   \   00000E   5D83         SUB.B   #0x1, R13
+   \   000010   0230         JN      ??zclHA_clearbit_0
+   \   000012                RPT     R13
+   \   000012   CD184E5E     RLAX.B  R14
+   \                     ??zclHA_clearbit_0:
+   \   000016   1001         RETA
+    169          
+    170          /*********************************************************************
+    171           * @fn      zclHA_clearbit
+    172           *
+    173           * @brief   clears a bit in a bit array
+    174           *
+    175           * @param   pArray   - array with bits in it
+    176           *          bitIndex - index into the array of bits
+    177           *
+    178           * @return  none
+    179           */
+
+   \                                 In  segment CODE, align 2
+    180          void zclHA_clearbit(uint8 *pArray, uint8 bitIndex)
+   \                     zclHA_clearbit:
+    181          {
+    182            uint8 bit;
+    183            bit = ( 1 << ( bitIndex & 0x7 ) );
+    184            pArray[bitIndex >> 3] &= (~(unsigned)bit);
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_0:
+   \   000004   CCCE0000     BIC.B   R14, 0(R12)
+    185          }
+   \   000008   1001         RETA
+    186          
+    187          /*********************************************************************
+    188           * @fn      zclHA_uint16toa
+    189           *
+    190           * @brief   Converts from a uint16 to ascii hex string.
+    191           *          The # will be exactly 4 hex digits (e.g. 0x0000 or 0x1E3F).
+    192           *          NULL terminates the string.
+    193           *
+    194           * @param   u - Number to be converted
+    195           *          string - pointer to coverted string
+    196           *
+    197           * @return  none
+    198           */
+
+   \                                 In  segment CODE, align 2
+    199          void zclHA_uint16toa(uint16 u, char *string)
+   \                     zclHA_uint16toa:
+    200          {
+    201            // add preceding zeros
+    202            if ( u < 0x1000 )
+   \   000000   3C900010     CMP.W   #0x1000, R12
+   \   000004   ........     CALLA   #?Subroutine1
+    203            {
+    204              *string++ = '0';
+    205            }
+    206          
+    207            if ( u < 0x0100 )
+   \                     ??CrossCallReturnLabel_2:
+   \   000008   3C900001     CMP.W   #0x100, R12
+   \   00000C   ........     CALLA   #?Subroutine1
+    208            {
+    209              *string++ = '0';
+    210            }
+    211          
+    212            if ( u < 0x0010 )
+   \                     ??CrossCallReturnLabel_3:
+   \   000010   3C901000     CMP.W   #0x10, R12
+   \   000014   ........     CALLA   #?Subroutine1
+    213            {
+    214              *string++ = '0';
+    215            }
+    216          
+    217            _ltoa((unsigned long)u, (unsigned char *)string, 16);
+   \                     ??CrossCallReturnLabel_4:
+   \   000018   7F401000     MOV.B   #0x10, R15
+   \   00001C   0E4D         MOV.W   R13, R14
+   \   00001E   0D43         MOV.W   #0x0, R13
+   \   000020   ........     BRA     #_ltoa
+    218          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   042C         JC      ??zclHA_uint16toa_0
+   \   000002   FD4030000000 MOV.B   #0x30, 0(R13)
+   \   000008   1D53         ADD.W   #0x1, R13
+   \                     ??zclHA_uint16toa_0:
+   \   00000A   1001         RETA
+    219          
+    220          /*********************************************************************
+    221           * @fn      zclHA_uint8toa
+    222           *
+    223           * @brief   Converts from a uint8 to ascii decimal string.
+    224           *          The # will be exactly 3 digits (e.g. "123", " 64", "  0"), preceded by spaces.
+    225           *          No null terminator.
+    226           *
+    227           * @param   b - Byte to be converted
+    228           *          string - pointer to coverted string
+    229           *
+    230           * @return  none
+    231           */
+
+   \                                 In  segment CODE, align 2
+    232          void zclHA_uint8toa(uint8 b, char *string)
+   \                     zclHA_uint8toa:
+    233          {
+   \   000000   3B15         PUSHM.W #0x4, R11
+   \   000002   4A4C         MOV.B   R12, R10
+   \   000004   0B4D         MOV.W   R13, R11
+    234            // write the level (up to 3 digits, pre-padded with spaces)
+    235            string[0] = string[1] = string[2] = '0';
+   \   000006   78403000     MOV.B   #0x30, R8
+   \   00000A   CD480200     MOV.B   R8, 0x2(R13)
+   \   00000E   CD480100     MOV.B   R8, 0x1(R13)
+   \   000012   CD480000     MOV.B   R8, 0(R13)
+    236            string[2] = '0' + (b % 10);  // 1s
+   \   000016   79400A00     MOV.B   #0xa, R9
+   \   00001A   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_5:
+   \   00001E   CB4E0200     MOV.B   R14, 0x2(R11)
+    237            b = b / 10;
+   \   000022   ........     CALLA   #?Subroutine3
+   \                     ??CrossCallReturnLabel_9:
+   \   000026   4A4C         MOV.B   R12, R10
+    238            if( b )
+   \   000028   4C93         CMP.B   #0x0, R12
+   \   00002A   0C24         JEQ     ??zclHA_uint8toa_0
+    239            {
+    240              string[1] = '0' + (b % 10);  // 10s
+   \   00002C   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_6:
+   \   000030   CB4E0100     MOV.B   R14, 0x1(R11)
+    241              b = b / 10;
+   \   000034   ........     CALLA   #?Subroutine3
+    242            }
+    243            if( b )
+   \                     ??CrossCallReturnLabel_10:
+   \   000038   4C93         CMP.B   #0x0, R12
+   \   00003A   0424         JEQ     ??zclHA_uint8toa_0
+    244            {
+    245             string[0] = '0' + (b % 10);  // 100s
+   \   00003C   ........     CALLA   #?Subroutine2
+    246            }
+   \                     ??CrossCallReturnLabel_7:
+   \   000040   CB4E0000     MOV.B   R14, 0(R11)
+    247          }
+   \                     ??zclHA_uint8toa_0:
+   \   000044   3817         POPM.W  #0x4, R11
+   \   000046   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   4C4A         MOV.B   R10, R12
+   \   000002                REQUIRE ??Subroutine4_0
+   \   000002                // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment CODE, align 2
+   \                     ??Subroutine4_0:
+   \   000000   4E49         MOV.B   R9, R14
+   \   000002   ........     BRA     #?DivMod8u
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine2:
+   \   000000   ........     CALLA   #??Subroutine4_0
+   \                     ??CrossCallReturnLabel_8:
+   \   000004   4E58         ADD.B   R8, R14
+   \   000006   1001         RETA
+    248          
+    249          /*********************************************************************
+    250           * @fn      zclHA_LcdStatusLine1
+    251           *
+    252           * @brief   Display LCD line 1 with network status
+    253           *          only call after on network
+    254           *          ZC: PPPP CH ADDR
+    255           *          ZR: PPPP CH ADDR
+    256           *          ZE: PPPP CH ADDR
+    257           *
+    258           * @param   kind (0=ZC, 1=ZR, 2=ZED)
+    259           *
+    260           * @return  none
+    261           */
+
+   \                                 In  segment CODE, align 2
+    262          void zclHA_LcdStatusLine1( uint8 kind )
+   \                     zclHA_LcdStatusLine1:
+    263          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   31801400     SUB.W   #0x14, SP
+    264          #if defined ( LCD_SUPPORTED )
+    265            char szLine[20];
+    266          
+    267            // copy in what node type it is
+    268            if ( kind > ZCL_HA_DEVICE_END_DEVICE )
+   \   000006   7C900300     CMP.B   #0x3, R12
+   \   00000A   2B2C         JC      ??zclHA_LcdStatusLine1_1
+    269            {
+    270              return;
+    271            }
+    272          
+    273            // ZE: PANx CH ADDR
+    274            osal_memcpy( szLine, NwkInfoStrs[kind], 4 );
+   \   00000C   0A41         MOV.W   SP, R10
+   \   00000E   0A53         ADD.W   #0x0, R10
+   \   000010   2E42         MOV.W   #0x4, R14
+   \   000012   4C4C         MOV.B   R12, R12
+   \   000014   0C5C         RLA.W   R12
+   \   000016   1D4C....     MOV.W   NwkInfoStrs(R12), R13
+   \   00001A   0C4A         MOV.W   R10, R12
+   \   00001C   ........     CALLA   #osal_memcpy
+    275            zclHA_uint16toa( _NIB.nwkPanId, &szLine[4] );
+   \   000020   0D4A         MOV.W   R10, R13
+   \   000022   2D52         ADD.W   #0x4, R13
+   \   000024   1C42....     MOV.W   &_NIB + 36, R12
+   \   000028   ........     CALLA   #zclHA_uint16toa
+    276            szLine[8] = ' ';
+   \   00002C   F14020000800 MOV.B   #0x20, 0x8(SP)
+    277          
+    278            _ltoa( _NIB.nwkLogicalChannel, (void *)(&szLine[9]), 10 );
+   \   000032   7F400A00     MOV.B   #0xa, R15
+   \   000036   0E4A         MOV.W   R10, R14
+   \   000038   3E500900     ADD.W   #0x9, R14
+   \   00003C   5C42....     MOV.B   &_NIB + 24, R12
+   \   000040   0D43         MOV.W   #0x0, R13
+   \   000042   ........     CALLA   #_ltoa
+    279            szLine[11] = ' ';
+   \   000046   F14020000B00 MOV.B   #0x20, 0xb(SP)
+    280          
+    281            zclHA_uint16toa( _NIB.nwkDevAddress, &szLine[12] );
+   \   00004C   0D4A         MOV.W   R10, R13
+   \   00004E   3D500C00     ADD.W   #0xc, R13
+   \   000052   1C42....     MOV.W   &_NIB + 22, R12
+   \   000056   ........     CALLA   #zclHA_uint16toa
+    282            HalLcdWriteString( (char*)szLine, HAL_LCD_LINE_1 );
+   \   00005A   5D43         MOV.B   #0x1, R13
+   \   00005C   0C4A         MOV.W   R10, R12
+   \   00005E   ........     CALLA   #HalLcdWriteString
+    283          #endif
+    284          }
+   \                     ??zclHA_LcdStatusLine1_1:
+   \   000062   31501400     ADD.W   #0x14, SP
+   \   000066   3A41         POP.W   R10
+   \   000068   1001         RETA
+    285          
+    286          /*********************************************************************
+    287          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+      6   zclHA_Init
+        6   -> afRegister
+        6   -> osal_mem_alloc
+     26   zclHA_LcdStatusLine1
+       26   -> HalLcdWriteString
+       26   -> _ltoa
+       26   -> osal_memcpy
+       26   -> zclHA_uint16toa
+      4   zclHA_clearbit
+      4   zclHA_isbit
+      4   zclHA_setbit
+      4   zclHA_uint16toa
+        4   -> _ltoa
+     12   zclHA_uint8toa
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??Subroutine4_0
+      24  ?Subroutine0
+      12  ?Subroutine1
+       8  ?Subroutine2
+       2  ?Subroutine3
+       6  NwkInfoStrs
+       5  NwkInfoZcStr
+       5  NwkInfoZedStr
+       5  NwkInfoZrStr
+      40  zclHA_Init
+     106  zclHA_LcdStatusLine1
+      10  zclHA_clearbit
+      34  zclHA_isbit
+      10  zclHA_setbit
+      36  zclHA_uint16toa
+      72  zclHA_uint8toa
+
+ 
+ 360 bytes in segment CODE
+  21 bytes in segment DATA16_C
+ 
+ 360 bytes of CODE  memory
+  21 bytes of CONST memory
+
+Errors: none
+Warnings: none

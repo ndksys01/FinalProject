@@ -1,0 +1,1297 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430      08/Apr/2014  21:14:18 /
+// Copyright 1996-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  small                                                  /
+//    Source file   =  C:\Texas Instruments\Z-Stack Home                      /
+//                     1.2.0\Components\osal\common\OSAL_Timers.c             /
+//    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                  /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \Source\zap.cfg" (-DZAP_PHY_SPI=1                      /
+//                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE   /
+//                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                 /
+//                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE              /
+//                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE           /
+//                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE           /
+//                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG           /
+//                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC              /
+//                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC         /
+//                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0        /
+//                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                /
+//                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000          /
+//                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f  /
+//                     "C:\Texas Instruments\Z-Stack Home                     /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE  /
+//                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                /
+//                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4         /
+//                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10        /
+//                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10       /
+//                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING               /
+//                     -DZCL_PRICING -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU  /
+//                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home  /
+//                     1.2.0\Components\osal\common\OSAL_Timers.c" -D         /
+//                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D      /
+//                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC           /
+//                     "C:\Texas Instruments\Z-Stack Home                     /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP   /
+//                     Coordinator\List\" -lA "C:\Texas Instruments\Z-Stack   /
+//                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ /
+//                     ZAP Coordinator\List\" --remarks --diag_suppress       /
+//                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                   /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\ZAP Coordinator\Obj\" --debug      /
+//                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas   /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\" -I "C:\Texas                     /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\Source\" -I "C:\Texas           /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\Source\" -I "C:\Texas        /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\hal\targ /
+//                     et\MSP5438ZAP\" -I "C:\Texas Instruments\Z-Stack Home  /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\hal\include\" -I "C:\Texas        /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\mac\incl /
+//                     ude\" -I "C:\Texas Instruments\Z-Stack Home            /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\mt\" -I "C:\Texas                 /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\osal\inc /
+//                     lude\" -I "C:\Texas Instruments\Z-Stack Home           /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas    /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\services /
+//                     \saddr\" -I "C:\Texas Instruments\Z-Stack Home         /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\services\sdata\" -I "C:\Texas     /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\af /
+//                     \" -I "C:\Texas Instruments\Z-Stack Home               /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\nwk\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\sa /
+//                     pi\" -I "C:\Texas Instruments\Z-Stack Home             /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\sec\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\sy /
+//                     s\" -I "C:\Texas Instruments\Z-Stack Home              /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\zcl\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\zd /
+//                     o\" -I "C:\Texas Instruments\Z-Stack Home              /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\zmac\" -I "C:\Texas               /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w /
+//                     \" --core=430X --data_model=small -Ohz                 /
+//                     --multiplier=32 --multiplier_location=4C0              /
+//                     --require_prototypes --hw_workaround=CPU40             /
+//                     --hw_workaround=CPU39                                  /
+//    List file     =  C:\Texas Instruments\Z-Stack Home                      /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP   /
+//                     Coordinator\List\OSAL_Timers.s43                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OSAL_Timers
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?cstart_init_zero
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC osalAddTimer
+        FUNCTION osalAddTimer,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC osalDeleteTimer
+        FUNCTION osalDeleteTimer,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC osalFindTimer
+        FUNCTION osalFindTimer,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC osalTimerInit
+        FUNCTION osalTimerInit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC osalTimerUpdate
+        FUNCTION osalTimerUpdate,0a1203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC osal_GetSystemClock
+        FUNCTION osal_GetSystemClock,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC osal_get_timeoutEx
+        FUNCTION osal_get_timeoutEx,0a1203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC osal_start_reload_timer
+        FUNCTION osal_start_reload_timer,0a1203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC osal_start_timerEx
+        FUNCTION osal_start_timerEx,0a1203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 6, STACK
+        PUBLIC osal_stop_timerEx
+        FUNCTION osal_stop_timerEx,0a1203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC osal_timer_num_active
+        FUNCTION osal_timer_num_active,080203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC timerHead
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN osal_set_event
+        FUNCTION osal_set_event,0202H
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+
+// C:\Texas Instruments\Z-Stack Home 1.2.0\Components\osal\common\OSAL_Timers.c
+//    1 /**************************************************************************************************
+//    2   Filename:       OSAL_Timers.c
+//    3   Revised:        $Date: 2012-11-28 00:37:02 -0800 (Wed, 28 Nov 2012) $
+//    4   Revision:       $Revision: 32329 $
+//    5 
+//    6   Description:    OSAL Timer definition and manipulation functions.
+//    7 
+//    8 
+//    9   Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License"). You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product. Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 
+//   44 #include "comdef.h"
+//   45 #include "OnBoard.h"
+//   46 #include "OSAL.h"
+//   47 #include "OSAL_Timers.h"
+//   48 #include "hal_timer.h"
+//   49 
+//   50 /*********************************************************************
+//   51  * MACROS
+//   52  */
+//   53 
+//   54 /*********************************************************************
+//   55  * CONSTANTS
+//   56  */
+//   57 
+//   58 /*********************************************************************
+//   59  * TYPEDEFS
+//   60  */
+//   61 
+//   62 typedef union {
+//   63   uint32 time32;
+//   64   uint16 time16[2];
+//   65   uint8 time8[4];
+//   66 } osalTime_t;
+//   67 
+//   68 typedef struct
+//   69 {
+//   70   void   *next;
+//   71   osalTime_t timeout;
+//   72   uint16 event_flag;
+//   73   uint8  task_id;
+//   74   uint32 reloadTimeout;
+//   75 } osalTimerRec_t;
+//   76 
+//   77 /*********************************************************************
+//   78  * GLOBAL VARIABLES
+//   79  */
+//   80 
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//   81 osalTimerRec_t *timerHead;
+timerHead:
+        DS8 2
+//   82 
+//   83 /*********************************************************************
+//   84  * EXTERNAL VARIABLES
+//   85  */
+//   86 
+//   87 /*********************************************************************
+//   88  * EXTERNAL FUNCTIONS
+//   89  */
+//   90 
+//   91 /*********************************************************************
+//   92  * LOCAL VARIABLES
+//   93  */
+//   94 // Milliseconds since last reboot
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//   95 static uint32 osal_systemClock;
+osal_systemClock:
+        DS8 4
+//   96 
+//   97 /*********************************************************************
+//   98  * LOCAL FUNCTION PROTOTYPES
+//   99  */
+//  100 osalTimerRec_t  *osalAddTimer( uint8 task_id, uint16 event_flag, uint32 timeout );
+//  101 osalTimerRec_t *osalFindTimer( uint8 task_id, uint16 event_flag );
+//  102 void osalDeleteTimer( osalTimerRec_t *rmTimer );
+//  103 
+//  104 /*********************************************************************
+//  105  * FUNCTIONS
+//  106  *********************************************************************/
+//  107 
+//  108 /*********************************************************************
+//  109  * @fn      osalTimerInit
+//  110  *
+//  111  * @brief   Initialization for the OSAL Timer System.
+//  112  *
+//  113  * @param   none
+//  114  *
+//  115  * @return
+//  116  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  117 void osalTimerInit( void )
+osalTimerInit:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function osalTimerInit
+//  118 {
+//  119   osal_systemClock = 0;
+        MOV.W   #0x0, &osal_systemClock
+        MOV.W   #0x0, &osal_systemClock + 2
+//  120 }
+        RETA
+          CFI EndBlock cfiBlock0
+//  121 
+//  122 /*********************************************************************
+//  123  * @fn      osalAddTimer
+//  124  *
+//  125  * @brief   Add a timer to the timer list.
+//  126  *          Ints must be disabled.
+//  127  *
+//  128  * @param   task_id
+//  129  * @param   event_flag
+//  130  * @param   timeout
+//  131  *
+//  132  * @return  osalTimerRec_t * - pointer to newly created timer
+//  133  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  134 osalTimerRec_t * osalAddTimer( uint8 task_id, uint16 event_flag, uint32 timeout )
+osalAddTimer:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function osalAddTimer
+//  135 {
+        FUNCALL osalAddTimer, osalFindTimer
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL osalAddTimer, osal_mem_alloc
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R8
+        MOV.W   R13, R9
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+//  136   osalTimerRec_t *newTimer;
+//  137   osalTimerRec_t *srchTimer;
+//  138 
+//  139   // Look for an existing timer first
+//  140   newTimer = osalFindTimer( task_id, event_flag );
+        CALLA   #osalFindTimer
+//  141   if ( newTimer )
+        CMP.W   #0x0, R12
+        JEQ     ??osalAddTimer_5
+//  142   {
+//  143     // Timer is found - update it.
+//  144     newTimer->timeout.time32 = timeout;
+        MOV.W   R14, 0x2(R12)
+        MOV.W   R11, 0x4(R12)
+//  145 
+//  146     return ( newTimer );
+        JMP     ??osalAddTimer_4
+//  147   }
+//  148   else
+//  149   {
+//  150     // New Timer
+//  151     newTimer = osal_mem_alloc( sizeof( osalTimerRec_t ) );
+??osalAddTimer_5:
+        MOV.W   #0xe, R12
+        CALLA   #osal_mem_alloc
+//  152 
+//  153     if ( newTimer )
+        CMP.W   #0x0, R12
+        JEQ     ??osalAddTimer_6
+//  154     {
+//  155       // Fill in new timer
+//  156       newTimer->task_id = task_id;
+        MOV.B   R8, 0x8(R12)
+//  157       newTimer->event_flag = event_flag;
+        MOV.W   R9, 0x6(R12)
+//  158       newTimer->timeout.time32 = timeout;
+        MOV.W   R10, 0x2(R12)
+        MOV.W   R11, 0x4(R12)
+//  159       newTimer->next = (void *)NULL;
+        MOV.W   #0x0, 0(R12)
+//  160       newTimer->reloadTimeout = 0;
+        MOV.W   #0x0, 0xa(R12)
+        MOV.W   #0x0, 0xc(R12)
+//  161 
+//  162       // Does the timer list already exist
+//  163       if ( timerHead == NULL )
+        MOV.W   &timerHead, R15
+        CMP.W   #0x0, R15
+        JNE     ??osalAddTimer_2
+//  164       {
+//  165         // Start task list
+//  166         timerHead = newTimer;
+        MOV.W   R12, &timerHead
+        JMP     ??osalAddTimer_4
+//  167       }
+//  168       else
+//  169       {
+//  170         // Add it to the end of the timer list
+//  171         srchTimer = timerHead;
+//  172 
+//  173         // Stop at the last record
+//  174         while ( srchTimer->next )
+//  175           srchTimer = srchTimer->next;
+??osalAddTimer_0:
+        MOV.W   R11, R15
+??osalAddTimer_2:
+        MOV.W   @R15, R11
+        CMP.W   #0x0, R11
+        JNE     ??osalAddTimer_0
+//  176 
+//  177         // Add to the list
+//  178         srchTimer->next = newTimer;
+        MOV.W   R12, 0(R15)
+//  179       }
+//  180 
+//  181       return ( newTimer );
+        JMP     ??osalAddTimer_4
+//  182     }
+//  183     else
+//  184     {
+//  185       return ( (osalTimerRec_t *)NULL );
+??osalAddTimer_6:
+        MOV.W   #0x0, R12
+??osalAddTimer_4:
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//  186     }
+//  187   }
+//  188 }
+//  189 
+//  190 /*********************************************************************
+//  191  * @fn      osalFindTimer
+//  192  *
+//  193  * @brief   Find a timer in a timer list.
+//  194  *          Ints must be disabled.
+//  195  *
+//  196  * @param   task_id
+//  197  * @param   event_flag
+//  198  *
+//  199  * @return  osalTimerRec_t *
+//  200  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  201 osalTimerRec_t *osalFindTimer( uint8 task_id, uint16 event_flag )
+osalFindTimer:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function osalFindTimer
+//  202 {
+//  203   osalTimerRec_t *srchTimer;
+//  204 
+//  205   // Head of the timer list
+//  206   srchTimer = timerHead;
+        MOV.W   &timerHead, R15
+        JMP     ??osalFindTimer_1
+//  207 
+//  208   // Stop when found or at the end
+//  209   while ( srchTimer )
+//  210   {
+//  211     if ( srchTimer->event_flag == event_flag &&
+//  212          srchTimer->task_id == task_id )
+//  213     {
+//  214       break;
+//  215     }
+//  216 
+//  217     // Not this one, check another
+//  218     srchTimer = srchTimer->next;
+??osalFindTimer_0:
+        MOV.W   @R15, R15
+??osalFindTimer_1:
+        CMP.W   #0x0, R15
+        JEQ     ??osalFindTimer_2
+        CMP.W   R13, 0x6(R15)
+        JNE     ??osalFindTimer_0
+        CMP.B   R12, 0x8(R15)
+        JNE     ??osalFindTimer_0
+//  219   }
+//  220 
+//  221   return ( srchTimer );
+??osalFindTimer_2:
+        MOV.W   R15, R12
+        RETA
+          CFI EndBlock cfiBlock2
+//  222 }
+//  223 
+//  224 /*********************************************************************
+//  225  * @fn      osalDeleteTimer
+//  226  *
+//  227  * @brief   Delete a timer from a timer list.
+//  228  *
+//  229  * @param   table
+//  230  * @param   rmTimer
+//  231  *
+//  232  * @return  none
+//  233  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  234 void osalDeleteTimer( osalTimerRec_t *rmTimer )
+osalDeleteTimer:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function osalDeleteTimer
+//  235 {
+//  236   // Does the timer list really exist
+//  237   if ( rmTimer )
+        CMP.W   #0x0, R12
+        JEQ     ??osalDeleteTimer_0
+//  238   {
+//  239     // Clear the event flag and osalTimerUpdate() will delete
+//  240     // the timer from the list.
+//  241     rmTimer->event_flag = 0;
+        MOV.W   #0x0, 0x6(R12)
+//  242   }
+//  243 }
+??osalDeleteTimer_0:
+        RETA
+          CFI EndBlock cfiBlock3
+//  244 
+//  245 /*********************************************************************
+//  246  * @fn      osal_start_timerEx
+//  247  *
+//  248  * @brief
+//  249  *
+//  250  *   This function is called to start a timer to expire in n mSecs.
+//  251  *   When the timer expires, the calling task will get the specified event.
+//  252  *
+//  253  * @param   uint8 taskID - task id to set timer for
+//  254  * @param   uint16 event_id - event to be notified with
+//  255  * @param   uint32 timeout_value - in milliseconds.
+//  256  *
+//  257  * @return  SUCCESS, or NO_TIMER_AVAIL.
+//  258  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  259 uint8 osal_start_timerEx( uint8 taskID, uint16 event_id, uint32 timeout_value )
+osal_start_timerEx:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function osal_start_timerEx
+//  260 {
+        FUNCALL osal_start_timerEx, osalAddTimer
+        LOCFRAME CSTACK, 6, STACK
+        PUSH.W  R10
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+6
+//  261   halIntState_t intState;
+//  262   osalTimerRec_t *newTimer;
+//  263 
+//  264   HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+        MOV.W   SR, R10
+        dint
+        nop
+//  265 
+//  266   // Add timer
+//  267   newTimer = osalAddTimer( taskID, event_id, timeout_value );
+        CALLA   #osalAddTimer
+//  268 
+//  269   HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+        MOV.W   R10, SR
+        NOP
+//  270 
+//  271   return ( (newTimer != NULL) ? SUCCESS : NO_TIMER_AVAIL );
+        CMP.W   #0x0, R12
+        JNE     ??osal_start_timerEx_0
+        MOV.B   #0x8, R12
+        JMP     ??osal_start_timerEx_1
+??osal_start_timerEx_0:
+        MOV.B   #0x0, R12
+??osal_start_timerEx_1:
+        POP.W   R10
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//  272 }
+//  273 
+//  274 /*********************************************************************
+//  275  * @fn      osal_start_reload_timer
+//  276  *
+//  277  * @brief
+//  278  *
+//  279  *   This function is called to start a timer to expire in n mSecs.
+//  280  *   When the timer expires, the calling task will get the specified event
+//  281  *   and the timer will be reloaded with the timeout value.
+//  282  *
+//  283  * @param   uint8 taskID - task id to set timer for
+//  284  * @param   uint16 event_id - event to be notified with
+//  285  * @param   UNINT16 timeout_value - in milliseconds.
+//  286  *
+//  287  * @return  SUCCESS, or NO_TIMER_AVAIL.
+//  288  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  289 uint8 osal_start_reload_timer( uint8 taskID, uint16 event_id, uint32 timeout_value )
+osal_start_reload_timer:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function osal_start_reload_timer
+//  290 {
+        FUNCALL osal_start_reload_timer, osalAddTimer
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+//  291   halIntState_t intState;
+//  292   osalTimerRec_t *newTimer;
+//  293 
+//  294   HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+        MOV.W   SR, R8
+        dint
+        nop
+//  295 
+//  296   // Add timer
+//  297   newTimer = osalAddTimer( taskID, event_id, timeout_value );
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        CALLA   #osalAddTimer
+//  298   if ( newTimer )
+        CMP.W   #0x0, R12
+        JEQ     ??osal_start_reload_timer_0
+//  299   {
+//  300     // Load the reload timeout value
+//  301     newTimer->reloadTimeout = timeout_value;
+        MOV.W   R10, 0xa(R12)
+        MOV.W   R11, 0xc(R12)
+//  302   }
+//  303 
+//  304   HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+??osal_start_reload_timer_0:
+        MOV.W   R8, SR
+        NOP
+//  305 
+//  306   return ( (newTimer != NULL) ? SUCCESS : NO_TIMER_AVAIL );
+        CMP.W   #0x0, R12
+        JNE     ??osal_start_reload_timer_1
+        MOV.B   #0x8, R12
+        JMP     ??osal_start_reload_timer_2
+??osal_start_reload_timer_1:
+        MOV.B   #0x0, R12
+??osal_start_reload_timer_2:
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//  307 }
+//  308 
+//  309 /*********************************************************************
+//  310  * @fn      osal_stop_timerEx
+//  311  *
+//  312  * @brief
+//  313  *
+//  314  *   This function is called to stop a timer that has already been started.
+//  315  *   If ZSUCCESS, the function will cancel the timer and prevent the event
+//  316  *   associated with the timer from being set for the calling task.
+//  317  *
+//  318  * @param   uint8 task_id - task id of timer to stop
+//  319  * @param   uint16 event_id - identifier of the timer that is to be stopped
+//  320  *
+//  321  * @return  SUCCESS or INVALID_EVENT_ID
+//  322  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  323 uint8 osal_stop_timerEx( uint8 task_id, uint16 event_id )
+osal_stop_timerEx:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function osal_stop_timerEx
+//  324 {
+        FUNCALL osal_stop_timerEx, osalFindTimer
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL osal_stop_timerEx, osalDeleteTimer
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.W #0x2, R11
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+8
+//  325   halIntState_t intState;
+//  326   osalTimerRec_t *foundTimer;
+//  327 
+//  328   HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+        MOV.W   SR, R10
+        dint
+        nop
+//  329 
+//  330   // Find the timer to stop
+//  331   foundTimer = osalFindTimer( task_id, event_id );
+        CALLA   #osalFindTimer
+        MOV.W   R12, R11
+//  332   if ( foundTimer )
+        CMP.W   #0x0, R12
+        JEQ     ??osal_stop_timerEx_0
+//  333   {
+//  334     osalDeleteTimer( foundTimer );
+        CALLA   #osalDeleteTimer
+//  335   }
+//  336 
+//  337   HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+??osal_stop_timerEx_0:
+        MOV.W   R10, SR
+        NOP
+//  338 
+//  339   return ( (foundTimer != NULL) ? SUCCESS : INVALID_EVENT_ID );
+        CMP.W   #0x0, R11
+        JNE     ??osal_stop_timerEx_1
+        MOV.B   #0x6, R12
+        JMP     ??osal_stop_timerEx_2
+??osal_stop_timerEx_1:
+        MOV.B   #0x0, R12
+??osal_stop_timerEx_2:
+        POPM.W  #0x2, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+//  340 }
+//  341 
+//  342 /*********************************************************************
+//  343  * @fn      osal_get_timeoutEx
+//  344  *
+//  345  * @brief
+//  346  *
+//  347  * @param   uint8 task_id - task id of timer to check
+//  348  * @param   uint16 event_id - identifier of timer to be checked
+//  349  *
+//  350  * @return  Return the timer's tick count if found, zero otherwise.
+//  351  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  352 uint32 osal_get_timeoutEx( uint8 task_id, uint16 event_id )
+osal_get_timeoutEx:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function osal_get_timeoutEx
+//  353 {
+        FUNCALL osal_get_timeoutEx, osalFindTimer
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+//  354   halIntState_t intState;
+//  355   uint32 rtrn = 0;
+        MOV.W   #0x0, R10
+        MOV.W   #0x0, R11
+//  356   osalTimerRec_t *tmr;
+//  357 
+//  358   HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+        MOV.W   SR, R8
+        dint
+        nop
+//  359 
+//  360   tmr = osalFindTimer( task_id, event_id );
+        CALLA   #osalFindTimer
+//  361 
+//  362   if ( tmr )
+        CMP.W   #0x0, R12
+        JEQ     ??osal_get_timeoutEx_0
+//  363   {
+//  364     rtrn = tmr->timeout.time32;
+        MOV.W   0x2(R12), R10
+        MOV.W   0x4(R12), R11
+//  365   }
+//  366 
+//  367   HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+??osal_get_timeoutEx_0:
+        MOV.W   R8, SR
+        NOP
+//  368 
+//  369   return rtrn;
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock7
+//  370 }
+//  371 
+//  372 /*********************************************************************
+//  373  * @fn      osal_timer_num_active
+//  374  *
+//  375  * @brief
+//  376  *
+//  377  *   This function counts the number of active timers.
+//  378  *
+//  379  * @return  uint8 - number of timers
+//  380  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  381 uint8 osal_timer_num_active( void )
+osal_timer_num_active:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function osal_timer_num_active
+//  382 {
+//  383   halIntState_t intState;
+//  384   uint8 num_timers = 0;
+        MOV.B   #0x0, R12
+//  385   osalTimerRec_t *srchTimer;
+//  386 
+//  387   HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+        MOV.W   SR, R15
+        dint
+        nop
+//  388 
+//  389   // Head of the timer list
+//  390   srchTimer = timerHead;
+        MOV.W   &timerHead, R14
+        JMP     ??osal_timer_num_active_1
+//  391 
+//  392   // Count timers in the list
+//  393   while ( srchTimer != NULL )
+//  394   {
+//  395     num_timers++;
+??osal_timer_num_active_0:
+        ADD.B   #0x1, R12
+//  396     srchTimer = srchTimer->next;
+        MOV.W   @R14, R14
+//  397   }
+??osal_timer_num_active_1:
+        CMP.W   #0x0, R14
+        JNE     ??osal_timer_num_active_0
+//  398 
+//  399   HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+        MOV.W   R15, SR
+        NOP
+//  400 
+//  401   return num_timers;
+        RETA
+          CFI EndBlock cfiBlock8
+//  402 }
+//  403 
+//  404 /*********************************************************************
+//  405  * @fn      osalTimerUpdate
+//  406  *
+//  407  * @brief   Update the timer structures for a timer tick.
+//  408  *
+//  409  * @param   none
+//  410  *
+//  411  * @return  none
+//  412  *********************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  413 void osalTimerUpdate( uint32 updateTime )
+osalTimerUpdate:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function osalTimerUpdate
+//  414 {
+        FUNCALL osalTimerUpdate, osal_set_event
+        LOCFRAME CSTACK, 16, STACK
+        FUNCALL osalTimerUpdate, osal_set_event
+        LOCFRAME CSTACK, 16, STACK
+        FUNCALL osalTimerUpdate, osal_mem_free
+        LOCFRAME CSTACK, 16, STACK
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x4, SP
+          CFI CFA SP+16
+//  415   halIntState_t intState;
+//  416   osalTimerRec_t *srchTimer;
+//  417   osalTimerRec_t *prevTimer;
+//  418 
+//  419   osalTime_t timeUnion;
+//  420   timeUnion.time32 = updateTime;
+        MOV.W   R12, 0(SP)
+        MOV.W   R13, 0x2(SP)
+//  421 
+//  422   HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+        MOV.W   SR, R10
+        dint
+        nop
+//  423   // Update the system time
+//  424   osal_systemClock += updateTime;
+        ADD.W   R12, &osal_systemClock
+        ADDC.W  R13, &osal_systemClock + 2
+//  425   HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+        MOV.W   R10, SR
+        NOP
+//  426 
+//  427   // Look for open timer slot
+//  428   if ( timerHead != NULL )
+        MOV.W   &timerHead, R11
+        CMP.W   #0x0, R11
+        JEQ     ??osalTimerUpdate_1
+//  429   {
+//  430     // Add it to the end of the timer list
+//  431     srchTimer = timerHead;
+//  432     prevTimer = (void *)NULL;
+        MOV.W   #0x0, R8
+//  433 
+//  434     // Look for open timer slot
+//  435     while ( srchTimer )
+//  436     {
+//  437       osalTimerRec_t *freeTimer = NULL;
+??osalTimerUpdate_0:
+        MOV.W   #0x0, R9
+//  438 
+//  439       HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+        MOV.W   SR, R10
+        dint
+        nop
+//  440 
+//  441       // To minimize time in this critical section, avoid 32-bit math
+//  442       if ((timeUnion.time16[1] == 0) && (timeUnion.time8[1] == 0))
+        CMP.W   #0x0, 0x2(SP)
+        JNE     ??osalTimerUpdate_2
+        CMP.B   #0x0, 0x1(SP)
+        JNE     ??osalTimerUpdate_2
+//  443       {
+//  444         // If upper 24 bits are zero, check lower 8 bits for roll over
+//  445         if (srchTimer->timeout.time8[0] >= timeUnion.time8[0])
+        CMP.B   @SP, 0x2(R11)
+        JNC     ??osalTimerUpdate_2
+//  446         {
+//  447           // 8-bit math
+//  448           srchTimer->timeout.time8[0] -= timeUnion.time8[0];
+        SUB.B   @SP, 0x2(R11)
+        JMP     ??osalTimerUpdate_3
+//  449         }
+//  450         else
+//  451         {
+//  452           // 32-bit math
+//  453           if (srchTimer->timeout.time32 > timeUnion.time32)
+//  454           {
+//  455             srchTimer->timeout.time32 -= timeUnion.time32;
+//  456           }
+//  457           else
+//  458           {
+//  459             srchTimer->timeout.time32 = 0;
+//  460           }
+//  461         }
+//  462       }
+//  463       else
+//  464       {
+//  465           // 32-bit math
+//  466         if (srchTimer->timeout.time32 > timeUnion.time32)
+??osalTimerUpdate_2:
+        CMP.W   0x4(R11), 0x2(SP)
+        JNC     ??osalTimerUpdate_4
+        JNE     ??osalTimerUpdate_5
+        CMP.W   0x2(R11), 0(SP)
+        JC      ??osalTimerUpdate_5
+//  467         {
+//  468           srchTimer->timeout.time32 -= timeUnion.time32;
+??osalTimerUpdate_4:
+        SUB.W   @SP, 0x2(R11)
+        SUBC.W  0x2(SP), 0x4(R11)
+        JMP     ??osalTimerUpdate_3
+//  469         }
+//  470         else
+//  471         {
+//  472           srchTimer->timeout.time32 = 0;
+??osalTimerUpdate_5:
+        MOV.W   #0x0, 0x2(R11)
+        MOV.W   #0x0, 0x4(R11)
+//  473         }
+//  474       }
+//  475 
+//  476       // Check for reloading
+//  477       if ( (srchTimer->timeout.time16[0] == 0) && (srchTimer->timeout.time16[1] == 0) &&
+//  478            (srchTimer->reloadTimeout) && (srchTimer->event_flag) )
+??osalTimerUpdate_3:
+        CMP.W   #0x0, 0x2(R11)
+        JNE     ??osalTimerUpdate_6
+        CMP.W   #0x0, 0x4(R11)
+        JNE     ??osalTimerUpdate_7
+        MOV.W   0xa(R11), R15
+        BIS.W   0xc(R11), R15
+        CMP.W   #0x0, R15
+        JEQ     ??osalTimerUpdate_8
+        MOV.W   0x6(R11), R13
+        CMP.W   #0x0, R13
+        JEQ     ??osalTimerUpdate_8
+//  479       {
+//  480         // Notify the task of a timeout
+//  481         osal_set_event( srchTimer->task_id, srchTimer->event_flag );
+        MOV.B   0x8(R11), R12
+        CALLA   #osal_set_event
+//  482 
+//  483         // Reload the timer timeout value
+//  484         srchTimer->timeout.time32 = srchTimer->reloadTimeout;
+        MOV.W   0xa(R11), 0x2(R11)
+        MOV.W   0xc(R11), 0x4(R11)
+//  485       }
+//  486 
+//  487       // When timeout or delete (event_flag == 0)
+//  488       if ( ((srchTimer->timeout.time16[0] == 0) && (srchTimer->timeout.time16[1] == 0)) ||
+//  489             (srchTimer->event_flag == 0) )
+??osalTimerUpdate_6:
+        CMP.W   #0x0, 0x2(R11)
+        JNE     ??osalTimerUpdate_9
+??osalTimerUpdate_7:
+        CMP.W   #0x0, 0x4(R11)
+        JEQ     ??osalTimerUpdate_8
+??osalTimerUpdate_9:
+        CMP.W   #0x0, 0x6(R11)
+        JNE     ??osalTimerUpdate_10
+//  490       {
+//  491         // Take out of list
+//  492         if ( prevTimer == NULL )
+??osalTimerUpdate_8:
+        MOV.W   @R11, R15
+        CMP.W   #0x0, R8
+        JNE     ??osalTimerUpdate_11
+//  493         {
+//  494           timerHead = srchTimer->next;
+        MOV.W   R15, &timerHead
+        JMP     ??osalTimerUpdate_12
+//  495         }
+//  496         else
+//  497         {
+//  498           prevTimer->next = srchTimer->next;
+??osalTimerUpdate_11:
+        MOV.W   R15, 0(R8)
+//  499         }
+//  500 
+//  501         // Setup to free memory
+//  502         freeTimer = srchTimer;
+??osalTimerUpdate_12:
+        MOV.W   R11, R9
+//  503 
+//  504         // Next
+//  505         srchTimer = srchTimer->next;
+        JMP     ??osalTimerUpdate_13
+//  506       }
+//  507       else
+//  508       {
+//  509         // Get next
+//  510         prevTimer = srchTimer;
+??osalTimerUpdate_10:
+        MOV.W   R11, R8
+//  511         srchTimer = srchTimer->next;
+??osalTimerUpdate_13:
+        MOV.W   @R11, R11
+//  512       }
+//  513 
+//  514       HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+        MOV.W   R10, SR
+        NOP
+//  515 
+//  516       if ( freeTimer )
+        CMP.W   #0x0, R9
+        JEQ     ??osalTimerUpdate_14
+//  517       {
+//  518         if ( (freeTimer->timeout.time16[0] == 0) && (freeTimer->timeout.time16[1] == 0) )
+        CMP.W   #0x0, 0x2(R9)
+        JNE     ??osalTimerUpdate_15
+        CMP.W   #0x0, 0x4(R9)
+        JNE     ??osalTimerUpdate_15
+//  519         {
+//  520           osal_set_event( freeTimer->task_id, freeTimer->event_flag );
+        MOV.W   0x6(R9), R13
+        MOV.B   0x8(R9), R12
+        CALLA   #osal_set_event
+//  521         }
+//  522         osal_mem_free( freeTimer );
+??osalTimerUpdate_15:
+        MOV.W   R9, R12
+        CALLA   #osal_mem_free
+//  523       }
+//  524     }
+??osalTimerUpdate_14:
+        CMP.W   #0x0, R11
+        JNE     ??osalTimerUpdate_0
+//  525   }
+//  526 }
+??osalTimerUpdate_1:
+        ADD.W   #0x4, SP
+          CFI CFA SP+12
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+//  527 
+//  528 #ifdef POWER_SAVING
+//  529 /*********************************************************************
+//  530  * @fn      osal_adjust_timers
+//  531  *
+//  532  * @brief   Update the timer structures for elapsed ticks.
+//  533  *
+//  534  * @param   none
+//  535  *
+//  536  * @return  none
+//  537  *********************************************************************/
+//  538 void osal_adjust_timers( void )
+//  539 {
+//  540   uint32 eTime;
+//  541 
+//  542   if ( timerHead != NULL )
+//  543   {
+//  544     // Compute elapsed time (msec)
+//  545     eTime = TimerElapsed() / TICK_COUNT;
+//  546 
+//  547     if ( eTime )
+//  548     {
+//  549       osalTimerUpdate( eTime );
+//  550     }
+//  551   }
+//  552 }
+//  553 
+//  554 /*********************************************************************
+//  555  * @fn      osal_next_timeout
+//  556  *
+//  557  * @brief
+//  558  *
+//  559  *   Search timer table to return the lowest timeout value. If the
+//  560  *   timer list is empty, then the returned timeout will be zero.
+//  561  *
+//  562  * @param   none
+//  563  *
+//  564  * @return  none
+//  565  *********************************************************************/
+//  566 uint32 osal_next_timeout( void )
+//  567 {
+//  568   uint32 nextTimeout;
+//  569   osalTimerRec_t *srchTimer;
+//  570 
+//  571   if ( timerHead != NULL )
+//  572   {
+//  573     // Head of the timer list
+//  574     srchTimer = timerHead;
+//  575     nextTimeout = OSAL_TIMERS_MAX_TIMEOUT;
+//  576 
+//  577     // Look for the next timeout timer
+//  578     while ( srchTimer != NULL )
+//  579     {
+//  580       if (srchTimer->timeout.time32 < nextTimeout)
+//  581       {
+//  582         nextTimeout = srchTimer->timeout.time32;
+//  583       }
+//  584       // Check next timer
+//  585       srchTimer = srchTimer->next;
+//  586     }
+//  587   }
+//  588   else
+//  589   {
+//  590     // No timers
+//  591     nextTimeout = 0;
+//  592   }
+//  593 
+//  594   return ( nextTimeout );
+//  595 }
+//  596 #endif // POWER_SAVING
+//  597 
+//  598 /*********************************************************************
+//  599  * @fn      osal_GetSystemClock()
+//  600  *
+//  601  * @brief   Read the local system clock.
+//  602  *
+//  603  * @param   none
+//  604  *
+//  605  * @return  local clock in milliseconds
+//  606  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  607 uint32 osal_GetSystemClock( void )
+osal_GetSystemClock:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function osal_GetSystemClock
+//  608 {
+//  609   return ( osal_systemClock );
+        MOV.W   &osal_systemClock, R12
+        MOV.W   &osal_systemClock + 2, R13
+        RETA
+          CFI EndBlock cfiBlock10
+//  610 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  611 
+//  612 /*********************************************************************
+//  613 *********************************************************************/
+// 
+// 602 bytes in segment CODE
+//   6 bytes in segment DATA16_Z
+// 
+// 602 bytes of CODE memory
+//   6 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

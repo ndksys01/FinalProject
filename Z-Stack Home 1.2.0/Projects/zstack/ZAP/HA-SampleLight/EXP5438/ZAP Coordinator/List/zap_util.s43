@@ -1,0 +1,2189 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430      08/Apr/2014  21:14:20 /
+// Copyright 1996-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  small                                                  /
+//    Source file   =  C:\Texas Instruments\Z-Stack Home                      /
+//                     1.2.0\Projects\zstack\ZAP\Source\zap_util.c            /
+//    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                  /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \Source\zap.cfg" (-DZAP_PHY_SPI=1                      /
+//                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE   /
+//                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                 /
+//                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE              /
+//                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE           /
+//                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE           /
+//                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG           /
+//                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC              /
+//                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC         /
+//                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0        /
+//                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                /
+//                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000          /
+//                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f  /
+//                     "C:\Texas Instruments\Z-Stack Home                     /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE  /
+//                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                /
+//                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4         /
+//                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10        /
+//                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10       /
+//                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING               /
+//                     -DZCL_PRICING -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU  /
+//                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home  /
+//                     1.2.0\Projects\zstack\ZAP\Source\zap_util.c" -D        /
+//                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D      /
+//                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC           /
+//                     "C:\Texas Instruments\Z-Stack Home                     /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP   /
+//                     Coordinator\List\" -lA "C:\Texas Instruments\Z-Stack   /
+//                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ /
+//                     ZAP Coordinator\List\" --remarks --diag_suppress       /
+//                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                   /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\ZAP Coordinator\Obj\" --debug      /
+//                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas   /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\" -I "C:\Texas                     /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\Source\" -I "C:\Texas           /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\Source\" -I "C:\Texas        /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\hal\targ /
+//                     et\MSP5438ZAP\" -I "C:\Texas Instruments\Z-Stack Home  /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\hal\include\" -I "C:\Texas        /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\mac\incl /
+//                     ude\" -I "C:\Texas Instruments\Z-Stack Home            /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\mt\" -I "C:\Texas                 /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\osal\inc /
+//                     lude\" -I "C:\Texas Instruments\Z-Stack Home           /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas    /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\services /
+//                     \saddr\" -I "C:\Texas Instruments\Z-Stack Home         /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\services\sdata\" -I "C:\Texas     /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\af /
+//                     \" -I "C:\Texas Instruments\Z-Stack Home               /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\nwk\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\sa /
+//                     pi\" -I "C:\Texas Instruments\Z-Stack Home             /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\sec\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\sy /
+//                     s\" -I "C:\Texas Instruments\Z-Stack Home              /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\zcl\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\zd /
+//                     o\" -I "C:\Texas Instruments\Z-Stack Home              /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\zmac\" -I "C:\Texas               /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w /
+//                     \" --core=430X --data_model=small -Ohz                 /
+//                     --multiplier=32 --multiplier_location=4C0              /
+//                     --require_prototypes --hw_workaround=CPU40             /
+//                     --hw_workaround=CPU39                                  /
+//    List file     =  C:\Texas Instruments\Z-Stack Home                      /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP   /
+//                     Coordinator\List\zap_util.s43                          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zap_util
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?ShiftLeft32_8
+        EXTERN ?cstart_init_zero
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC AddrMgrEntryLookupNwk
+        FUNCTION AddrMgrEntryLookupNwk,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC AddrMgrExtAddrLookup
+        FUNCTION AddrMgrExtAddrLookup,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC AddrMgrExtAddrSet
+        FUNCTION AddrMgrExtAddrSet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC AssocCount
+        FUNCTION AssocCount,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC AssocFindDevice
+        FUNCTION AssocFindDevice,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC AssocGetWithShort
+        FUNCTION AssocGetWithShort,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 26, STACK
+        PUBLIC NLME_GetCoordShortAddr
+        FUNCTION NLME_GetCoordShortAddr,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NLME_GetExtAddr
+        FUNCTION NLME_GetExtAddr,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NLME_GetShortAddr
+        FUNCTION NLME_GetShortAddr,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NLME_PermitJoiningRequest
+        FUNCTION NLME_PermitJoiningRequest,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 14, STACK
+        PUBLIC NLME_SetPollRate
+        FUNCTION NLME_SetPollRate,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 6, STACK
+        PUBLIC bindAddEntry
+        FUNCTION bindAddEntry,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 18, STACK
+        PUBLIC nullAddr
+        FUNCTION zapUtilParseAssocDevT,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        FUNCTION zapUtilParseBindEntryT,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC zapUtilProcessIncoming
+        FUNCTION zapUtilProcessIncoming,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC zapUtilReq
+        FUNCTION zapUtilReq,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 14, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H 0
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H 0
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H 0
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H 0
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN osal_memcpy
+        FUNCTION osal_memcpy,0202H
+        EXTERN devState
+        EXTERN zap_msg_allocate
+        FUNCTION zap_msg_allocate,0202H
+        EXTERN osal_memset
+        FUNCTION osal_memset,0202H
+        EXTERN zapAppPort
+        EXTERN zapPhySend
+        FUNCTION zapPhySend,0202H
+        EXTERN zap_msg_deallocate
+        FUNCTION zap_msg_deallocate,0202H
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        EXTERN sAddrExtCpy
+        FUNCTION sAddrExtCpy,0202H
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        EXTERN znpAddr
+        EXTERN ZDP_MgmtPermitJoinReq
+        FUNCTION ZDP_MgmtPermitJoinReq,0202H
+        EXTERN znp_nv_write
+        FUNCTION znp_nv_write,0202H
+        EXTERN znpIEEE
+        EXTERN znpParent
+        EXTERN osal_memcmp
+        FUNCTION osal_memcmp,0202H
+        EXTERN zapGotSync
+        FUNCTION zapGotSync,0202H
+
+// C:\Texas Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\Source\zap_util.c
+//    1 /**************************************************************************************************
+//    2     Filename:       zap_util.c
+//    3     Revised:        $Date: 2013-11-15 17:25:09 -0800 (Fri, 15 Nov 2013) $
+//    4     Revision:       $Revision: 36131 $
+//    5 
+//    6     Description:
+//    7 
+//    8     This file declares the ZNP Application Processor UTIL API functions.
+//    9 
+//   10 
+//   11     Copyright 2010-2013 Texas Instruments Incorporated. All rights reserved.
+//   12 
+//   13     IMPORTANT: Your use of this Software is limited to those specific rights
+//   14     granted under the terms of a software license agreement between the user
+//   15     who downloaded the software, his/her employer (which must be your employer)
+//   16     and Texas Instruments Incorporated (the "License"). You may not use this
+//   17     Software unless you agree to abide by the terms of the License. The License
+//   18     limits your use, and you acknowledge, that the Software may not be modified,
+//   19     copied or distributed unless embedded on a Texas Instruments microcontroller
+//   20     or used solely and exclusively in conjunction with a Texas Instruments radio
+//   21     frequency transceiver, which is integrated into your product. Other than for
+//   22     the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   23     works of, modify, distribute, perform, display or sell this Software and/or
+//   24     its documentation for any purpose.
+//   25 
+//   26     YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   27     PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   28     INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   29     NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   30     TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   31     NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   32     LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   33     INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   34     OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   35     OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   36     (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   37 
+//   38     Should you have any questions regarding your right to use this Software,
+//   39     contact Texas Instruments Incorporated at www.TI.com.
+//   40 **************************************************************************************************/
+//   41 
+//   42 /* ------------------------------------------------------------------------------------------------
+//   43  *                                          Includes
+//   44  * ------------------------------------------------------------------------------------------------
+//   45  */
+//   46 
+//   47 #include "AddrMgr.h"
+//   48 #include "hal_board.h"
+//   49 #include "mt.h"
+//   50 #include "mt_rpc.h"
+//   51 #include "OSAL.h"
+//   52 #include "zap_app.h"
+//   53 #include "zap_phy.h"
+//   54 #include "zap_znp.h"
+//   55 #if defined ZCL_KEY_ESTABLISH
+//   56 #include "zcl_key_establish.h"
+//   57 #include "zcl_se.h"
+//   58 #endif
+//   59 #include "ZComDef.h"
+//   60 
+//   61 /* ------------------------------------------------------------------------------------------------
+//   62  *                                           Constants
+//   63  * ------------------------------------------------------------------------------------------------
+//   64  */
+//   65 
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   66 const uint8 nullAddr[Z_EXTADDR_LEN] = { 0,0,0,0,0,0,0,0 };
+nullAddr:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0
+//   67 
+//   68 /* ------------------------------------------------------------------------------------------------
+//   69  *                                           Typedefs
+//   70  * ------------------------------------------------------------------------------------------------
+//   71  */
+//   72 
+//   73 /* ------------------------------------------------------------------------------------------------
+//   74  *                                           Macros
+//   75  * ------------------------------------------------------------------------------------------------
+//   76  */
+//   77 
+//   78 /* ------------------------------------------------------------------------------------------------
+//   79  *                                           Global Variables
+//   80  * ------------------------------------------------------------------------------------------------
+//   81  */
+//   82 
+//   83 /* ------------------------------------------------------------------------------------------------
+//   84  *                                           Local Variables
+//   85  * ------------------------------------------------------------------------------------------------
+//   86  */
+//   87 
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//   88 static associated_devices_t assocDevT;
+assocDevT:
+        DS8 22
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//   89 static BindingEntry_t bindEntryT;
+bindEntryT:
+        DS8 14
+//   90 
+//   91 /* ------------------------------------------------------------------------------------------------
+//   92  *                                           Local Functions
+//   93  * ------------------------------------------------------------------------------------------------
+//   94  */
+//   95 
+//   96 static uint8 zapUtilParseAssocDevT(uint8 *pBuf);
+//   97 static uint8 zapUtilParseBindEntryT(uint8 *pBuf);
+//   98 #if defined ZCL_KEY_ESTABLISH
+//   99 static void zapUtilParseKeyInd(uint8 *pBuf);
+//  100 #endif
+//  101 
+//  102 #if defined (ZAP_UTIL_FUNC)
+//  103 /**************************************************************************************************
+//  104  * @fn          zapUtilProcessIncoming
+//  105  *
+//  106  * @brief       This function processes the UTIL sub-system response from the ZNP.
+//  107  *
+//  108  * input parameters
+//  109  *
+//  110  * @param       port - Port Id corresponding to the ZNP that sent the message.
+//  111  * @param       pBuf - A pointer to the RPC response.
+//  112  *
+//  113  * output parameters
+//  114  *
+//  115  * None.
+//  116  *
+//  117  * @return      None.
+//  118  **************************************************************************************************
+//  119  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  120 void zapUtilProcessIncoming(uint8 port, uint8 *pBuf)
+zapUtilProcessIncoming:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function zapUtilProcessIncoming
+//  121 {
+//  122   uint8 cmd1 = pBuf[MT_RPC_POS_CMD1];
+//  123   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  124 
+//  125   switch (cmd1)
+        FUNCALL zapUtilProcessIncoming, zapGotSync
+        LOCFRAME CSTACK, 4, STACK
+        CMP.B   #0xe0, 0x2(R13)
+        JNE     ??zapUtilProcessIncoming_0
+//  126   {
+//  127   case MT_UTIL_SYNC_REQ:
+//  128     zapGotSync(port);
+        CALLA   #zapGotSync
+//  129     break;
+//  130 
+//  131 #if defined ZCL_KEY_ESTABLISH
+//  132   case MT_UTIL_ZCL_KEY_ESTABLISH_IND:
+//  133     zapUtilParseKeyInd(pBuf);
+//  134     break;
+//  135 #endif
+//  136 
+//  137   default:
+//  138     break;
+//  139   }
+//  140 }
+??zapUtilProcessIncoming_0:
+        RETA
+          CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:NOROOT(1)
+AssocCount:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function AssocCount
+        FUNCALL AssocCount, zapUtilReq
+        LOCFRAME CSTACK, 8, STACK
+        PUSH.W  R10
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+6
+        SUB.W   #0x2, SP
+          CFI CFA SP+8
+        MOV.W   #0x0, R10
+        MOV.B   R12, 0(SP)
+        MOV.B   R13, 0x1(SP)
+        MOV.W   #0x0, R14
+        MOV.W   SP, R13
+        ADD.W   #0x0, R13
+        MOV.B   #0x48, R12
+        CALLA   #??Subroutine1_0
+??CrossCallReturnLabel_7:
+        JNE     ??AssocCount_0
+        MOV.B   @SP, R10
+        MOV.B   0x1(SP), R15
+        RPT     #0x8
+        RLAX.W  R15
+        ADD.W   R15, R10
+??AssocCount_0:
+        MOV.W   R10, R12
+          CFI EndBlock cfiBlock1
+        REQUIRE ?Subroutine0
+        // Fall through to label ?Subroutine0
+//  141 #endif
+//  142 
+//  143 /**************************************************************************************************
+//  144  * @fn          AddrMgrEntryLookupNwk
+//  145  *
+//  146  * @brief       Lookup entry based on NWK address.
+//  147  *
+//  148  * input parameters
+//  149  *
+//  150  * @param       entry
+//  151  *                ::nwkAddr - [in] NWK address
+//  152  *
+//  153  * output parameters
+//  154  *
+//  155  * @param       entry
+//  156  *                ::extAddr - [out] EXT address
+//  157  *
+//  158  * @return      uint8 - success(TRUE:FALSE)
+//  159  **************************************************************************************************
+//  160  */
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA SP+8
+          CFI R10L Frame(CFA, -6)
+//  161 uint8 AddrMgrEntryLookupNwk(AddrMgrEntry_t* entry)
+//  162 {
+//  163   uint8 args[2] = { LO_UINT16(entry->nwkAddr), HI_UINT16(entry->nwkAddr) };
+//  164 
+//  165   if (SUCCESS == zapUtilReq(MT_UTIL_ADDRMGR_NWK_ADDR_LOOKUP, entry->extAddr, args))
+//  166   {
+//  167     return ((osal_memcmp(nullAddr, entry->extAddr, Z_EXTADDR_LEN)) ? FALSE : TRUE);
+//  168   }
+//  169   else
+//  170   {
+//  171     (void)osal_memset(entry->extAddr, 0, Z_EXTADDR_LEN);
+//  172     return FALSE;
+//  173   }
+//  174 }
+//  175 
+//  176 /**************************************************************************************************
+//  177  * @fn          AddrMgrExtAddrLookup
+//  178  *
+//  179  * @brief       Lookup EXT address using the NWK address.
+//  180  *
+//  181  * input parameters
+//  182  *
+//  183  * @param       nwkAddr - [in] NWK address
+//  184  *
+//  185  * output parameters
+//  186  *
+//  187  * @param       extAddr - [out] EXT address
+//  188  *
+//  189  * @return      uint8 - success(TRUE:FALSE)
+//  190  **************************************************************************************************
+//  191  */
+//  192 uint8 AddrMgrExtAddrLookup(uint16 nwkAddr, uint8* extAddr)
+//  193 {
+//  194   uint8 args[2] = { LO_UINT16(nwkAddr), HI_UINT16(nwkAddr) };
+//  195 
+//  196   if (SUCCESS == zapUtilReq(MT_UTIL_ADDRMGR_NWK_ADDR_LOOKUP, extAddr, args))
+//  197   {
+//  198     return ((osal_memcmp(nullAddr, extAddr, Z_EXTADDR_LEN)) ? FALSE : TRUE);
+//  199   }
+//  200   else
+//  201   {
+//  202     (void)osal_memset(extAddr, 0, Z_EXTADDR_LEN);
+//  203     return FALSE;
+        ADD.W   #0x2, SP
+          CFI CFA SP+6
+        POP.W   R10
+          CFI CFA SP+4
+          CFI R10L SameValue
+        RETA
+          CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI Function AddrMgrExtAddrLookup
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+12
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI (cfiCond4) Function AddrMgrEntryLookupNwk
+          CFI (cfiCond4) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond4) R10L Frame(CFA, -6)
+          CFI (cfiCond4) CFA SP+12
+          CFI Block cfiPicker5 Using cfiCommon1
+          CFI (cfiPicker5) NoFunction
+          CFI (cfiPicker5) Picker
+        MOV.B   #0x41, R12
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiPicker5
+        REQUIRE ??Subroutine1_0
+        // Fall through to label ??Subroutine1_0
+
+        RSEG CODE:CODE:NOROOT(1)
+??Subroutine1_0:
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI Function bindAddEntry
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+22
+          CFI Block cfiCond7 Using cfiCommon0
+          CFI (cfiCond7) Function AssocGetWithShort
+          CFI (cfiCond7) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond7) CFA SP+30
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI (cfiCond8) Function AssocFindDevice
+          CFI (cfiCond8) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond8) CFA SP+32
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function AssocCount
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond9) R10L Frame(CFA, -6)
+          CFI (cfiCond9) CFA SP+12
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function AddrMgrExtAddrLookup
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_2
+          CFI (cfiCond10) R10L Frame(CFA, -6)
+          CFI (cfiCond10) CFA SP+12
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI (cfiCond11) Function AddrMgrEntryLookupNwk
+          CFI (cfiCond11) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond11) R10L Frame(CFA, -6)
+          CFI (cfiCond11) CFA SP+12
+          CFI Block cfiPicker12 Using cfiCommon1
+          CFI (cfiPicker12) NoFunction
+          CFI (cfiPicker12) Picker
+        CALLA   #zapUtilReq
+        CMP.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiCond7
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiPicker12
+
+        RSEG CODE:CODE:NOROOT(1)
+AddrMgrExtAddrSet:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function AddrMgrExtAddrSet
+        FUNCALL AddrMgrExtAddrSet, sAddrExtCpy
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL AddrMgrExtAddrSet, osal_memset
+        LOCFRAME CSTACK, 4, STACK
+        CMP.W   #0x0, R13
+        JEQ     ??AddrMgrExtAddrSet_0
+        BRA     #sAddrExtCpy
+??AddrMgrExtAddrSet_0:
+        MOV.W   #0x8, R14
+        MOV.B   #0x0, R13
+        BRA     #osal_memset
+          CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(1)
+AddrMgrExtAddrLookup:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function AddrMgrExtAddrLookup
+        FUNCALL AddrMgrExtAddrLookup, zapUtilReq
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL AddrMgrExtAddrLookup, osal_memcmp
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL AddrMgrExtAddrLookup, osal_memset
+        LOCFRAME CSTACK, 8, STACK
+        PUSH.W  R10
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+6
+        SUB.W   #0x2, SP
+          CFI CFA SP+8
+        MOV.W   R13, R10
+        MOV.B   R12, 0(SP)
+        RPT     #0x8
+        RRUX.W  R12
+        MOV.B   R12, 0x1(SP)
+        MOV.W   SP, R14
+        ADD.W   #0x0, R14
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_2:
+        MOV.W   #0x8, R14
+        JNE     ??AddrMgrExtAddrLookup_4
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_0:
+        JNE     ??AddrMgrExtAddrLookup_3
+        MOV.B   #0x1, R12
+        JMP     ??AddrMgrExtAddrLookup_1
+??AddrMgrExtAddrLookup_4:
+        MOV.B   #0x0, R13
+        MOV.W   R10, R12
+        CALLA   #osal_memset
+??AddrMgrExtAddrLookup_3:
+        MOV.B   #0x0, R12
+??AddrMgrExtAddrLookup_1:
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+AddrMgrEntryLookupNwk:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function AddrMgrEntryLookupNwk
+        FUNCALL AddrMgrEntryLookupNwk, zapUtilReq
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL AddrMgrEntryLookupNwk, osal_memcmp
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL AddrMgrEntryLookupNwk, osal_memset
+        LOCFRAME CSTACK, 8, STACK
+        PUSH.W  R10
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+6
+        SUB.W   #0x2, SP
+          CFI CFA SP+8
+        MOV.W   R12, R10
+        MOV.B   0x2(R12), 0(SP)
+        MOV.B   0x3(R12), 0x1(SP)
+        MOV.W   SP, R14
+        ADD.W   #0x0, R14
+        MOV.W   R12, R13
+        ADD.W   #0x4, R13
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_3:
+        MOV.W   #0x8, R14
+        JNE     ??AddrMgrEntryLookupNwk_4
+        ADD.W   #0x4, R10
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_1:
+        JNE     ??AddrMgrEntryLookupNwk_3
+        MOV.B   #0x1, R12
+        JMP     ??AddrMgrEntryLookupNwk_1
+??AddrMgrEntryLookupNwk_4:
+        MOV.B   #0x0, R13
+        ADD.W   #0x4, R10
+        MOV.W   R10, R12
+        CALLA   #osal_memset
+??AddrMgrEntryLookupNwk_3:
+        MOV.B   #0x0, R12
+??AddrMgrEntryLookupNwk_1:
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock15
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI Function AddrMgrExtAddrLookup
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+12
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function AddrMgrEntryLookupNwk
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond17) R10L Frame(CFA, -6)
+          CFI (cfiCond17) CFA SP+12
+          CFI Block cfiPicker18 Using cfiCommon1
+          CFI (cfiPicker18) NoFunction
+          CFI (cfiPicker18) Picker
+        MOV.W   R10, R13
+        MOV.W   #nullAddr, R12
+        CALLA   #osal_memcmp
+        CMP.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiPicker18
+//  204   }
+//  205 }
+//  206 
+//  207 /**************************************************************************************************
+//  208  * @fn          AddrMgrExtAddrSet
+//  209  *
+//  210  * @brief       Set destination address to source address or empty{0x00}.
+//  211  *
+//  212  * input parameters
+//  213  *
+//  214  * @param       dstExtAddr - Pointer to the buffer to which to copy.
+//  215  * @param       srcExtAddr - Pointer to the buffer from which to copy.
+//  216  *
+//  217  * output parameters
+//  218  *
+//  219  * @param       dstExtAddr - Pointer to the buffer to which to copy.
+//  220  *
+//  221  * @return      None.
+//  222  **************************************************************************************************
+//  223  */
+//  224 void AddrMgrExtAddrSet(uint8 *dstExtAddr, uint8 *srcExtAddr)
+//  225 {
+//  226   if ( srcExtAddr != NULL )
+//  227   {
+//  228     osal_cpyExtAddr( dstExtAddr, srcExtAddr );
+//  229   }
+//  230   else
+//  231   {
+//  232     osal_memset( dstExtAddr, 0x00, Z_EXTADDR_LEN );
+//  233   }
+//  234 }
+//  235 
+//  236 /**************************************************************************************************
+//  237  * @fn          AssocCount()
+//  238  *
+//  239  * @brief       Counts the number of entries in the device list.
+//  240  *
+//  241  * input parameters
+//  242  *
+//  243  * @param       startRelation - Device relation to start counting at.
+//  244  * @param       endRelation - Device relation to end counting at.
+//  245  *
+//  246  * output parameters
+//  247  *
+//  248  * None.
+//  249  *
+//  250  * @return      The number of devices within the relation parameters.
+//  251  **************************************************************************************************
+//  252  */
+//  253 uint16 AssocCount(uint8 startRelation, uint8 endRelation)
+//  254 {
+//  255   uint16 count = 0;
+//  256   uint8 pBuf[2] = { startRelation, endRelation };
+//  257 
+//  258   if (SUCCESS == zapUtilReq(MT_UTIL_ASSOC_COUNT, pBuf, NULL))
+//  259   {
+//  260     count = BUILD_UINT16(pBuf[0], pBuf[1]);
+//  261   }
+//  262 
+//  263   return count;
+//  264 }
+//  265 
+//  266 /**************************************************************************************************
+//  267  * @fn          AssocFindDevice()
+//  268  *
+//  269  * @brief       Finds Nth active entry in the device list.
+//  270  *
+//  271  * input parameters
+//  272  *
+//  273  * @param       number - Device index where 0 = first.
+//  274  *
+//  275  * output parameters
+//  276  *
+//  277  * None.
+//  278  *
+//  279  * @return      A pointer to associated_devices_t if device found, NULL if operation failed.
+//  280  **************************************************************************************************
+//  281  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  282 associated_devices_t *AssocFindDevice(uint16 number)
+AssocFindDevice:
+          CFI Block cfiBlock19 Using cfiCommon0
+          CFI Function AssocFindDevice
+//  283 {
+        FUNCALL AssocFindDevice, zapUtilReq
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL AssocFindDevice, zapUtilParseAssocDevT
+        LOCFRAME CSTACK, 28, STACK
+        SUB.W   #0x18, SP
+          CFI CFA SP+28
+//  284   uint8 pBuf[sizeof(associated_devices_t)];
+//  285 
+//  286   /* ZNP can only handle one-byte index */
+//  287   if ( number < 256 )
+        CMP.W   #0x100, R12
+        JC      ??AssocFindDevice_0
+//  288   {
+//  289     uint8 index = number;
+        MOV.B   R12, 0(SP)
+//  290 
+//  291     if ((SUCCESS == zapUtilReq(MT_UTIL_ASSOC_FIND_DEVICE, pBuf, &index)) &&
+//  292         (SUCCESS == zapUtilParseAssocDevT(pBuf)))
+        MOV.W   SP, R14
+        ADD.W   #0x0, R14
+        MOV.W   SP, R13
+        ADD.W   #0x1, R13
+        MOV.B   #0x49, R12
+        CALLA   #??Subroutine1_0
+??CrossCallReturnLabel_6:
+        JNE     ??AssocFindDevice_0
+        MOV.W   SP, R12
+        ADD.W   #0x1, R12
+        CALLA   #zapUtilParseAssocDevT
+        CMP.B   #0x0, R12
+        JNE     ??AssocFindDevice_0
+//  293     {
+//  294       return &assocDevT;
+        MOV.W   #assocDevT, R12
+        JMP     ??AssocFindDevice_1
+//  295     }
+//  296   }
+//  297 
+//  298   return NULL;
+??AssocFindDevice_0:
+        MOV.W   #0x0, R12
+??AssocFindDevice_1:
+        ADD.W   #0x18, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock19
+//  299 }
+//  300 
+//  301 /**************************************************************************************************
+//  302  * @fn          AssocGetWithShort()
+//  303  *
+//  304  * @brief       Search the Device list using shortAddr.
+//  305  *
+//  306  * input parameters
+//  307  *
+//  308  * @param       shortAddr - look for this short address
+//  309  *
+//  310  * output parameters
+//  311  *
+//  312  * None.
+//  313  *
+//  314  * @return      A pointer to associated_devices_t if device found, NULL if operation failed.
+//  315  **************************************************************************************************
+//  316  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  317 associated_devices_t *AssocGetWithShort(uint16 shortAddr)
+AssocGetWithShort:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function AssocGetWithShort
+//  318 {
+        FUNCALL AssocGetWithShort, zapUtilReq
+        LOCFRAME CSTACK, 26, STACK
+        FUNCALL AssocGetWithShort, zapUtilParseAssocDevT
+        LOCFRAME CSTACK, 26, STACK
+        SUB.W   #0x16, SP
+          CFI CFA SP+26
+//  319   uint8 pBuf[sizeof(associated_devices_t)];
+//  320   assocDevT.shortAddr = shortAddr;
+        MOV.W   R12, &assocDevT
+//  321 
+//  322   if ((SUCCESS == zapUtilReq(MT_UTIL_ASSOC_GET_WITH_ADDRESS, pBuf, NULL)) &&
+//  323       (SUCCESS == zapUtilParseAssocDevT(pBuf)))
+        MOV.W   #0x0, R14
+        MOV.W   SP, R13
+        ADD.W   #0x0, R13
+        MOV.B   #0x4a, R12
+        CALLA   #??Subroutine1_0
+??CrossCallReturnLabel_5:
+        JNE     ??AssocGetWithShort_0
+        MOV.W   SP, R12
+        ADD.W   #0x0, R12
+        CALLA   #zapUtilParseAssocDevT
+        CMP.B   #0x0, R12
+        JNE     ??AssocGetWithShort_0
+//  324   {
+//  325     return &assocDevT;
+        MOV.W   #assocDevT, R12
+        JMP     ??AssocGetWithShort_1
+//  326   }
+//  327   else
+//  328   {
+//  329     return NULL;
+??AssocGetWithShort_0:
+        MOV.W   #0x0, R12
+??AssocGetWithShort_1:
+        ADD.W   #0x16, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock20
+//  330   }
+//  331 }
+//  332 
+//  333 /**************************************************************************************************
+//  334  * @fn          NLME_GetCoordShortAddr
+//  335  *
+//  336  * @brief       This function is a ZAP-side proxy for a Z-Stack accessor function. The
+//  337  *              concurrency of the information is assured by the ZAP task which queries the current
+//  338  *              values on a ZDO state change notification.
+//  339  *
+//  340  * input parameters
+//  341  *
+//  342  * None.
+//  343  *
+//  344  * output parameters
+//  345  *
+//  346  * None.
+//  347  *
+//  348  * @return      The ZigBee network address of the ZNP's parent device.
+//  349  **************************************************************************************************
+//  350  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  351 uint16 NLME_GetCoordShortAddr(void)
+NLME_GetCoordShortAddr:
+          CFI Block cfiBlock21 Using cfiCommon0
+          CFI Function NLME_GetCoordShortAddr
+//  352 {
+//  353   return znpParent;
+        MOV.W   &znpParent, R12
+        RETA
+          CFI EndBlock cfiBlock21
+//  354 }
+//  355 
+//  356 /**************************************************************************************************
+//  357  * @fn          NLME_GetExtAddr
+//  358  *
+//  359  * @brief       This function will return a pointer to the ZNP's IEEE 64-bit address.
+//  360  *
+//  361  * input parameters
+//  362  *
+//  363  * None.
+//  364  *
+//  365  * output parameters
+//  366  *
+//  367  * None.
+//  368  *
+//  369  * @return      Pointer to the ZNP 64-bit address.
+//  370  **************************************************************************************************
+//  371  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  372 uint8 *NLME_GetExtAddr(void)
+NLME_GetExtAddr:
+          CFI Block cfiBlock22 Using cfiCommon0
+          CFI Function NLME_GetExtAddr
+//  373 {
+//  374   return znpIEEE;
+        MOV.W   #znpIEEE, R12
+        RETA
+          CFI EndBlock cfiBlock22
+//  375 }
+//  376 
+//  377 /**************************************************************************************************
+//  378  * @fn          NLME_GetShortAddr
+//  379  *
+//  380  * @brief       This function is a ZAP-side proxy for a Z-Stack accessor function. The
+//  381  *              concurrency of the information is assured by the ZAP task which queries the current
+//  382  *              values on a ZDO state change notification.
+//  383  *
+//  384  * input parameters
+//  385  *
+//  386  * None.
+//  387  *
+//  388  * output parameters
+//  389  *
+//  390  * None.
+//  391  *
+//  392  * @return      The ZigBee network address of the ZNP.
+//  393  **************************************************************************************************
+//  394  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  395 uint16 NLME_GetShortAddr(void)
+NLME_GetShortAddr:
+          CFI Block cfiBlock23 Using cfiCommon0
+          CFI Function NLME_GetShortAddr
+//  396 {
+//  397   return znpAddr;
+        MOV.W   &znpAddr, R12
+        RETA
+          CFI EndBlock cfiBlock23
+//  398 }
+//  399 
+//  400 /**************************************************************************************************
+//  401  * @fn          NLME_RemoveChild
+//  402  *
+//  403  * @brief       This function is a ZAP-side proxy for a Z-Stack function to remove a child
+//  404  *              device and optionally re-use its network address.
+//  405  *
+//  406  * input parameters
+//  407  *
+//  408  * @param       newRate = number of milliseconds to do next poll.
+//  409  *                        0 will turn off the polling.
+//  410  *                        1 will do a one time poll.
+//  411  *
+//  412  * output parameters
+//  413  *
+//  414  * None.
+//  415  *
+//  416  * @return      None.
+//  417  **************************************************************************************************
+//  418  *
+//  419 void NLME_RemoveChild(uint8 *extAddr, uint8 dealloc)
+//  420 {
+//  421   (void)zapUtilReq(MT_NLME_REMOVE_CHILD, extAddr, &dealloc);
+//  422 }*/
+//  423 
+//  424 /**************************************************************************************************
+//  425  * @fn          NLME_SetPollRate
+//  426  *
+//  427  * @brief       This function is a ZAP-side proxy for a Z-Stack function to immediately set
+//  428  *              the poll rate of the ZNP.
+//  429  *
+//  430  * input parameters
+//  431  *
+//  432  * @param       newRate = number of milliseconds to do next poll.
+//  433  *                        0 will turn off the polling.
+//  434  *                        1 will do a one time poll.
+//  435  *
+//  436  * output parameters
+//  437  *
+//  438  * None.
+//  439  *
+//  440  * @return      None.
+//  441  **************************************************************************************************
+//  442  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  443 void NLME_SetPollRate(uint16 newRate)
+NLME_SetPollRate:
+          CFI Block cfiBlock24 Using cfiCommon0
+          CFI Function NLME_SetPollRate
+//  444 {
+        FUNCALL NLME_SetPollRate, znp_nv_write
+        LOCFRAME CSTACK, 6, STACK
+        PUSH.W  R12
+          CFI CFA SP+6
+//  445   (void)znp_nv_write(ZCD_NV_POLL_RATE, 0, 2, (uint8 *)(&newRate));
+        MOV.W   SP, R15
+        ADD.W   #0x0, R15
+        MOV.B   #0x2, R14
+        MOV.B   #0x0, R13
+        MOV.W   #0x24, R12
+        CALLA   #znp_nv_write
+//  446 }
+        ADD.W   #0x2, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock24
+//  447 
+//  448 /**************************************************************************************************
+//  449  * @fn          NLME_PermitJoiningRequest
+//  450  *
+//  451  * @brief       This function is a ZAP-side proxy for a Z-Stack function to immediately set
+//  452  *              the coordinator device to permit devices to join its network for a fixed period.
+//  453  *
+//  454  * input parameters
+//  455  *
+//  456  * @param       PermitDuration - Length of time to allow for associates
+//  457  *                               0x00 - macAssociationPermit = FALSE
+//  458  *                               0xFF - macAssociationPermit = TRUE
+//  459  *                               0x01 - 0xFE number of seconds to remain
+//  460  *                                  TRUE.
+//  461  *
+//  462  * output parameters
+//  463  *
+//  464  * None.
+//  465  *
+//  466  * @return      ZStatus_t
+//  467  **************************************************************************************************
+//  468  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  469 ZStatus_t NLME_PermitJoiningRequest( byte PermitDuration )
+NLME_PermitJoiningRequest:
+          CFI Block cfiBlock25 Using cfiCommon0
+          CFI Function NLME_PermitJoiningRequest
+//  470 {
+        FUNCALL NLME_PermitJoiningRequest, ZDP_MgmtPermitJoinReq
+        LOCFRAME CSTACK, 14, STACK
+        SUB.W   #0xa, SP
+          CFI CFA SP+14
+//  471   uint8 rtrn;
+//  472   zAddrType_t dstAddrLocal;
+//  473 
+//  474   dstAddrLocal.addr.shortAddr = NLME_GetShortAddr();
+        MOV.W   &znpAddr, 0(SP)
+//  475   dstAddrLocal.addrMode = afAddr16Bit;
+        MOV.B   #0x2, 0x8(SP)
+//  476 
+//  477   rtrn = ZDP_MgmtPermitJoinReq( &dstAddrLocal, PermitDuration, TRUE, FALSE );
+//  478 
+//  479   return (ZStatus_t)rtrn;
+        MOV.B   #0x0, R15
+        MOV.B   #0x1, R14
+        MOV.B   R12, R13
+        MOV.W   SP, R12
+        ADD.W   #0x0, R12
+        CALLA   #ZDP_MgmtPermitJoinReq
+        ADD.W   #0xa, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock25
+//  480 }
+//  481 
+//  482 /**************************************************************************************************
+//  483  * @fn      bindAddEntry()
+//  484  *
+//  485  * @brief   This function is a ZAP-side proxy for a Z-Stack function to
+//  486  *          Add an entry to the binding table
+//  487  *
+//  488  * input parameters
+//  489  *
+//  490  * @param       srcEpInt - source endpoint
+//  491  * @param       dstAddr - destination Address
+//  492  * @param       dstEpInt - destination endpoint
+//  493  * @param       numClusterIds - number of cluster Ids in the list
+//  494  * @param       clusterIds - pointer to the Object ID list
+//  495  *
+//  496  * output parameters
+//  497  *
+//  498  * None.
+//  499  *
+//  500  * @return  pointer to binding table entry, NULL if not added
+//  501  **************************************************************************************************
+//  502  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  503 BindingEntry_t *bindAddEntry( byte srcEpInt,
+bindAddEntry:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI Function bindAddEntry
+//  504                               zAddrType_t *dstAddr, byte dstEpInt,
+//  505                               byte numClusterIds, uint16 *clusterIds )
+//  506 {
+        FUNCALL bindAddEntry, osal_mem_alloc
+        LOCFRAME CSTACK, 18, STACK
+        FUNCALL bindAddEntry, sAddrExtCpy
+        LOCFRAME CSTACK, 18, STACK
+        FUNCALL bindAddEntry, osal_memcpy
+        LOCFRAME CSTACK, 18, STACK
+        FUNCALL bindAddEntry, zapUtilReq
+        LOCFRAME CSTACK, 18, STACK
+        FUNCALL bindAddEntry, zapUtilParseBindEntryT
+        LOCFRAME CSTACK, 18, STACK
+        FUNCALL bindAddEntry, osal_mem_free
+        LOCFRAME CSTACK, 18, STACK
+        FUNCALL bindAddEntry, osal_mem_free
+        LOCFRAME CSTACK, 18, STACK
+        PUSHM.W #0x6, R11
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+16
+        SUB.W   #0x2, SP
+          CFI CFA SP+18
+        MOV.B   R12, R11
+        MOV.W   R13, R9
+        MOV.B   R14, R8
+        MOV.B   R15, R10
+//  507   uint8 *pData = NULL;
+//  508   uint8 *pBuf;
+//  509   uint8 len;
+//  510 
+//  511   len = 1 + sizeof(zAddrType_t) + 1 + 1 + ( numClusterIds * sizeof(uint16) );
+        MOV.B   R15, R12
+        RLA.B   R12
+        ADD.B   #0xd, R12
+        MOV.B   R12, 0(SP)
+//  512 
+//  513   pData = (uint8 *)osal_mem_alloc( len );
+        CALLA   #osal_mem_alloc
+        MOV.W   R12, R6
+//  514 
+//  515   if ( pData != NULL )
+        CMP.W   #0x0, R12
+        JEQ     ??bindAddEntry_0
+//  516   {
+//  517     pBuf = pData;
+        MOV.W   R12, R7
+//  518 
+//  519     *pBuf++ = srcEpInt;
+        MOV.B   R11, 0(R12)
+        ADD.W   #0x1, R7
+//  520     *pBuf++ = dstAddr->addrMode;
+        MOV.B   0x8(R9), 0(R7)
+        ADD.W   #0x1, R7
+//  521 
+//  522     if ( dstAddr->addrMode == Addr64Bit )
+        CMP.B   #0x3, 0x8(R9)
+        JNE     ??bindAddEntry_1
+//  523     {
+//  524       osal_cpyExtAddr( pBuf, dstAddr->addr.extAddr );
+        MOV.W   R9, R13
+        MOV.W   R7, R12
+        CALLA   #sAddrExtCpy
+        JMP     ??bindAddEntry_2
+//  525     }
+//  526     else
+//  527     {
+//  528       *pBuf++ = LO_UINT16( dstAddr->addr.shortAddr );
+??bindAddEntry_1:
+        MOV.B   @R9, 0(R7)
+        ADD.W   #0x1, R7
+//  529       *pBuf++ = HI_UINT16( dstAddr->addr.shortAddr );
+        MOV.B   0x1(R9), 0(R7)
+        ADD.W   #0x1, R7
+//  530       pBuf += ( Z_EXTADDR_LEN - 2);
+        ADD.W   #0x6, R7
+//  531     }
+//  532 
+//  533     *pBuf++ = dstEpInt;
+??bindAddEntry_2:
+        MOV.B   R8, 0(R7)
+        ADD.W   #0x1, R7
+//  534     *pBuf++ = numClusterIds;
+        MOV.B   R10, 0(R7)
+        ADD.W   #0x1, R7
+//  535     osal_memcpy( pBuf, clusterIds, numClusterIds * sizeof(uint16) );
+        MOV.B   R10, R14
+        RLA.W   R14
+        MOV.W   0x12(SP), R13
+        MOV.W   R7, R12
+        CALLA   #osal_memcpy
+//  536 
+//  537     if ( ( SUCCESS == zapUtilReq( MT_UTIL_BIND_ADD_ENTRY, pData, &len ) ) &&
+//  538          ( SUCCESS == zapUtilParseBindEntryT( pData ) ) )
+        MOV.W   SP, R14
+        ADD.W   #0x0, R14
+        MOV.W   R6, R13
+        MOV.B   #0x4d, R12
+        CALLA   #??Subroutine1_0
+??CrossCallReturnLabel_4:
+        JNE     ??bindAddEntry_3
+        MOV.W   R6, R12
+        CALLA   #zapUtilParseBindEntryT
+        CMP.B   #0x0, R12
+        JNE     ??bindAddEntry_3
+//  539     {
+//  540       osal_mem_free( pData );
+        MOV.W   R6, R12
+        CALLA   #osal_mem_free
+//  541 
+//  542       return &bindEntryT;
+        MOV.W   #bindEntryT, R12
+        JMP     ??bindAddEntry_4
+//  543     }
+//  544 
+//  545     osal_mem_free( pData );
+??bindAddEntry_3:
+        MOV.W   R6, R12
+        CALLA   #osal_mem_free
+//  546   }
+//  547 
+//  548   return NULL;
+??bindAddEntry_0:
+        MOV.W   #0x0, R12
+??bindAddEntry_4:
+        ADD.W   #0x2, SP
+          CFI CFA SP+16
+        POPM.W  #0x6, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock26
+//  549 }
+//  550 
+//  551 #if defined ZCL_KEY_ESTABLISH
+//  552 /**************************************************************************************************
+//  553  * @fn          zclGeneral_KeyEstablish_InitiateKeyEstablishment
+//  554  *
+//  555  *
+//  556  * @brief       This function is a ZAP-side proxy for a Z-Stack function to initiate
+//  557  *              key establishment with partner device.
+//  558  *
+//  559  * input parameters
+//  560  *
+//  561  * @param       appTaskID - task ID of the application that initates the key establish
+//  562  * @param       partnerAddr - short address and endpoint of the partner to establish key with
+//  563  * @param       seqNum - pointer to the sequence number of application (ZCL)
+//  564  *
+//  565  * output parameters
+//  566  *
+//  567  * None.
+//  568  *
+//  569  * @return      ZStatus_t ZSuccess or ZFailure
+//  570  **************************************************************************************************
+//  571  */
+//  572 ZStatus_t zclGeneral_KeyEstablish_InitiateKeyEstablishment(uint8 appTaskID,
+//  573                                                            afAddrType_t *partnerAddr, uint8 seqNum)
+//  574 {
+//  575   uint8 req[12], rtrn;
+//  576 
+//  577   req[0] = appTaskID;
+//  578   req[1] = seqNum;
+//  579   req[2] = partnerAddr->endPoint;
+//  580   req[3] = partnerAddr->addrMode;
+//  581   if (afAddr64Bit == partnerAddr->addrMode)
+//  582   {
+//  583     (void)osal_memcpy(req+4, partnerAddr->addr.extAddr, Z_EXTADDR_LEN);
+//  584   }
+//  585   else
+//  586   {
+//  587     req[4] = LO_UINT16(partnerAddr->addr.shortAddr);
+//  588     req[5] = HI_UINT16(partnerAddr->addr.shortAddr);
+//  589   }
+//  590 
+//  591   zapPhyWait(zapAppPort, ZCL_KEY_EST_INIT_EST_WAIT);
+//  592   rtrn = zapUtilReq(MT_UTIL_ZCL_KEY_EST_INIT_EST, req, NULL);
+//  593   zapPhyWait(zapAppPort, 0);
+//  594   return rtrn;
+//  595 }
+//  596 
+//  597 /**************************************************************************************************
+//  598  * @fn          zclGeneral_KeyEstablishment_ECDSASign
+//  599  *
+//  600  * @brief       This function is a ZAP-side proxy for a Z-Stack function to creates an
+//  601  *              ECDSA signature of a message digest.
+//  602  *
+//  603  * input parameters
+//  604  *
+//  605  * @param       input - input data buffer
+//  606  * @param       inputLen - byte length of the input buffer
+//  607  * @param       output - output buffer (21x2 bytes: SE_PROFILE_SIGNATURE_LENGTH).
+//  608  *
+//  609  * output parameters
+//  610  *
+//  611  * None.
+//  612  *
+//  613  * @return      ZStatus_t - success.
+//  614  **************************************************************************************************
+//  615  */
+//  616 ZStatus_t zclGeneral_KeyEstablishment_ECDSASign(uint8 *input, uint8 inputLen, uint8 *output)
+//  617 {
+//  618   uint8 rtrn, *pBuf;
+//  619 
+//  620 #if defined SECURE
+//  621   if (SE_PROFILE_SIGNATURE_LENGTH > inputLen)
+//  622   {
+//  623     pBuf = output;
+//  624     (void)osal_memcpy(pBuf, input, inputLen);
+//  625   }
+//  626   else
+//  627   {
+//  628     pBuf = input;
+//  629   }
+//  630 
+//  631   rtrn = zapUtilReq(MT_UTIL_ZCL_KEY_EST_SIGN, pBuf, &inputLen);
+//  632 
+//  633   if (SE_PROFILE_SIGNATURE_LENGTH <= inputLen)
+//  634   {
+//  635     (void)osal_memcpy(output, pBuf, SE_PROFILE_SIGNATURE_LENGTH);
+//  636   }
+//  637 #endif
+//  638 
+//  639   return rtrn;
+//  640 }
+//  641 #endif
+//  642 
+//  643 #if SECURE
+//  644 /**************************************************************************************************
+//  645  * @fn          APSME_LinkKeyDataGet
+//  646  *
+//  647  *
+//  648  * @brief       This function is a ZAP-side proxy for a Z-Stack function to get the
+//  649  *              APS Link Key NV ID for a specified extended address.
+//  650  *
+//  651  * input parameters
+//  652  *
+//  653  * @param       extAddr - [in] EXT address
+//  654  *
+//  655  * output parameters
+//  656  *
+//  657  * @param       data    - [out] pKeyNvId
+//  658  *
+//  659  * @return      ZStatus_t
+//  660  **************************************************************************************************
+//  661  */
+//  662 ZStatus_t APSME_LinkKeyNVIdGet(uint8* extAddr, uint16 *pKeyNvId)
+//  663 {
+//  664   // query for the APS Link Key NV id
+//  665   if (SUCCESS == zapUtilReq(MT_UTIL_APSME_LINK_KEY_NV_ID_GET, extAddr, (uint8 *)pKeyNvId))
+//  666   {
+//  667     return ZSuccess;
+//  668   }
+//  669   else
+//  670   {
+//  671     return ZNwkUnknownDevice;
+//  672   }
+//  673 }
+//  674 
+//  675 
+//  676 /******************************************************************************
+//  677  * @fn          APSME_IsLinkKeyValid
+//  678  *
+//  679  * @brief       Verifies if Link Key in NV has been set.
+//  680  *
+//  681  * @param       extAddr - [in] EXT address
+//  682  *
+//  683  * @return      TRUE - Link Key has been established
+//  684  *              FALSE - Link Key in NV has default value.
+//  685  */
+//  686 uint8 APSME_IsLinkKeyValid(uint8* extAddr)
+//  687 {
+//  688   APSME_LinkKeyData_t *pKeyData = NULL;
+//  689   uint8 nullKey[SEC_KEY_LEN];
+//  690   uint8 status = FALSE;
+//  691   uint8 ret;
+//  692 
+//  693   // initialize default vealue to compare to
+//  694   osal_memset(nullKey, 0x00, SEC_KEY_LEN);
+//  695 
+//  696   pKeyData = (APSME_LinkKeyData_t *)osal_mem_alloc(sizeof(APSME_LinkKeyData_t));
+//  697 
+//  698   if (pKeyData != NULL)
+//  699   {
+//  700     ret = zapUtilReq(MT_UTIL_APSME_LINK_KEY_DATA_GET, extAddr, (uint8 *)pKeyData);
+//  701 
+//  702     if (ret == SUCCESS)
+//  703     {
+//  704       // if stored key is different than default value, then a key has been established
+//  705       if (!osal_memcmp(pKeyData, nullKey, SEC_KEY_LEN))
+//  706       {
+//  707         status = TRUE;
+//  708       }
+//  709     }
+//  710   }
+//  711 
+//  712   return status;
+//  713 }
+//  714 #endif
+//  715 
+//  716 /**************************************************************************************************
+//  717  * @fn          zapUtilReq
+//  718  *
+//  719  * @brief       This function packs and sends an RPC NWK request.
+//  720  *
+//  721  * input parameters
+//  722  *
+//  723  * @param       cmd - A valid NWK command.
+//  724  * @param       req - A buffer containing the contents of the request/response, or NULL.
+//  725  * @param       args - Valid argument(s) corresponding to the NWK command.
+//  726  *
+//  727  * output parameters
+//  728  *
+//  729  * @param       req - The buffer filled with the contents or success of a response.
+//  730  * @param       args - The buffer filled with the contents or success of a response.
+//  731  *
+//  732  * @return      SUCCESS or FAILURE.
+//  733  **************************************************************************************************
+//  734  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  735 uint8 zapUtilReq(uint8 cmd, uint8 *req, uint8 *args)
+zapUtilReq:
+          CFI Block cfiBlock27 Using cfiCommon0
+          CFI Function zapUtilReq
+//  736 {
+        FUNCALL zapUtilReq, zap_msg_allocate
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memset
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, zapPhySend
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, zap_msg_deallocate
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL zapUtilReq, zap_msg_deallocate
+        LOCFRAME CSTACK, 14, STACK
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x2, SP
+          CFI CFA SP+14
+        MOV.B   R12, R9
+        MOV.W   R13, R11
+        MOV.W   R14, R8
+//  737   uint8 len, cmd0 = (uint8)MT_RPC_CMD_SREQ;
+        MOV.B   #0x20, R13
+//  738   uint8 rtrn = SUCCESS;
+//  739   uint8 *pBuf;
+//  740 
+//  741   if (DEV_STATE_INVALID <= devState)
+        CMP.B   #0xfc, &devState
+        JC      ??zapUtilReq_0
+//  742   {
+//  743     return FAILURE;
+//  744   }
+//  745 
+//  746   switch (cmd)
+        MOV.B   R12, R14
+        SUB.B   #0x41, R14
+        JEQ     ??zapUtilReq_2
+        SUB.B   #0x7, R14
+        JEQ     ??zapUtilReq_2
+        SUB.B   #0x1, R14
+        JEQ     ??zapUtilReq_3
+        SUB.B   #0x1, R14
+        JEQ     ??zapUtilReq_4
+        SUB.B   #0x3, R14
+        JEQ     ??zapUtilReq_5
+        SUB.B   #0x93, R14
+        JEQ     ??zapUtilReq_6
+        JMP     ??zapUtilReq_0
+//  747   {
+//  748   // SREQ's to ZNP.
+//  749 
+//  750   case MT_UTIL_ASSOC_GET_WITH_ADDRESS:
+//  751     len = Z_EXTADDR_LEN + 2;
+??zapUtilReq_4:
+        MOV.B   #0xa, R10
+//  752     break;
+        JMP     ??zapUtilReq_7
+//  753 
+//  754   case MT_UTIL_ADDRMGR_NWK_ADDR_LOOKUP:
+//  755   case MT_UTIL_ASSOC_COUNT:
+//  756     len = 2;
+??zapUtilReq_2:
+        MOV.B   #0x2, R10
+//  757     break;
+        JMP     ??zapUtilReq_7
+//  758 
+//  759 #if SECURE
+//  760   case MT_UTIL_APSME_LINK_KEY_DATA_GET:
+//  761     len = Z_EXTADDR_LEN;
+//  762     break;
+//  763 
+//  764   case MT_UTIL_APSME_LINK_KEY_NV_ID_GET:
+//  765     len = Z_EXTADDR_LEN;
+//  766     break;
+//  767 #endif
+//  768 
+//  769   case MT_UTIL_ASSOC_FIND_DEVICE:
+//  770     len = 1;
+??zapUtilReq_3:
+        MOV.B   #0x1, R10
+//  771     break;
+        JMP     ??zapUtilReq_7
+//  772 
+//  773 #if defined ZCL_KEY_ESTABLISH
+//  774   case MT_UTIL_ZCL_KEY_EST_INIT_EST:
+//  775     len = 12;
+//  776     break;
+//  777 
+//  778   case MT_UTIL_ZCL_KEY_EST_SIGN:
+//  779     len = *args +1;
+//  780     break;
+//  781 #endif
+//  782 
+//  783   case MT_UTIL_BIND_ADD_ENTRY:
+//  784     len = *args;
+??zapUtilReq_5:
+        MOV.B   @R8, R10
+//  785     break;
+        JMP     ??zapUtilReq_7
+//  786 
+//  787   // AREQ's to ZNP.
+//  788 
+//  789   case MT_UTIL_SYNC_REQ:
+//  790     cmd0 = (uint8)MT_RPC_CMD_AREQ;
+??zapUtilReq_6:
+        MOV.B   #0x40, R13
+//  791     len = 0;
+        MOV.B   #0x0, R10
+//  792     break;
+//  793 
+//  794   default:
+//  795     return FAILURE;
+//  796   }
+//  797   cmd0 |= (uint8)MT_RPC_SYS_UTIL;
+//  798 
+//  799   if (NULL == (pBuf = zap_msg_allocate(len, cmd0, cmd)))
+??zapUtilReq_7:
+        MOV.B   R12, R14
+        BIS.B   #0x7, R13
+        MOV.B   R10, R12
+        CALLA   #zap_msg_allocate
+        MOV.W   R12, 0(SP)
+        CMP.W   #0x0, R12
+        JNE     ??zapUtilReq_8
+//  800   {
+//  801     return FAILURE;
+??zapUtilReq_0:
+        MOV.B   #0x1, R12
+        JMP     ??zapUtilReq_9
+//  802   }
+//  803 
+//  804   switch (cmd)
+??zapUtilReq_8:
+        MOV.B   R9, R14
+        SUB.B   #0x41, R14
+        JEQ     ??zapUtilReq_10
+        SUB.B   #0x7, R14
+        JEQ     ??zapUtilReq_11
+        SUB.B   #0x1, R14
+        JEQ     ??zapUtilReq_12
+        SUB.B   #0x1, R14
+        JEQ     ??zapUtilReq_13
+        SUB.B   #0x3, R14
+        JEQ     ??zapUtilReq_14
+        JMP     ??zapUtilReq_15
+//  805   {
+//  806   // SREQ's to ZNP.
+//  807 
+//  808   case MT_UTIL_ADDRMGR_NWK_ADDR_LOOKUP:
+//  809     pBuf[0] = *args++;
+??zapUtilReq_10:
+        MOV.B   @R8+, 0(R12)
+//  810     pBuf[1] = *args;
+        MOV.W   @SP, R15
+        MOV.B   @R8, 0x1(R15)
+//  811     break;
+        JMP     ??zapUtilReq_15
+//  812 
+//  813 #if SECURE
+//  814   case MT_UTIL_APSME_LINK_KEY_DATA_GET:
+//  815     (void)osal_memcpy(pBuf, req, Z_EXTADDR_LEN);
+//  816     break;
+//  817 
+//  818   case MT_UTIL_APSME_LINK_KEY_NV_ID_GET:
+//  819     (void)osal_memcpy(pBuf, req, Z_EXTADDR_LEN);
+//  820     break;
+//  821 #endif
+//  822 
+//  823   case MT_UTIL_ASSOC_COUNT:
+//  824     (void)osal_memcpy(pBuf, req, 2);
+??zapUtilReq_11:
+        MOV.W   #0x2, R14
+        JMP     ??zapUtilReq_16
+//  825     break;
+//  826 
+//  827   case MT_UTIL_ASSOC_FIND_DEVICE:
+//  828     pBuf[0] = *args;
+??zapUtilReq_12:
+        MOV.B   @R8, 0(R12)
+//  829     break;
+        JMP     ??zapUtilReq_15
+//  830 
+//  831   case MT_UTIL_ASSOC_GET_WITH_ADDRESS:
+//  832     if (NULL == args)
+??zapUtilReq_13:
+        CMP.W   #0x0, R8
+        MOV.W   #0x8, R14
+        JNE     ??zapUtilReq_17
+//  833     {
+//  834       (void)osal_memset(pBuf, 0, Z_EXTADDR_LEN);
+        MOV.B   #0x0, R13
+        CALLA   #osal_memset
+        JMP     ??zapUtilReq_18
+//  835     }
+//  836     else
+//  837     {
+//  838       (void)osal_memcpy(pBuf, args, Z_EXTADDR_LEN);
+??zapUtilReq_17:
+        MOV.W   R8, R13
+        CALLA   #osal_memcpy
+//  839     }
+//  840     pBuf[Z_EXTADDR_LEN] = LO_UINT16(assocDevT.shortAddr);
+??zapUtilReq_18:
+        MOV.W   @SP, R15
+        MOV.B   &assocDevT, 0x8(R15)
+//  841     pBuf[Z_EXTADDR_LEN+1] = HI_UINT16(assocDevT.shortAddr);
+        MOV.W   @SP, R15
+        MOV.B   &assocDevT + 1, 0x9(R15)
+//  842     break;
+        JMP     ??zapUtilReq_15
+//  843 
+//  844 #if defined ZCL_KEY_ESTABLISH
+//  845   case MT_UTIL_ZCL_KEY_EST_INIT_EST:
+//  846     (void)osal_memcpy(pBuf, req, 12);
+//  847     break;
+//  848 
+//  849   case MT_UTIL_ZCL_KEY_EST_SIGN:
+//  850     *pBuf = *args;
+//  851     (void)osal_memcpy(pBuf+1, req, *args);
+//  852     break;
+//  853 #endif
+//  854 
+//  855   case MT_UTIL_BIND_ADD_ENTRY:
+//  856     (void)osal_memcpy(pBuf, req, len);
+??zapUtilReq_14:
+        MOV.B   R10, R14
+??zapUtilReq_16:
+        MOV.W   R11, R13
+        CALLA   #osal_memcpy
+//  857     break;
+//  858 
+//  859   // AREQ's to ZNP.
+//  860 
+//  861   default:
+//  862     break;
+//  863   }
+//  864 
+//  865   if (zapPhySend(zapAppPort, pBuf) == FAILURE)
+??zapUtilReq_15:
+        MOV.W   @SP, R13
+        MOV.B   &zapAppPort, R12
+        CALLA   #zapPhySend
+        CMP.B   #0x1, R12
+        JNE     ??zapUtilReq_19
+//  866   {
+//  867     zap_msg_deallocate(&pBuf);
+        MOV.W   SP, R12
+        ADD.W   #0x0, R12
+        CALLA   #zap_msg_deallocate
+        JMP     ??zapUtilReq_0
+//  868     return FAILURE;
+//  869   }
+//  870 
+//  871   switch (cmd)
+??zapUtilReq_19:
+        SUB.B   #0x41, R9
+        JEQ     ??zapUtilReq_20
+        SUB.B   #0x7, R9
+        JEQ     ??zapUtilReq_21
+        SUB.B   #0x1, R9
+        JEQ     ??zapUtilReq_22
+        SUB.B   #0x1, R9
+        JEQ     ??zapUtilReq_22
+        SUB.B   #0x3, R9
+        JEQ     ??zapUtilReq_23
+        JMP     ??zapUtilReq_24
+//  872   {
+//  873   // SREQ's to ZNP.
+//  874 
+//  875   case MT_UTIL_ADDRMGR_NWK_ADDR_LOOKUP:
+//  876     (void)osal_memcpy(req, pBuf, Z_EXTADDR_LEN);
+??zapUtilReq_20:
+        MOV.W   #0x8, R14
+        JMP     ??zapUtilReq_1
+//  877     break;
+//  878 
+//  879 #if SECURE
+//  880   case MT_UTIL_APSME_LINK_KEY_DATA_GET:
+//  881     if (SUCCESS == (rtrn = *pBuf))
+//  882     {
+//  883       APSME_LinkKeyData_t *pData = (APSME_LinkKeyData_t *)args;
+//  884       uint8 *ptr = pBuf+1;
+//  885 
+//  886       // copy key data
+//  887       (void)osal_memcpy(pData->key, ptr, SEC_KEY_LEN);
+//  888       ptr += SEC_KEY_LEN;
+//  889       pData->txFrmCntr = BUILD_UINT32(ptr[0], ptr[1], ptr[2], ptr[3]);
+//  890       ptr += 4;
+//  891       pData->rxFrmCntr = BUILD_UINT32(ptr[0], ptr[1], ptr[2], ptr[3]);
+//  892     }
+//  893     break;
+//  894 
+//  895   case MT_UTIL_APSME_LINK_KEY_NV_ID_GET:
+//  896     if (SUCCESS == (rtrn = *pBuf))
+//  897     {
+//  898       uint16 *pNvId = (uint16 *)args;
+//  899       uint8 *ptr = pBuf+1;
+//  900 
+//  901       *pNvId = BUILD_UINT16(ptr[0], ptr[1]);
+//  902     }
+//  903     break;
+//  904 #endif
+//  905 
+//  906   case MT_UTIL_ASSOC_COUNT:
+//  907     (void)osal_memcpy(req, pBuf, 2);
+??zapUtilReq_21:
+        MOV.W   #0x2, R14
+        JMP     ??zapUtilReq_1
+//  908     break;
+//  909 
+//  910   case MT_UTIL_ASSOC_FIND_DEVICE:
+//  911   case MT_UTIL_ASSOC_GET_WITH_ADDRESS:
+//  912     (void)osal_memcpy(req, pBuf, sizeof(associated_devices_t));
+??zapUtilReq_22:
+        MOV.W   #0x16, R14
+        JMP     ??zapUtilReq_1
+//  913     break;
+//  914 
+//  915     case MT_UTIL_BIND_ADD_ENTRY:
+//  916     (void)osal_memcpy(req, pBuf, sizeof(BindingEntry_t));
+??zapUtilReq_23:
+        MOV.W   #0xe, R14
+??zapUtilReq_1:
+        MOV.W   @SP, R13
+        MOV.W   R11, R12
+        CALLA   #osal_memcpy
+//  917     break;
+//  918 
+//  919 #if defined ZCL_KEY_ESTABLISH
+//  920   case MT_UTIL_ZCL_KEY_EST_SIGN:
+//  921 #if defined SECURE
+//  922     (void)osal_memcpy(req, pBuf+1, SE_PROFILE_SIGNATURE_LENGTH);
+//  923 #endif
+//  924   case MT_UTIL_ZCL_KEY_EST_INIT_EST:
+//  925     rtrn = *pBuf;
+//  926     break;
+//  927 #endif
+//  928 
+//  929   // AREQ's to ZNP.
+//  930 
+//  931   default:
+//  932     break;
+//  933   }
+//  934 
+//  935   zap_msg_deallocate(&pBuf);
+??zapUtilReq_24:
+        MOV.W   SP, R12
+        ADD.W   #0x0, R12
+        CALLA   #zap_msg_deallocate
+//  936   return rtrn;
+        MOV.B   #0x0, R12
+??zapUtilReq_9:
+        ADD.W   #0x2, SP
+          CFI CFA SP+12
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock27
+//  937 }
+//  938 
+//  939 /**************************************************************************************************
+//  940  * @fn          zapUtilParseAssocDevT
+//  941  *
+//  942  * @brief       This function parses a packed associated_devices_t.
+//  943  *
+//  944  * input parameters
+//  945  *
+//  946  * @param       pBuf - A buffer containing a packed associated_devices_t.
+//  947  *
+//  948  * output parameters
+//  949  *
+//  950  * None.
+//  951  *
+//  952  * @return      SUCCESS if the parsed shortAddr is not invalid, otherwise FAILURE.
+//  953  **************************************************************************************************
+//  954  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  955 static uint8 zapUtilParseAssocDevT(uint8 *pBuf)
+zapUtilParseAssocDevT:
+          CFI Block cfiBlock28 Using cfiCommon0
+          CFI Function zapUtilParseAssocDevT
+//  956 {
+        PUSHM.W #0x2, R11
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.W   R12, R15
+//  957   assocDevT.shortAddr = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV.B   @R12, R14
+        MOV.B   0x1(R12), R11
+        RPT     #0x8
+        RLAX.W  R11
+        ADD.W   R11, R14
+        MOV.W   R14, &assocDevT
+//  958   assocDevT.addrIdx = BUILD_UINT16(pBuf[2], pBuf[3]);
+        MOV.B   0x2(R12), R14
+        MOV.B   0x3(R12), R11
+        RPT     #0x8
+        RLAX.W  R11
+        ADD.W   R11, R14
+        MOV.W   R14, &assocDevT + 2
+//  959   pBuf += 4;
+        ADD.W   #0x4, R15
+//  960   assocDevT.nodeRelation = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 4
+//  961   assocDevT.devStatus = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 5
+//  962   assocDevT.assocCnt = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 6
+//  963   assocDevT.age = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 7
+//  964   assocDevT.linkInfo.txCounter = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 8
+//  965   assocDevT.linkInfo.txCost = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 9
+//  966   assocDevT.linkInfo.rxLqi = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 10
+//  967   assocDevT.linkInfo.inKeySeqNum = *pBuf++;
+        MOV.B   @R15+, &assocDevT + 11
+//  968   assocDevT.linkInfo.inFrmCntr = BUILD_UINT32(pBuf[0], pBuf[1], pBuf[2], pBuf[3]);
+        MOV.B   @R15, R10
+        MOV.W   #0x0, R11
+        MOV.B   0x1(R15), R12
+        MOV.W   #0x0, R13
+        CALLA   #?ShiftLeft32_8
+        ADD.W   R12, R10
+        ADDC.W  R13, R11
+        MOV.B   0x2(R15), R13
+        ADD.W   R13, R11
+        MOV.B   0x3(R15), R12
+        RPT     #0x8
+        RLAX.W  R12
+        ADD.W   R12, R11
+        MOV.W   R10, &assocDevT + 12
+        MOV.W   R11, &assocDevT + 14
+//  969   assocDevT.linkInfo.txFailure = BUILD_UINT16(pBuf[4], pBuf[5]);
+        MOV.B   0x4(R15), R11
+        MOV.B   0x5(R15), R15
+        RPT     #0x8
+        RLAX.W  R15
+        ADD.W   R15, R11
+        MOV.W   R11, &assocDevT + 16
+//  970 
+//  971   return ((INVALID_NODE_ADDR != assocDevT.shortAddr) ? SUCCESS : FAILURE);
+        CMP.W   #0xfffe, &assocDevT
+        JNE     ??zapUtilParseAssocDevT_0
+        MOV.B   #0x1, R12
+??zapUtilParseAssocDevT_0:
+        POPM.W  #0x2, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock28
+//  972 }
+//  973 
+//  974 /**************************************************************************************************
+//  975  * @fn          zapUtilParseBindEntryT
+//  976  *
+//  977  * @brief       This function parses a packed BindingEntry_t.
+//  978  *
+//  979  * input parameters
+//  980  *
+//  981  * @param       pBuf - A buffer containing a packed BindingEntry_t.
+//  982  *
+//  983  * output parameters
+//  984  *
+//  985  * None.
+//  986  *
+//  987  * @return      SUCCESS if the parsed dstIdx is valid, otherwise FAILURE.
+//  988  **************************************************************************************************
+//  989  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  990 static uint8 zapUtilParseBindEntryT(uint8 *pBuf)
+zapUtilParseBindEntryT:
+          CFI Block cfiBlock29 Using cfiCommon0
+          CFI Function zapUtilParseBindEntryT
+//  991 {
+//  992   bindEntryT.srcEP = *pBuf++;
+        FUNCALL zapUtilParseBindEntryT, osal_memcpy
+        LOCFRAME CSTACK, 4, STACK
+        MOV.B   @R12+, &bindEntryT
+//  993   bindEntryT.dstGroupMode = *pBuf++;
+        MOV.B   @R12+, &bindEntryT + 1
+//  994   bindEntryT.dstIdx = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV.B   @R12, R14
+        MOV.B   0x1(R12), R15
+        RPT     #0x8
+        RLAX.W  R15
+        ADD.W   R15, R14
+        MOV.W   R14, &bindEntryT + 2
+//  995   pBuf += 2;
+        ADD.W   #0x2, R12
+//  996   bindEntryT.dstEP = *pBuf++;
+        MOV.B   @R12+, &bindEntryT + 4
+//  997   bindEntryT.numClusterIds = *pBuf++;
+        MOV.B   @R12+, R14
+//  998 
+//  999   if ( bindEntryT.numClusterIds > MAX_BINDING_CLUSTER_IDS )
+        CMP.B   #0x5, R14
+        JNC     ??zapUtilParseBindEntryT_0
+// 1000   {
+// 1001     bindEntryT.numClusterIds = MAX_BINDING_CLUSTER_IDS;
+        MOV.B   #0x4, R14
+??zapUtilParseBindEntryT_0:
+        MOV.B   R14, &bindEntryT + 5
+// 1002   }
+// 1003 
+// 1004   osal_memcpy( bindEntryT.clusterIdList, pBuf, bindEntryT.numClusterIds * sizeof(uint16));
+        RLA.W   R14
+        MOV.W   R12, R13
+        MOV.W   #bindEntryT + 6, R12
+        CALLA   #osal_memcpy
+// 1005 
+// 1006   return ((INVALID_NODE_ADDR != bindEntryT.dstIdx) ? SUCCESS : FAILURE);
+        CMP.W   #0xfffe, &bindEntryT + 2
+        JNE     ??zapUtilParseBindEntryT_1
+        MOV.B   #0x1, R12
+        RETA
+??zapUtilParseBindEntryT_1:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock29
+// 1007 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 1008 
+// 1009 #if defined ZCL_KEY_ESTABLISH
+// 1010 /**************************************************************************************************
+// 1011  * @fn          zapUtilParseKeyInd
+// 1012  *
+// 1013  * @brief       This function parses a packed keyEstablishmentInd_t.
+// 1014  *
+// 1015  * input parameters
+// 1016  *
+// 1017  * @param       pBuf - A buffer containing a packed keyEstablishmentInd_t.
+// 1018  *
+// 1019  * output parameters
+// 1020  *
+// 1021  * None.
+// 1022  *
+// 1023  * @return      None.
+// 1024  **************************************************************************************************
+// 1025  */
+// 1026 static void zapUtilParseKeyInd(uint8 *pBuf)
+// 1027 {
+// 1028   keyEstablishmentInd_t *pInd;
+// 1029 
+// 1030   // Send osal message to the application.
+// 1031   if (NULL != (pInd = (keyEstablishmentInd_t *)osal_msg_allocate(sizeof(keyEstablishmentInd_t))))
+// 1032   {
+// 1033     pInd->hdr.event = pBuf[1];
+// 1034     pInd->hdr.status = pBuf[2];
+// 1035     pInd->waitTime = pBuf[3];
+// 1036     pInd->keyEstablishmentSuite = BUILD_UINT16(pBuf[4], pBuf[5]);
+// 1037     osal_msg_send(pBuf[0], (uint8 *)pInd);
+// 1038   }
+// 1039 }
+// 1040 #endif
+// 1041 
+// 1042 /**************************************************************************************************
+// 1043 */
+// 
+// 1 084 bytes in segment CODE
+//     8 bytes in segment DATA16_C
+//    36 bytes in segment DATA16_Z
+// 
+// 1 084 bytes of CODE  memory
+//     8 bytes of CONST memory
+//    36 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

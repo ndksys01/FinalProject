@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>4094072538</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\bsp.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp_key.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp_led.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\io_pin_int.o</file>
+      <file>$PROJ_DIR$\..\..\bin\iar\bsp.lib</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp_key.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp_led.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\io_pin_int.pbi</file>
+      <file>$PROJ_DIR$\..\..\source\bsp_key.c</file>
+      <file>$PROJ_DIR$\bsp_iar.cfg</file>
+      <file>$PROJ_DIR$\..\..\source\io_pin_int.c</file>
+      <file>$PROJ_DIR$\..\..\source\bsp.h</file>
+      <file>$PROJ_DIR$\..\..\source\bsp.c</file>
+      <file>$PROJ_DIR$\..\..\source\bsp_led.c</file>
+      <file>$PROJ_DIR$\..\..\source\io_pin_int.h</file>
+      <file>$PROJ_DIR$\..\..\source\bsp_led.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\inc\hw_smwdthrosc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\source\interrupt.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\inc\hw_ioc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\..\..\source\bsp_key.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\inc\hw_memmap.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\source\ioc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\inc\hw_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\source\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\inc\hw_ssi.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\source\ssi.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\driverlib\cc2538\source\sys_ctrl.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>IARCHIVE</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\source\bsp_key.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 6</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24 13 31 20 29 34 25 26 27 36 23 22 28 32 30 16 19 18</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 24 13 31 20 29 34 25 26 27 36 23 22 28 32 30 16 19 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\source\io_pin_int.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16 13 31 20 29 34 25 26 27 36 23 22 28 19 32</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 16 13 31 20 29 34 25 26 27 36 23 22 28 19 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\source\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13 31 20 29 34 25 26 27 36 23 22 28 21 33 30 32 37 19 35</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 13 31 20 29 34 25 26 27 36 23 22 28 21 33 30 32 37 19 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\source\bsp_led.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17 13 31 20 29 34 25 26 27 36 23 22 28 32</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 17 13 31 20 29 34 25 26 27 36 23 22 28 32</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>IARCHIVE</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

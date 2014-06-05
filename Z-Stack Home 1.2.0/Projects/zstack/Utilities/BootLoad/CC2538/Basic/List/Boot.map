@@ -1,0 +1,306 @@
+###############################################################################
+#
+# IAR ELF Linker V7.10.3.6832/W32 for ARM                 05/Apr/2014  08:20:22
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Exe\Boot.out
+#    Map file     =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\List\Boot.map
+#    Command line =  
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Obj\hal_sys_ctrl.o"
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Obj\sb_exec.o"
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Obj\sb_main.o"
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Obj\sb_uart.o"
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Obj\startup_ewarm.o"
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmall -o
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Exe\Boot.out"
+#        --map "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\List\Boot.map"
+#        --config "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\boot.icf"
+#        --semihosting "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\..\..\..\..\..\Components\driverlib\cc2538\bin\iar\sdriverlib.lib"
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\..\..\..\..\..\Components\bsp\srf06eb_cc2538\drivers\bin\iar\bsp.lib"
+#        --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x0027b800-0x0027c7ff] { ro section .intvec };
+"A2":  place at start of [0x0027ffd4-0x0027ffdf] { ro section .cca };
+"P1":  place in [from 0x0027b000 to 0x0027c7ff] { ro };
+"P2":  place in [from 0x20004000 to 0x20007fff] { rw, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"P1", part 1 of 2:                         0x55c
+  .text              ro code  0x0027b000   0x448  sb_exec.o [1]
+  .text              ro code  0x0027b448    0x44  flash.o [5]
+  .text              ro code  0x0027b48c     0x6  ABImemclr.o [4]
+  .text              ro code  0x0027b492    0x2e  copy_init3.o [4]
+  .text              ro code  0x0027b4c0    0x66  ABImemset.o [4]
+  Initializer bytes  ro data  0x0027b528    0x34  <for P2 s0>
+                            - 0x0027b55c   0x55c
+
+"A1":                                        0x8
+  .intvec            const    0x0027b800     0x8  startup_ewarm.o [1]
+                            - 0x0027b808     0x8
+
+"P1", part 2 of 2:                         0x86c
+  .text              ro code  0x0027b808   0x154  sb_uart.o [1]
+  .text              ro code  0x0027b95c    0x22  zero_init3.o [4]
+  .text              ro code  0x0027b980    0x76  ABImemcpy_unaligned.o [4]
+  .text              ro code  0x0027b9f8   0x120  sys_ctrl.o [5]
+  .text              ro code  0x0027bb18    0xc8  uart.o [5]
+  .text              ro code  0x0027bbe0   0x2e4  ioc.o [5]
+  .text              ro code  0x0027bec4    0x5e  gpio.o [5]
+  .text              ro code  0x0027bf24    0x7c  sb_main.o [1]
+  .text              ro code  0x0027bfa0     0xe  interrupt.o [5]
+  .text              ro code  0x0027bfb0    0x20  hal_sys_ctrl.o [1]
+  .text              ro code  0x0027bfd0     0x8  cpu.o [5]
+  .text              ro code  0x0027bfd8    0x28  data_init.o [4]
+  .iar.init_table    const    0x0027c000    0x24  - Linker created -
+  .text              ro code  0x0027c024    0x1a  cmain.o [4]
+  .text              ro code  0x0027c03e     0x4  low_level_init.o [3]
+  .text              ro code  0x0027c042     0x4  exit.o [3]
+  .text              ro code  0x0027c048     0xa  cexit.o [4]
+  .text              ro code  0x0027c054    0x14  exit.o [6]
+  .text              ro code  0x0027c068     0xc  cstartup_M.o [4]
+  .rodata            const    0x0027c074     0x0  zero_init3.o [4]
+  .rodata            const    0x0027c074     0x0  copy_init3.o [4]
+                            - 0x0027c074   0x86c
+
+"A2":                                        0xc
+  .cca               const    0x0027ffd4     0xc  startup_ewarm.o [1]
+                            - 0x0027ffe0     0xc
+
+Absolute sections:                           0x4
+  .noinit            uninit   0x20000800     0x4  startup_ewarm.o [1]
+                            - 0x20000804     0x4
+
+"P2", part 1 of 2:                          0x34
+  P2 s0                       0x20004000    0x34  <Init block>
+    .data            inited   0x20004000    0x30  sb_exec.o [1]
+    .data            inited   0x20004030     0x4  sb_main.o [1]
+                            - 0x20004034    0x34
+
+"P2", part 2 of 2:                        0x1070
+  .bss               zero     0x20004034   0x834  sb_exec.o [1]
+  .bss               zero     0x20004868   0x834  sb_uart.o [1]
+  .bss               zero     0x2000509c     0x8  sb_uart.o [1]
+                            - 0x200050a4  0x1070
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1070:
+          0x20004034  0x1070
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x34:
+          0x0027b528    0x34
+    1 destination range, total size 0x34:
+          0x20004000    0x34
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data  rw data
+                                                       (abs)
+    ------                 -------  -------  -------  -------
+C:\Texas Instruments\Z-Stack Home 1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Obj: [1]
+    hal_sys_ctrl.o              32
+    sb_exec.o                1 096       48    2 148
+    sb_main.o                  124        4        4
+    sb_uart.o                  340             2 108
+    startup_ewarm.o                      20                 4
+    ---------------------------------------------------------
+    Total:                   1 592       72    4 260        4
+
+command line: [2]
+    ---------------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                       4
+    low_level_init.o             4
+    ---------------------------------------------------------
+    Total:                       8
+
+rt7M_tl.a: [4]
+    ABImemclr.o                  6
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    cexit.o                     10
+    cmain.o                     26
+    copy_init3.o                46
+    cstartup_M.o                12
+    data_init.o                 40
+    zero_init3.o                34
+    ---------------------------------------------------------
+    Total:                     394
+
+sdriverlib.lib: [5]
+    cpu.o                        8
+    flash.o                     68
+    gpio.o                      94
+    interrupt.o                 14
+    ioc.o                      740
+    sys_ctrl.o                 288
+    uart.o                     200
+    ---------------------------------------------------------
+    Total:                   1 412
+
+shb_l.a: [6]
+    exit.o                      20
+    ---------------------------------------------------------
+    Total:                      20
+
+    Gaps                        12
+    Linker created                       38
+-------------------------------------------------------------
+    Grand Total:             3 438      110    4 260        4
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x0027c025         Code  Gb  cmain.o [4]
+CPUcpsid                0x0027bfd1    0x8  Code  Gb  cpu.o [5]
+EnterNvmApplication     0x0027bf79   0x16  Code  Lc  sb_main.o [1]
+FlashCacheModeSet       0x0027b477   0x12  Code  Gb  flash.o [5]
+FlashMainPageErase      0x0027b449   0x10  Code  Gb  flash.o [5]
+FlashMainPageProgram    0x0027b469    0xe  Code  Gb  flash.o [5]
+GPIODirModeSet          0x0027bec5   0x28  Code  Gb  gpio.o [5]
+GPIOPinTypeUARTInput    0x0027bf05    0x4  Code  Gb  gpio.o [5]
+GPIOPinTypeUARTOutput   0x0027bf09   0x1a  Code  Gb  gpio.o [5]
+IOCPadConfigSet         0x0027bd43   0x68  Code  Gb  ioc.o [5]
+IOCPinConfigPeriphInput
+                        0x0027bc49   0xfa  Code  Gb  ioc.o [5]
+IOCPinConfigPeriphOutput
+                        0x0027bbe1   0x68  Code  Gb  ioc.o [5]
+IntMasterDisable        0x0027bfa1    0x6  Code  Gb  interrupt.o [5]
+Region$$Table$$Base     0x0027c000          --   Gb  - Linker created -
+Region$$Table$$Limit    0x0027c024          --   Gb  - Linker created -
+SysCtrlClockGet         0x0027ba45   0x2c  Code  Gb  sys_ctrl.o [5]
+SysCtrlClockSet         0x0027b9f9   0x4c  Code  Gb  sys_ctrl.o [5]
+SysCtrlClockStartSetting
+                        0x0027bfb1   0x1a  Code  Gb  hal_sys_ctrl.o [1]
+SysCtrlDelay            0x0027baa1    0x8  Code  Gb  sys_ctrl.o [5]
+SysCtrlIOClockSet       0x0027ba71   0x10  Code  Gb  sys_ctrl.o [5]
+SysCtrlPeripheralEnable
+                        0x0027bab1    0x6  Code  Gb  sys_ctrl.o [5]
+SysCtrlReset            0x0027baa9    0x8  Code  Gb  sys_ctrl.o [5]
+UARTCharGetNonBlocking  0x0027bba7   0x10  Code  Gb  uart.o [5]
+UARTCharPutNonBlocking  0x0027bbb7   0x10  Code  Gb  uart.o [5]
+UARTCharsAvail          0x0027bb97    0x6  Code  Gb  uart.o [5]
+UARTClockSourceSet      0x0027bbdb    0x6  Code  Gb  uart.o [5]
+UARTConfigSetExpClk     0x0027bb19   0x46  Code  Gb  uart.o [5]
+UARTDisable             0x0027bb79   0x1e  Code  Gb  uart.o [5]
+UARTEnable              0x0027bb5f   0x1a  Code  Gb  uart.o [5]
+UARTIntDisable          0x0027bbcd    0x6  Code  Gb  uart.o [5]
+__aeabi_memclr          0x0027b48d         Code  Gb  ABImemclr.o [4]
+__aeabi_memset          0x0027b4c1         Code  Gb  ABImemset.o [4]
+__cca                   0x0027ffd4    0xc  Data  Gb  startup_ewarm.o [1]
+__cmain                 0x0027c025         Code  Gb  cmain.o [4]
+__exit                  0x0027c055   0x14  Code  Gb  exit.o [6]
+__iar_Memset            0x0027b4c1         Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x0027b4c9         Code  Gb  ABImemset.o [4]
+__iar_copy_init3        0x0027b493   0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x0027bfd9   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x0027c069         Code  Gb  cstartup_M.o [4]
+__iar_unaligned___aeabi_memcpy
+                        0x0027b981         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy4
+                        0x0027b9a1         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy8
+                        0x0027b9a1         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_zero_init3        0x0027b95d   0x22  Code  Gb  zero_init3.o [4]
+__low_level_init        0x0027c03f    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x0027b800    0x8  Data  Gb  startup_ewarm.o [1]
+_call_main              0x0027c031         Code  Gb  cmain.o [4]
+_exit                   0x0027c049         Code  Gb  cexit.o [4]
+_main                   0x0027c03b         Code  Gb  cmain.o [4]
+_sbBuf                  0x20004034  0x834  Data  Gb  sb_exec.o [1]
+cstack                  0x20000800    0x4  Data  Gb  startup_ewarm.o [1]
+exit                    0x0027c043    0x4  Code  Gb  exit.o [3]
+g_pui32IOCPortAOverrideReg
+                        0x0027bdc4   0x20  Data  Lc  ioc.o [5]
+g_pui32IOCPortASignSelectReg
+                        0x0027be44   0x20  Data  Lc  ioc.o [5]
+g_pui32IOCPortBOverrideReg
+                        0x0027bde4   0x20  Data  Lc  ioc.o [5]
+g_pui32IOCPortBSignSelectReg
+                        0x0027be64   0x20  Data  Lc  ioc.o [5]
+g_pui32IOCPortCOverrideReg
+                        0x0027be04   0x20  Data  Lc  ioc.o [5]
+g_pui32IOCPortCSignSelectReg
+                        0x0027be84   0x20  Data  Lc  ioc.o [5]
+g_pui32IOCPortDOverrideReg
+                        0x0027be24   0x20  Data  Lc  ioc.o [5]
+g_pui32IOCPortDSignSelectReg
+                        0x0027bea4   0x20  Data  Lc  ioc.o [5]
+g_pui32RCGCRegs         0x0027bb00   0x18  Data  Lc  sys_ctrl.o [5]
+main                    0x0027bf25   0x52  Code  Gb  sb_main.o [1]
+page_deleted            0x20004004   0x20  Data  Lc  sb_exec.o [1]
+sbBuf                   0x20004024    0x4  Data  Gb  sb_exec.o [1]
+sbCmnd                  0x0027b16f  0x20e  Code  Lc  sb_exec.o [1]
+sbExec                  0x0027b001   0xfe  Code  Gb  sb_exec.o [1]
+sbImgValid              0x0027b0ff   0x70  Code  Gb  sb_exec.o [1]
+sbResp                  0x0027b37d   0xb2  Code  Lc  sb_exec.o [1]
+sbUartCharAvail         0x0027b927    0x6  Code  Gb  sb_uart.o [1]
+sbUartGetChar           0x0027b92d   0x1a  Code  Gb  sb_uart.o [1]
+sbUartInit              0x0027b809   0x6c  Code  Gb  sb_uart.o [1]
+sbUartPoll              0x0027b875   0x32  Code  Gb  sb_uart.o [1]
+sbUartWrite             0x0027b8a7   0x80  Code  Gb  sb_uart.o [1]
+sbl_header_ptr          0x20004030    0x4  Data  Gb  sb_main.o [1]
+txBuf                   0x20004868  0x834  Data  Lc  sb_uart.o [1]
+txHead                  0x2000509c    0x4  Data  Lc  sb_uart.o [1]
+txTail                  0x200050a0    0x4  Data  Lc  sb_uart.o [1]
+
+
+[1] = C:\Texas Instruments\Z-Stack Home 1.2.0\Projects\zstack\Utilities\BootLoad\CC2538\Basic\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = sdriverlib.lib
+[6] = shb_l.a
+
+  3 438 bytes of readonly  code memory
+    110 bytes of readonly  data memory
+  4 260 bytes of readwrite data memory (+ 4 absolute)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,517 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       08/Apr/2014  21:14:13 #
+# Copyright 1996-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  small                                                   #
+#    Source file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Components\hal\common\hal_drivers.c               #
+#    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                   #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\zap.cfg" (-DZAP_PHY_SPI=1                        #
+#                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE    #
+#                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                  #
+#                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE               #
+#                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE            #
+#                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE            #
+#                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG            #
+#                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC               #
+#                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC          #
+#                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0         #
+#                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                 #
+#                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000           #
+#                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f   #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE    #
+#                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                 #
+#                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4          #
+#                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10         #
+#                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10        #
+#                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING -DZCL_PRICING  #
+#                     -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU                 #
+#                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home   #
+#                     1.2.0\Components\hal\common\hal_drivers.c" -D           #
+#                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D       #
+#                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC "C:\Texas  #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\List\" -lA           #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\" --remarks --diag_suppress            #
+#                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\ZAP Coordinator\Obj\" --debug        #
+#                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas    #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\" -I "C:\Texas Instruments\Z-Stack   #
+#                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\. #
+#                     .\Source\" -I "C:\Texas Instruments\Z-Stack Home        #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     Source\" -I "C:\Texas Instruments\Z-Stack Home          #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\target\MSP5438ZAP\" -I          #
+#                     "C:\Texas Instruments\Z-Stack Home                      #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\hal\include\" -I "C:\Texas          #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\mac\includ #
+#                     e\" -I "C:\Texas Instruments\Z-Stack Home               #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\mt\" -I "C:\Texas                   #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\osal\inclu #
+#                     de\" -I "C:\Texas Instruments\Z-Stack Home              #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas      #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\services\s #
+#                     addr\" -I "C:\Texas Instruments\Z-Stack Home            #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\services\sdata\" -I "C:\Texas       #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\af\" #
+#                      -I "C:\Texas Instruments\Z-Stack Home                  #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\nwk\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sapi #
+#                     \" -I "C:\Texas Instruments\Z-Stack Home                #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\sec\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\sys\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\stack\zcl\" -I "C:\Texas            #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\stack\zdo\ #
+#                     " -I "C:\Texas Instruments\Z-Stack Home                 #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\..\ #
+#                     ..\..\..\Components\zmac\" -I "C:\Texas                 #
+#                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA-S #
+#                     ampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w\" #
+#                      --core=430X --data_model=small -Ohz --multiplier=32    #
+#                     --multiplier_location=4C0 --require_prototypes          #
+#                     --hw_workaround=CPU40 --hw_workaround=CPU39             #
+#    List file     =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\List\hal_drivers.lst                        #
+#    Object file   =  C:\Texas Instruments\Z-Stack Home                       #
+#                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP    #
+#                     Coordinator\Obj\hal_drivers.r43                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.0\Components\hal\common\hal_drivers.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_drivers.c
+      3            Revised:        $Date: 2007-07-06 10:42:24 -0700 (Fri, 06 Jul 2007) $
+      4            Revision:       $Revision: 13579 $
+      5          
+      6            Description:    This file contains the interface to the Drivers Service.
+      7          
+      8          
+      9            Copyright 2005-2013 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /**************************************************************************************************
+     41           *                                            INCLUDES
+     42           **************************************************************************************************/
+     43          
+     44          #include "hal_adc.h"
+     45          #if (defined HAL_AES) && (HAL_AES == TRUE)
+     46          #include "hal_aes.h"
+     47          #endif
+     48          #if (defined HAL_BUZZER) && (HAL_BUZZER == TRUE)
+     49          #include "hal_buzzer.h"
+     50          #endif
+     51          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+     52          #include "hal_dma.h"
+     53          #endif
+     54          #include "hal_drivers.h"
+     55          #include "hal_key.h"
+     56          #include "hal_lcd.h"
+     57          #include "hal_led.h"
+     58          #include "hal_sleep.h"
+     59          #include "hal_timer.h"
+     60          #include "hal_types.h"
+     61          #include "hal_uart.h"
+     62          #ifdef CC2591_COMPRESSION_WORKAROUND
+     63          #include "mac_rx.h"
+     64          #endif
+     65          #include "OSAL.h"
+     66          #if defined POWER_SAVING
+     67          #include "OSAL_PwrMgr.h"
+     68          #endif
+     69          #if (defined HAL_HID) && (HAL_HID == TRUE)
+     70          #include "usb_hid.h"
+     71          #endif
+     72          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+     73          #include "hal_spi.h"
+     74          #endif
+     75          
+     76          /**************************************************************************************************
+     77           *                                      GLOBAL VARIABLES
+     78           **************************************************************************************************/
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     79          uint8 Hal_TaskID;
+   \                     Hal_TaskID:
+   \   000000                DS8 1
+     80          
+     81          extern void HalLedUpdate( void ); /* Notes: This for internal only so it shouldn't be in hal_led.h */
+     82          
+     83          /**************************************************************************************************
+     84           * @fn      Hal_Init
+     85           *
+     86           * @brief   Hal Initialization function.
+     87           *
+     88           * @param   task_id - Hal TaskId
+     89           *
+     90           * @return  None
+     91           **************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     92          void Hal_Init( uint8 task_id )
+   \                     Hal_Init:
+     93          {
+     94            /* Register task ID */
+     95            Hal_TaskID = task_id;
+   \   000000   C24C....     MOV.B   R12, &Hal_TaskID
+     96          
+     97          #ifdef CC2591_COMPRESSION_WORKAROUND
+     98            osal_start_reload_timer( Hal_TaskID, PERIOD_RSSI_RESET_EVT, PERIOD_RSSI_RESET_TIMEOUT );
+     99          #endif
+    100          }
+   \   000004   1001         RETA
+    101          
+    102          /**************************************************************************************************
+    103           * @fn      Hal_DriverInit
+    104           *
+    105           * @brief   Initialize HW - These need to be initialized before anyone.
+    106           *
+    107           * @param   task_id - Hal TaskId
+    108           *
+    109           * @return  None
+    110           **************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    111          void HalDriverInit (void)
+   \                     HalDriverInit:
+    112          {
+    113            /* TIMER */
+    114          #if (defined HAL_TIMER) && (HAL_TIMER == TRUE)
+    115          #endif
+    116          
+    117            /* ADC */
+    118          #if (defined HAL_ADC) && (HAL_ADC == TRUE)
+    119            HalAdcInit();
+   \   000000   ........     CALLA   #HalAdcInit
+    120          #endif
+    121          
+    122            /* DMA */
+    123          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+    124            // Must be called before the init call to any module that uses DMA.
+    125            HalDmaInit();
+    126          #endif
+    127          
+    128            /* AES */
+    129          #if (defined HAL_AES) && (HAL_AES == TRUE)
+    130            HalAesInit();
+    131          #endif
+    132          
+    133            /* LCD */
+    134          #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+    135            HalLcdInit();
+   \   000004   ........     CALLA   #HalLcdInit
+    136          #endif
+    137          
+    138            /* LED */
+    139          #if (defined HAL_LED) && (HAL_LED == TRUE)
+    140            HalLedInit();
+   \   000008   ........     CALLA   #HalLedInit
+    141          #endif
+    142          
+    143            /* UART */
+    144          #if (defined HAL_UART) && (HAL_UART == TRUE)
+    145            HalUARTInit();
+    146          #endif
+    147          
+    148            /* KEY */
+    149          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    150            HalKeyInit();
+   \   00000C   ........     CALLA   #HalKeyInit
+    151          #endif
+    152            
+    153            /* SPI */
+    154          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+    155            HalSpiInit();
+   \   000010   ........     BRA     #HalSpiInit
+    156          #endif
+    157          
+    158            /* HID */
+    159          #if (defined HAL_HID) && (HAL_HID == TRUE)
+    160            usbHidInit();
+    161          #endif
+    162          }
+    163          
+    164          /**************************************************************************************************
+    165           * @fn      Hal_ProcessEvent
+    166           *
+    167           * @brief   Hal Process Event
+    168           *
+    169           * @param   task_id - Hal TaskId
+    170           *          events - events
+    171           *
+    172           * @return  None
+    173           **************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    174          uint16 Hal_ProcessEvent( uint8 task_id, uint16 events )
+   \                     Hal_ProcessEvent:
+    175          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   0A4D         MOV.W   R13, R10
+    176            uint8 *msgPtr;
+    177          
+    178            (void)task_id;  // Intentionally unreferenced parameter
+    179          
+    180            if ( events & SYS_EVENT_MSG )
+   \   000004   0D93         CMP.W   #0x0, R13
+   \   000006   0C34         JGE     ??Hal_ProcessEvent_2
+    181            {
+    182              msgPtr = osal_msg_receive(Hal_TaskID);
+   \   000008   023C         JMP     ??Hal_ProcessEvent_3
+    183          
+    184              while (msgPtr)
+    185              {
+    186                /* Do something here - for now, just deallocate the msg and move on */
+    187          
+    188                /* De-allocate */
+    189                osal_msg_deallocate( msgPtr );
+   \                     ??Hal_ProcessEvent_0:
+   \   00000A   ........     CALLA   #osal_msg_deallocate
+    190                /* Next */
+    191                msgPtr = osal_msg_receive( Hal_TaskID );
+   \                     ??Hal_ProcessEvent_3:
+   \   00000E   5C42....     MOV.B   &Hal_TaskID, R12
+   \   000012   ........     CALLA   #osal_msg_receive
+    192              }
+   \   000016   0C93         CMP.W   #0x0, R12
+   \   000018   F823         JNE     ??Hal_ProcessEvent_0
+    193              return events ^ SYS_EVENT_MSG;
+   \   00001A   3AE00080     XOR.W   #0x8000, R10
+   \   00001E   1B3C         JMP     ??Hal_ProcessEvent_1
+    194            }
+    195          
+    196          #if (defined HAL_BUZZER) && (HAL_BUZZER == TRUE)
+    197            if (events & HAL_BUZZER_EVENT)
+    198            {
+    199              HalBuzzerStop();
+    200              return events ^ HAL_BUZZER_EVENT;
+    201            }
+    202          #endif
+    203          
+    204          #ifdef CC2591_COMPRESSION_WORKAROUND
+    205            if ( events & PERIOD_RSSI_RESET_EVT )
+    206            {
+    207              macRxResetRssi();
+    208              return (events ^ PERIOD_RSSI_RESET_EVT);
+    209            }
+    210          #endif
+    211          
+    212            if ( events & HAL_LED_BLINK_EVENT )
+   \                     ??Hal_ProcessEvent_2:
+   \   000020   3DB02000     BIT.W   #0x20, R13
+   \   000024   0528         JNC     ??Hal_ProcessEvent_4
+    213            {
+    214          #if (defined (BLINK_LEDS)) && (HAL_LED == TRUE)
+    215              HalLedUpdate();
+   \   000026   ........     CALLA   #HalLedUpdate
+    216          #endif /* BLINK_LEDS && HAL_LED */
+    217              return events ^ HAL_LED_BLINK_EVENT;
+   \   00002A   3AE02000     XOR.W   #0x20, R10
+   \   00002E   133C         JMP     ??Hal_ProcessEvent_1
+    218            }
+    219          
+    220            if (events & HAL_KEY_EVENT)
+   \                     ??Hal_ProcessEvent_4:
+   \   000030   3DB01000     BIT.W   #0x10, R13
+   \   000034   1228         JNC     ??Hal_ProcessEvent_5
+    221            {
+    222          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    223              /* Check for keys */
+    224              HalKeyPoll();
+   \   000036   ........     CALLA   #HalKeyPoll
+    225          
+    226              /* if interrupt disabled, do next polling */
+    227              if (!Hal_KeyIntEnable)
+   \   00003A   C293....     CMP.B   #0x0, &Hal_KeyIntEnable
+   \   00003E   0920         JNE     ??Hal_ProcessEvent_6
+    228              {
+    229                osal_start_timerEx( Hal_TaskID, HAL_KEY_EVENT, 100);
+   \   000040   3E406400     MOV.W   #0x64, R14
+   \   000044   0F43         MOV.W   #0x0, R15
+   \   000046   3D401000     MOV.W   #0x10, R13
+   \   00004A   5C42....     MOV.B   &Hal_TaskID, R12
+   \   00004E   ........     CALLA   #osal_start_timerEx
+    230              }
+    231          #endif
+    232              return events ^ HAL_KEY_EVENT;
+   \                     ??Hal_ProcessEvent_6:
+   \   000052   3AE01000     XOR.W   #0x10, R10
+   \                     ??Hal_ProcessEvent_1:
+   \   000056   0C4A         MOV.W   R10, R12
+   \   000058   013C         JMP     ??Hal_ProcessEvent_7
+    233            }
+    234          
+    235          #if defined POWER_SAVING
+    236            if ( events & HAL_SLEEP_TIMER_EVENT )
+    237            {
+    238              halRestoreSleepLevel();
+    239              return events ^ HAL_SLEEP_TIMER_EVENT;
+    240            }
+    241          
+    242            if ( events & HAL_PWRMGR_HOLD_EVENT )
+    243            {
+    244              (void)osal_pwrmgr_task_state(Hal_TaskID, PWRMGR_HOLD);
+    245          
+    246              (void)osal_stop_timerEx(Hal_TaskID, HAL_PWRMGR_CONSERVE_EVENT);
+    247              (void)osal_clear_event(Hal_TaskID, HAL_PWRMGR_CONSERVE_EVENT);
+    248          
+    249              return (events & ~(HAL_PWRMGR_HOLD_EVENT | HAL_PWRMGR_CONSERVE_EVENT));
+    250            }
+    251          
+    252            if ( events & HAL_PWRMGR_CONSERVE_EVENT )
+    253            {
+    254              (void)osal_pwrmgr_task_state(Hal_TaskID, PWRMGR_CONSERVE);
+    255              return events ^ HAL_PWRMGR_CONSERVE_EVENT;
+    256            }
+    257          #endif
+    258          
+    259            return 0;
+   \                     ??Hal_ProcessEvent_5:
+   \   00005A   0C43         MOV.W   #0x0, R12
+   \                     ??Hal_ProcessEvent_7:
+   \   00005C   3A41         POP.W   R10
+   \   00005E   1001         RETA
+    260          }
+    261          
+    262          /**************************************************************************************************
+    263           * @fn      Hal_ProcessPoll
+    264           *
+    265           * @brief   This routine will be called by OSAL to poll UART, TIMER...
+    266           *
+    267           * @param   task_id - Hal TaskId
+    268           *
+    269           * @return  None
+    270           **************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    271          void Hal_ProcessPoll ()
+   \                     Hal_ProcessPoll:
+    272          {
+    273          #if defined( POWER_SAVING )
+    274            /* Allow sleep before the next OSAL event loop */
+    275            ALLOW_SLEEP_MODE();
+    276          #endif
+    277            
+    278            /* UART Poll */
+    279          #if (defined HAL_UART) && (HAL_UART == TRUE)
+    280            HalUARTPoll();
+    281          #endif
+    282            
+    283            /* SPI Poll */
+    284          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+    285            HalSpiPoll();
+   \   000000   ........     BRA     #HalSpiPoll
+    286          #endif
+    287          
+    288            /* HID poll */
+    289          #if (defined HAL_HID) && (HAL_HID == TRUE)
+    290            usbHidProcessEvents();
+    291          #endif
+    292           
+    293          }
+    294          
+    295          /**************************************************************************************************
+    296          **************************************************************************************************/
+    297          
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+      4   HalDriverInit
+        4   -> HalAdcInit
+        4   -> HalKeyInit
+        4   -> HalLcdInit
+        4   -> HalLedInit
+        4   -> HalSpiInit
+      4   Hal_Init
+      6   Hal_ProcessEvent
+        6   -> HalKeyPoll
+        6   -> HalLedUpdate
+        6   -> osal_msg_deallocate
+        6   -> osal_msg_receive
+        6   -> osal_start_timerEx
+      4   Hal_ProcessPoll
+        4   -> HalSpiPoll
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      20  HalDriverInit
+       6  Hal_Init
+      96  Hal_ProcessEvent
+       4  Hal_ProcessPoll
+       1  Hal_TaskID
+
+ 
+ 126 bytes in segment CODE
+   1 byte  in segment DATA16_Z
+ 
+ 126 bytes of CODE memory
+   1 byte  of DATA memory
+
+Errors: none
+Warnings: none

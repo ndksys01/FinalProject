@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>202183275</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_sys_ctrl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\ioc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_udma.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_udmachctl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\udma.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_gptimer.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\gptimer.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_i2cm.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_i2cs.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\ssi.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\i2c.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\udma.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\interrupt.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\sys_ctrl.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\systick.c</file>
+      <file>$PROJ_DIR$\..\..\source\uart_polled.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\ioc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\watchdog.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\gptimer.c</file>
+      <file>$PROJ_DIR$\..\..\..\startup_files\startup_iar.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\uart.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\sleepmode.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_memmap.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_soc_adc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\interrupt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\debug.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_ints.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\gpio.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\cpu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\debug.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\flash.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\sleepmode.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_smwdthrosc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\ssi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_ssi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_ioc.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\ioc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\ssi.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\adc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\flash.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gptimer.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\interrupt.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\sleepmode.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\sys_ctrl.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\cpu.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\debug.o</file>
+      <file>$PROJ_DIR$\..\..\bin\iar\uart_polled.out</file>
+      <file>$PROJ_DIR$\Debug\Obj\ioc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ssi.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gpio.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\watchdog.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\interrupt.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\sleepmode.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_iar.pbi</file>
+      <file>$PROJ_DIR$\..\..\bin\iar\uart_polled.bin</file>
+      <file>$PROJ_DIR$\Debug\Obj\udma.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_iar.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\watchdog.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\adc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\debug.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\cpu.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\flash.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gptimer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\udma.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart_polled.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart_polled.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\sys_ctrl.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart_polled.pbd</file>
+      <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\cx2538xf53.icf</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\watchdog.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\flash.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\cpu.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\rom.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_flash_ctrl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\systick.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_uart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\uart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\source\sys_ctrl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\inc\hw_nvic.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\ssi.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 28 49 38 29 30 32 25 27 33 36 34 26 35 37 48</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 28 49 38 29 30 32 25 27 33 36 34 26 35 37 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\i2c.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 77</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 9 10 39 28 1 38 29 30 32 25 27 33 36 34 26 35 11 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 10 39 28 1 38 29 30 32 25 27 33 36 34 26 35 11 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\udma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 4 5 38 29 30 32 25 27 33 36 34 26 35 37 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 4 5 38 29 30 32 25 27 33 36 34 26 35 37 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\interrupt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 104 1 97 29 30 32 25 27 33 36 34 26 35 38 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 104 1 97 29 30 32 25 27 33 36 34 26 35 38 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\sys_ctrl.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 1 99 104 97 29 30 32 25 27 33 36 34 26 35 38 37 103</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 1 99 104 97 29 30 32 25 27 33 36 34 26 35 38 37 103</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\systick.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 53</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 104 38 29 30 32 25 27 33 36 34 26 35 37 100</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 104 38 29 30 32 25 27 33 36 34 26 35 37 100</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\source\uart_polled.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 86</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 28 29 30 32 25 27 33 36 34 26 35 50 103 102 2 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28 29 30 32 25 27 33 36 34 26 35 50 103 102 2 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\ioc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 50 0 28 38 29 30 32 25 27 33 36 34 26 35 3 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50 0 28 38 29 30 32 25 27 33 36 34 26 35 3 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\watchdog.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 28 47 38 29 30 32 25 27 33 36 34 26 35 37 95</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 28 47 38 29 30 32 25 27 33 36 34 26 35 37 95</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\gptimer.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 28 7 38 29 30 32 25 27 33 36 34 26 35 37 8</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 28 7 38 29 30 32 25 27 33 36 34 26 35 37 8</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\startup_files\startup_iar.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 76</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 30 32 25 27 33 36 34 26</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30 32 25 27 33 36 34 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 54</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 28 1 101 38 29 30 32 25 27 33 36 34 26 35 37 102</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 28 1 101 38 29 30 32 25 27 33 36 34 26 35 37 102</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\sleepmode.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 28 47 38 29 30 32 25 27 33 36 34 26 35 37 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 28 47 38 29 30 32 25 27 33 36 34 26 35 37 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 39 1 28 38 29 30 32 25 27 33 36 34 26 35 2 37 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 39 1 28 38 29 30 32 25 27 33 36 34 26 35 2 37 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\cpu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 63</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 97 29 30 32 25 27 33 36 34 26 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97 29 30 32 25 27 33 36 34 26 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\debug.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 64</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38 29 30 32 25 27 33 36 34 26 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38 29 30 32 25 27 33 36 34 26 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39 28 31 38 29 30 32 25 27 33 36 34 26 35 37 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 28 31 38 29 30 32 25 27 33 36 34 26 35 37 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\source\flash.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 99 28 38 29 30 32 25 27 33 36 34 26 35 96 98</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 28 38 29 30 32 25 27 33 36 34 26 35 96 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\bin\iar\uart_polled.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 90 56 63 64 57 51 58 59 60 52 61 55 76 62 53 54 87 75 79 93 92 91 94</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+</project>
+
+

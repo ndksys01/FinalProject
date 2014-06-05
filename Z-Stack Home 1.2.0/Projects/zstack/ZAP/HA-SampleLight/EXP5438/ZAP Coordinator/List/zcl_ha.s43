@@ -1,0 +1,986 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430      08/Apr/2014  21:14:23 /
+// Copyright 1996-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  small                                                  /
+//    Source file   =  C:\Texas Instruments\Z-Stack Home                      /
+//                     1.2.0\Projects\zstack\ZAP\Source\zcl_ha.c              /
+//    Command line  =  -f "C:\Texas Instruments\Z-Stack Home                  /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \Source\zap.cfg" (-DZAP_PHY_SPI=1                      /
+//                     -DZAP_PHY_UART=!ZAP_PHY_SPI -DZAP_PHY_RESET_ZNP=TRUE   /
+//                     -DZAP_ZNP_MT=FALSE -DZAP_APP_MSG=FALSE                 /
+//                     -DZAP_SBL_PROXY=FALSE -DZAP_AUTO_CFG=TRUE              /
+//                     -DZAP_AUTO_START=TRUE -DZAP_NV_RESTORE=FALSE           /
+//                     -DLCD_SUPPORTED -DZAP_AF_DATA_REQ_FRAG=FALSE           /
+//                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG           /
+//                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC              /
+//                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC         /
+//                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0        /
+//                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                /
+//                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000          /
+//                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f  /
+//                     "C:\Texas Instruments\Z-Stack Home                     /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\Tools\MSP5438\f8wZCL.cfg" (-DZCL_READ -DZCL_WRITE  /
+//                     -DZCL_BASIC -DZCL_IDENTIFY -DZCL_ON_OFF                /
+//                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4         /
+//                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10        /
+//                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10       /
+//                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING               /
+//                     -DZCL_PRICING -DZCL_MESSAGE -DZCL_TUNNELING -DZCL_TOU  /
+//                     -DZCL_DEVICE_MGMT) "C:\Texas Instruments\Z-Stack Home  /
+//                     1.2.0\Projects\zstack\ZAP\Source\zcl_ha.c" -D          /
+//                     FEATURE_GREEN_POWER -D FEATURE_ENHANCED_BEACON -D      /
+//                     ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -lC           /
+//                     "C:\Texas Instruments\Z-Stack Home                     /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP   /
+//                     Coordinator\List\" -lA "C:\Texas Instruments\Z-Stack   /
+//                     Home 1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ /
+//                     ZAP Coordinator\List\" --remarks --diag_suppress       /
+//                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                   /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\ZAP Coordinator\Obj\" --debug      /
+//                     -D__MSP430F5438__ -e --double=32 --clib -I "C:\Texas   /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\" -I "C:\Texas                     /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\Source\" -I "C:\Texas           /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\Source\" -I "C:\Texas        /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\hal\targ /
+//                     et\MSP5438ZAP\" -I "C:\Texas Instruments\Z-Stack Home  /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\hal\include\" -I "C:\Texas        /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\mac\incl /
+//                     ude\" -I "C:\Texas Instruments\Z-Stack Home            /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\mt\" -I "C:\Texas                 /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\osal\inc /
+//                     lude\" -I "C:\Texas Instruments\Z-Stack Home           /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\osal\mcu\msp430\" -I "C:\Texas    /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\services /
+//                     \saddr\" -I "C:\Texas Instruments\Z-Stack Home         /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\services\sdata\" -I "C:\Texas     /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\af /
+//                     \" -I "C:\Texas Instruments\Z-Stack Home               /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\nwk\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\sa /
+//                     pi\" -I "C:\Texas Instruments\Z-Stack Home             /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\sec\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\sy /
+//                     s\" -I "C:\Texas Instruments\Z-Stack Home              /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\stack\zcl\" -I "C:\Texas          /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\stack\zd /
+//                     o\" -I "C:\Texas Instruments\Z-Stack Home              /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\..\.. /
+//                     \..\..\..\Components\zmac\" -I "C:\Texas               /
+//                     Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\HA- /
+//                     SampleLight\EXP5438\..\..\..\..\..\Components\zmac\f8w /
+//                     \" --core=430X --data_model=small -Ohz                 /
+//                     --multiplier=32 --multiplier_location=4C0              /
+//                     --require_prototypes --hw_workaround=CPU40             /
+//                     --hw_workaround=CPU39                                  /
+//    List file     =  C:\Texas Instruments\Z-Stack Home                      /
+//                     1.2.0\Projects\zstack\ZAP\HA-SampleLight\EXP5438\ZAP   /
+//                     Coordinator\List\zcl_ha.s43                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zcl_ha
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?DivMod8u
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC NwkInfoStrs
+        PUBLIC NwkInfoZcStr
+        PUBLIC NwkInfoZedStr
+        PUBLIC NwkInfoZrStr
+        PUBLIC zclHA_Init
+        FUNCTION zclHA_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 6, STACK
+        PUBLIC zclHA_LcdStatusLine1
+        FUNCTION zclHA_LcdStatusLine1,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 26, STACK
+        PUBLIC zclHA_clearbit
+        FUNCTION zclHA_clearbit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC zclHA_isbit
+        FUNCTION zclHA_isbit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC zclHA_setbit
+        FUNCTION zclHA_setbit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC zclHA_uint16toa
+        FUNCTION zclHA_uint16toa,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC zclHA_uint8toa
+        FUNCTION zclHA_uint8toa,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H 0
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H 0
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H 0
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H 0
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN osal_memcpy
+        FUNCTION osal_memcpy,0202H
+        EXTERN _NIB
+        EXTERN _ltoa
+        FUNCTION _ltoa,0202H
+        EXTERN HalLcdWriteString
+        FUNCTION HalLcdWriteString,0202H
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        EXTERN zcl_TaskID
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+
+// C:\Texas Instruments\Z-Stack Home 1.2.0\Projects\zstack\ZAP\Source\zcl_ha.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zcl_ha.c
+//    3   Revised:        $Date: 2013-10-21 12:15:10 -0700 (Mon, 21 Oct 2013) $
+//    4   Revision:       $Revision: 35738 $
+//    5 
+//    6   Description:    Describe the purpose and contents of the file.
+//    7 
+//    8 
+//    9   Copyright 2013 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 #include "ZComDef.h"
+//   44 #include "OSAL.h"
+//   45 
+//   46 #include "zcl.h"
+//   47 #include "zcl_general.h"
+//   48 #include "zcl_closures.h"
+//   49 #include "zcl_HVAC.h"
+//   50 #include "zcl_ss.h"
+//   51 #include "zcl_ms.h"
+//   52 #include "zcl_lighting.h"
+//   53 #include "zcl_ha.h"
+//   54 
+//   55 /* HAL */
+//   56 #include "hal_lcd.h"
+//   57 
+//   58 /*********************************************************************
+//   59  * MACROS
+//   60  */
+//   61 
+//   62 /*********************************************************************
+//   63  * CONSTANTS
+//   64  */
+//   65 
+//   66 /*********************************************************************
+//   67  * TYPEDEFS
+//   68  */
+//   69 
+//   70 /*********************************************************************
+//   71  * GLOBAL VARIABLES
+//   72  */
+//   73 
+//   74 /*********************************************************************
+//   75  * EXTERNAL VARIABLES
+//   76  */
+//   77 
+//   78 /*********************************************************************
+//   79  * EXTERNAL FUNCTIONS
+//   80  */
+//   81 
+//   82 /*********************************************************************
+//   83  * LOCAL VARIABLES
+//   84  */
+//   85 
+//   86 /*********************************************************************
+//   87  * STATUS STRINGS
+//   88  */
+//   89 // NwkInfo displayed on line 1 once on the network
+//   90 // 0123456789012345
+//   91 // Zc: PPPP CH ADDR
+//   92 // Zr: PPPP CH ADDR
+//   93 // Zed:PPPP CH ADDR
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   94 const char NwkInfoZcStr[]  = "ZC: ";
+NwkInfoZcStr:
+        DC8 "ZC: "
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   95 const char NwkInfoZrStr[]  = "ZR: ";
+NwkInfoZrStr:
+        DC8 "ZR: "
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   96 const char NwkInfoZedStr[] = "Zed:";
+NwkInfoZedStr:
+        DC8 "Zed:"
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(1)
+//   97 const char * const NwkInfoStrs[] = { NwkInfoZcStr, NwkInfoZrStr, NwkInfoZedStr };
+NwkInfoStrs:
+        DC16 NwkInfoZcStr, NwkInfoZrStr, NwkInfoZedStr
+//   98 
+//   99 /*********************************************************************
+//  100  * LOCAL FUNCTIONS
+//  101  */
+//  102 
+//  103 /*********************************************************************
+//  104  * @fn      zclHA_Init
+//  105  *
+//  106  * @brief   Register the Simple descriptor with the HA profile.
+//  107  *          This function also registers the profile's cluster
+//  108  *          conversion table.
+//  109  *
+//  110  * @param   simpleDesc - a pointer to a valid SimpleDescriptionFormat_t, must not be NULL.
+//  111  *
+//  112  * @return  none
+//  113  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  114 void zclHA_Init( SimpleDescriptionFormat_t *simpleDesc )
+zclHA_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function zclHA_Init
+//  115 {
+        FUNCALL zclHA_Init, osal_mem_alloc
+        LOCFRAME CSTACK, 6, STACK
+        FUNCALL zclHA_Init, afRegister
+        LOCFRAME CSTACK, 6, STACK
+        PUSH.W  R10
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+6
+        MOV.W   R12, R10
+//  116   endPointDesc_t *epDesc;
+//  117 
+//  118   // Register the application's endpoint descriptor
+//  119   //  - This memory is allocated and never freed.
+//  120   epDesc = osal_mem_alloc( sizeof ( endPointDesc_t ) );
+        MOV.W   #0x8, R12
+        CALLA   #osal_mem_alloc
+//  121   if ( epDesc )
+        CMP.W   #0x0, R12
+        JEQ     ??zclHA_Init_0
+//  122   {
+//  123     // Fill out the endpoint description.
+//  124     epDesc->endPoint = simpleDesc->EndPoint;
+        MOV.B   @R10, 0(R12)
+//  125     epDesc->task_id = &zcl_TaskID;   // all messages get sent to ZCL first
+        MOV.W   #zcl_TaskID, 0x2(R12)
+//  126     epDesc->simpleDesc = simpleDesc;
+        MOV.W   R10, 0x4(R12)
+//  127     epDesc->latencyReq = noLatencyReqs;
+        MOV.B   #0x0, 0x6(R12)
+//  128 
+//  129     // Register the endpoint description with the AF
+//  130     afRegister( epDesc );
+        CALLA   #afRegister
+//  131   }
+//  132 }
+??zclHA_Init_0:
+        POP.W   R10
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//  133 
+//  134 /*********************************************************************
+//  135  * @fn      zclHA_isbit
+//  136  *
+//  137  * @brief   Returns TRUE if the index bit is set
+//  138  *
+//  139  * @param   pArray   - array with bits in it
+//  140  *          bitIndex - index into the array of bits
+//  141  *
+//  142  * @return  TRUE if index bit is set
+//  143  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  144 bool zclHA_isbit(uint8 *pArray, uint8 bitIndex)
+zclHA_isbit:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function zclHA_isbit
+//  145 {
+//  146   uint8 bit;
+//  147   bit = ( 1 << ( bitIndex & 0x7 ) );
+//  148   if( pArray[bitIndex >> 3] & bit )
+        MOV.B   R13, R14
+        RPT     #0x3
+        RRUX.B  R14
+        ADD.W   R14, R12
+        MOV.B   @R12, R14
+        AND.B   #0x7, R13
+        SUB.B   #0x1, R13
+        JN      ??zclHA_isbit_0
+        RPT     R13
+        RRUX.B  R14
+??zclHA_isbit_0:
+        BIT.B   #0x1, R14
+        JEQ     ??zclHA_isbit_1
+//  149     return TRUE;
+        MOV.B   #0x1, R12
+        RETA
+//  150   return FALSE;
+??zclHA_isbit_1:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock1
+//  151 }
+//  152 
+//  153 /*********************************************************************
+//  154  * @fn      zclHA_setbit
+//  155  *
+//  156  * @brief   Sets a bit in a bit array
+//  157  *
+//  158  * @param   pArray   - array with bits in it
+//  159  *          bitIndex - index into the array of bits
+//  160  *
+//  161  * @return  none
+//  162  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  163 void zclHA_setbit(uint8 *pArray, uint8 bitIndex)
+zclHA_setbit:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function zclHA_setbit
+//  164 {
+//  165   uint8 bit;
+//  166   bit = ( 1 << ( bitIndex & 0x7 ) );
+//  167   pArray[bitIndex >> 3] |= bit;
+        CALLA   #?Subroutine0
+??CrossCallReturnLabel_1:
+        BIS.B   R14, 0(R12)
+//  168 }
+        RETA
+          CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI Function zclHA_clearbit
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI CFA SP+8
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI (cfiCond4) Function zclHA_setbit
+          CFI (cfiCond4) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond4) CFA SP+8
+          CFI Block cfiPicker5 Using cfiCommon1
+          CFI (cfiPicker5) NoFunction
+          CFI (cfiPicker5) Picker
+        MOV.B   R13, R14
+        RPT     #0x3
+        RRUX.B  R14
+        ADD.W   R14, R12
+        MOV.B   #0x1, R14
+        AND.B   #0x7, R13
+        SUB.B   #0x1, R13
+        JN      ??zclHA_clearbit_0
+        RPT     R13
+        RLAX.B  R14
+??zclHA_clearbit_0:
+        RETA
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiPicker5
+//  169 
+//  170 /*********************************************************************
+//  171  * @fn      zclHA_clearbit
+//  172  *
+//  173  * @brief   clears a bit in a bit array
+//  174  *
+//  175  * @param   pArray   - array with bits in it
+//  176  *          bitIndex - index into the array of bits
+//  177  *
+//  178  * @return  none
+//  179  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  180 void zclHA_clearbit(uint8 *pArray, uint8 bitIndex)
+zclHA_clearbit:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function zclHA_clearbit
+//  181 {
+//  182   uint8 bit;
+//  183   bit = ( 1 << ( bitIndex & 0x7 ) );
+//  184   pArray[bitIndex >> 3] &= (~(unsigned)bit);
+        CALLA   #?Subroutine0
+??CrossCallReturnLabel_0:
+        BIC.B   R14, 0(R12)
+//  185 }
+        RETA
+          CFI EndBlock cfiBlock6
+//  186 
+//  187 /*********************************************************************
+//  188  * @fn      zclHA_uint16toa
+//  189  *
+//  190  * @brief   Converts from a uint16 to ascii hex string.
+//  191  *          The # will be exactly 4 hex digits (e.g. 0x0000 or 0x1E3F).
+//  192  *          NULL terminates the string.
+//  193  *
+//  194  * @param   u - Number to be converted
+//  195  *          string - pointer to coverted string
+//  196  *
+//  197  * @return  none
+//  198  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  199 void zclHA_uint16toa(uint16 u, char *string)
+zclHA_uint16toa:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function zclHA_uint16toa
+//  200 {
+//  201   // add preceding zeros
+//  202   if ( u < 0x1000 )
+        FUNCALL zclHA_uint16toa, _ltoa
+        LOCFRAME CSTACK, 4, STACK
+        CMP.W   #0x1000, R12
+        CALLA   #?Subroutine1
+//  203   {
+//  204     *string++ = '0';
+//  205   }
+//  206 
+//  207   if ( u < 0x0100 )
+??CrossCallReturnLabel_2:
+        CMP.W   #0x100, R12
+        CALLA   #?Subroutine1
+//  208   {
+//  209     *string++ = '0';
+//  210   }
+//  211 
+//  212   if ( u < 0x0010 )
+??CrossCallReturnLabel_3:
+        CMP.W   #0x10, R12
+        CALLA   #?Subroutine1
+//  213   {
+//  214     *string++ = '0';
+//  215   }
+//  216 
+//  217   _ltoa((unsigned long)u, (unsigned char *)string, 16);
+??CrossCallReturnLabel_4:
+        MOV.B   #0x10, R15
+        MOV.W   R13, R14
+        MOV.W   #0x0, R13
+        BRA     #_ltoa
+          CFI EndBlock cfiBlock7
+//  218 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI Function zclHA_uint16toa
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI CFA SP+8
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function zclHA_uint16toa
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond9) CFA SP+8
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function zclHA_uint16toa
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond10) CFA SP+8
+          CFI Block cfiPicker11 Using cfiCommon1
+          CFI (cfiPicker11) NoFunction
+          CFI (cfiPicker11) Picker
+        JC      ??zclHA_uint16toa_0
+        MOV.B   #0x30, 0(R13)
+        ADD.W   #0x1, R13
+??zclHA_uint16toa_0:
+        RETA
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiPicker11
+//  219 
+//  220 /*********************************************************************
+//  221  * @fn      zclHA_uint8toa
+//  222  *
+//  223  * @brief   Converts from a uint8 to ascii decimal string.
+//  224  *          The # will be exactly 3 digits (e.g. "123", " 64", "  0"), preceded by spaces.
+//  225  *          No null terminator.
+//  226  *
+//  227  * @param   b - Byte to be converted
+//  228  *          string - pointer to coverted string
+//  229  *
+//  230  * @return  none
+//  231  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  232 void zclHA_uint8toa(uint8 b, char *string)
+zclHA_uint8toa:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function zclHA_uint8toa
+//  233 {
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.W   R13, R11
+//  234   // write the level (up to 3 digits, pre-padded with spaces)
+//  235   string[0] = string[1] = string[2] = '0';
+        MOV.B   #0x30, R8
+        MOV.B   R8, 0x2(R13)
+        MOV.B   R8, 0x1(R13)
+        MOV.B   R8, 0(R13)
+//  236   string[2] = '0' + (b % 10);  // 1s
+        MOV.B   #0xa, R9
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_5:
+        MOV.B   R14, 0x2(R11)
+//  237   b = b / 10;
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_9:
+        MOV.B   R12, R10
+//  238   if( b )
+        CMP.B   #0x0, R12
+        JEQ     ??zclHA_uint8toa_0
+//  239   {
+//  240     string[1] = '0' + (b % 10);  // 10s
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_6:
+        MOV.B   R14, 0x1(R11)
+//  241     b = b / 10;
+        CALLA   #?Subroutine3
+//  242   }
+//  243   if( b )
+??CrossCallReturnLabel_10:
+        CMP.B   #0x0, R12
+        JEQ     ??zclHA_uint8toa_0
+//  244   {
+//  245    string[0] = '0' + (b % 10);  // 100s
+        CALLA   #?Subroutine2
+//  246   }
+??CrossCallReturnLabel_7:
+        MOV.B   R14, 0(R11)
+//  247 }
+??zclHA_uint8toa_0:
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI Function zclHA_uint8toa
+          CFI Conditional ??CrossCallReturnLabel_9
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+16
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI (cfiCond14) Function zclHA_uint8toa
+          CFI (cfiCond14) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond14) R8L Frame(CFA, -12)
+          CFI (cfiCond14) R9L Frame(CFA, -10)
+          CFI (cfiCond14) R10L Frame(CFA, -8)
+          CFI (cfiCond14) R11L Frame(CFA, -6)
+          CFI (cfiCond14) CFA SP+16
+          CFI Block cfiPicker15 Using cfiCommon1
+          CFI (cfiPicker15) NoFunction
+          CFI (cfiPicker15) Picker
+        MOV.B   R10, R12
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiPicker15
+        REQUIRE ??Subroutine4_0
+        // Fall through to label ??Subroutine4_0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine4_0:
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI Function zclHA_uint8toa
+          CFI Conditional ??CrossCallReturnLabel_8, ??CrossCallReturnLabel_5
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+20
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function zclHA_uint8toa
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_8, ??CrossCallReturnLabel_6
+          CFI (cfiCond17) R8L Frame(CFA, -12)
+          CFI (cfiCond17) R9L Frame(CFA, -10)
+          CFI (cfiCond17) R10L Frame(CFA, -8)
+          CFI (cfiCond17) R11L Frame(CFA, -6)
+          CFI (cfiCond17) CFA SP+20
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI (cfiCond18) Function zclHA_uint8toa
+          CFI (cfiCond18) Conditional ??CrossCallReturnLabel_8, ??CrossCallReturnLabel_7
+          CFI (cfiCond18) R8L Frame(CFA, -12)
+          CFI (cfiCond18) R9L Frame(CFA, -10)
+          CFI (cfiCond18) R10L Frame(CFA, -8)
+          CFI (cfiCond18) R11L Frame(CFA, -6)
+          CFI (cfiCond18) CFA SP+20
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI (cfiCond19) Function zclHA_uint8toa
+          CFI (cfiCond19) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond19) R8L Frame(CFA, -12)
+          CFI (cfiCond19) R9L Frame(CFA, -10)
+          CFI (cfiCond19) R10L Frame(CFA, -8)
+          CFI (cfiCond19) R11L Frame(CFA, -6)
+          CFI (cfiCond19) CFA SP+16
+          CFI Block cfiCond20 Using cfiCommon0
+          CFI (cfiCond20) Function zclHA_uint8toa
+          CFI (cfiCond20) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond20) R8L Frame(CFA, -12)
+          CFI (cfiCond20) R9L Frame(CFA, -10)
+          CFI (cfiCond20) R10L Frame(CFA, -8)
+          CFI (cfiCond20) R11L Frame(CFA, -6)
+          CFI (cfiCond20) CFA SP+16
+          CFI Block cfiPicker21 Using cfiCommon1
+          CFI (cfiPicker21) NoFunction
+          CFI (cfiPicker21) Picker
+        MOV.B   R9, R14
+        BRA     #?DivMod8u
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiCond20
+          CFI EndBlock cfiPicker21
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI Function zclHA_uint8toa
+          CFI Conditional ??CrossCallReturnLabel_5
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+16
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI (cfiCond23) Function zclHA_uint8toa
+          CFI (cfiCond23) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond23) R8L Frame(CFA, -12)
+          CFI (cfiCond23) R9L Frame(CFA, -10)
+          CFI (cfiCond23) R10L Frame(CFA, -8)
+          CFI (cfiCond23) R11L Frame(CFA, -6)
+          CFI (cfiCond23) CFA SP+16
+          CFI Block cfiCond24 Using cfiCommon0
+          CFI (cfiCond24) Function zclHA_uint8toa
+          CFI (cfiCond24) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond24) R8L Frame(CFA, -12)
+          CFI (cfiCond24) R9L Frame(CFA, -10)
+          CFI (cfiCond24) R10L Frame(CFA, -8)
+          CFI (cfiCond24) R11L Frame(CFA, -6)
+          CFI (cfiCond24) CFA SP+16
+          CFI Block cfiPicker25 Using cfiCommon1
+          CFI (cfiPicker25) NoFunction
+          CFI (cfiPicker25) Picker
+        CALLA   #??Subroutine4_0
+??CrossCallReturnLabel_8:
+        ADD.B   R8, R14
+        RETA
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiCond24
+          CFI EndBlock cfiPicker25
+//  248 
+//  249 /*********************************************************************
+//  250  * @fn      zclHA_LcdStatusLine1
+//  251  *
+//  252  * @brief   Display LCD line 1 with network status
+//  253  *          only call after on network
+//  254  *          ZC: PPPP CH ADDR
+//  255  *          ZR: PPPP CH ADDR
+//  256  *          ZE: PPPP CH ADDR
+//  257  *
+//  258  * @param   kind (0=ZC, 1=ZR, 2=ZED)
+//  259  *
+//  260  * @return  none
+//  261  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  262 void zclHA_LcdStatusLine1( uint8 kind )
+zclHA_LcdStatusLine1:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI Function zclHA_LcdStatusLine1
+//  263 {
+        FUNCALL zclHA_LcdStatusLine1, osal_memcpy
+        LOCFRAME CSTACK, 26, STACK
+        FUNCALL zclHA_LcdStatusLine1, zclHA_uint16toa
+        LOCFRAME CSTACK, 26, STACK
+        FUNCALL zclHA_LcdStatusLine1, _ltoa
+        LOCFRAME CSTACK, 26, STACK
+        FUNCALL zclHA_LcdStatusLine1, zclHA_uint16toa
+        LOCFRAME CSTACK, 26, STACK
+        FUNCALL zclHA_LcdStatusLine1, HalLcdWriteString
+        LOCFRAME CSTACK, 26, STACK
+        PUSH.W  R10
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+6
+        SUB.W   #0x14, SP
+          CFI CFA SP+26
+//  264 #if defined ( LCD_SUPPORTED )
+//  265   char szLine[20];
+//  266 
+//  267   // copy in what node type it is
+//  268   if ( kind > ZCL_HA_DEVICE_END_DEVICE )
+        CMP.B   #0x3, R12
+        JC      ??zclHA_LcdStatusLine1_1
+//  269   {
+//  270     return;
+//  271   }
+//  272 
+//  273   // ZE: PANx CH ADDR
+//  274   osal_memcpy( szLine, NwkInfoStrs[kind], 4 );
+        MOV.W   SP, R10
+        ADD.W   #0x0, R10
+        MOV.W   #0x4, R14
+        MOV.B   R12, R12
+        RLA.W   R12
+        MOV.W   NwkInfoStrs(R12), R13
+        MOV.W   R10, R12
+        CALLA   #osal_memcpy
+//  275   zclHA_uint16toa( _NIB.nwkPanId, &szLine[4] );
+        MOV.W   R10, R13
+        ADD.W   #0x4, R13
+        MOV.W   &_NIB + 36, R12
+        CALLA   #zclHA_uint16toa
+//  276   szLine[8] = ' ';
+        MOV.B   #0x20, 0x8(SP)
+//  277 
+//  278   _ltoa( _NIB.nwkLogicalChannel, (void *)(&szLine[9]), 10 );
+        MOV.B   #0xa, R15
+        MOV.W   R10, R14
+        ADD.W   #0x9, R14
+        MOV.B   &_NIB + 24, R12
+        MOV.W   #0x0, R13
+        CALLA   #_ltoa
+//  279   szLine[11] = ' ';
+        MOV.B   #0x20, 0xb(SP)
+//  280 
+//  281   zclHA_uint16toa( _NIB.nwkDevAddress, &szLine[12] );
+        MOV.W   R10, R13
+        ADD.W   #0xc, R13
+        MOV.W   &_NIB + 22, R12
+        CALLA   #zclHA_uint16toa
+//  282   HalLcdWriteString( (char*)szLine, HAL_LCD_LINE_1 );
+        MOV.B   #0x1, R13
+        MOV.W   R10, R12
+        CALLA   #HalLcdWriteString
+//  283 #endif
+//  284 }
+??zclHA_LcdStatusLine1_1:
+        ADD.W   #0x14, SP
+          CFI CFA SP+6
+        POP.W   R10
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock26
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  285 
+//  286 /*********************************************************************
+//  287 *********************************************************************/
+// 
+// 360 bytes in segment CODE
+//  21 bytes in segment DATA16_C
+// 
+// 360 bytes of CODE  memory
+//  21 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

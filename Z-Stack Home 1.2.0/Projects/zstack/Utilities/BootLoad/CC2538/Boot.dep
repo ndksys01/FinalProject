@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>4185551478</fileChecksum>
+  <configuration>
+    <name>Basic</name>
+    <outputs>
+      <file>$PROJ_DIR$\Basic\List\Boot.map</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\bin\iar\sdriverlib.lib</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\bsp\srf06eb_cc2538\drivers\bin\iar\bsp.lib</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_ioc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_sys_ctrl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2538\hal_sys_ctrl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2538\iocc2538.h</file>
+      <file>$PROJ_DIR$\source\sb_exec.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2538\hal_sys_ctrl.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2538\hal_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2538\hal_board_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\source\sys_ctrl.h</file>
+      <file>$PROJ_DIR$\boot.icf</file>
+      <file>$PROJ_DIR$\source\sb_uart.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_ints.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\include\hal_board.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\source\flash.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2538\hal_mcu.h</file>
+      <file>$PROJ_DIR$\source\sb_main.c</file>
+      <file>$PROJ_DIR$\source\sb_main.h</file>
+      <file>$PROJ_DIR$\source\sb_exec.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\include\hal_defs.h</file>
+      <file>$PROJ_DIR$\source\startup_ewarm.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_nvic.h</file>
+      <file>$PROJ_DIR$\Basic\Obj\hal_sys_ctrl.o</file>
+      <file>$PROJ_DIR$\Basic\Obj\sb_exec.pbi</file>
+      <file>$PROJ_DIR$\Basic\Obj\sb_main.pbi</file>
+      <file>$PROJ_DIR$\Basic\Obj\sb_uart.pbi</file>
+      <file>$PROJ_DIR$\Basic\Obj\sb_main.o</file>
+      <file>$PROJ_DIR$\Basic\Obj\sb_uart.o</file>
+      <file>$PROJ_DIR$\Basic\Obj\sb_exec.o</file>
+      <file>$PROJ_DIR$\Basic\Obj\startup_ewarm.o</file>
+      <file>$PROJ_DIR$\Basic\Obj\startup_ewarm.pbi</file>
+      <file>$PROJ_DIR$\Basic\Obj\hal_sys_ctrl.pbi</file>
+      <file>$PROJ_DIR$\Basic\Exe\Boot.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\source\uart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_flash_ctrl.h</file>
+      <file>$PROJ_DIR$\Basic\Exe\Boot.bin</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\source\interrupt.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+      <file>$PROJ_DIR$\Basic\Obj\Boot.pbd</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_ssi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\source\systick.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_memmap.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_ana_regs.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\source\gpio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_aes.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\source\ioc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\bsp\srf06eb_cc2538\drivers\source\lcd_dogm128_6.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\driverlib\cc2538\inc\hw_soc_adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\hal\include\hal_assert.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\bsp\srf06eb_cc2538\drivers\source\bsp.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Components\bsp\srf06eb_cc2538\drivers\source\bsp_key.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 39 0</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\sb_exec.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52 60 53 50 54 51 45 59 58 40 21 8 61 46 15 22 26 14 28 19 42 62 9 55 48 63 56 49 44 41 57 16 64 69 68 11 66 67 10 65 25 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52 60 53 50 54 51 45 59 58 40 21 8 61 46 15 22 26 14 28 19 42 62 9 55 48 63 56 49 44 41 57 16 64 69 68 11 66 67 10 65 25 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2538\hal_sys_ctrl.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 9 16 8 61 60 53 50 54 51 45 59 46 62 57 22 26 14 28 19 42 55 48 63 56 49 44 41 21 64 69 68 11 66 15 67 10 65</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 16 8 61 60 53 50 54 51 45 59 46 62 57 22 26 14 28 19 42 55 48 63 56 49 44 41 21 64 69 68 11 66 15 67 10 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\sb_uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 15 22 26 14 28 19 8 61 60 53 50 54 51 45 59 46 42 62 9 55 48 63 56 49 44 41 57 16 21 64 69 68 11 66 67 10 65 25 24 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 15 22 26 14 28 19 8 61 60 53 50 54 51 45 59 46 42 62 9 55 48 63 56 49 44 41 57 16 21 64 69 68 11 66 67 10 65 25 24 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\sb_main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15 22 26 14 28 19 8 61 60 53 50 54 51 45 59 46 42 62 9 55 48 63 56 49 44 41 57 16 21 64 69 68 11 66 67 10 65 25 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15 22 26 14 28 19 8 61 60 53 50 54 51 45 59 46 42 62 9 55 48 63 56 49 44 41 57 16 21 64 69 68 11 66 67 10 65 25 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\startup_ewarm.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 22 26 14 28 19 8 61 60 53 50 54 51 45 59 46 42 62 9 55 48 63 56 49 44 41 57 16 21 64 69 68 11 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 26 14 28 19 8 61 60 53 50 54 51 45 59 46 42 62 9 55 48 63 56 49 44 41 57 16 21 64 69 68 11 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Basic\Exe\Boot.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 0</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 17 29 35 33 34 36 3 4 5 2 6 1</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+
