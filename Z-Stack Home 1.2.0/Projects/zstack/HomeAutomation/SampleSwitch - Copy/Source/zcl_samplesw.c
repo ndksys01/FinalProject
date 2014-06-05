@@ -1,4 +1,4 @@
-//git change_branch
+//git change_branch test
 /**************************************************************************************************
 Filename:       zcl_samplesw.c
 Revised:        $Date: 2013-08-02 16:56:53 -0700 (Fri, 02 Aug 2013) $
