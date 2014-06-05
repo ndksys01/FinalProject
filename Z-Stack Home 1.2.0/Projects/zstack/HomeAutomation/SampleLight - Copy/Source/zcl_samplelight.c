@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 
 //master
-
-=======
-//git change_branch test
->>>>>>> change_branch
 /**************************************************************************************************
   Filename:       zcl_sampleLight.c
   Revised:        $Date: 2013-11-25 10:56:12 -0800 (Mon, 25 Nov 2013) $
