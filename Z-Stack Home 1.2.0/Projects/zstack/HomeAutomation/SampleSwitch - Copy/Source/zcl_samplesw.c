@@ -288,7 +288,7 @@ static void initUart();
 static void rxCB( uint8 port, uint8 event );
 int ic=0;
 char* tempData;
-static uint8 bufTemp[8];
+static uint8 bufTemp[5] = "#128*";
 char getAccelerator();
 
 //**************************Ket thuc cac khai bao duoc them vao
@@ -1557,7 +1557,7 @@ static void rxCB( uint8 port, uint8 event )
     if ( event != HAL_UART_TX_EMPTY )
   {
     // Read from UART
-    HalUARTRead( SERIAL_APP_PORT, bufTemp, 8 );
+    HalUARTRead( SERIAL_APP_PORT, bufTemp, 5 );
     //if(pBuf1[0]=='swww')
       //ic=0;
     //els/e if(pBuf1[0]=='fwww')
