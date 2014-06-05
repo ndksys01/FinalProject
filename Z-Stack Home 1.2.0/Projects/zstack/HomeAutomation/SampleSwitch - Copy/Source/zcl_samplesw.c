@@ -289,7 +289,7 @@ static void rxCB( uint8 port, uint8 event );
 int ic=0;
 char* tempData;
 static uint8 bufTemp[8];
-uint16_t getAccelerator();
+char getAccelerator();
 
 //**************************Ket thuc cac khai bao duoc them vao
 
@@ -1199,10 +1199,10 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
     {
     //HalUARTWrite(SERIAL_APP_PORT,(uint8*)pkt->cmd.Data,14);
       char statusLight3Byte[]="#40";
-      statusLight3Byte[2] = getAccelerator()+48;
+      statusLight3Byte[2] = getAccelerator();
       SendDataFull(statusLight3Byte,0x24,"Sending Light.");
         
-    //HalLcdWriteString( (char*)pkt->cmd.Data, HAL_LCD_LINE_7 );
+    //HalLcdWriteString( "toi iday", HAL_LCD_LINE_7 );
     //HalUARTWrite( SERIAL_APP_PORT, (uint8*)pkt->cmd.Data, 6 );
     break; 
     }
@@ -1254,7 +1254,7 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         *(tmpInfo++) = bspLedGet(BSP_LED_1)+48; //led 1 status
         *(tmpInfo++) = bspLedGet(BSP_LED_2)+48; //led 2 status
         *(tmpInfo++) = autoLight+48; //autoLight
-        *(tmpInfo++) = getAccelerator() + 48;
+        *(tmpInfo++) = getAccelerator();
         int ic;
         for(ic=2;ic<9;ic++)
         {
@@ -1359,7 +1359,7 @@ static void sendAccelermeter()
   HalLcdWriteString( data, HAL_LCD_LINE_5 );
   //HalUARTWrite(SERIAL_APP_PORT,(uint8*)data,14);
 }
-uint16_t getAccelerator()
+char getAccelerator()
 {
       ui16AlsValue=0;
     int ui16AlsValueTB[5];
@@ -1375,9 +1375,9 @@ uint16_t getAccelerator()
       ui16AlsValue += ui16AlsValueTB[i];
     }
     ui16AlsValue = ui16AlsValue/5;
-    if(getAccelerator() >400)
-      return 1;
-    return 0;
+    if(ui16AlsValue >400)
+      return '1';
+    return '0';
 }
 //static void sendLight()
 //{

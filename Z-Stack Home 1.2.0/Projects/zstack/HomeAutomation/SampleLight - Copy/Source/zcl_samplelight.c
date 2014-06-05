@@ -1557,21 +1557,21 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
           //HalUARTWrite( SERIAL_APP_PORT,statusLight4Byte, 4 );
            if(*(statusLight4Byte +2) =='1' && *(statusLight4Byte +3) =='1')
             {
-              HalUARTWrite( SERIAL_APP_PORT,"#411\r\n", osal_strlen("Light 1: ON. Light 2: ON\r\n") + 1 );
+              HalUARTWrite( SERIAL_APP_PORT,"#411*", osal_strlen("#411*") + 1 );
             }
           else
             if(*(statusLight4Byte +2) =='1' && *(statusLight4Byte +3) =='0')
             {
-              HalUARTWrite( SERIAL_APP_PORT,"#410\r\n", osal_strlen("Light 1: ON. Light 2: OFF\r\n") + 1 );
+              HalUARTWrite( SERIAL_APP_PORT,"#410*", osal_strlen("#411*") + 1 );
             }
           else
             if(*(statusLight4Byte +2) =='0' && *(statusLight4Byte +3) =='1')
             {
-              HalUARTWrite( SERIAL_APP_PORT,"#401\r\n", osal_strlen("Light 1: OFF. Light 2: ON\r\n") + 1 );
+              HalUARTWrite( SERIAL_APP_PORT,"#401*", osal_strlen("#411*") + 1 );
             }
           else
             {
-              HalUARTWrite( SERIAL_APP_PORT,"#400\r\n", osal_strlen("Light 1: OFF. Light 2: OFF\r\n") +1);
+              HalUARTWrite( SERIAL_APP_PORT,"#400*", osal_strlen("#411*") +1);
             }
          // HalUARTWrite( SERIAL_APP_PORT, "\r\n",2 );
          

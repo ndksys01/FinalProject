@@ -8,12 +8,25 @@ UseTrigger=1
 TriggerName=main
 LimitSize=0
 ByteLimit=50
+[xds100]
+xds100serialNo=06EB121009FE
+xds100foundProbes=06EB121009FE:06EB12100B35:
 [Disassemble mode]
 mode=0
 [Breakpoints]
 Bp0=_ "STD_CODE" "{C:\Texas Instruments\Z-Stack Home 1.2.0\Components\stack\af\AF.c}.475.15" 1 0 0 0 "" 0 "" 0
 Bp1=_ "STD_CODE" "{C:\Texas Instruments\Z-Stack Home 1.2.0\Components\stack\af\AF.c}.355.19" 1 0 0 0 "" 0 "" 0
 Count=2
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Aliases]
 Count=0
 SuppressDialog=0
