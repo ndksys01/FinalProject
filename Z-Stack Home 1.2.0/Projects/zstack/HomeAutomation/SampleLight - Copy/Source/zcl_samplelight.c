@@ -249,7 +249,16 @@ char getAccelerator();
  
  
  
- 
+ // them ham nay de lay trang thai led
+uint32_t
+bspLedGet(uint8_t ui8Leds)
+{
+    //
+    // Turn on specified LEDs
+    //
+    return GPIOPinRead(BSP_LED_BASE, ui8Leds);
+}
+
 /*********************************************************************
  * ZCL General Profile Callback table
  */
@@ -1548,10 +1557,35 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
  {
        switch ( pkt->clusterId ) 
   { 
-    case 0x21: // Getting Temperature
+    case 0x21: // Getting Temperature and send to rapsberry
           HalUARTWrite( SERIAL_APP_PORT, (uint8*)pkt->cmd.Data, osal_strlen(pkt->cmd.Data) + 1 );
-          break; 
-    case 0x24: // get status Lgiht
+          break;
+    case 0x22: //Getting status everything and send to rapsberry
+      {
+        char tmpInfo[13];
+        unsigned char index; 
+        for(index=0;index<12;index++)
+        {
+          tmpInfo[index] = *(pkt->cmd.Data++);
+        }   
+        //get status led 1
+        tmpInfo[2] = bspLedGet(BSP_LED_1)+48;
+        //get status led 2
+        tmpInfo[3] = bspLedGet(BSP_LED_2)/2+48;
+        
+        //Get status automatic light 1
+        tmpInfo[6] = autoLight+48;
+        
+        //get status Accelerator 1
+        tmpInfo[8] = getAccelerator();
+        tmpInfo[index] = '*';
+        
+        // sending to rapsberry
+        HalUARTWrite( SERIAL_APP_PORT,tmpInfo, osal_strlen(tmpInfo));
+
+        break;
+      }
+    case 0x24: // get status Lgiht and send to rapsberry
           *(statusLight4Byte +3) = *(pkt->cmd.Data+2);
           //HalUARTWrite( SERIAL_APP_PORT,statusLight4Byte, 4 );
            if(*(statusLight4Byte +2) =='1' && *(statusLight4Byte +3) =='1')
@@ -1643,6 +1677,7 @@ static void rxCB( uint8 port, uint8 event )
 
              break;
            }
+           
            case '6':
            {
               autoLight =0;
@@ -1704,7 +1739,6 @@ static void rxCB( uint8 port, uint8 event )
            }
           case 'f':
            {
-             autoLight =0;
              SendDataFull("#f",0x1f,"Get Status Now");
              break;
            }
