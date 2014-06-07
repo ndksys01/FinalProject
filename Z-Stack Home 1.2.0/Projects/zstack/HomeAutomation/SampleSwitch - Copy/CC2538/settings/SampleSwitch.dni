@@ -9,8 +9,8 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [xds100]
-xds100serialNo=06EB121009FE
-xds100foundProbes=06EB121009FE:06EB12100B35:
+xds100serialNo=06EB12100B35
+xds100foundProbes=
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.10.3.6832/W32 for ARM                 07/Jun/2014  16:56:21
+# IAR ELF Linker V7.10.3.6832/W32 for ARM                 07/Jun/2014  17:11:36
 # Copyright 2007-2014 IAR Systems AB.
 #
 #    Output file  =  
@@ -1787,7 +1787,7 @@ apsfProcessAck          0x200050d4     0x4  Data  Gb  APS.o [3]
 apsfSendFragmented      0x200050d0     0x4  Data  Gb  APS.o [3]
 apsfSendOsalMsg         0x200050d8     0x4  Data  Gb  APS.o [3]
 attrList                0x20005094     0x4  Data  Lc  zcl.o [1]
-autoLight1              0x20005141     0x1  Data  Lc  zcl_samplesw.o [1]
+autoLight               0x20005141     0x1  Data  Lc  zcl_samplesw.o [1]
 backoffTimerRollover    0x20005040     0x4  Data  Lc  mac_backoff_timer.o [1]
 backoffTimerTrigger     0x20005044     0x4  Data  Lc  mac_backoff_timer.o [1]
 bcastHoldHandle         0x20004f50     0xc  Data  Gb  nwk_globals.o [1]

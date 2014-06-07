@@ -283,7 +283,7 @@ char pcTemp[10];
 void readTemperature();
 void SendDataFull(char *dataSend,int cluID, char *info);
 void connect2ZC();
-static uint8 autoLight1 = 0;
+static uint8 autoLight = 0;
 static void initUart();
 static void rxCB( uint8 port, uint8 event );
 int ic=0;
@@ -452,7 +452,7 @@ uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
     //________________-send data ACCE
     if ( events & TIME_SEND_ACCE_EVT )
     {
-      if(autoLight1)
+      if(autoLight)
       {
         ui16AlsValue = alsRead();
         if(ui16AlsValue>400)
@@ -1209,41 +1209,41 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
     }
   case 0x19:
     {
-      autoLight1=0;
+      autoLight=0;
       bspLedSet(BSP_LED_1);
       SendDataFull("#91*",0x21,"Turned On Light 3");
       break; 
     }
   case 0x1a:
     {
-      autoLight1=0;
+      autoLight=0;
       bspLedClear(BSP_LED_1);
       SendDataFull("#a0*",0x21,"Turned Off Light 3");
       break; 
     }
   case 0x1b:
     {
-      autoLight1=0;
+      autoLight=0;
       bspLedSet(BSP_LED_2);
       SendDataFull("#b1*",0x21,"Turned On Light 4");
       break; 
     }
   case 0x1c:
     {
-      autoLight1=0;
+      autoLight=0;
       bspLedClear(BSP_LED_2);
       SendDataFull("#c0*",0x21,"Turned Off Light 4");
       break; 
     }
   case 0x1d:    //enable auto control Light 1 3
     {
-      autoLight1 =1;
+      autoLight =1;
       SendDataFull("#d1*",0x21,"Enable Auto Light");
      break;     
     }
   case 0x1e:
     {
-     autoLight1=0;
+     autoLight=0;
      SendDataFull("#e0*",0x21,"Disable Auto Light");
      break;     //disable auto control light 1 3
     }
@@ -1268,7 +1268,7 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         //Get status automatic light 1
         tmpInfo[index++] = 'x';
         //Get status automatic light 2
-        tmpInfo[index++] = autoLight1 + 48;
+        tmpInfo[index++] = autoLight + 48;
         
          //get status Accelerator 1
         tmpInfo[index++] = 'x';
@@ -1284,7 +1284,7 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         *(tmpInfo++) = 'f';
         *(tmpInfo++) = bspLedGet(BSP_LED_1)+48; //led 1 status
         *(tmpInfo++) = bspLedGet(BSP_LED_2)+48; //led 2 status
-        *(tmpInfo++) = autoLight1+48; //autoLight1
+        *(tmpInfo++) = autoLight+48; //autoLight
         *(tmpInfo++) = getAccelerator();
         int ic;
         for(ic=2;ic<9;ic++)
