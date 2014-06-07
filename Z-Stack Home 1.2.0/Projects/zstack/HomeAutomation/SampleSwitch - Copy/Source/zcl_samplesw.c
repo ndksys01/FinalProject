@@ -268,13 +268,13 @@ char dataTest[];
 char data[];
 byte zclSampleSw_TransID;//Them vao
 static void sendAccelermeter();
-uint8_t ui8RegVal;//cam bien gia toc
-int16_t i16X, i16Y, i16Z;//cam bien gia toc
-uint16_t ui16AlsValue = 0;//cam bien anh sang
+static uint8_t ui8RegVal;//cam bien gia toc
+static int16_t i16X, i16Y, i16Z;//cam bien gia toc
+static uint16_t ui16AlsValue = 0;//cam bien anh sang
 static void initAccelerometer();
-int iCount=1;
-int jCount=1;
-int flag =0;
+static int iCount=1;
+static int jCount=1;
+static int flag =0;
 static uint8 enableBaotrom=0;
 //static void sendLight();
 uint16_t ui16Dummy;
@@ -283,7 +283,7 @@ char pcTemp[10];
 void readTemperature();
 void SendDataFull(char *dataSend,int cluID, char *info);
 void connect2ZC();
-uint8 autoLight = 0;
+static uint8 autoLight1 = 0;
 static void initUart();
 static void rxCB( uint8 port, uint8 event );
 int ic=0;
@@ -452,17 +452,7 @@ uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
     //________________-send data ACCE
     if ( events & TIME_SEND_ACCE_EVT )
     {
-      //readTemperature();
-      if(enableBaotrom)
-      {
-        iCount--;jCount--;
-        if(!iCount)
-        {
-          sendAccelermeter();
-          iCount=1;
-        }
-      }
-      if(autoLight)
+      if(autoLight1)
       {
         ui16AlsValue = alsRead();
         if(ui16AlsValue>400)
@@ -474,6 +464,17 @@ uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
           bspLedSet(BSP_LED_1);
         }
       }
+      //readTemperature();
+      if(enableBaotrom)
+      {
+        iCount--;jCount--;
+        if(!iCount)
+        {
+          sendAccelermeter();
+          iCount=1;
+        }
+      }
+      
       osal_start_timerEx(task_id,TIME_SEND_ACCE_EVT, 100);
       return (events ^ TIME_SEND_ACCE_EVT);  
     }
@@ -1208,41 +1209,41 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
     }
   case 0x19:
     {
-      autoLight=0;
+      autoLight1=0;
       bspLedSet(BSP_LED_1);
       SendDataFull("#91*",0x21,"Turned On Light 3");
       break; 
     }
   case 0x1a:
     {
-      autoLight=0;
+      autoLight1=0;
       bspLedClear(BSP_LED_1);
       SendDataFull("#a0*",0x21,"Turned Off Light 3");
       break; 
     }
   case 0x1b:
     {
-      autoLight=0;
+      autoLight1=0;
       bspLedSet(BSP_LED_2);
       SendDataFull("#b1*",0x21,"Turned On Light 4");
       break; 
     }
   case 0x1c:
     {
-      autoLight=0;
+      autoLight1=0;
       bspLedClear(BSP_LED_2);
       SendDataFull("#c0*",0x21,"Turned Off Light 4");
       break; 
     }
   case 0x1d:    //enable auto control Light 1 3
     {
-      autoLight =1;
+      autoLight1 =1;
       SendDataFull("#d1*",0x21,"Enable Auto Light");
      break;     
     }
   case 0x1e:
     {
-     autoLight=0;
+     autoLight1=0;
      SendDataFull("#e0*",0x21,"Disable Auto Light");
      break;     //disable auto control light 1 3
     }
@@ -1267,7 +1268,7 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         //Get status automatic light 1
         tmpInfo[index++] = 'x';
         //Get status automatic light 2
-        tmpInfo[index++] = autoLight+48;
+        tmpInfo[index++] = autoLight1 + 48;
         
          //get status Accelerator 1
         tmpInfo[index++] = 'x';
@@ -1283,7 +1284,7 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         *(tmpInfo++) = 'f';
         *(tmpInfo++) = bspLedGet(BSP_LED_1)+48; //led 1 status
         *(tmpInfo++) = bspLedGet(BSP_LED_2)+48; //led 2 status
-        *(tmpInfo++) = autoLight+48; //autoLight
+        *(tmpInfo++) = autoLight1+48; //autoLight1
         *(tmpInfo++) = getAccelerator();
         int ic;
         for(ic=2;ic<9;ic++)
@@ -1334,7 +1335,7 @@ static void sendAccelermeter()
 {
   
   accReadData(&i16X, &i16Y, &i16Z);
-  if(i16X < -30 | i16X >30 | i16Z < -50 | i16Z >50)
+  if(i16X < -25 | i16X >25 | i16Z < -30 | i16Z >30)
   {
     SendDataFull("#21*",0x21,"Co Trom");
     
@@ -1342,6 +1343,7 @@ static void sendAccelermeter()
   else {
     HalLcdWriteString( "Ko Co trom", HAL_LCD_LINE_6 );
   }
+  /*
   //tinh x
   if(i16X>=0)
   {
@@ -1388,6 +1390,7 @@ static void sendAccelermeter()
     data[11]=i16Z%10 + 48;
   }
   HalLcdWriteString( data, HAL_LCD_LINE_5 );
+  */
   //HalUARTWrite(SERIAL_APP_PORT,(uint8*)data,14);
 }
 char getAccelerator()

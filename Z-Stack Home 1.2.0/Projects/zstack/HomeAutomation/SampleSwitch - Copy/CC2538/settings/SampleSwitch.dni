@@ -9,11 +9,17 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [xds100]
-xds100serialNo=06EB12100B35
+xds100serialNo=06EB121009FE
 xds100foundProbes=06EB121009FE:06EB12100B35:
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
+[DebugChecksum]
+Checksum=-159876843
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
 [Disassemble mode]
 mode=0
 [Breakpoints]
