@@ -1642,7 +1642,8 @@ static void rxCB( uint8 port, uint8 event )
     uint8 pBuf[50];
     // Read from UART
     HalUARTRead( SERIAL_APP_PORT, pBuf, 50 );
-    
+    HalLcdWriteString (pBuf, HAL_LCD_LINE_5 );     
+
     if(*pBuf =='#')
       {
          switch(*(pBuf+1))
