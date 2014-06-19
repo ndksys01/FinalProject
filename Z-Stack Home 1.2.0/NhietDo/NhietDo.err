@@ -1,8 +1,0 @@
->>> Warning 203 "NhietDo.c" Line 50(1,1): Condition always TRUE
->>> Warning 216 "NhietDo.c" Line 77(0,1): Interrupts disabled during call to prevent re-entrancy:  (@ITOF)
->>> Warning 216 "NhietDo.c" Line 77(0,1): Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
->>> Warning 216 "NhietDo.c" Line 77(0,1): Interrupts disabled during call to prevent re-entrancy:  (@DIVFF)
->>> Warning 216 "NhietDo.c" Line 77(0,1): Interrupts disabled during call to prevent re-entrancy:  (@SFTOI)
->>> Warning 216 "NhietDo.c" Line 77(0,1): Interrupts disabled during call to prevent re-entrancy:  (@DIV88)
-      Memory usage:   ROM=12%      RAM=8% - 17%
-      0 Errors,  6 Warnings.

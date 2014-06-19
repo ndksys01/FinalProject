@@ -1209,28 +1209,28 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
     }
   case 0x19:
     {
-      autoLight=0;
+      //autoLight=0;
       bspLedSet(BSP_LED_1);
       SendDataFull("#91*",0x21,"Turned On Light 3");
       break; 
     }
   case 0x1a:
     {
-      autoLight=0;
+      //autoLight=0;
       bspLedClear(BSP_LED_1);
       SendDataFull("#a0*",0x21,"Turned Off Light 3");
       break; 
     }
   case 0x1b:
     {
-      autoLight=0;
+      //autoLight=0;
       bspLedSet(BSP_LED_2);
       SendDataFull("#b1*",0x21,"Turned On Light 4");
       break; 
     }
   case 0x1c:
     {
-      autoLight=0;
+      //autoLight=0;
       bspLedClear(BSP_LED_2);
       SendDataFull("#c0*",0x21,"Turned Off Light 4");
       break; 
@@ -1268,7 +1268,7 @@ void ProcessData( afIncomingMSGPacket_t *pkt)
         //Get status automatic light 1
         tmpInfo[index++] = 'x';
         //Get status automatic light 2
-        tmpInfo[index++] = autoLight + 48;
+        tmpInfo[index++] = enableBaotrom + 48;
         
          //get status Accelerator 1
         tmpInfo[index++] = 'x';
@@ -1337,11 +1337,11 @@ static void sendAccelermeter()
   accReadData(&i16X, &i16Y, &i16Z);
   if(i16X < -25 | i16X >25 | i16Z < -30 | i16Z >30)
   {
-    SendDataFull("#21*",0x21,"Co Trom");
+    SendDataFull("#k*",0x21,"Co Trom");
     
   }
   else {
-    HalLcdWriteString( "Ko Co trom", HAL_LCD_LINE_6 );
+    HalLcdWriteString( "#h*", HAL_LCD_LINE_6 );
   }
   /*
   //tinh x

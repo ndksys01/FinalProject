@@ -1670,7 +1670,7 @@ static void rxCB( uint8 port, uint8 event )
            case '5':
            {
               //SendDataFull("#5",0x15,"Turning On Light 1");
-              autoLight =0;
+             // autoLight =0;
               bspLedSet(BSP_LED_1);
               HalLcdWriteString ( "Turning On Light 1", HAL_LCD_LINE_6 );
               HalUARTWrite( SERIAL_APP_PORT,"#51*", osal_strlen("#50*") + 1 );
@@ -1680,7 +1680,7 @@ static void rxCB( uint8 port, uint8 event )
            
            case '6':
            {
-              autoLight =0;
+              //autoLight =0;
               bspLedClear(BSP_LED_1);
               HalLcdWriteString ( "Turning Off Light 1", HAL_LCD_LINE_6 );
               HalUARTWrite( SERIAL_APP_PORT,"#60*", osal_strlen("#60*") + 1 );
@@ -1690,7 +1690,7 @@ static void rxCB( uint8 port, uint8 event )
            case '7':
            {
              //SendDataFull("#5",0x15,"Turning On Light 1");
-              autoLight =0;
+              //autoLight =0;
               bspLedSet(BSP_LED_2);
               HalLcdWriteString ( "Turning On Light 2", HAL_LCD_LINE_6 );
               HalUARTWrite( SERIAL_APP_PORT,"#71*", osal_strlen("#71*") + 1 );
@@ -1698,7 +1698,7 @@ static void rxCB( uint8 port, uint8 event )
            }
            case '8':
            {
-              autoLight =0;
+              //autoLight =0;
               bspLedClear(BSP_LED_2);
               HalLcdWriteString ( "Turning Off Light 2", HAL_LCD_LINE_6 );
               HalUARTWrite( SERIAL_APP_PORT,"#80*", osal_strlen("#80*") + 1 );
