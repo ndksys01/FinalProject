@@ -1335,10 +1335,10 @@ static void sendAccelermeter()
 {
   
   accReadData(&i16X, &i16Y, &i16Z);
-  if(i16X < -25 | i16X >25 | i16Z < -30 | i16Z >30)
+  if(i16X < -30 | i16X >30 | i16Z < -30 | i16Z >30)
   {
     SendDataFull("#k*",0x21,"Co Trom");
-    
+    enableBaotrom =0;
   }
   else {
     HalLcdWriteString( "#h*", HAL_LCD_LINE_6 );
